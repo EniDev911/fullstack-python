@@ -3,13 +3,13 @@
   img: https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/code.visualstudio.svg
 - title: "🐍 Python"
   text: "Interprete de Python"
-  img: /assets/svg/python.svg
+  img: assets/svg/python.svg
 - title: "🐘 POSTGRESQL"
   text: "ORDBMS Open Source"
-  img: /assets/svg/postgres.svg
+  img: assets/svg/postgres.svg
 - title: "🎮 DISCORD"
   text: "Aplicación de chat"
-  img: /assets/svg/discord.svg
+  img: assets/svg/discord.svg
 - title: "🗂️ GIT"
   text: "Control de versiones"
-  img: /assets/svg/git.svg
+  img: assets/svg/git.svg
