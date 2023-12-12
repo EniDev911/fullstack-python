@@ -1,5 +1,6 @@
 @import "highlight";
 @import "images";
+@import "variables";
 
 $backgroundColor: #ffffff;
 $bodyColor: #000000;
@@ -10,6 +11,10 @@ body {
   background: $backgroundColor;
   color: $bodyColor;
   font-family: $bodyFont;
+}
+
+.text-secondary {
+  color: $secondary !important;
 }
 
 .code-header {

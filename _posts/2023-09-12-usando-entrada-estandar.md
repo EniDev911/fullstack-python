@@ -130,14 +130,14 @@ A menudo la expresión (es decir, aquello que terminará inserto en la lista res
 
 **Ejemplos**: 
 
-{: .clipboard }
+{% include codeHeader.html %}
 ```py
 x, y = [int(x) for x in input("Ingresa dos valores: ").split()]
 print('Eje x:', x)
 print('Eje y:', y)
 ```
 
-{: .clipboard }
+{% include codeHeader.html %}
 ```py
 x = [int(x) for x in input("Ingrese múltiples valores separados por coma: ").split(",")]
 print("Numeros de la lista: ", x)
