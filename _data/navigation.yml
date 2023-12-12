@@ -1,4 +1,6 @@
 - name: "Home"
   link: /
 - name: "Software"
-  link: software.html
+  link: /software.html
+- name: "Blog"
+  link: /blog.html

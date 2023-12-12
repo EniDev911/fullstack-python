@@ -4,5 +4,10 @@ title: "" # the name of your site, e.g. ACME Corp.
 plugins:
   - jekyll-paginate
 
+markdown: kramdown
+highlighter: rouge
+linenos: true
+
 paginate: 5
 paginate_path: /page:num/
+  
