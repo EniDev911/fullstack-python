@@ -36,10 +36,10 @@ print(type(val))
 # <class 'str'>
 ```
 
-Usando la conversión de tipos, si convierte explícitamente una variable que contiene a la función **input()** o utilizandola directamente en su declaración y si el usuario ingresa un valor erróneo tendría una excepción de tipo [**_`ValueError`_**](https://docs.python.org/3/library/exceptions.html#ValueError):
+Usando la conversión de tipos, si convierte explícitamente una variable que contiene a la función **input()** o utilizandola directamente en su declaración y si el usuario ingresa un valor erróneo tendría una excepción de tipo [**_`ValueError`_**](https://docs.python.org/3/library/exceptions.html#ValueError){:target='_blank'}:
 
 
-{: .clipboard }
+{% include codeHeader.html %}
 ```py
 val = int(input("Ingresa un número: "))
 # o también ocurrirá un error si lo tengo de la siguiente manera
@@ -48,9 +48,9 @@ print(val)
 # Ingresa un valor :  diez
 # output: ValueError: invalid literal for int() with base 10: 'diez'
 ```
-<p align="center">
-    <img src="assets/exception_input.png" width="800" alt="img - vscode-ouput">
-</p>
+
+![img - exception]({{ 'assets/img/exception_input.png' | relative_url }})
+
 
 ---
 
@@ -63,8 +63,7 @@ print(val)
 
 - Lo que sea que ingrese como entrada, la función `input()` lo convierte en una cadena, quiere decir, si ingresa un valor entero, será procesado como una cadena, necesitará convertirlo explícitamente en un número entero en su código usando la **conversión de tipo** Ej: 
 
-
-{: .clipboard }
+{% include codeHeader.html %}
 ```py
 num = input("Ingrese un número: ")
 print(type(num))
@@ -99,7 +98,7 @@ input().split(separator, maxplit)
 
 **Ejemplos**: 
 
-{: .clipboard }
+{% include codeHeader.html %}
 ```py
 x, y = input('Ingresa dos valores: ').split()
 print('Eje x:', x)
