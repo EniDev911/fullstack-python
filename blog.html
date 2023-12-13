@@ -1,0 +1,17 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="row g-3 justify-content-center">
+  {% for post in site.posts %}
+  <div class="col-10 col-md-6 col-lg-4">
+    {% include card_post.html
+    title=post.title
+    date=post.date
+    href=post.url
+    img=post.thumbnail
+    %}
+  </div>
+  {% endfor %}
+</div>
