@@ -1,11 +1,8 @@
 ---
 layout: post
-title: "Usando entrada estándar - input"
-css:
-  custom: >-
-    strong { color: #FFCB3B }
+title: "Usando entrada estándar input"
+thumbnail: /assets/img/python-input-card.png
 ---
-
 
 
 Los desarrolladores a menudo tenemos la necesidad de interactuar con los usuarios, ya sea para obtener datos o para proporcionar algún tipo de resultado. La mayoría de los programas actuales utilizan un cuadro de diálogo como una forma de pedirle al usuario que proporcione algún tipo de entrada (*input*). Mientras que Python nos proporciona dos funciones incorporadas para leer la entrada estándar desde el teclado.
@@ -26,7 +23,8 @@ Esta función **input()** primero toma la entrada del usuario y luego se evalúa
 
 
 {% include codeHeader.html %}
-```py
+{: .highlight-rouge }
+{% highlight py linenos %}
 val = input("Ingresa un valor: ")
 print(val)
 # Ingresa un valor :  10
@@ -34,9 +32,9 @@ print(val)
 # por defecto lo almacena como una cadena
 print(type(val))
 # <class 'str'>
-```
+{% endhighlight %}
 
-Usando la conversión de tipos, si convierte explícitamente una variable que contiene a la función **input()** o utilizandola directamente en su declaración y si el usuario ingresa un valor erróneo tendría una excepción de tipo [**_`ValueError`_**](https://docs.python.org/3/library/exceptions.html#ValueError){:target='_blank'}:
+Usando la conversión de tipos, si convierte explícitamente una variable que contiene a la función `input()` o utilizandola directamente en su declaración y si el usuario ingresa un valor erróneo tendría una excepción de tipo [**_`ValueError`_**](https://docs.python.org/3/library/exceptions.html#ValueError){:target='_blank'}:
 
 
 {% include codeHeader.html %}
@@ -64,7 +62,8 @@ print(val)
 - Lo que sea que ingrese como entrada, la función `input()` lo convierte en una cadena, quiere decir, si ingresa un valor entero, será procesado como una cadena, necesitará convertirlo explícitamente en un número entero en su código usando la **conversión de tipo** Ej: 
 
 {% include codeHeader.html %}
-```py
+{: .highlight-rouge }
+{% highlight py linenos %}
 num = input("Ingrese un número: ")
 print(type(num))
 # output: <class 'str'>
@@ -74,7 +73,7 @@ print(type(num))
 # otra opción más legible es:
 num = input("Ingrese un número: ")
 print(type(int(num)))
-```
+{% endhighlight %}
 
 ---
 
@@ -82,12 +81,12 @@ print(type(int(num)))
 
 En Python se pueden tomar múltiples valores o entradas en una línea mediante dos métodos:
 
-- usando el método **split()**
+- usando el método `split()`
 - usando la comprensión de lista (*list comprehension*)
 
-## Usando el método split()
+### Usando el método split()
 
-Esta función ayuda obtener múltiples entradas de los usuarios rompe la entrada dada por el separador, cualquier espacio en blanco es un separador. Generalmente, los desarrolladores usan el método **split()** para dividir una cadena de Python, pero se puede usar para tomar múltiples entradas. 
+Esta función ayuda obtener múltiples entradas de los usuarios rompe la entrada dada por el separador, cualquier espacio en blanco es un separador. Generalmente, los desarrolladores usan el método `split()` para dividir una cadena de Python, pero se puede usar para tomar múltiples entradas. 
 
 
 **Sintaxis**: 
@@ -99,14 +98,17 @@ input().split(separator, maxplit)
 **Ejemplos**: 
 
 {% include codeHeader.html %}
-```py
+{: .highlighter-rouge }
+{% highlight py linenos=table %}
 x, y = input('Ingresa dos valores: ').split()
 print('Eje x:', x)
 print('Eje y:', y)
 # ======== Otra forma
 a, b = input('Ingresa dos valores: ').split()
 print('Primer número {} y segundo número es {}'.format(a, b))
-```
+{% endhighlight %}
+
+
 
 <p align="center">
  <a href="https://colab.research.google.com/drive/1Xii73KEHvw8y9Utu1KlSH8FGWfrPaSO8?usp=sharing" target="_blank">
@@ -131,11 +133,12 @@ A menudo la expresión (es decir, aquello que terminará inserto en la lista res
 **Ejemplos**: 
 
 {% include codeHeader.html %}
-```py
+{: .highlight-rouge }
+{% highlight py linenos %}
 x, y = [int(x) for x in input("Ingresa dos valores: ").split()]
 print('Eje x:', x)
 print('Eje y:', y)
-```
+{% endhighlight %}
 
 {% include codeHeader.html %}
 ```py
@@ -143,6 +146,7 @@ x = [int(x) for x in input("Ingrese múltiples valores separados por coma: ").sp
 print("Numeros de la lista: ", x)
 ```
 
+---
 
 ## Complementando para ocultar la información de entrada
 
@@ -164,8 +168,9 @@ getpass.getpass(prompt='Password: ', stream=None)
 
 Veamos el siguiente ejemplo para comprender su implementación.
 
-{: .clipboard }
-```py
+{% include codeHeader.html %}
+{: .highlight-rouge }
+{% highlight py linenos %}
 # Ejemplo 1: Sin argumentos en la llamada.
 import getpass
  
@@ -179,7 +184,7 @@ else:
 # Entrada del usuario:
 # Password : (No se muestra lo que se escribe.)
 # output: Contraseña ingresada: salchipapa123
-```
+{% endhighlight %}
 
 Al no proporcionar una cadena como argumento se imprime el valor **password:** para mostrar al usuario es el valor por defecto que tiene la función. Hay ciertos programas que solicitan preguntas de seguridad en lugar de solicitar contraseñas para mejorar la seguridad. Aquí, la solicitud se puede cambiar a cualquier valor. 
 
@@ -207,25 +212,27 @@ La función **getuser()** muestra el nombre de inicio de sesión del usuario. Es
 getpass.getuser()
 ```
 
+
 Veamos el siguiente ejemplo para comprender su implementación.
 
-{: .clipboard }
-```py
+{% include codeHeader.html %}
+{: .highlighter-rouge }
+{% highlight py linenos %}
 #Ejemplo 3: Mostrando el usuario 
 import getpass
- 
+
 user = getpass.getuser()
- 
+
 while True:
     pwd = getpass.getpass("Usuario : %s " % user)
- 
+
     if pwd == 'abcd123':
-        print "Bienvenido!!!"
+        print("Bienvenido!!!")
         break
     else:
-        print "La contraseña es incorrecta."
+        print("La contraseña es incorrecta.")
 # Entrada : Usuario: Will 
-```
+{% endhighlight %}
 
 <p align="center">
 <a href="https://colab.research.google.com/drive/1Xii73KEHvw8y9Utu1KlSH8FGWfrPaSO8?usp=sharing#scrollTo=_8VwvC5fSO7k" target="_open">

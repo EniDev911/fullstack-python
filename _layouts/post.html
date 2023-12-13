@@ -4,6 +4,15 @@ layout: default
 <style>
   h2 {
     color: #ffbb33ff;
+    margin-bottom: 25px;
+    font-weight: bolder;
+    -webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-color: #000;
+    text-shadow: 1px 1px 2px #000, 0 0 8px #000, 0 0 0.2em #000;
+  }
+  h3 {
+    color: #40a0e2df;
+    margin-bottom: 20px;
   }
   strong {
     color: #40a0e2ff;
@@ -15,6 +24,18 @@ layout: default
 
 <!-- Page Header -->
 
-<div class="container">
+<div class="container-fluid">
     {{ content }}
+
+              {% if page.previous.url %}
+              <a class="btn btn-primary float-left" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
+                data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">&larr; Previous<span
+                  class="d-none d-md-inline">
+                  Post</span></a>
+              {% endif %}
+              {% if page.next.url %}
+              <a class="btn btn-primary float-right" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
+                data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">Next<span class="d-none d-md-inline">
+                  Post</span> &rarr;</a>
+              {% endif %}
 </div>

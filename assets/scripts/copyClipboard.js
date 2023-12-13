@@ -3,12 +3,14 @@ const codeBlocks = document.querySelectorAll('.code-header + .highlighter-rouge'
 const copyCodeButtons = document.querySelectorAll('.copy-code-button');
 
 copyCodeButtons.forEach((copyCodeButton, index) => {
-  const code = codeBlocks[index].innerText;
-
+  let code = codeBlocks[index].innerHTML;
   copyCodeButton.addEventListener('click', () => {
-    // Copy the code to the user's clipboard
-    window.navigator.clipboard.writeText(code);
-
+    const regexp = /[1-9]/i;
+    console.log(regexp.test(code)); // true
+    if (code.includes('lineno')){
+      code = code.split('class="code">')[1];
+    }
+    window.navigator.clipboard.writeText(code.replaceAll(/<\/?[^>]+(>|$)/gi, ""));
     // Update the button text visually
     const { innerText: originalText } = copyCodeButton;
     copyCodeButton.innerText = 'Copiado!';

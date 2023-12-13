@@ -13,16 +13,16 @@
   <!-- 👇 partial de la navegación -->
 {% include navigation.html %}
 <!-- HERO SECTION -->
-<div class="px-4 pt-5" style="height: 80vh; background: #191919">
+<div class="pt-5" style="height: 80vh; background: #191919">
   <div class="py-5 text-center">
-    <h1 class="display-5 fw-bold text-white">{{ page.title }}</h1>
+    <h1 class="display-5 fw-bold page-title">{{ page.title }}</h1>
     <div class="col-lg-6 mx-auto">
       <p class="fs-3 mb-4" style="color: lightsalmon;">
         {{ page.subtitle }}
       </p>
     </div>
   </div>
-  <div class="text-secondary bg-dark shadow-lg col col-md-6 col-lg-9 mx-auto p-4 min-vh-100 rounded">
+  <div class="text-secondary bg-dark shadow-lg col-12 col-md-6 col-lg-9 mx-auto p-4 min-vh-100 rounded">
     {{ content }}
   </div>
 </div>

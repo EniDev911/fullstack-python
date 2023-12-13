@@ -1,6 +1,6 @@
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
-.highlight:first-of-type {
+.highlight {
   border: 1px solid #ccc;
   border-radius: 3px;
   box-shadow: 2px 2px 19px 2px #00000070;
@@ -8,13 +8,22 @@
   margin-bottom: 25px;
   font-size: 16px;
 }
+.code {
+  font-size: 17px;
+}
+.rouge-table .lineno {
+  user-select: none;
+  font-size: 14.8px;
+  vertical-align: middle;
+  color: #d2a8ff;
+}
 .highlight::-webkit-scrollbar {
-  height:7px;
+  height:5px;
   width: 10px;
   border-radius: 0;
 }
 .highlight::-webkit-scrollbar-thumb {
-  background-color: #ffca01;
+  background-color: #ffca0160;
   border-radius: 10px;
 }
 .highlight::-webkit-scrollbar-corner {
@@ -27,7 +36,7 @@
 }
 
 .highlight > .highlight,.highlight > pre {
-  padding: 0;
+  padding: 0 0 7px 0;
   margin: 0;
   border: 0;
   box-shadow: none;
