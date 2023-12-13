@@ -1,16 +1,14 @@
-// This assumes that you're using Rouge; if not, update the selector
+// Si estás usando Rouge utiliza .code-header + .highlighter-rouge como selector
+// Si no, actualiza el  selector
 const codeBlocks = document.querySelectorAll('.code-header + .highlighter-rouge');
 const copyCodeButtons = document.querySelectorAll('.copy-code-button');
 
 copyCodeButtons.forEach((copyCodeButton, index) => {
-  let code = codeBlocks[index].innerHTML;
+  let code = codeBlocks[index].textContent;
   copyCodeButton.addEventListener('click', () => {
-    const regexp = /[1-9]/i;
-    console.log(regexp.test(code)); // true
-    if (code.includes('lineno')){
-      code = code.split('class="code">')[1];
-    }
-    window.navigator.clipboard.writeText(code.replaceAll(/<\/?[^>]+(>|$)/gi, ""));
+    const codeSplit = code.split("\n").filter((ele) => !ele.match(/^[1-9]/))
+    // console.log(code.split("\n").filter((ele) => !ele.match(/^[1-9]/)))
+    window.navigator.clipboard.writeText(codeSplit.join("\n"));
     // Update the button text visually
     const { innerText: originalText } = copyCodeButton;
     copyCodeButton.innerText = 'Copiado!';

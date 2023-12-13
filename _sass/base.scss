@@ -1,6 +1,7 @@
 @import "highlight";
 @import "images";
 @import "variables";
+@import "blockquotes";
 
 $backgroundColor: #ffffff;
 $bodyColor: #000000;
@@ -38,6 +39,10 @@ code.language-plaintext {
   -webkit-text-stroke-color: #f7c;
 }
 
+pre {
+  tab-size: 2;
+}
+
 .code-header {
   float: right;
   height: 100%;
@@ -67,5 +72,14 @@ code.language-plaintext {
   }
   code.language-plaintext {
     font-size: $fsParagraphXl;
+  }
+}
+
+@media (min-width: 1200px) {
+  .highlight {
+    font-size: 19px;
+  }
+  .rouge-table .lineno {
+    font-size: 16.5px;
   }
 }

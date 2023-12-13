@@ -25,17 +25,19 @@ layout: default
 <!-- Page Header -->
 
 <div class="container-fluid">
+  <div class="mb-4 d-flex justify-content-between">
+    {% if page.previous.url %}
+    <a class="btn btn-primary" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
+      data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.previous.title }}">&larr; Anterior<span
+        class="d-none d-md-inline">
+        Post</span></a>
+    {% endif %}
+    <a class="btn btn-primary" href="{{ '/blog' | prepend: site.baseurl | replace: '//', '/' }}">Home</a>
+    {% if page.next.url %}
+    <a class="btn btn-primary" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
+      data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.next.title }}">Siguiente<span class="d-none d-md-inline">
+        Post</span> &rarr;</a>
+    {% endif %}
+    </div>
     {{ content }}
-
-              {% if page.previous.url %}
-              <a class="btn btn-primary float-left" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
-                data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">&larr; Previous<span
-                  class="d-none d-md-inline">
-                  Post</span></a>
-              {% endif %}
-              {% if page.next.url %}
-              <a class="btn btn-primary float-right" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
-                data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">Next<span class="d-none d-md-inline">
-                  Post</span> &rarr;</a>
-              {% endif %}
 </div>
