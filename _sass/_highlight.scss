@@ -1,8 +1,8 @@
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight {
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #ccc8;
+  border-radius: 5px;
   box-shadow: 2px 2px 19px 2px #00000070;
   padding: 13px 13px 7px 13px;
   margin-bottom: 25px;
@@ -18,6 +18,8 @@
   user-select: none;
   font-size: 14.8px;
   vertical-align: middle;
+  border-right: 1px solid #ccc5;
+  padding: 0 10px 0 0;
   color: #d2a8ff;
 }
 .highlight::-webkit-scrollbar {

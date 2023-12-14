@@ -103,7 +103,3 @@ print(str) # ['Hola Mundo!', 'Hello World!'] (equivalente a split("\n"))
 ```
 
 > **NOTA** <br>Un segundo argumento en `split()` indica cuál es el máximo de divisiones que puede tener lugar el string.
-
-
-
-
