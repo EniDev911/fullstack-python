@@ -14,7 +14,7 @@ layout: default
     color: #40a0e2df;
     margin-bottom: 20px;
   }
-  strong {
+  strong, em {
     color: #40a0e2ff;
   }
   body {
@@ -25,7 +25,7 @@ layout: default
 <!-- Page Header -->
 
 <div class="container-fluid">
-  <div class="mb-4 d-flex justify-content-between">
+  <div class="mb-4 d-flex justify-content-between group-btn-post">
     {% if page.previous.url %}
     <a class="btn btn-primary" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
       data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.previous.title }}">&larr; Anterior<span

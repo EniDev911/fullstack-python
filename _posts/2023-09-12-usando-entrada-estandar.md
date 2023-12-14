@@ -46,7 +46,8 @@ print(val)
 # output: ValueError: invalid literal for int() with base 10: 'diez'
 ```
 
-![img - exception]({{ 'assets/img/exception_input.png' | relative_url }})
+{: align='center'}
+![img - exception]({{ 'assets/img/exception_input.png' | relative_url }}){:height='190'}
 
 
 ---

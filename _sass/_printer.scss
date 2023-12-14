@@ -1,0 +1,21 @@
+@media print {
+	body {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	.group-btn-post {
+		display: none !important;
+	}
+	.copy-code-button {
+		display: none;
+	}
+	h2 {
+		color: #c8a !important;
+		text-shadow: none !important;
+		-webkit-text-stroke-width: 0 !important;
+	-webkit-text-stroke-color: 0;
+	}
+	.highlight {
+		box-shadow: none !important;
+	}
+}

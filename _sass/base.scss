@@ -67,7 +67,7 @@ pre {
 }
 
 @media (min-width: 768px) {
-  body p {
+  body p, ul {
     font-size: $fsParagraphXl !important;
   }
   code.language-plaintext {
@@ -83,3 +83,6 @@ pre {
     font-size: 16.5px;
   }
 }
+
+@import "printer";
+
