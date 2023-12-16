@@ -18,6 +18,9 @@ body {
     font-size: $fsParagraphSm !important;
   }
 }
+.mermaid {
+  display: none;
+}
 .page-title {
   color: #ffbb33ff;
   font-weight: bolder;

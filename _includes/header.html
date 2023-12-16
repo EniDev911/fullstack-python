@@ -1,0 +1,43 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>{{ page.title }} - {{ site.title }}</title>
+<!-- CDN CSS bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+mermaid.initialize({
+	securityLevel: 'loose',
+	startOnLoad: false
+});
+let aux = 0;
+await mermaid.run({
+	suppressErrors: true,
+	querySelector: '.mermaid',
+	postRenderCallback: (id) => {
+		const container = document.querySelector(".visually-hidden")
+		container.classList.remove("visually-hidden");
+		let spinners = document.querySelectorAll('.lds-spinner');
+    	spinners[aux].style.display = 'none';
+		aux++;
+
+	}
+});
+</script>
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+	.my_style_mermaid {
+		fill:#191919;
+		stroke:#f2f5a6;
+		stroke-width:1px;
+		color:#ccc;
+	}
+    svg.mermaid{max-width: 100%}
+    svg.mermaid:hover{max-width: none}
+    marker { fill: #f2f5a6 !important }
+    .flowchartTitleText { fill: #f00 !important; text-transform: uppercase; stroke:#000; stroke-width:0.5em; paint-order:stroke; stroke-linejoin:round }
+    svg[id^="mermaid-"] { min-width: 70%; max-width: 900px; font-size: 20px; }
+    img[alt*='img']{border: 1px solid #ccc}
+</style>

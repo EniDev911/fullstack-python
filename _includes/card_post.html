@@ -1,7 +1,8 @@
 <div class="card text-light shadow" style="background-color: #191919; cursor: pointer" onclick="location.href = '{{ include.href | relative_url }}'">
-  <div class="card-header text-center p-0">
-    <img src="{{ include.img | relative_url }}" alt="image" class="card-img-top" style="object-fit: scale-down;"
-      height="210">
+  <div class="card-header text-center p-0" style="height: 210px; position: relative;">
+    {% include loading.html %}
+    <img id="{{ include.id }}" src="{{ include.img | relative_url }}" alt="image_post" class="card-img-top" style="object-fit: scale-down; visibility: hidden;"
+      height="210" loading="lazy" onload="{mostrar(this, this.id)}">
   </div>
   <div class="card-body">
     <h5 class="card-title text-warning text-center">
@@ -15,3 +16,11 @@
     {% include date_es.html date=include.date time-attributes='class="post-date"' %}
   </div>
 </div>
+
+<script>
+  function mostrar(img, index) {
+    let spinners = document.querySelectorAll('.lds-spinner');
+    spinners[index].style.display = 'none';
+    img.style.visibility = 'visible';
+  }
+</script>
