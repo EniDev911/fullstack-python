@@ -18,4 +18,11 @@
 	.highlight {
 		box-shadow: none !important;
 	}
+	.node {
+		fill: #ff0 !important;
+	}
+	svg[id^="mermaid"] .default>* {
+      min-width: 60%;
+	  fill: #ff0 !important;
+ 	}
 }

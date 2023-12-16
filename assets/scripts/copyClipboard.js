@@ -12,10 +12,8 @@ copyCodeButtons.forEach((copyCodeButton, index) => {
     // Update the button text visually
     const { innerText: originalText } = copyCodeButton;
     copyCodeButton.innerText = 'Copiado!';
-
     // (Optional) Toggle a class for styling the button
     copyCodeButton.classList.add('copied');
-
     // After 2 seconds, reset the button to its initial UI
     setTimeout(() => {
       copyCodeButton.innerText = originalText;

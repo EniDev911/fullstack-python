@@ -154,7 +154,7 @@ graph LR
 
 {% include mermaid.html content=es_par_graph %}
 
-Como podemos observar en el diagrama de flujo. El programa pide un número positivos al usuario y almacena la respuesta en la variable `numero`. Después comprueba si el número es par o impar evaluando la condición. Si lo es, el programa mostrará el número ingresado por el usuario acompañado de la frase '**es par**'. Sino, el programa imprime mostrará el valor introducido por el usuario acompañado de la frase **'es impar**' luego de eso el programa finaliza. 
+Como podemos observar en el diagrama de flujo. El programa pide un número positivos al usuario y almacena la respuesta en la variable `numero`. Después comprueba si el número es par o impar evaluando la condición. Si lo es, el programa mostrará el número ingresado por el usuario acompañado de la frase '**es par**'. Sino, el programa mostrará el valor introducido por el usuario acompañado de la frase **'es impar**' luego de eso el programa finaliza. 
 
 ### Escribamos el ejemplo en Python
 
