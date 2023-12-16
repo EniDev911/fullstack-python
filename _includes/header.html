@@ -21,23 +21,25 @@ await mermaid.run({
 		let spinners = document.querySelectorAll('.lds-spinner');
     	spinners[aux].style.display = 'none';
 		aux++;
-
 	}
 });
 </script>
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
-	.my_style_mermaid {
-		fill:#191919;
-		stroke:#f2f5a6;
-		stroke-width:1px;
-		color:#ccc;
-	}
-    svg.mermaid{max-width: 100%}
+    svg.mermaid{
+    	max-width: 100%
+    }
     svg.mermaid:hover{max-width: none}
     marker { fill: #f2f5a6 !important }
-    .flowchartTitleText { fill: #f00 !important; text-transform: uppercase; stroke:#000; stroke-width:0.5em; paint-order:stroke; stroke-linejoin:round }
-    svg[id^="mermaid-"] { min-width: 70%; max-width: 900px; font-size: 20px; }
-    img[alt*='img']{border: 1px solid #ccc}
+    .flowchartTitleText {
+    	fill: #f8d040 !important;
+    	text-transform: uppercase;
+    	stroke:#000; stroke-width:0.5em;
+    	paint-order:stroke;
+    	stroke-linejoin:round;
+    	font-size: 19px !important;
+    	font-size-adjust:0.58 !important;
+   	}
+    svg[id^="mermaid-"] { min-width: 90%; font-size: 20px; }
 </style>

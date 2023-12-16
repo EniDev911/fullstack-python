@@ -41,12 +41,41 @@ thumbnail: /assets/img/python-condicionales.png
   };
 </script>
 
-## Condicionales en Python
+
+## Condicional IF
 
 De no ser por las **estructuras de control**, el código en cualquier lenguaje de programación sería ejecutado línea a línea de forma secuencial hasta el fin del programa. Un programa que está escrito basado en un código fuente en algún lenguaje de programación no deja de ser un conjunto de instrucciones que son ejecutadas una tras otras.
 
 
 {% capture condicional_graph %}
+---
+title: "DIAGRAMA DE FLUJO: SENTENCIA IF"
+---
+graph LR
+  inicio([Inicio])
+  inicio--&gt;condicion{"CONDICIÓN"}
+  condicion--&gt;|Si| bloqueA[BLOQUE]
+  condicion--&gt;|No| fin([fin])
+  bloqueA--&gt;fin([fin])
+{% endcapture %}
+
+{% include mermaid.html content=condicional_graph %}
+
+Como se puede visualizar en el diagrama de flujo, gracias a las estructuras de control, podemos **cambiar el flujo de ejecución de un programa**
+
+
+---
+
+## Uso del if y else en Python
+
+Es posible que no solo queramos hacer algo si una determinada condición se cumple, sino además queramos hacer algo en caso contrario. Es aquí donde entre en juego la cláusula `else` en Python que se comporta como lo que sucedería si la condición no se cumple, se ejecutará el código presente dentro del `else`.
+
+El diagrama de flujo siguiente muestra la ejecución de una sentencia `if` ... `else`:
+
+{% capture condicional_if_else_graph %}
+---
+title: "DIAGRAMA DE FLUJO: SENTENCIA IF...ELSE"
+---
 graph LR
   inicio([Inicio])
   inicio--&gt;condicion{"CONDICIÓN"}
@@ -56,14 +85,26 @@ graph LR
   bloqueB--&gt;fin([fin])
 {% endcapture %}
 
-{% include mermaid.html content=condicional_graph %}
+{% include mermaid.html content=condicional_if_else_graph %}
 
-Como se puede visualizar en el diagrama de flujo, gracias a las estructuras de control, podemos **cambiar el flujo de ejecución de un programa**
+> **OJO**<br>Nótese que ambos bloque de código son excluyentes, se entra o en uno o en otro, pero nunca se ejecutarán los dos.
+
+
+### ¿Cómo determinar si un número es par o impar?
+
+Veamos un caso muy sencillo. El operador mod que se representa con el símbolo de porcentaje `%` en Python te da el sobrante de la división entera de un número entre otro (*sin meternos en detalles matemáticos*).
+
+Por lo tanto, si quisieramos crear un programa para que el usuario introduzca un número y luego evaluar cuyo número y nos muestre un mensaje si el número introducido es par o impar.
+
+El diagrama de flujo siguiente muestra los pasos para lograr el objetivo:
 
 {% capture es_par_graph %}
+---
+title: "DIAGRAMA DE FLUJO: ES PAR?"
+---
 graph LR
   inicio([Inicio])
-  inicio--&gt;id2[/numero = 'Indique un número: '/]
+  inicio--&gt;id2[/numero/]
   id2--&gt;condicion{"numero MOD 2=0"}
   condicion--&gt;|Si| true[/numero, 'es par'/]
   condicion--&gt;|No| false[/numero, 'es impar'/]
@@ -78,11 +119,11 @@ graph LR
 
 {% include mermaid.html content=es_par_graph %}
 
-
 Como podemos observar en el diagrama de flujo. El programa pide un número positivos al usuario y almacena la respuesta en la variable `numero`. Después comprueba si el número es par o impar evaluando la condición. Si lo es, el programa mostrará el número ingresado por el usuario acompañado de la frase '**es par**'. Sino, el programa imprime mostrará el valor introducido por el usuario acompañado de la frase **'es impar**' luego de eso el programa finaliza. 
 
 ### Escribamos el ejemplo en Python
 
+Así que el código queda así:
 
 {% include codeHeader.html %}
 ```py
@@ -92,3 +133,6 @@ if numero % 2 == 0:
 else:
 	print(numero,'es impar')
 ```
+
+---
+

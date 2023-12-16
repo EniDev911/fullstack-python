@@ -4,7 +4,7 @@
       <div class="navbar-nav">
         {% for item in site.data.navigation %}
         <a href="{{ item.link | relative_url }}"
-          class="nav-link"
+          class="nav-link fs-5 text-uppercase"
           {% if page.url == item.link %}
             style="color: lightsalmon;"
           {% endif %}>
