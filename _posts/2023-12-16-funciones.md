@@ -20,14 +20,17 @@ Puede no estar muy claro por qué merece la pena molestarse em dividir un progra
 
 ## Funciones internas
 
-Como se mencionaba al principio Python proporciona un número importante de funciones internas, que pueden ser  sin necesidad de tener que definirlas previamente.
+Como se mencionaba al principio Python proporciona un número importante de funciones internas, que pueden ser  sin necesidad de tener que definirlas previamente. Los creadores y equipo de Python han escrito un conjunto de funciones para resolver problemas comunes y las han incluido en Python para que las podamos utilizar.
+
+Algunas de las funciones incorporadas en Python son las siguientes:
 
 {% capture funciones %}
 ---
 title: "Funciones incorporadas"
 ---
 graph TD
-  abs["len()"]
+  min["min()"]
+  max["max()"]
   round["round()"]
   sum["sum()"]
   input["input()"]
@@ -35,6 +38,17 @@ graph TD
 {% endcapture %}
 
 {% include mermaid.html content=funciones %}
+
+{% include codeHeader.html %}
+```py
+numeros = [10, 3, 22, 14, 55, 43]
+print(min(numeros)) # 3
+print(max(numeros)) # 55
+print(max('abcdefghijklmnopqrstuvwxyz')) # z
+print(min('zyxwvutsrqponmlkjihgfedcba')) # a
+```
+
+La función `max()` en el caso de las cadenas nos dice cuál es el "carácter más grande" de la cadena (que resulta ser la **z** en el abecedario), mientras que la función `min()` mps muestra el carácter más pequeño (que en el caso del abecedario es la **a**)
 
 ---
 
@@ -50,3 +64,22 @@ print(len(idioma)) # 7
 print(len(metales)) # 3
 ```
 
+Dentro de las funciones, los argumentos son asignados a variables llamadas *parámetros*. A continuación tenemos un ejemplo de función definida por el usuario que recibe un argumento:
+
+{% include codeHeader.html %}
+```py
+def repetir(parametro):
+  print(parametro, end=' ')
+  print(parametro)
+```
+
+Esta función asigna el argumento a un parámetro llamado `parametro`. Cuando la función es llamada, imprime el valor del parámetro (sea éste lo que sea) dos veces.
+
+La función antes definida funcionará con cualquier valor que pueda ser mostrado en pantalla:
+
+{% include codeHeader.html %}
+```py
+repetir("Span") # 'Span' 'Span'
+repetir(12) # 12 12 
+repetir(len("abcde")) # 5 5
+```

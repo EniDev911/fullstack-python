@@ -4,9 +4,11 @@
 - title: "🐍 Python"
   text: "Interprete de Python"
   img: assets/svg/python.svg
+  url: software/python/instalacion
 - title: "🐘 POSTGRESQL"
   text: "ORDBMS Open Source"
   img: assets/svg/postgres.svg
+  url: https://enidev911.github.io/guias/postgres/instalacion/zip/
 - title: "🎮 DISCORD"
   text: "Aplicación de chat"
   img: assets/svg/discord.svg

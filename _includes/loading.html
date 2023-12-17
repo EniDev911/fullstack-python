@@ -81,4 +81,11 @@
 }
 
 </style>
- <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+<script>
+    function mostrar(img, index) {
+    let spinners = document.querySelectorAll('.lds-spinner');
+    spinners[index].style.display = 'none';
+    img.style.visibility = 'visible';
+  }
+</script>
