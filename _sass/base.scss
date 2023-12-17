@@ -90,6 +90,10 @@ pre {
   cursor: pointer;
 }
 
+td, th {
+  color: #ccd;
+}
+
 ol li::marker {
   color: rgb(219, 201, 6);
 }
