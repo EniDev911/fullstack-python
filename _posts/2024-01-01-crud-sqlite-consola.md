@@ -7,7 +7,7 @@ thumbnail: "https://enidev911.github.io/guias/assets/images/python/crud-sqlite-c
 
 ## Contexto
 
-Antes de sumergirnos
+Antes de sumergirnos en el ejemplo **CRUD**
 
 {% tabs modelo %}
 {% tab modelo python %}
