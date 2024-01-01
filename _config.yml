@@ -3,6 +3,7 @@ baseurl: "/fullstack-python" # the subpath of your site, e.g. /blog
 title: "fullstack python" # the name of your site, e.g. ACME Corp.
 plugins:
   - jekyll-paginate
+  - jekyll-tabs
 
 markdown: kramdown
 highlighter: rouge

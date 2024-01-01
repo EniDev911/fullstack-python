@@ -4,9 +4,7 @@ title: "Funciones en Python"
 thumbnail: /assets/img/python-funciones-card.png
 ---
 
-En el contexto de la programación, una *función* es una secuencia de sentencias que realizan una operación y que reciben un nombre. Cuando se define una función, 
-
-Python y la gran mayoría de lenguajes de programación vienen con una gran variedad funciones nativas del lenguaje, pero Python al igual que otros lenguajes de programación nos permite definir **nuestras propias funciones**.
+En el contexto de la programación, una *función* es una secuencia de sentencias que realizan una operación y que reciben un nombre. Cuando se define una función, Python y la gran mayoría de lenguajes de programación vienen con una gran variedad funciones nativas del lenguaje, pero Python al igual que otros lenguajes de programación nos permite definir **nuestras propias funciones**.
 
 ## ¿Por qué funciones?
 
