@@ -52,6 +52,26 @@ body {
   text-shadow: 1px 1px 2px #000, 0 0 16px #cccd0190, 0 0 0.2em #000;
 }
 
+// LINKS
+a {
+  color: #ffcc00;
+  font-weight: 400;
+  text-decoration: none;
+  &:hover {
+    color: #ffcc40;
+  }
+}
+
+
+a[target='_blank']::after {
+  content: "\25E5";
+  font-size: .6rem;
+  font-weight: bolder;
+  margin-left: 0.1rem;
+  vertical-align: super;
+}
+
+
 .text-secondary {
   color: $secondary !important;
 }

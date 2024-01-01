@@ -6,7 +6,7 @@ subtitle: "Instalación de Python"
 
 ## Instalación usando el instalador completo
 
-1. Descargar el archivo ejecutable de instalación de la versión más reciente de Python que sea compatible con tu sistema operativo desde ["página de descargas"](https://www.python.org/downloads/){:target='_blank' class='link'}
+1. Descargar el archivo ejecutable de instalación de la versión más reciente de Python que sea compatible con tu sistema operativo desde [página de descargas](https://www.python.org/downloads/){:target='_blank' class='link'}
 2. Ejecuta el archivo ejecutable de instalación de Python que se descargó anterioremente.<br>
     Selecciona las siguientes opciones en la ventana del instalador de Python para configurar los pasos de instalación.
     1. Elija agregar el archivo ejecutable de Python a la ruta.

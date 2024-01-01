@@ -98,3 +98,80 @@ cursor.execute("""
 conexion.commit()
 ```
 
+> Hemos agregado la cláusula `IF NOT EXISTS` para evitar errores cada vez que ejecutemos el script
+
+---
+
+## Insertar datos en la tabla
+
+Ahora que ya hemos creado la tabla en la base de datos, agregaremos algunos registros en la tabla de clientes. Para eso podemos usar el comando `SQL - INSERT` y usando la clase **Cliente** para crear objetos como representaciones de clientes:
+
+
+
+{% tabs ej_insertar %}
+{% tab ej_insertar main.py %}
+{% include codeHeader.html %}
+```python
+from modelos.cliente import Cliente
+
+import sqlite3
+
+connection = sqlite3.connect("clientes.db")
+cursor = connection.cursor()
+
+cliente_1 = Cliente("marco", "contreras", "+569-84687949", "block 327", "coquimbo")
+
+cursor.execute(
+    """
+  INSERT INTO clientes (nombre, apellido, telefono, email, direccion, ciudad)
+  VALUES (:nombre, :apellido, :telefono, :email,:direccion, :ciudad)
+    """,
+    {
+        "nombre": cliente_1.nombre,
+        "apellido": cliente_1.apellido,
+        "telefono": cliente_1.telefono,
+        "email": cliente_1.email,
+        "direccion": cliente_1.direccion,
+        "ciudad": cliente_1.ciudad,
+    },
+)
+
+connection.commit()
+connection.close()
+```
+{% endtab %}
+{% tab ej_insertar modelos/cliente.py %}
+{% include codeHeader.html %}
+```python
+class Cliente:
+
+    def __init__(self, nombre, apellido, tel, direccion, ciudad):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.telefono = tel
+        self._email = '{}.{}@gmail.com'.format(nombre, apellido)
+        self.direccion = direccion
+        self.ciudad = ciudad
+
+    @property
+    def email(self):
+        return self._email
+
+    @email.setter
+    def email(self, value):
+        self._email = value
+
+    @property
+    def nombre_completo(self):
+        return '{} {}'.format(self.nombre, self.apellido)
+
+    def __repr__(self):
+        return "Cliente('{}', '{}', '{}', '{}', '{}')".format(
+            self.nombre,
+            self.apellido,
+            self.telefono,
+            self.direccion,
+            self.ciudad)
+```
+{% endtab %}
+{% endtabs %}
