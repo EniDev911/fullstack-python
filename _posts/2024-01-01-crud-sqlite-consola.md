@@ -175,3 +175,5 @@ class Cliente:
 ```
 {% endtab %}
 {% endtabs %}
+
+Lo primero que podemos observar
