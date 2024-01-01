@@ -81,8 +81,9 @@ Con el cursor a nuestra disposición podemos llamar al método `.execute()` para
 El comando **SQL** que deberíamos ejecutar es de varias líneas, por ende cuando entremos en el método `.execute()` del cursor usaremos **comillas triples** (*docstring*) para envolver el comando **SQL** de la siguiente manera:
 
 
-{% highlight python linenos starts="6" %}
 
+{% include codeHeader.html %}
+```py
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS clientes(
         id INTEGER PRIMARY KEY,
@@ -95,6 +96,5 @@ cursor.execute("""
     """)
 
 conexion.commit()
-
-{% endhighlight %}
+```
 
