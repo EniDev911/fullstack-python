@@ -142,18 +142,17 @@ listen_addresses = '*'
 
 Ahora que podemos conectarnos a nuestro servidor PostgreSQL, el siguiente paso es establecer una contraseña para el usuario de **Postgres**. Ejecute el siguiente comando en la terminal para conectarse a la base de datos predeterminada:
 
-{: .clipboard }
-{% highlight bash %}
+{% include codeHeader.html %}
+```bash
 sudo -u postgres psql template1
-{% endhighlight %}
+```
 
 El comando anterior se conecta a la base de datos `template1` con el usuario `postgres`. Una vez se conecta al servidor PostgreSQL, aparecerá un mensaje en el prompt que nos solicita cambiar el password. Podemos ejecutar el siguiente comando SQL para establecer la contraseña para el usuario `postgres`:
 
-{: .clipboard }
-{% highlight sql %}
+
+{% include codeHeader.html %}
+```sql
 ALTER USER postgres with encrypted password 'my_password';
-{% endhighlight %}
+```
 
-
-
-![img - pg_hba.conf](assets/pg_hba.png)
+![img - pg_hba.conf](https://enidev911.github.io/guias/postgres/instalacion/ubuntu/assets/pg_hba.png)
