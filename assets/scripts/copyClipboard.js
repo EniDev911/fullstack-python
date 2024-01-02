@@ -1,9 +1,10 @@
 // Si estás usando Rouge utiliza .code-header + .highlighter-rouge como selector
-// Si no, actualiza el  selector
+// Si no, actualiza el selector
 const codeBlocks = document.querySelectorAll('.code-header + .highlighter-rouge');
 const copyCodeButtons = document.querySelectorAll('.copy-code-button');
 
 copyCodeButtons.forEach((copyCodeButton, index) => {
+
   let code = codeBlocks[index].textContent;
   copyCodeButton.addEventListener('click', () => {
     const codeSplit = code.split("\n").filter((ele) => !ele.match(/^[1-9]/))

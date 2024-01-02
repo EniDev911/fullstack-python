@@ -22,7 +22,13 @@
 		fill: #ff0 !important;
 	}
 	svg[id^="mermaid"] .default>* {
-      min-width: 60%;
+	  min-width: 60%;
 	  fill: #ff0 !important;
- 	}
+	}
+	iframe {
+		display: none;
+	}
+	ol li::marker {
+		color: #333;
+	}
 }

@@ -8,7 +8,10 @@
 - title: "🐘 POSTGRESQL"
   text: "ORDBMS Open Source"
   img: assets/svg/postgres.svg
-  url: https://enidev911.github.io/guias/postgres/instalacion/zip/
+  url: software/postgres/instalacion
+  install:
+    - Windows
+    - Linux
 - title: "🎮 DISCORD"
   text: "Aplicación de chat"
   img: assets/svg/discord.svg

@@ -176,4 +176,4 @@ class Cliente:
 {% endtab %}
 {% endtabs %}
 
-Lo primero que podemos observar
+Lo primero que podemos observar es que no fue necesario proporcionar un email al momento de crear la instancia, ya que este dato lo estamos obteniendo desde el método **email** y lo podemos usar como una propiedad gracias al decorador `@property`

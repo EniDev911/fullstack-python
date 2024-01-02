@@ -46,14 +46,3 @@ Las siguientes opciones (encontradas al ejecutar el instalador con /?) pueden se
 python-3.12.1.exe /passive InstallAllUsers=1
 ```
 ![img - instalacion silenciosa]({{ '/assets/img/instalacion-silenciosa-01.png' | relative_url}})
-
-{% include codeHeader.html %}
-```xml
-<Options>
-    <Option Name="InstallAllUsers" Value="no" />
-    <Option Name="Include_launcher" Value="0" />
-    <Option Name="Include_test" Value="no" />
-    <Option Name="SimpleInstall" Value="yes" />
-    <Option Name="SimpleInstallDescription">Just for me, no test suite</Option>
-</Options>
-```
