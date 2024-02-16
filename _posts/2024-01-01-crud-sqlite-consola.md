@@ -4,8 +4,6 @@ title: "Crud Python - Sqlite"
 thumbnail: "https://enidev911.github.io/guias/assets/images/python/crud-sqlite-consola.png"
 ---
 
-
-
 ## Comenzando
 
 {% tabs main %}
@@ -24,8 +22,9 @@ if __name__ == "__main__":
 
 La instrucción `if __name__ == "__main__":` comprueba si el script se está ejecutando como programa principal. Si es así, llama a la función `init()` que de momento solo tiene la declaración `pass` esto es más que nada para promover la modularidad y la reutilización. Permite que el script sirva como programa independiente y como módulo importable.
 
-## Abrir una nueva conexión a SQLITE
+---
 
+## Abrir una nueva conexión a SQLITE
 
 {% tabs main %}
 {% tab main main.py %}
@@ -34,7 +33,7 @@ La instrucción `if __name__ == "__main__":` comprueba si el script se está eje
 import sqlite3
 
 def init():
-    conexion = sqlite3.connect("sqlite_DB")
+    conexion = sqlite3.connect("cars.db")
 
 if __name__ == "__main__":
     init()
@@ -43,7 +42,7 @@ if __name__ == "__main__":
 {% endtabs %}
 
 
-Ahora como se puede observar en el código anterior, importamos el módulo de **sqlite3** que viene integrado con Python y dentro de la función `init()` que arranca junto a la ejecución del programa almacenamos en la variable `conexion` una nueva conexión a un archivo llamado **sqlite_DB**.
+Ahora como se puede observar en el código anterior, importamos el módulo de **sqlite3** que viene integrado con Python y dentro de la función `init()` que arranca junto a la ejecución del programa almacenamos en la variable `conexion` una nueva conexión a un archivo llamado **cars.db**.
 
 ---
 
@@ -72,7 +71,7 @@ if __name__ == "__main__":
 ```
 {% endtab %}
 
-{% tab main db/schema.py %}
+{% tab main db/schema.sql %}
 {% include codeHeader.html %}
 ```sql
 CREATE TABLE IF NOT EXISTS cars(
@@ -82,7 +81,6 @@ CREATE TABLE IF NOT EXISTS cars(
 ```
 {% endtab %}
 {% tab main resultado %}
-{% include codeHeader.html %}
 ```
 Database created successfully
 ```
@@ -106,7 +104,7 @@ import db
 import crud
 
 def init():
-    db.create_schema()
+    # db.create_schema()
     crud.insert_data()
 
 if __name__ == "__main__":
@@ -149,7 +147,7 @@ import db
 import crud
 
 def init():
-    db.create_schema()
+    # db.create_schema()
     # crud.insert_data()
     crud.get_data()
 
@@ -194,7 +192,7 @@ from prettytable import from_db_cursor # pip install prettytable
 {% endtabs %}
 
 
-> `prettytable` es una librería de Python que da formato de tabla a los datos por consola
+> `prettytable` es una librería de Python que da formato de tabla a los datos por consola.
 
 
 ---
@@ -212,15 +210,106 @@ import db
 import crud
 
 def init():
-    db.create_schema()
+    # db.create_schema()
     # crud.insert_data()
-    # crud.get_data()
     crud.update_data("CR-V", "HR-V")
+    crud.get_data()
 
 if __name__ == "__main__":
     init()
 ```
 {% endtab %}
+{% tab updatedata crud.py %}
+{% include codeHeader.html %}
+```py
+import db
+from prettytable import from_db_cursor # pip install prettytable
+
+{{ site.data.crud_python_sqlite["crud.py"].update_data }}
+
+{{ site.data.crud_python_sqlite["crud.py"].get_data }}
+```
+{% endtab %}
+
+{% tab updatedata db.py %}
+{% include codeHeader.html %}
+```py
+{{ site.data.crud_python_sqlite["db.py"] }}
+```
+{% endtab %}
+{% tab updatedata resultado %}
+```
++-------+-----------+---------------+
+| rowid | brand     | model         |
++-------+-----------+---------------+
+| 1     | Chevrolet | Camaro        |
+| 2     | Chevrolet | Captiva       |
+| 3     | Fiat      | Mirafiori     |
+| 4     | Fiat      | 125 Centurion |
+| 5     | Honda     | HR-V          |
+| 6     | Honda     | CR-X del Sol  |
+| 7     | Honda     | CR-Z          |
++-------+-----------+---------------+
+```
+{: .nolineno }
+{% endtab %}
 {% endtabs %}
 
+---
 
+## Eliminar datos
+
+Eliminar datos desde la tabla:
+
+{% tabs deletedata %}
+{% tab deletedata main.py %}
+{% include codeHeader.html %}
+```py
+import db
+import crud
+
+def init():
+    # db.create_schema()
+    # crud.insert_data()
+    # crud.update_data("CR-V", "HR-V")
+    crud.delete_data("Camaro")
+    crud.get_data()
+
+if __name__ == "__main__":
+    init()
+```
+{% endtab %}
+
+{% tab deletedata crud.py %}
+{% include codeHeader.html %}
+```py
+import db
+from prettytable import from_db_cursor # pip install prettytable
+
+{{ site.data.crud_python_sqlite["crud.py"].delete_data }}
+
+{{ site.data.crud_python_sqlite["crud.py"].get_data }}
+```
+{% endtab %}
+{% tab deletedata db.py %}
+{% include codeHeader.html %}
+```py
+{{ site.data.crud_python_sqlite["db.py"] }}
+```
+{% endtab %}
+{% tab deletedata resultado %}
+```
++-------+-----------+---------------+
+| rowid | brand     | model         |
++-------+-----------+---------------+
+| 2     | Chevrolet | Captiva       |
+| 3     | Fiat      | Mirafiori     |
+| 4     | Fiat      | 125 Centurion |
+| 5     | Honda     | HR-V          |
+| 6     | Honda     | CR-X del Sol  |
+| 7     | Honda     | CR-Z          |
++-------+-----------+---------------+
+```
+{: .nolineno }
+{% endtab %}
+{% endtabs %}
