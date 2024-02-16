@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Crud Python - Sqlite"
+description: Guía paso a paso como hacer un SQLITE CRUD en Python.
 thumbnail: "https://enidev911.github.io/guias/assets/images/python/crud-sqlite-consola.png"
 ---
 

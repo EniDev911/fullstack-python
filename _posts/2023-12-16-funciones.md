@@ -4,11 +4,13 @@ title: "Funciones en Python"
 thumbnail: /assets/img/python-funciones-card.png
 ---
 
+## Funciones en Python
+
 En el contexto de la programación, una *función* es una secuencia de sentencias que realizan una operación y que reciben un nombre. Cuando se define una función, Python y la gran mayoría de lenguajes de programación vienen con una gran variedad funciones nativas del lenguaje, pero Python al igual que otros lenguajes de programación nos permite definir **nuestras propias funciones**.
 
 ## ¿Por qué funciones?
 
-Puede no estar muy claro por qué merece la pena molestarse em dividir un programa en funciones. Existen varias razones:
+Puede no estar muy claro por qué merece la pena molestarse en dividir un programa en funciones. Existen varias razones:
 
 - El crear una función nueva te da la oportunidad de **dar nombre a un grupo de sentencias**, lo cual hace que tu programa sea más fácil de leer, entender y depurar.
 - Las funciones pueden hacer que **un programa sea más pequeño, al eliminar código repetido**. Además, si quieres realizar cualquier cambio en el futuro, sólo tendrás que hacerlo en un único lugar.
@@ -81,3 +83,40 @@ repetir("Span") # 'Span' 'Span'
 repetir(12) # 12 12 
 repetir(len("abcde")) # 5 5
 ```
+
+---
+
+## Argumentos Arbitrarios
+
+Si no sabes cuántos argumentos se pasarán a la función, puede usar **\*args** para permitir un número arbitrario de argumentos posicionales:
+
+
+{% tabs multiargs %}
+{% tab multiargs script.py %}
+{% include codeHeader.html %}
+```py
+def mi_funcion(*args):
+	for arg in args:
+		print(arg)
+
+mi_funcion("A", "B", "C", 1, 2, 3)
+```
+{% endtab %}
+{% tab multiargs resultado %}
+```
+A
+B
+C
+1
+2
+3
+```
+{: .nolineno }
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Argumentos de palabra clave
+
+Los argumentos de palabra clave te permiten pasar valores utilizando la sintaxis **<<nombre=valor>>**
