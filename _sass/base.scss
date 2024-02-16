@@ -3,11 +3,13 @@
 @import "variables";
 @import "blockquotes";
 @import "tabs";
+@import "utilities";
+
 
 $backgroundColor: #ffffff;
 $bodyColor: #000000;
 $bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $fsParagraphSm: 16px;
 $fsParagraphXl: 19px;
 
@@ -139,15 +141,15 @@ ol li::marker {
     font-size: 16.5px;
   }
   svg[id^="mermaid"] {
-      min-width: 60%;
+    min-width: 60%;
   }
   .flowchartTitleText {
-      font-size: 19px !important;
+    font-size: 19px !important;
   }
   .node rect, .node polygon {
     -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
     filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7)) !important;
-  /* Similar syntax to box-shadow */
+    /* Similar syntax to box-shadow */
   }
 }
 

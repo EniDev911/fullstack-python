@@ -5,175 +5,222 @@ thumbnail: "https://enidev911.github.io/guias/assets/images/python/crud-sqlite-c
 ---
 
 
-## Contexto
 
-Antes de sumergirnos en el ejemplo **CRUD**
+## Comenzando
 
-{% tabs modelo %}
-{% tab modelo python %}
+{% tabs main %}
+{% tab main main.py %}
 {% include codeHeader.html %}
-```python
-class Cliente:
+```py
+def init():
+    pass
 
-    def __init__(self, nombre, apellido, tel, direccion, ciudad):
-        self.nombre = nombre
-        self.apellido = apellido
-        self.telefono = tel
-        self._email = '{}.{}@gmail.com'.format(nombre, apellido)
-        self.direccion = direccion
-        self.ciudad = ciudad
-
-    @property
-    def email(self):
-        return self._email
-
-    @email.setter
-    def email(self, value):
-        self._email = value
-
-    @property
-    def nombre_completo(self):
-        return '{} {}'.format(self.nombre, self.apellido)
-
-    def __repr__(self):
-        return "Cliente('{}', '{}', '{}', '{}', '{}')".format(
-            self.nombre,
-            self.apellido,
-            self.telefono,
-            self.direccion,
-            self.ciudad)
+if __name__ == "__main__":
+    init()
 ```
 {% endtab %}
 {% endtabs %}
 
 
-> `@property` es un decorador incorporado para el uso de captadores y definidores en Python orientado a objetos
+La instrucción `if __name__ == "__main__":` comprueba si el script se está ejecutando como programa principal. Si es así, llama a la función `init()` que de momento solo tiene la declaración `pass` esto es más que nada para promover la modularidad y la reutilización. Permite que el script sirva como programa independiente y como módulo importable.
 
----
+## Abrir una nueva conexión a SQLITE
 
-## Abrir una nueva conexión
 
-Necesitamos crear un objeto de conexión para representar nuestra base de datos. En este caso, nuestra base de datos tendrá el nombre de `clientes.db` este nombre lo usaremos al invocar el método `.connect()` del módulo de sqlite3 y si no encuentra la ubicación del archivo lo crea:
-
+{% tabs main %}
+{% tab main main.py %}
 {% include codeHeader.html %}
 ```py
 import sqlite3
 
-conexion = sqlite3.connect('clientes.db')
-```
+def init():
+    conexion = sqlite3.connect("sqlite_DB")
 
----
-
-## Crear un cursor
-
-Un cursor nos permite interactuar con la base de datos a través de comandos [SQL](https://es.wikipedia.org/wiki/SQL){:target='_blank'}, podemos crear un cursor llamando al método `.cursor()` del objeto de conexión creado previamente:
-
-{% include codeHeader.html %}
-```py
-import sqlite3
-
-conexion = sqlite3.connect('clientes.db')
-cursor = conexion.cursor()
-```
-
-Con el cursor a nuestra disposición podemos llamar al método `.execute()` para ejecutar el comando [SQL](https://es.wikipedia.org/wiki/SQL){:target='_blank'} para crear la tabla.
-
-El comando **SQL** que deberíamos ejecutar es de varias líneas, por ende cuando entremos en el método `.execute()` del cursor usaremos **comillas triples** (*docstring*) para envolver el comando **SQL** de la siguiente manera:
-
-
-
-{% include codeHeader.html %}
-```py
-cursor.execute("""
-    CREATE TABLE IF NOT EXISTS clientes(
-        id INTEGER PRIMARY KEY,
-        nombre VARCHAR(50) NOT NULL,
-        apellido VARCHAR(50) NOT NULL,
-        telefono VARCHAR(12) NOT NULL,
-        email VARCHAR(50) NOT NULL,
-        direccion VARCHAR(100),
-        ciudad VARCHAR(50))
-    """)
-
-conexion.commit()
-```
-
-> Hemos agregado la cláusula `IF NOT EXISTS` para evitar errores cada vez que ejecutemos el script
-
----
-
-## Insertar datos en la tabla
-
-Ahora que ya hemos creado la tabla en la base de datos, agregaremos algunos registros en la tabla de clientes. Para eso podemos usar el comando `SQL - INSERT` y usando la clase **Cliente** para crear objetos como representaciones de clientes:
-
-
-
-{% tabs ej_insertar %}
-{% tab ej_insertar main.py %}
-{% include codeHeader.html %}
-```python
-from modelos.cliente import Cliente
-
-import sqlite3
-
-connection = sqlite3.connect("clientes.db")
-cursor = connection.cursor()
-
-cliente_1 = Cliente("marco", "contreras", "+569-84687949", "block 327", "coquimbo")
-
-cursor.execute(
-    """
-  INSERT INTO clientes (nombre, apellido, telefono, email, direccion, ciudad)
-  VALUES (:nombre, :apellido, :telefono, :email,:direccion, :ciudad)
-    """,
-    {
-        "nombre": cliente_1.nombre,
-        "apellido": cliente_1.apellido,
-        "telefono": cliente_1.telefono,
-        "email": cliente_1.email,
-        "direccion": cliente_1.direccion,
-        "ciudad": cliente_1.ciudad,
-    },
-)
-
-connection.commit()
-connection.close()
-```
-{% endtab %}
-{% tab ej_insertar modelos/cliente.py %}
-{% include codeHeader.html %}
-```python
-class Cliente:
-
-    def __init__(self, nombre, apellido, tel, direccion, ciudad):
-        self.nombre = nombre
-        self.apellido = apellido
-        self.telefono = tel
-        self._email = '{}.{}@gmail.com'.format(nombre, apellido)
-        self.direccion = direccion
-        self.ciudad = ciudad
-
-    @property
-    def email(self):
-        return self._email
-
-    @email.setter
-    def email(self, value):
-        self._email = value
-
-    @property
-    def nombre_completo(self):
-        return '{} {}'.format(self.nombre, self.apellido)
-
-    def __repr__(self):
-        return "Cliente('{}', '{}', '{}', '{}', '{}')".format(
-            self.nombre,
-            self.apellido,
-            self.telefono,
-            self.direccion,
-            self.ciudad)
+if __name__ == "__main__":
+    init()
 ```
 {% endtab %}
 {% endtabs %}
 
-Lo primero que podemos observar es que no fue necesario proporcionar un email al momento de crear la instancia, ya que este dato lo estamos obteniendo desde el método **email** y lo podemos usar como una propiedad gracias al decorador `@property`
+
+Ahora como se puede observar en el código anterior, importamos el módulo de **sqlite3** que viene integrado con Python y dentro de la función `init()` que arranca junto a la ejecución del programa almacenamos en la variable `conexion` una nueva conexión a un archivo llamado **sqlite_DB**.
+
+---
+
+## Crear una tabla en la base de datos
+
+Para facilitarnos la existencia, vamos a modularizar el código, quiere decir que vamos subdividir el programa en partes más pequeñas:
+
+{% tabs main %}
+{% tab main main.py %}
+{% include codeHeader.html %}
+```py
+import db
+
+def init():
+    db.create_schema()
+
+if __name__ == "__main__":
+    init()
+```
+{% endtab %}
+
+{% tab main db.py %}
+{% include codeHeader.html %}
+```py
+{{ site.data.crud_python_sqlite["db.py"] }}
+```
+{% endtab %}
+
+{% tab main db/schema.py %}
+{% include codeHeader.html %}
+```sql
+CREATE TABLE IF NOT EXISTS cars(
+    brand VARCHAR(50) NOT NULL,
+    model VARCHAR(12) NOT NULL
+);
+```
+{% endtab %}
+{% tab main resultado %}
+{% include codeHeader.html %}
+```
+Database created successfully
+```
+{: .nolineno }
+{% endtab %}
+{% endtabs %}
+
+
+---
+
+## Insertar Datos
+
+Ahora, insertemos nuevos registros de autos en la tabla **cars**:
+
+
+{% tabs insertdata %}
+{% tab insertdata main.py %}
+{% include codeHeader.html %}
+```py
+import db
+import crud
+
+def init():
+    db.create_schema()
+    crud.insert_data()
+
+if __name__ == "__main__":
+    init()
+```
+{% endtab %}
+{% tab insertdata crud.py %}
+{% include codeHeader.html %}
+```py
+import db
+
+{{ site.data.crud_python_sqlite["crud.py"].insert_data }}
+```
+{% endtab %}
+{% tab insertdata db.py %}
+{% include codeHeader.html %}
+```py
+{{ site.data.crud_python_sqlite["db.py"] }}
+```
+{% endtab %}
+{% tab insertdata resultado %}
+```
+Record inserted successfully into table 7
+```
+{: .nolineno }
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Consultado los datos de la tabla
+
+Recuperamos los datos insertados anteriormente:
+
+{% tabs getdata %}
+{% tab getdata main.py %}
+{% include codeHeader.html %}
+```py
+import db
+import crud
+
+def init():
+    db.create_schema()
+    # crud.insert_data()
+    crud.get_data()
+
+if __name__ == "__main__":
+    init()
+```
+{% endtab %}
+
+{% tab getdata crud.py %}
+{% include codeHeader.html %}
+```py
+import db
+from prettytable import from_db_cursor # pip install prettytable
+
+{{ site.data.crud_python_sqlite["crud.py"].get_data }}
+```
+{% endtab %}
+
+{% tab getdata db.py %}
+{% include codeHeader.html %}
+```py
+{{ site.data.crud_python_sqlite["db.py"] }}
+```
+{% endtab %}
+
+{% tab getdata resultado %}
+```
++-------+-----------+--------------------+
+| rowid | brand     | model              |
++-------+-----------+--------------------+
+| 1     | Chevrolet | Chevrolet Camaro   |
+| 2     | Chevrolet | Chevrolet Captiva  |
+| 3     | Fiat      | Fiat 125 Mirafiori |
+| 4     | Fiat      | Fiat 125 Centurion |
+| 5     | Honda     | Honda CR-V         |
+| 6     | Honda     | Honda CR-X del Sol |
+| 7     | Honda     | Honda CR-Z         |
++-------+-----------+--------------------+
+```
+{: .nolineno }
+{% endtab %}
+{% endtabs %}
+
+
+> `prettytable` es una librería de Python que da formato de tabla a los datos por consola
+
+
+---
+
+## Actualización de datos
+
+Podemos actualizar los modelos de autos:
+
+
+{% tabs updatedata %}
+{% tab updatedata main.py %}
+{% include codeHeader.html %}
+```python
+import db
+import crud
+
+def init():
+    db.create_schema()
+    # crud.insert_data()
+    # crud.get_data()
+    crud.update_data("CR-V", "HR-V")
+
+if __name__ == "__main__":
+    init()
+```
+{% endtab %}
+{% endtabs %}
+
+
