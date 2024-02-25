@@ -13,13 +13,9 @@
 .language-bat .rouge-gutter {
   display: none;
 }
-.code {
-  font-size: 17px;
-}
+
 .rouge-table .lineno {
   user-select: none;
-  font-size: 14.8px;
-  vertical-align: middle;
   border-right: 1px solid #ccc5;
   padding: 0 10px 0 0;
   color: #d2a8ff;
@@ -153,4 +149,12 @@
 .highlight .gs {
   color: #c9d1d9;
   font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+  .highlight {
+    font-size: 19px;
+  }
+  .rouge-table .lineno {
+  }
 }
