@@ -27,7 +27,8 @@ permalink: /:categories/:title:output_ext
 collections:
   software:
     output: true
+  desafios:
+    output: true
 
 paginate: 5
 paginate_path: /page:num/
-
