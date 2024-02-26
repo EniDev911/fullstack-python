@@ -24,9 +24,41 @@ curriculum/
 
 ---
 
-## Meta datos
+## Cabecera de un documento HTML
 
-Para añadir infomación sobre la página y otros datos podemos hacerlo a través de la etiquetas `<meta>`:
+Como sabemos  la estructura de un documento HTML debía contener siempre dos etiquetas **HTML** principales:
+
+- La cabecera de la página o `head`{:.tag}
+- El cuerpo de la página o `body`{:.tag}
+
+El primero de ellos, se encarga de contener **etiquetas de metadatos** (*información sobre el documento*) así como establecer **relaciones con otro documentos**. El segundo de la parte visual que se mostrará al usuario en el navegador.
+
+Existen varias etiquetas que podemos utilizar en esta sección de cabecera del documento:
+
+
+
+
+{3 4 5 6}
+```css
+/* style.css */
+/* change background color if the OS is on Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000 !important;
+  }
+}
+```
+
+
+```css
+/* style.css */
+/* change background color if the OS is on Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000 !important;
+  }
+}
+```
 
 {% include codeHeader.html %}
 ```html
@@ -45,7 +77,7 @@ Para añadir infomación sobre la página y otros datos podemos hacerlo a travé
 
 ## Encabezados
 
-En la parte principal del curriculum, vamos agrupar el título, nuestra foto de perfil y un subtítulo en lo que sería nuestro encabezado mediante la etiqueta `<header>`:
+En la parte principal del curriculum, vamos agrupar el título, nuestra foto de perfil y un subtítulo en lo que sería nuestro encabezado mediante la etiqueta `header`{:.tag}:
 
 {% tabs header %}
 {% tab header html %}

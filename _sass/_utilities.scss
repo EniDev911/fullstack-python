@@ -3,3 +3,19 @@
 		display: none;
 	}
 }
+
+.tag {
+	font-weight: bold;
+	color: #306dcb;
+	&::before {
+		content: '<';
+	}
+	&::after {
+		content: '>';
+	}
+}
+
+.hll {
+	background-color: #ffffff10;
+	border-bottom: 1px solid #b4d;
+}
