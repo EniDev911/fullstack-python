@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Desafío - Notas Finales
+modulo: m2
+type: evaluado
 ---
 
 ## Descripción

@@ -6,22 +6,22 @@
 crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 <script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-mermaid.initialize({
-	securityLevel: 'loose',
-	startOnLoad: false
-});
-let aux = 0;
-await mermaid.run({
-	suppressErrors: true,
-	querySelector: '.mermaid',
-	postRenderCallback: (id) => {
-		const container = document.querySelector(".visually-hidden")
-		container.classList.remove("visually-hidden");
-		let spinners = document.querySelectorAll('.lds-spinner');
-    	spinners[aux].style.display = 'none';
-		aux++;
-	}
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+     securityLevel: 'loose',
+     startOnLoad: false
+ });
+    let aux = 0;
+    await mermaid.run({
+     suppressErrors: true,
+     querySelector: '.mermaid',
+     postRenderCallback: (id) => {
+      const container = document.querySelector(".visually-hidden")
+      container.classList.remove("visually-hidden");
+      let spinners = document.querySelectorAll('.lds-spinner');
+      spinners[aux].style.display = 'none';
+      aux++;
+  }
 });
 </script>
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
@@ -38,5 +38,5 @@ await mermaid.run({
     	stroke:#000; stroke-width:0.5em;
     	paint-order:stroke;
     	stroke-linejoin:round;
-   	}
+    }
 </style>
