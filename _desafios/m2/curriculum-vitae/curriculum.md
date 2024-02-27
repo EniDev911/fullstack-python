@@ -53,52 +53,46 @@ Desde el año 2010, facebook introdujo el [protocolo Open Graph](https://ogp.me/
 
 Un ejemplo de ello, es el siguiente:
 
-{3 4 5 6}
+{% tabs opg %}
+{% tab opg html %}
+{3 4 5 6 7}
 ```html
 <html prefix="og: https://ogp.me/ns#">
 <head>
   <meta property="og:title" content="Marco Contreras - Curriculum Vitae">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://enidev911.github.io/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=2070">
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Curriculum Vitae - Programador FullStack" />
+  <meta property="og:url" content="https://enidev911.github.io/curriculum">
+  <meta property="og:image" content="https://enidev911.github.io/curriculum/perfil.png">
   ...
 </head>
   ...
 </html>
 ```
-
-{3 4 5 6}
-```css
-/* style.css */
-/* change background color if the OS is on Dark Mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000 !important;
-  }
-}
-```
+{% endtab %}
+{% tab opg compartido en whatsapp %}
+![img - opg whatsapp]({{ '/assets/img/ws-opg.png' | relative_url }}){:height='180'}
+{% endtab %}
+{% tab opg compartido en facebook %}
+![img - opg facebook]({{ '/assets/img/fb-opg.png' | relative_url }}){:height='180' width='380'}
+{% endtab %}
+{% endtabs %}
 
 
-```css
-/* style.css */
-/* change background color if the OS is on Dark Mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000 !important;
-  }
-}
-```
 
-{% include codeHeader.html %}
+### Etiquetas meta para describir la página
+
+A pesar de que los motores de búsqueda como [Google](//google.com){:target='_blank'} analiza el contenido de la página para determinar automáticamente el fragmento adecuado para la descripción. También puede usar la información descriptiva del elemento `<meta name="description">` si resulta más apropiado que otras partes del contenido.
+
 ```html
 <head>
-	<meta name="description" content="Contenido relacionado de la página">
+	<meta name="description" content="Contenido relacionado de la página" />
 </head
 ```
+{: .nolineno }
 
 > Una descripción meta es una información importante para los motores de búsqueda y los usuarios.
 
-### Etiquetas meta robots
 
 {: .nolineno }
 
