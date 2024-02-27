@@ -33,10 +33,39 @@ Como sabemos  la estructura de un documento HTML debía contener siempre dos eti
 
 El primero de ellos, se encarga de contener **etiquetas de metadatos** (*información sobre el documento*) así como establecer **relaciones con otro documentos**. El segundo de la parte visual que se mostrará al usuario en el navegador.
 
+![img doc html](https://enidev911.github.io/fullstackjsg33/guias/html/guia-general/images/estructura-documento.png)
+
 Existen varias etiquetas que podemos utilizar en esta sección de cabecera del documento:
 
+{: .table.table-bordered }
+|Etiqueta|Atributos|Descripción|
+|:-------|:--------|:----------|
+|`title`{:.tag}||Título de la página.|
+|`base`{:.tag}|*`href`*, *`target`*|URL base del documento.|
+|`link`{:.tag}|*`href`*, *`hreflang`*, *`rel`*, *`media`*, *`type`*|Establece una relación del documento actual con otro externo.|
+|`meta`{:.tag}|*`name`*,*`content`*,*`http-equiv`*,*`charset`*|Establece un metadato un metadato específico en el documento actual.|
 
+### ¿Qué es Open Graph?
 
+¿Te haz preguntado como es que cuando compartes una página, en un blog, un video de YouTube o una canción de Spotify aparece una silueta de una tarjeta junto una imagen con su título?
+
+Desde el año 2010, facebook introdujo el [protocolo Open Graph](https://ogp.me/){:target='_blank'} que permite que cualquier página web se pueda convertir en un objeto gráfico.
+
+Un ejemplo de ello, es el siguiente:
+
+{3 4 5 6}
+```html
+<html prefix="og: https://ogp.me/ns#">
+<head>
+  <meta property="og:title" content="Marco Contreras - Curriculum Vitae">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://enidev911.github.io/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=2070">
+  ...
+</head>
+  ...
+</html>
+```
 
 {3 4 5 6}
 ```css

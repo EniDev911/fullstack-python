@@ -20,16 +20,16 @@
   padding: 0 10px 0 0;
   color: #d2a8ff;
 }
-.highlight::-webkit-scrollbar {
+pre::-webkit-scrollbar, .highlight::-webkit-scrollbar {
   height:5px;
   width: 10px;
   border-radius: 0;
 }
-.highlight::-webkit-scrollbar-thumb {
+pre::-webkit-scrollbar-thumb, .highlight::-webkit-scrollbar-thumb {
   background-color: #ffca0160;
   border-radius: 10px;
 }
-.highlight::-webkit-scrollbar-corner {
+pre::-webkit-scrollbar-corner, .highlight::-webkit-scrollbar-corner {
   background-color: transparent;
 }
 
