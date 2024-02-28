@@ -79,22 +79,40 @@ Un ejemplo de ello, es el siguiente:
 {% endtabs %}
 
 
-
 ### Etiquetas meta para describir la página
 
 A pesar de que los motores de búsqueda como [Google](//google.com){:target='_blank'} analiza el contenido de la página para determinar automáticamente el fragmento adecuado para la descripción. También puede usar la información descriptiva del elemento `<meta name="description">` si resulta más apropiado que otras partes del contenido.
 
+{3}
 ```html
 <head>
+  ...
 	<meta name="description" content="Contenido relacionado de la página" />
-</head
+  ...
+</head>
 ```
-{: .nolineno }
 
 > Una descripción meta es una información importante para los motores de búsqueda y los usuarios.
 
 
-{: .nolineno }
+### Favicon (icono de pestaña)
+
+Cuando tenemos varias pestañas en nuestro navegador, para una búsqueda más fácil e intuitiva entre prestañas, el navegador suele colocar iconos a la izuierda del título de las pestañas. Estos iconos son conocidos como **favicons** (*iconos favoritos*) ya que [fue un invento de Internet Explorer](https://es.wikipedia.org/wiki/Favicon#:~:text=La%20forma%20original%20de%20definir%20un%20favicono%20era%20poniendo%20un%20archivo%20llamado%20favicon.ico%20en%20el%20directorio%20ra%C3%ADz%20del%20servidor%20web%2C%20el%20cual%20era%20mostrado%20autom%C3%A1ticamente%20en%20los%20favoritos%20de%20Internet%20Explorer){:target='_blank'} para colocar icono cuando el usuario añadía una página a favoritos.
+
+{3 4 5}
+```html
+<head>
+  ...
+  <link rel="shorcut icon" href="/favicon.ico" /><!-- HTML4 -->
+  <link rel="icon" sizes="64x64" href="/favicon.png" /><!-- HTML5 -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" /><!-- iPhone/iPad -->
+</head>
+```
+
+Para generar los favicons de una forma más comoda, podemos utilizar herramientas como [Real Favicon Generator](https://realfavicongenerator.net/)
+> El problema principal con los **favicons**, es que esta característica no está definida en la especificación, por lo que cada navegador y cada sistema operativo la implementa como quiere. Hay navegadores que sólo soportan favicon en formato **PNG**, otros que solo soportan resoluciones específicas, etc.
+
+
 
 ---
 
