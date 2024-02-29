@@ -37,6 +37,8 @@ El primero de ellos, se encarga de contener **etiquetas de metadatos** (*informa
 
 Existen varias etiquetas que podemos utilizar en esta sección de cabecera del documento:
 
+<div class="table-responsive" markdown="1">
+
 {: .table.table-bordered }
 |Etiqueta|Atributos|Descripción|
 |:-------|:--------|:----------|
@@ -44,6 +46,8 @@ Existen varias etiquetas que podemos utilizar en esta sección de cabecera del d
 |`base`{:.tag}|*`href`*, *`target`*|URL base del documento.|
 |`link`{:.tag}|*`href`*, *`hreflang`*, *`rel`*, *`media`*, *`type`*|Establece una relación del documento actual con otro externo.|
 |`meta`{:.tag}|*`name`*,*`content`*,*`http-equiv`*,*`charset`*|Establece un metadato un metadato específico en el documento actual.|
+
+</div>
 
 ### ¿Qué es Open Graph?
 
@@ -99,24 +103,41 @@ A pesar de que los motores de búsqueda como [Google](//google.com){:target='_bl
 
 Cuando tenemos varias pestañas en nuestro navegador, para una búsqueda más fácil e intuitiva entre prestañas, el navegador suele colocar iconos a la izuierda del título de las pestañas. Estos iconos son conocidos como **favicons** (*iconos favoritos*) ya que [fue un invento de Internet Explorer](https://es.wikipedia.org/wiki/Favicon#:~:text=La%20forma%20original%20de%20definir%20un%20favicono%20era%20poniendo%20un%20archivo%20llamado%20favicon.ico%20en%20el%20directorio%20ra%C3%ADz%20del%20servidor%20web%2C%20el%20cual%20era%20mostrado%20autom%C3%A1ticamente%20en%20los%20favoritos%20de%20Internet%20Explorer){:target='_blank'} para colocar icono cuando el usuario añadía una página a favoritos.
 
-{3 4 5}
+
+Para generar los favicons de una forma más comoda, podemos utilizar herramientas como [Real Favicon Generator](https://realfavicongenerator.net/){:target='_blank'}, a la cúal le pasamos un logo de alta resolución y nos genera un paquete **.zip** con los archivos y el código necesario para las diferentes versiones y resoluciones de los iconos. Ejemplo de ello sería el siguiente código:
+
+{3 4 5 6 7}
 ```html
 <head>
   ...
   <link rel="shorcut icon" href="/favicon.ico" /><!-- HTML4 -->
   <link rel="icon" sizes="64x64" href="/favicon.png" /><!-- HTML5 -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" /><!-- iPhone/iPad -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  ...
 </head>
 ```
 
-Para generar los favicons de una forma más comoda, podemos utilizar herramientas como [Real Favicon Generator](https://realfavicongenerator.net/)
+>Según la estructura del proyecto se deben afinar las rutas hacia los vínculos.
+
+<div class="row g-3 my-3">
+  <div class="col-12 col-md-6">
+    <img src="{{ '/assets/img/favicon-light.png' | relative_url }}" alt="favicon light">
+  </div>
+  <div class="col-12 col-md-6">
+    <img src="{{ '/assets/img/favicon-dark.png' | relative_url }}" alt="favicon dark">
+  </div>
+</div>
+
+
 > El problema principal con los **favicons**, es que esta característica no está definida en la especificación, por lo que cada navegador y cada sistema operativo la implementa como quiere. Hay navegadores que sólo soportan favicon en formato **PNG**, otros que solo soportan resoluciones específicas, etc.
 
 
 
 ---
 
-## Encabezados
+## Encabezado
 
 En la parte principal del curriculum, vamos agrupar el título, nuestra foto de perfil y un subtítulo en lo que sería nuestro encabezado mediante la etiqueta `header`{:.tag}:
 
@@ -127,7 +148,7 @@ En la parte principal del curriculum, vamos agrupar el título, nuestra foto de 
 <!-- header  -->
 <header>
 	<h1>Curriculum Vitae</h1>
-	<img src="./assets/img/perfil.jpg" width="260" alt="cv photo">
+	<img src="./assets/img/perfil.png" width="260" alt="cv photo">
 	<h2>Marco Contreras</h2>
 </header>
 ```
@@ -137,6 +158,33 @@ En la parte principal del curriculum, vamos agrupar el título, nuestra foto de 
 {% include ifr_results.html %}
 {% endtab %}
 {% endtabs %}
+
+---
+
+## Contenido
+
+Dentro del contenido principal vamos a estar utilizando básicamente secciones para cada apartado como sería los **datos personales**, **formación académica**, **experiencia**, **información complementaria**, etc. Un ejemplo de ello sería lo siguiente:
+
+
+
+{5 6 7 8 9 10}
+```html
+<header>
+  ...
+</header>
+<main>
+  <section>
+    <h3>Título</h3>
+    <p>Párrafo</p>
+    <blockquote>Notas</blockquote>>
+    <ul></ul>
+  </section>
+  <section>
+    ....
+  </section>
+</main>
+```
+
 
 
 *[CV]: Curriculum Vitae
