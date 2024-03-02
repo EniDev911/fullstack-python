@@ -1,0 +1,8 @@
+iframe[id*='container'] {
+	display: none !important;
+}
+
+body {
+	top: 0px !important;
+	background: #fff;
+}

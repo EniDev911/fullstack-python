@@ -12,11 +12,15 @@
 // 	}
 // }
 
+let printStyle = document.querySelector("link[media='print']");
 window.onbeforeprint = (event) => {
-	let printStyle = document.querySelector("[rel='stylesheet']");
+	if (!document.head.contains(printStyle)) {
+		printStyle.parentNode.appendChild(printStyle);
+	}
+}
 
+window.onafterprint = (event) => {
 	if (document.head.contains(printStyle)) {
-		alert("Si");
 		printStyle.parentNode.removeChild(printStyle);
 	}
 }

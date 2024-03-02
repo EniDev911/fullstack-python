@@ -185,6 +185,29 @@ Dentro del contenido principal vamos a estar utilizando básicamente secciones p
 </main>
 ```
 
+---
+
+## Resultado final
+
+{% tabs base %}
+{% tab base index.html %}
+{% include codeHeader.html %}
+```html
+{{ site.data.m2.curriculum.html }}
+```
+{% endtab %}
+{% tab base script.js %}
+{% include codeHeader.html %}
+```js
+{{ site.data.m2.curriculum.js }}
+```
+{% endtab %}
+{% tab base resultado %}
+{% include ifr_results.html 
+  src=site.data.m2.curriculum.url %}
+{% endtab %}
+{% endtabs %}
+
 
 
 *[CV]: Curriculum Vitae
