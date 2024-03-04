@@ -154,9 +154,6 @@ En la parte principal del curriculum, vamos agrupar el título, nuestra foto de 
 ```
 {: .nolineno }
 {% endtab %}
-{% tab header resultado %}
-{% include ifr_results.html %}
-{% endtab %}
 {% endtabs %}
 
 ---
@@ -164,7 +161,6 @@ En la parte principal del curriculum, vamos agrupar el título, nuestra foto de 
 ## Contenido
 
 Dentro del contenido principal vamos a estar utilizando básicamente secciones para cada apartado como sería los **datos personales**, **formación académica**, **experiencia**, **información complementaria**, etc. Un ejemplo de ello sería lo siguiente:
-
 
 
 {5 6 7 8 9 10}
@@ -191,8 +187,39 @@ Dentro del contenido principal vamos a estar utilizando básicamente secciones p
 
 Este es un punto que se suele pasar por alto cuando se crean páginas o sitios web y es poner un estilo específico para cuando alguien quiera imprimir y para nuestro curriculum sería positivo.
 
-Al menos hay que tener en cuenta lo siguiente
+Al menos hay que tener en cuenta lo siguiente cuando se define un estilo para imprimir:
 
+- Eliminar todo el contenido irrelevante como botones, menús, anuncios, etc.
+- Al imprimir se pierde la interactividad y por tanto hay que tener en cuenta que los enlaces generalmente no se pone la **url** y si tenemos enlaces debemos mostrar esas **url**.
+- Centrar el título principal y subtítulo, eliminar emojis y caracteres raros.
+
+Un ejemplo de lo anterior sería:
+
+{% tabs printcss %}
+{% tab printcss print.css %}
+{% include codeHeader.html %}
+```css
+@media print {
+	body, section {
+		color: #342;
+		font-family: sans-serif;
+	}
+	h1, h2 {
+		text-align: center;
+	}
+	img, button, footer {
+		display: none;
+	}
+	a {
+		text-decoration: none;
+	}
+	a[href^='https']:after {
+		content: " (" attr(href) ")";
+	}
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 
@@ -216,7 +243,6 @@ Al menos hay que tener en cuenta lo siguiente
   src=site.data.m2.curriculum.url %}
 {% endtab %}
 {% endtabs %}
-
 
 
 *[CV]: Curriculum Vitae

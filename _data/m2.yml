@@ -29,14 +29,18 @@ curriculum:
         <img src="./assets/img/perfil.png" width="260" alt="cv photo">
         <h2>Marco Contreras</h2>
       </header>
-
+        <!-- print button -->
+        <button style="position: absolute; top:20px; right:30px;" onclick="{window.print()}">
+          <img src="./assets/img/print.png" alt="icon Imprimir" width="30px">
+        </button>
+        <!-- google translate -->
+        <div id="google_translate_element" style="position: absolute; top: 20px; right: 120px;"></div>
       <main>
         <!-- profile section -->
         <section>
           <h3 translate="no">Perfil</h3>
           <p>Programador chileno, titulado de programación computacional, tengo varios años de experiencia en desarrollo web. Apasionado de las nuevas tecnologías y en especial del ecosistema Javascript. Actualmente soy desarrollador freelance y siempre estoy dispuesto a aprender y compartir conocimientos. Me centro mucho en llevar a cabo buenas prácticas de desarrollo, tanto de estándares como de compatibilidad.</p>
         </section>
-        <!-- end section -->
         <hr>
         <!-- contact section -->
         <section>
@@ -57,7 +61,7 @@ curriculum:
             </li>
             <li>
               <img src="./assets/img/github.png" width="18" alt="icon">
-              <strong>Github:</strong> <a href="//github.com/enidev911" target="_blank"
+              <strong>Github:</strong> <a href="https://github.com/enidev911" target="_blank"
               title="Go to github">enidev911</a>
             </li>
             <li>
@@ -81,55 +85,39 @@ curriculum:
         <!-- experience section -->
         <section>
           <h3>Experiencia</h3>
-          <ul>
+          <ul style="list-style: none;">
             <li>
-              <strong>Fecha:</strong> 2020 - PRESENT<br>
+              <strong>Fecha:</strong> 2020 - ACTUALIDAD<br>
               <strong>Empresa:</strong> ENIDEV911<br>
-              <strong>Rol:</strong>Fullstack developer<br>
-
-              <p><strong>Description:</strong> Manage complete developments, working based on customer
-                requirements and specifications,
-                preparing detailed
-              documentation on the analysis and progress of the projects.</p>
+              <strong>Rol:</strong>Fullstack Developer (<em>freelance</em>)<br>
+              <p><strong>Descripción:</strong> Administrar proyectos completos, desarrollando sitios y apliciones web en base a los requerimientos de los clientes.</p>
+            </li>
+              <hr>
+            <li>
+              <strong>Fecha:</strong> ABRIL 2019 - FEBRERO 2020<br>
+              <strong>Empresa:</strong> TOC DIGITAL<br>
+              <strong>Rol:</strong> Fullstack Java Developer (<em>jr</em>)<br>
+              <p><strong>Descripción:</strong> Abordar eficazmente problemas complejos. Implementación y actualización de módulos de aplicaciones bajo la dirección de
+              desarrolladores de software <em>seniors</em>. Trabajé exitosamente tanto de forma independiente como en equipo. Realicé tareas de
+              prueba automatizadas y creé funciones complementarias.</p>
             </li>
             <li style="list-style: none;">
               <hr>
             </li>
             <li>
-              <strong>Date:</strong> APRIL 2019 - FEBRUARY 2020<br>
-              <strong>Company:</strong> TD DIGITAL<br>
-              <strong>Rol:</strong>Fullstack jr java developer<br>
-              <p><strong>Description:</strong> Effectively tackled complex problems. Implementation and update of
-                application modules under the direction of senior
-                software developers. I worked successfully both independently and in a team. Performed automated
-                testing tasks and built
-              add-on features on a routine basis.</p>
-            </li>
-            <li style="list-style: none;">
-              <hr>
-            </li>
-            <li>
-              <strong>Date:</strong> JANUARY 2018 - JANUARY 2019<br>
-              <strong>Company:</strong> POLISOFT<br>
-              <strong>Rol:</strong>Jr Frontend<br>
-              <p><strong>Description:</strong> Productive collaboration with team to understand business
-              requirements and specifications around product stewardship.</p>
+              <strong>Fecha:</strong> ENERO 2018 - ENERO 2019<br>
+              <strong>Empresa:</strong> POLISOFT<br>
+              <strong>Rol:</strong> Frontend (<em>jr</em>)<br>
+              <p><strong>Descripción:</strong> Colaboración productiva con el equipo para la implementación de diseño en sitios web para móviles y otros dispositivos, usando herramientas como <strong>HTML</strong>, <strong>CSS</strong> y <strong>JS</strong> para dar vida a los conceptos de otros diseñadores.</p>
             </li>
           </ul>
         </section>
       </main>
-      <!-- end main -->
-      <!-- print button -->
-      <button style="position: absolute; top:20px; right:30px;" onclick="{window.print()}">
-        <img src="./assets/img/print.png" alt="icon Imprimir" width="30px">
-      </button>
-      <!-- google translate -->
-      <div id="google_translate_element" style="position: absolute; top: 20px; right: 120px;"></div>
-      <hr>
       <!-- footer -->
-      <footer>
-        <blockquote><strong>source: </strong><a
-          href="https://mach-911.github.io/fullstack-ror/desafios/curriculum-vitae/">Marco Contreras</a>
+      <footer align="center">
+        <blockquote>
+          <strong>fuente: </strong>
+          <a href="//enidev911.github.io/fullstack-python/desafios/m2/curriculum-vitae/curriculum.html">Curriculum Vitae - Marco Contreras</a>
         </blockquote>
       </footer>
       <!-- scripts -->
@@ -138,12 +126,11 @@ curriculum:
           new google.translate.TranslateElement({
             pageLanguage: 'es',
             includedLanguages: 'es,en',
-                    //OPTION LAYOUT : HORIZONTAL
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                    autoDisplay: false,
-                    gaTrack: true
-                },
-                'google_translate_element');
+            //OPTION LAYOUT : HORIZONTAL
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+            gaTrack: true
+          }, 'google_translate_element');
         }
       </script>
       <script type="text/javascript"
@@ -163,7 +150,6 @@ curriculum:
         printStyle.parentNode.removeChild(printStyle);
       }
     }
-
   url: demo/
 notas_finales:
   html: |-
