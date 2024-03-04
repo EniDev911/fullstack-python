@@ -6,3 +6,12 @@ body {
 	top: 0px !important;
 	background: #fff;
 }
+
+#google_translate_element {
+		display: none;
+}
+@media (min-width: 768px) {
+	#google_translate_element {
+		display: block;
+	}
+}

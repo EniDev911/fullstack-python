@@ -1,9 +1,18 @@
 @media print {
 	body, section {
-		background: #ff0;
-		color: #ff0;
+		color: #342;
+		font-family: sans-serif;
 	}
-	img {
+	img, button {
 		display: none;
+	} 
+	#google_translate_element {
+		display: none !important;
+	}
+	a {
+		text-decoration: none;
+	}
+	a[href^='https']:after {
+		content: " (" attr(href) ")";
 	}
 }

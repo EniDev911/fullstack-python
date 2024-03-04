@@ -187,6 +187,15 @@ Dentro del contenido principal vamos a estar utilizando básicamente secciones p
 
 ---
 
+## Estilos para imprimir @media print
+
+Este es un punto que se suele pasar por alto cuando se crean páginas o sitios web y es poner un estilo específico para cuando alguien quiera imprimir y para nuestro curriculum sería positivo.
+
+Al menos hay que tener en cuenta lo siguiente
+
+
+---
+
 ## Resultado final
 
 {% tabs base %}
