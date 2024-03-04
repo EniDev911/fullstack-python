@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: post
 title: Desafío Curriculum Vitae
 modulo: m2
+challenge: 1
 type: evaluado
 ---
 

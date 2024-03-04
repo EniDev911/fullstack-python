@@ -22,3 +22,14 @@
 thead {
 	background: #012;
 }
+
+:target {
+	scroll-margin-top: 70px;
+}
+
+:target::before {
+	font: 70% sans-serif;
+	content: "►";
+	color: rgb(232, 236, 161);
+	margin-right: 0.25em;
+}

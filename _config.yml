@@ -21,7 +21,8 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-permalink: /:categories/:title:output_ext
+# permalink: /:categories/:title:output_ext
+permalink: /:categories/:title
 
 
 collections:
@@ -29,6 +30,7 @@ collections:
     output: true
   desafios:
     output: true
+    sort_by: challenge
 
 paginate: 5
 paginate_path: /page:num/
