@@ -42,3 +42,57 @@ Los iconos que se utilizan son los siguientes:
 <i class="fas fa-paint-brush"></i>
 ```
 {: .nolineno }
+
+---
+
+## Etiquetas semánticas
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <header>
+	<!-- ... -->
+  </header>
+  <main>
+	<section>
+	  <!-- ... -->
+	</section>
+	<section>
+	  <!-- ... -->
+	</section>
+	<section>
+	  <!-- ... -->
+	</section>
+  </main>
+  <footer>
+	<!-- ... -->
+  </footer>
+</body>	
+</html>
+```
+{: .nolineno }
+
+
+---
+
+## Resultado
+
+{% tabs base %}
+{% tab base index.html %}
+{% include codeHeader.html %}
+```html
+{{ site.data.m2.iguana.html }}
+```
+{% endtab %}
+{% tab base style.css %}
+{% include codeHeader.html %}
+```css
+{{ site.data.m2.iguana.css }}
+```
+{% endtab %}
+{% tab base resultado %}
+{% include ifr_results.html 
+  src=site.data.m2.iguana.url %}
+{% endtab %}
+{% endtabs %}
