@@ -2,11 +2,15 @@
 .highlight table pre { margin: 0; }
 .highlight {
   border: 1px solid #ccc8;
-  border-radius: 5px;
+  border-radius:5px;
   box-shadow: 2px 2px 19px 2px #00000070;
   padding: 13px 13px 7px 13px;
   margin-bottom: 25px;
   font-size: 17px;
+}
+
+pre.highlight {
+  max-height: 450px;
 }
 
 .language-bash .rouge-gutter,

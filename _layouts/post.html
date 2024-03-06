@@ -1,20 +1,21 @@
 ---
 layout: default
+fa: true
 ---
 
 <!-- Page Header -->
 <div class="container-fluid">
-  <div class="mb-4 d-flex justify-content-between group-btn-post">
-    {% if page.previous.url %}
-    <a class="btn btn-primary" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
-    data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.previous.title }}">&larr; {{ page.previous.title }}</a>
-{% endif %}
-<!-- <a class="btn btn-primary" href="{{ '/blog' | prepend: site.baseurl | replace: '//', '/' }}">BLOG</a> -->
-{% if page.next.url %}
-<a class="btn btn-primary" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
-data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.next.title }}">{{ page.next.title }} &rarr;</a>
-{% endif %}
-</div>
-{% include toc.html html=content %}
-{{ content }}
+	<div class="mb-4 d-flex justify-content-between group-btn-post">
+		{% if page.previous.url %}
+		<a class="btn btn-primary" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
+		data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.previous.title }}">&larr; {{ page.previous.title }}</a>
+		{% endif %}
+		<!-- <a class="btn btn-primary" href="{{ '/blog' | prepend: site.baseurl | replace: '//', '/' }}">BLOG</a> -->
+		{% if page.next.url %}
+		<a class="btn btn-primary" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
+		data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.next.title }}">{{ page.next.title }} &rarr;</a>
+		{% endif %}
+	</div>
+	{% include toc.html html=content %}
+	{{ content }}
 </div>

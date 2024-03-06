@@ -78,20 +78,20 @@ Los iconos que se utilizan son los siguientes:
 
 ## Resultado
 
-{% tabs base %}
-{% tab base index.html %}
+{% tabs iguana %}
+{% tab iguana index.html %}
 {% include codeHeader.html %}
 ```html
 {{ site.data.m2.iguana.html }}
 ```
 {% endtab %}
-{% tab base style.css %}
+{% tab iguana style.css %}
 {% include codeHeader.html %}
 ```css
 {{ site.data.m2.iguana.css }}
 ```
 {% endtab %}
-{% tab base resultado %}
+{% tab iguana resultado %}
 {% include ifr_results.html 
   src=site.data.m2.iguana.url %}
 {% endtab %}

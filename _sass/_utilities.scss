@@ -33,3 +33,34 @@ thead {
 	color: rgb(232, 236, 161);
 	margin-right: 0.25em;
 }
+
+.fullscreen {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background: #000;
+	z-index: 99999999;
+}
+
+:fullscreen {
+	overflow: auto;
+	height: 100%;
+	pre.highlight {
+		max-height: 100%;
+	}
+}
+
+::-webkit-scrollbar, .highlight::-webkit-scrollbar {
+	height:5px;
+	width: 10px;
+	border-radius: 0;
+}
+::-webkit-scrollbar-thumb, .highlight::-webkit-scrollbar-thumb {
+	background-color: #ffca0160;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-corner, .highlight::-webkit-scrollbar-corner {
+	background-color: transparent;
+}

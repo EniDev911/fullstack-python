@@ -34,7 +34,7 @@ var get = (id) => document.getElementById(id); //  Abreviamos su uso :D
 
 ## Validación
 
-Aunque no es un requerimiento, debemos tomar en cuenta que el objetivo es calcular promedios, y por ello podemos deducir que esperamos trabajar con números, entonces para evitar ejecutar la operación cuando no se reciben números como argumentos, podemos crear una sencilla función y valiendonos de las expresiones regulares saber si la entrada del usuario contiene números o no:
+Aunque no es un requerimiento, debemos tomar en cuenta que el objetivo es calcular promedios, y por ello podemos deducir que esperamos trabajar con números, entonces para evitar ejecutar la operación cuando no se reciben números como argumentos, podemos crear una sencilla función y valiendonos de las **expresiones regulares** saber si la entrada del usuario contiene números o no:
 
 {% include codeHeader.html %}
 ```js
