@@ -1,0 +1,45 @@
+    body {
+      font-family: 'Cabin', sans-serif;
+    }
+
+    .navbar-brand {
+      font-family: 'Lobster', cursive;
+    }
+
+    .carousel-indicators {
+      position: relative;
+      margin-top: 35px;
+    }
+
+    .carousel-indicators>li {
+      border-radius: 50%;
+      height: 25px !important;
+      width: 25px !important;
+      background-color: black !important;
+    }
+
+    .fit {
+      object-fit: cover;
+      height: 240px;
+    }
+
+    .ricomida-text {
+      font-family: 'Lobster', cursive;
+    }
+
+    hr {
+      position: relative;
+      top: 20px;
+      border: none;
+      height: 2px;
+      background: black;
+      opacity: 1;
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: 768px) {
+      .underline {
+        text-decoration: underline;
+        text-underline-offset: 10px;
+      }
+    }

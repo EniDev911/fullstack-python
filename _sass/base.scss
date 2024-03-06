@@ -43,6 +43,10 @@ body {
   background-color: #666;
 }
 
+.contenido {
+  padding: 0px;
+}
+
 .mermaid {
   display: none;
 }
@@ -144,6 +148,9 @@ ol li::marker {
   code.language-plaintext {
     font-size: $fsParagraphXl;
   }
+  .contenido {
+    padding: 10px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -152,6 +159,9 @@ ol li::marker {
   }
   svg[id^="mermaid"] {
     min-width: 60%;
+  }
+  .contenido {
+    padding: 25px;
   }
   .flowchartTitleText {
     font-size: 19px !important;

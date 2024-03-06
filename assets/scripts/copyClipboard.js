@@ -38,3 +38,9 @@ codeFullscreenButtons.forEach((codeFullscreenButton, index) => {
     }
   });
 });
+
+// function fullscreenHanler(e) {
+  // console.log(e.target.previousSibling.nodeType)
+// }
+
+// document.addEventListener('fullscreenchange', fullscreenHanler);
