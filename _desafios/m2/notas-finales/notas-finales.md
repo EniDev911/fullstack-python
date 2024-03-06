@@ -63,7 +63,7 @@ Aquí la expresión regular, para aquellos que no están muy familizarizados con
 
 Ya y como podemos suponer, si estamos validando números quiere decir que vamos a recibir un conjunto de números por lo que debemos crear un mecanismo que permita obtener un resultado para ese conjunto de números. 
 
-Para ello definiremos una función para obtener el promedio según los valores recibidos por los usuarios:
+Para ello definiremos una función para obtener el promedio según los valores recibidos por el usuario:
 
 {% include codeHeader.html %}
 ```js
