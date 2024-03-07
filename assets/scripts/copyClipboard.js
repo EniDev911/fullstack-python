@@ -27,8 +27,6 @@ codeFullscreenButtons.forEach((codeFullscreenButton, index) => {
   codeFullscreenButton.addEventListener('click', () => {
     code.insertAdjacentElement('afterbegin', header);
     if (!document.fullscreenElement) {
-      // header.children[0].children[0].classList.add('fa-compress');
-      // header.children[0].children[0].classList.remove('fa-expand');
       header.querySelector('.fsc').classList.add('fa-compress');
       header.querySelector('.fsc').classList.remove('fa-expand');
       code.requestFullscreen();
