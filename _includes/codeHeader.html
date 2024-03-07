@@ -1,6 +1,12 @@
 <div class="code-header">
+	{% if include.file %}
+	<div class="me-auto align-self-center">
+		<i class="fa-regular fa-file-code fs-5 px-2"></i>
+		{{ include.file }}
+	</div>
+	{% endif %}
 	<button class="code-fullscreen-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Aumentar">
-		<i class="fa-solid fa-expand"></i>
+		<i class="fsc fa-solid fa-expand"></i>
 	</button>
 	<button class="copy-code-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar">
 		<i class="fa-regular fa-clipboard rounded fs-5 p-1 px-2"></i>

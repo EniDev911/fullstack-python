@@ -27,20 +27,55 @@ codeFullscreenButtons.forEach((codeFullscreenButton, index) => {
   codeFullscreenButton.addEventListener('click', () => {
     code.insertAdjacentElement('afterbegin', header);
     if (!document.fullscreenElement) {
-      header.children[0].children[0].classList.add('fa-compress');
-      header.children[0].children[0].classList.remove('fa-expand');
+      // header.children[0].children[0].classList.add('fa-compress');
+      // header.children[0].children[0].classList.remove('fa-expand');
+      header.querySelector('.fsc').classList.add('fa-compress');
+      header.querySelector('.fsc').classList.remove('fa-expand');
       code.requestFullscreen();
     } else if (document.exitFullscreen) {
       code.insertAdjacentElement('beforebegin', header);
-      header.children[0].children[0].classList.remove('fa-compress');
-      header.children[0].children[0].classList.add('fa-expand');
+      header.querySelector('.fsc').classList.remove('fa-compress');
+      header.querySelector('.fsc').classList.add('fa-expand');
       document.exitFullscreen();
     }
   });
 });
 
-// function fullscreenHanler(e) {
-  // console.log(e.target.previousSibling.nodeType)
-// }
-
-// document.addEventListener('fullscreenchange', fullscreenHanler);
+document.querySelectorAll("[data-color*='#']").forEach(ele => {
+  ele.addEventListener('click', () => {
+    color = getComputedStyle(ele).getPropertyValue('--color');
+    window.navigator.clipboard.writeText(color);
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 1500,
+      timerProgressBar: false,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    Toast.fire({
+      title: "<h5>Copiado!</h5>",
+      background: '#020304',
+      width: '220px',
+      showClass: {
+        popup: `
+        animate__animated
+        animate__fadeInDown
+        animate__faster
+        p-0
+        `
+      },
+      hideClass: {
+        popup: `
+        animate__animated
+        animate__fadeOutUp
+        animate__faster
+        p-0
+        `
+      }
+    });
+  })
+})

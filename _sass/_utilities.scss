@@ -51,3 +51,33 @@ thead {
 		max-height: 100%;
 	}
 }
+
+
+[data-color^='#'] {
+	display: inline-flex;
+	align-items: center;
+	margin: 0 15px 10px 0;
+	border: 1px solid #ccc8;
+	border-radius: 5px;
+	padding: 0 5px;
+	white-space: pre;
+	&:hover {
+		cursor: pointer;
+		background: #fff4;
+	}
+	&:before {
+		display: inline-block;
+		content: attr(data-color);
+		margin-right: 6px;
+		user-select: text;
+	}
+	&:after {
+		display: inline-block;
+		content: '';
+		background-color: var(--color);
+		border: 1px solid #eee;
+		width: 17px;
+		height: 17px;
+		border-radius: 15px;
+	}
+}

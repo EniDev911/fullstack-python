@@ -13,7 +13,7 @@ title: Módulos
 {% if item.modulo == "m2" %}
 	<tr onclick="location.href='{{ item.url | relative_url }}'" style="cursor: pointer;">
 		<th style="width: 10px;">
-			<span class="badge text-bg-warning">
+			<span class="badge {% if item.type == 'guiado' %}text-bg-light{% else %}text-bg-warning{% endif %}">
 			{{ item.type }}
 			</span>
 		</th>

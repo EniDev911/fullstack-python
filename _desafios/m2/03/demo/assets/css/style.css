@@ -1,0 +1,25 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--primary: #E83E8C;
+	--bg-icons: #17A2B8;
+}
+
+body {
+	width: 100%;
+}
+
+.navbar {
+	background: var(--primary);
+}
+
+
+.pay-section {
+	background: var(--bg-icons);
+}
+
+footer {
+	background: var(--primary);
+}
