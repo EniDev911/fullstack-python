@@ -2,7 +2,7 @@
 layout: post
 title: Ricomida
 modulo: m2
-challenge: 5
+challenge: 6
 type: evaluado
 ---
 

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+	--main-dark: #373A3C;
+	--secondary: #17A2B8;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+body {
+	width: 100%;
+	max-height: 100vw;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+	background: var(--main-dark);
+}
+
+#hero-section {
+	background-image: url(../img/bg-hero.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	min-height: 100vh;
+}
+
+#mis-trabajos {
+	background: var(--secondary);
+	width: 100%;
+}
+
+.card-header {
+	padding: 0;
+	height: 300px;
+}
+
+.card-img-top {
+	height: 100%;
+	object-fit: cover;
+}
+
+@media(max-width: 768px) {
+	#hero-section {
+		background-image:
+			linear-gradient(#00000090, #444),
+			url(../img/bg-hero.jpg);
+	}
+}

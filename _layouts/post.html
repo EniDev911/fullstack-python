@@ -5,7 +5,7 @@ fa: true
 
 <div class="container-fluid">
 	<!-- Page Header -->
-	<div class="mb-4 d-flex justify-content-between group-btn-post">
+	<div class="mb-4 d-flex flex-column gap-3 flex-md-row justify-content-between group-btn-post">
 		{% if page.previous.url %}
 		<a class="btn btn-primary" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
 		data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.previous.title }}">&larr; {{ page.previous.title }}</a>
