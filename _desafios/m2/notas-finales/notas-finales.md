@@ -2,7 +2,7 @@
 layout: post
 title: Desafío - Notas Finales
 modulo: m2
-challenge: 5
+challenge: 6
 type: evaluado
 ---
 
