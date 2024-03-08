@@ -7,9 +7,7 @@ thumbnail: "https://enidev911.github.io/guias/assets/images/python/crud-sqlite-c
 
 ## Comenzando
 
-{% tabs main %}
-{% tab main main.py %}
-{% include codeHeader.html %}
+{% include codeHeader.html file='main.py' %}
 ```py
 def init():
     pass
@@ -17,8 +15,6 @@ def init():
 if __name__ == "__main__":
     init()
 ```
-{% endtab %}
-{% endtabs %}
 
 
 La instrucción `if __name__ == "__main__":` comprueba si el script se está ejecutando como programa principal. Si es así, llama a la función `init()` que de momento solo tiene la declaración `pass` esto es más que nada para promover la modularidad y la reutilización. Permite que el script sirva como programa independiente y como módulo importable.
@@ -27,9 +23,7 @@ La instrucción `if __name__ == "__main__":` comprueba si el script se está eje
 
 ## Abrir una nueva conexión a SQLITE
 
-{% tabs main %}
-{% tab main main.py %}
-{% include codeHeader.html %}
+{% include codeHeader.html file='main.py' %}
 ```py
 import sqlite3
 
@@ -39,11 +33,9 @@ def init():
 if __name__ == "__main__":
     init()
 ```
-{% endtab %}
-{% endtabs %}
 
 
-Ahora como se puede observar en el código anterior, importamos el módulo de **sqlite3** que viene integrado con Python y dentro de la función `init()` que arranca junto a la ejecución del programa almacenamos en la variable `conexion` una nueva conexión a un archivo llamado **cars.db**.
+Ahora como se puede observar en el código anterior, importamos el módulo de `sqlite3` que viene integrado con Python y dentro de la función `init()` que arranca junto a la ejecución del programa almacenamos en la variable `conexion` una nueva conexión a un archivo llamado **cars.db**.
 
 ---
 
@@ -51,9 +43,9 @@ Ahora como se puede observar en el código anterior, importamos el módulo de **
 
 Para facilitarnos la existencia, vamos a modularizar el código, quiere decir que vamos subdividir el programa en partes más pequeñas:
 
-{% tabs main %}
-{% tab main main.py %}
-{% include codeHeader.html %}
+{% tabs create_table %}
+{% tab create_table Main %}
+{% include codeHeader.html file='main.py' %}
 ```py
 import db
 
@@ -65,15 +57,15 @@ if __name__ == "__main__":
 ```
 {% endtab %}
 
-{% tab main db.py %}
-{% include codeHeader.html %}
+{% tab create_table db module %}
+{% include codeHeader.html file='db.py' %}
 ```py
 {{ site.data.crud_python_sqlite["db.py"] }}
 ```
 {% endtab %}
 
-{% tab main db/schema.sql %}
-{% include codeHeader.html %}
+{% tab create_table sql %}
+{% include codeHeader.html file='db/schema.sql' %}
 ```sql
 CREATE TABLE IF NOT EXISTS cars(
     brand VARCHAR(50) NOT NULL,
@@ -81,7 +73,7 @@ CREATE TABLE IF NOT EXISTS cars(
 );
 ```
 {% endtab %}
-{% tab main resultado %}
+{% tab create_table resultado %}
 ```
 Database created successfully
 ```
@@ -98,8 +90,8 @@ Ahora, insertemos nuevos registros de autos en la tabla **cars**:
 
 
 {% tabs insertdata %}
-{% tab insertdata main.py %}
-{% include codeHeader.html %}
+{% tab insertdata main %}
+{% include codeHeader.html file='main.py' %}
 ```py
 import db
 import crud
@@ -112,16 +104,16 @@ if __name__ == "__main__":
     init()
 ```
 {% endtab %}
-{% tab insertdata crud.py %}
-{% include codeHeader.html %}
+{% tab insertdata crud module %}
+{% include codeHeader.html file='crud.py' %}
 ```py
 import db
 
 {{ site.data.crud_python_sqlite["crud.py"].insert_data }}
 ```
 {% endtab %}
-{% tab insertdata db.py %}
-{% include codeHeader.html %}
+{% tab insertdata db module %}
+{% include codeHeader.html file='db.py' %}
 ```py
 {{ site.data.crud_python_sqlite["db.py"] }}
 ```
@@ -141,8 +133,8 @@ Record inserted successfully into table 7
 Recuperamos los datos insertados anteriormente:
 
 {% tabs getdata %}
-{% tab getdata main.py %}
-{% include codeHeader.html %}
+{% tab getdata main %}
+{% include codeHeader.html file='main.py' %}
 ```py
 import db
 import crud
@@ -157,18 +149,20 @@ if __name__ == "__main__":
 ```
 {% endtab %}
 
-{% tab getdata crud.py %}
-{% include codeHeader.html %}
+{% tab getdata crud module %}
+{% include codeHeader.html file='crud.py' %}
 ```py
 import db
 from prettytable import from_db_cursor # pip install prettytable
 
 {{ site.data.crud_python_sqlite["crud.py"].get_data }}
+
+{{ site.data.crud_python_sqlite["crud.py"].insert_data }}
 ```
 {% endtab %}
 
-{% tab getdata db.py %}
-{% include codeHeader.html %}
+{% tab getdata db module %}
+{% include codeHeader.html file='db.py' %}
 ```py
 {{ site.data.crud_python_sqlite["db.py"] }}
 ```
@@ -204,8 +198,8 @@ Podemos actualizar los modelos de autos:
 
 
 {% tabs updatedata %}
-{% tab updatedata main.py %}
-{% include codeHeader.html %}
+{% tab updatedata main %}
+{% include codeHeader.html file='main.py' %}
 ```python
 import db
 import crud
@@ -220,8 +214,8 @@ if __name__ == "__main__":
     init()
 ```
 {% endtab %}
-{% tab updatedata crud.py %}
-{% include codeHeader.html %}
+{% tab updatedata crud module %}
+{% include codeHeader.html file='crud.py' %}
 ```py
 import db
 from prettytable import from_db_cursor # pip install prettytable
@@ -232,8 +226,8 @@ from prettytable import from_db_cursor # pip install prettytable
 ```
 {% endtab %}
 
-{% tab updatedata db.py %}
-{% include codeHeader.html %}
+{% tab updatedata db module %}
+{% include codeHeader.html file='db.py' %}
 ```py
 {{ site.data.crud_python_sqlite["db.py"] }}
 ```
@@ -263,8 +257,8 @@ from prettytable import from_db_cursor # pip install prettytable
 Eliminar datos desde la tabla:
 
 {% tabs deletedata %}
-{% tab deletedata main.py %}
-{% include codeHeader.html %}
+{% tab deletedata main %}
+{% include codeHeader.html file='main.py' %}
 ```py
 import db
 import crud
@@ -281,19 +275,19 @@ if __name__ == "__main__":
 ```
 {% endtab %}
 
-{% tab deletedata crud.py %}
-{% include codeHeader.html %}
+{% tab deletedata crud module %}
+{% include codeHeader.html file='crud.py' %}
 ```py
 import db
 from prettytable import from_db_cursor # pip install prettytable
 
-{{ site.data.crud_python_sqlite["crud.py"].delete_data }}
-
 {{ site.data.crud_python_sqlite["crud.py"].get_data }}
+
+{{ site.data.crud_python_sqlite["crud.py"].delete_data }}
 ```
 {% endtab %}
-{% tab deletedata db.py %}
-{% include codeHeader.html %}
+{% tab deletedata db module %}
+{% include codeHeader.html file='db.py' %}
 ```py
 {{ site.data.crud_python_sqlite["db.py"] }}
 ```
