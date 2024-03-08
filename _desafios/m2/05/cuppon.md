@@ -22,7 +22,7 @@ type: evaluado
 Como sabemos **bootstrap** ofrece una grilla compuesta por 12 columnas, en ella se puede especificar cuántas columnas ocupará un solo elemento.
 
 <div class="container mb-4">
-  <div class="row border border-light">
+  <div class="row g-2">
     <div class="col-12 border border-light py-2">
     	.col-12
     </div>
@@ -101,44 +101,87 @@ Sabiendo lo anterior podemos partir agregando el componentes de navegación:
 
 Como vemos el componentes [navbar](https://getbootstrap.com/docs/5.3/components/navbar/){:target='_blank'} ya es responsivo, y sólo nos basta con indicar con la clase `navbar-expand-md` que su comportamiento cambie cuando el dispositivo tenga un ancho **≥ 768px**.
 
-### Diseñar las card responsive
+### Configurar grilla
 
 Para crear una card responsive, aquí si tenemos usar en esta la grilla de bootstrap.
 
-Fijemonos en la siguiente imagen:
-
-{: align='center' }
-![img card-mobile](cuppon-mobile.png){:height='350'}
-![img card-responsive](cuppon-card.png){:height='350'}
-
-{2 3 5}
+{2}
 ```html
 <!-- PROMOS SECTION -->
 <section class="container-lg my-5">
-  <div class="row">
-    <!-- primer item -->
-    <div class="mx-auto col-11 col-md-6 col-lg-4 mb-3">
-      <div class="card">
-        <img src="./assets/img/cupon-1.jpg" alt="primer item" class="card-img-top">
-        <div class="card-body">
-          <h4 class="card-title fw-normal">Plumón Coral Fleece estampado en modelo y tamaño a elección</h4>
-          <p class="card-text text-secondary">Plumones Manolino<br>
-            <i class="fa-solid fa-location-dot"></i> 9191 Avenida Vitacura, Chile
-          </p>
-          <hr>
-          <div class="text-end">
-            <span class="text-secondary me-2">$45.990</span>
-            <span class="oferta">$22.290</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- segundo item -->
+  <!-- fila -->
 </section>
 ```
 
 Como podemos observar, tenemos un `section class='container my-5'`{: .tag } como sabemos el sistema de grilla debe tener un contenedor que lo estamos proporcionando con la clase `container` y para que el contenido no esté apegado a la navegación y pie de página añadimos la clase `my-5` para agregar margenes arriba y abajo (*en el eje y*).
+
+
+### Configurar la fila
+
+Luego de especificar un contenedor para colocar los elementos dentro de él. Ahí se especificará una fila:
+
+{2}
+```html
+<section class="container-lg my-5">
+  <div class="row">
+    <!-- columnas -->
+  </div>
+</section>
+```
+
+Ahora para continuar con las columnas, ya vimos que lo que son los (*breakpoints*) asi que esto es importante para que cada columna pueda ocupar el ancho que corresponda según el disposiivo.
+
+Veamos rápidamente el uso de (*breakpoints*) en columnas:
+
+<div class="table-responsive">
+<table class="table" border="1">
+  <thead class="text-center">
+    <th class="h1">📺</th>
+    <th>Muy pequeño<br><span class="font-weight-normal">&lt;576 px</span></th>
+    <th>Pequeño<br><span class="font-weight-normal">&ge;576 px</span></th>
+    <th>Medio<br><span class="font-weight-normal">&ge;768 px</span></th>
+    <th>Grande<br><span class="font-weight-normal">&ge;992 px</span></th>
+    <th>Extra grande<br><span class="font-weight-normal">&ge;1200 px</span></th>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Prefijo clase</th>
+      <td><code>.col-</code></td>
+      <td><code>.col-sm-</code></td>
+      <td><code>.col-md-</code></td>
+      <td><code>.col-lg-</code></td>
+      <td><code>.col-xl-</code></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+### Configurar columna
+
+Como vemos tenemos una columna que está configurada de la siguiente manera:
+
+<div class="row align-items-center text-center" markdown="1">
+<div class="col-11 col-md-4" markdown="1">
+![img col-11](assets/cuppon-col-mobile.png){:height='380'}
+</div>
+<div class="col-11 col-md-8" markdown="1">
+![img col-md-6](assets/cuppon-col-tablet.png){:height='350'}
+</div>
+<div class="col-11" markdown="1">
+![img col-md-12](assets/cuppon-col-desktop.png){:height='450'}
+</div>
+</div>
+
+{3}
+```html
+<section class="container-lg my-5">
+  <div class="row">
+    <div class="mx-auto col-11 col-md-6 col-lg-4">
+      <!-- card -->
+    </div>
+  </div>
+</section>
+```
 
 ## Resultado
 
