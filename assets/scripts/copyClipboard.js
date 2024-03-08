@@ -77,3 +77,40 @@ document.querySelectorAll("[data-color*='#']").forEach(ele => {
     });
   })
 })
+
+function copyClipboard(content) {
+  const codeSplit = content.split("\n").filter((ele) => !ele.match(/^[1-9]/))
+  window.navigator.clipboard.writeText(codeSplit.join("\n"));
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
+  Toast.fire({
+    title: "<h5>Copiado!</h5>",
+    background: '#020304',
+    width: '220px',
+    showClass: {
+      popup: `
+      animate__animated
+      animate__fadeInDown
+      animate__faster
+      p-0
+      `
+    },
+    hideClass: {
+      popup: `
+      animate__animated
+      animate__fadeOutUp
+      animate__faster
+      p-0
+      `
+    }
+  });
+}
