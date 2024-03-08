@@ -103,7 +103,7 @@ Como vemos el componentes [navbar](https://getbootstrap.com/docs/5.3/components/
 
 ### Configurar grilla
 
-Para crear una card responsive, aquí si tenemos usar en esta la grilla de bootstrap.
+Para crear nuestro layout responsive, aquí si tenemos que usar la grilla de bootstrap.
 
 {2}
 ```html
@@ -182,6 +182,10 @@ Como vemos tenemos una columna que está configurada de la siguiente manera:
   </div>
 </section>
 ```
+
+Como podemos observar en el ejemplo, tenemos la columna configurada de forma responsiva para los diferentes dispositivo, cada columna abarcará 11 espacios de la grilla en dispositivos pequeños (*mobile*), 6 espacios de la grilla en dispositivos medianos (*tablets*) y 4 espacios de la grilla en dispositivos grandes (*desktop*)
+
+---
 
 ## Resultado
 
