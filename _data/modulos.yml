@@ -1,6 +1,8 @@
 - title: "G9 - M2"
   text: "Fundamentos de Frontend"
   img: /assets/img/frontend.png
-  url: desafios/m2/index
-- title: "🐍 Python"
+  url: desafios/m2/
+- title: "G9 - M3"
+  text: "Fundamentos de Python"
   img: https://raw.githubusercontent.com/EniDev911/assets/d08cddbcf99c8a08cf01b64868633c8b38cb162a/svg/software/python.svg
+  url: desafios/m3/

@@ -3,7 +3,7 @@ layout: post
 title: Branching
 modulo: m2
 challenge: 8
-type: evaluado
+type: opcional
 ---
 
 ## Requerimientos

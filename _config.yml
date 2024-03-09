@@ -28,6 +28,7 @@ permalink: /:categories/:title
 collections:
   software:
     output: true
+    sort_by: priority
   desafios:
     output: true
     sort_by: challenge

@@ -6,6 +6,7 @@ const codeFullscreenButtons = document.querySelectorAll('.code-fullscreen-button
 
 copyCodeButtons.forEach((copyCodeButton, index) => {
   let code = codeBlocks[index].textContent;
+
   copyCodeButton.addEventListener('click', () => {
     const codeSplit = code.split("\n").filter((ele) => !ele.match(/^[1-9]/))
     window.navigator.clipboard.writeText(codeSplit.join("\n"));

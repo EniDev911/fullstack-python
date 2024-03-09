@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: post
 title: "🐍 Python"
 subtitle: "Instalación de Python"
+priority: 2
 ---
 
 ## Instalación usando el instalador completo
@@ -15,7 +16,7 @@ subtitle: "Instalación de Python"
 4. Comprobamos que tanto **Python** como **pip** estén instalados correctamente con los siguientes comandos:
 
 {% include codeHeader.html %}
-```bash
+```bat
 python --version
 pip --version
 ```
