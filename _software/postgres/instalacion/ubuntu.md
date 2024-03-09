@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "🐘 Postgres"
+layout: post
+title: "🐘 Postgres en Ubuntu"
 subtitle: "Instalación de Postgres en Ubuntu"
 ---
 

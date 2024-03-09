@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "🐘 Postgres"
+layout: post
+title: "🐘 Postgres en Windows"
 subtitle: "Instalación de Postgres en Windows"
 ---
 
@@ -60,7 +60,7 @@ Para iniciar una nueva configuración en un cluster de PostgreSQL y crear el **r
 Nos cambiamos al directorio de instalación y entramos a la carpeta **bin**:  
 
 
-{: .clipboard }
+{% include codeHeader.html %}
 ```bat
 cd "C:\pgsql_14\bin"
 ```

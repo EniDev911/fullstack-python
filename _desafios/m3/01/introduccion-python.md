@@ -29,3 +29,34 @@ Donde:
 - **GT**: Gastos Totales
 
 
+### Desarrollo
+
+1. Crear el programa emprendedor1.py que utilice la fórmula descrita anteriormente para calcular las utilidades de un proyecto. Para ello utiliza `input()` para solicitar como dato el precio de suscripción P, el número de usuarios U y el gasto total GT.
+
+- Creamos el script emprendedor.py:
+
+{% tabs crear_script %}
+{% tab crear_script BASH %}
+{% include codeHeader.html %}
+```bash
+touch emprendedor.py
+```
+{% endtab %}
+{% tab crear_script CMD %}
+{% include codeHeader.html %}
+```bat
+type null > emprendedor.py
+```
+{% endtab %}
+{% endtabs %}
+
+- Definimos la función descrita anteriormente:
+
+{% include codeHeader.html file='emprendedor.py' %}
+```py
+def obtenerUtilidades(p, u, gt):
+	return ((p * u) - gt)
+```
+
+{:start="2"}
+2. 
