@@ -115,3 +115,56 @@ function copyClipboard(content) {
     }
   });
 }
+
+const playCodeButtons = document.querySelectorAll('.code-play-button');
+
+playCodeButtons.forEach((playCodeButton, index) => {
+  let code = playCodeButton.parentElement.nextSibling.nextSibling.textContent;
+  playCodeButton.addEventListener('click', () => {
+    const codeSplit = code.split("\n").filter((ele) => !ele.match(/^[1-9]/))
+    openCompiler(codeSplit.join("\n"));
+  })
+});
+
+function openCompiler(content, lang = "python", ext = "py") {
+  const ifr = document.createElement("iframe");
+  ifr.src = 'https://onecompiler.com/embed/?hideNewFileOption=true&hideNew=true&hideLanguageSelection=true&theme=dark&hideStdin=true&hideTitle=true&listenToEvents=true&codeChangeEvent=true';
+  ifr.width = "100%";
+  ifr.frameBorder = "0"
+  ifr.style.height = "100vh";
+  ifr.allowFullscreen = "true";
+  const childWindow = window.open("", "_blank");
+  childWindow.document.body.style.boxSizing = "border-box"
+  childWindow.document.body.style.padding = "0"
+  childWindow.document.body.style.margin = "0"
+  childWindow.document.body.appendChild(ifr);
+  const eliminarCookies = () => {
+    childWindow.document.cookie.split(";").forEach(function (c) {
+      childWindow.document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+  }
+  ifr.onload = () => {
+    ifr.contentWindow.postMessage({
+      eventType: 'populateCode',
+      language: lang,
+      files: [
+      {
+        "name": "911." + ext,
+        "content": content.trim()
+      }
+      ]
+    }, "*");
+
+    ifr.contentWindow.postMessage({
+      eventType: 'triggerRun'
+    }, '*')
+  }
+  childWindow.document.onreadystatechange = () => {
+    if (childWindow.document.readyState === "interactive") {
+      eliminarCookies()
+    }
+    if (childWindow.document.readyState === "complete") {
+      childWindow.console.log(childWindow.document.cookie)
+    }
+  }
+}

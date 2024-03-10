@@ -9,6 +9,11 @@
 		<i class="fa fa-terminal fs-5 px-2"></i>
 	</div>
 	{% endif %}
+	{% if include.compiler == 'y' %}
+	<button class="code-play-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Ejecutar">
+		<i class="fa-regular fa-circle-play"></i>
+	</button>
+	{% endif %}
 	<button class="code-fullscreen-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Aumentar">
 		<i class="fsc fa-solid fa-expand"></i>
 	</button>
