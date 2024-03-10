@@ -1,8 +1,8 @@
 - name: "Inicio"
   link: /
 - name: "Software"
-  link: /software.html
+  link: /software
 - name: "Blog"
-  link: /blog.html
+  link: /blog
 - name: "Trabajos"
-  link: /trabajos.html
+  link: /trabajos

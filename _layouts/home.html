@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="posts">
+	<p class="fs-1 text-warning">Últimos posts</p>
+	<hr>
+	{% for post in paginator.posts %}
+	<article class="post card p-2 shadow mb-3 border" onclick="location.href = '{{ post.url | relative_url }}'" style="background: #222;cursor: pointer;">
+		<h2 class="card-title">{{ post.title }}</h2>
+		<div class="entry">
+			{{ post.description }}
+		</div>
+		<a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Leer Más</a>
+	</article>
+	{% endfor %}
+
+	<nav class="post-nav">
+		{% if paginator.next_page %}
+		<p><a href="{{ site.baseurl }}{{ paginator.next_page_path }}">Más antiguo</a></p>
+		{% endif %}
+
+		{% if paginator.previous_page %}
+		<p><a href="{{ site.baseurl }}{{ paginator.previous_page_path }}">Más nuevo</a></p>
+		{% endif %}
+	</nav>
+</div>

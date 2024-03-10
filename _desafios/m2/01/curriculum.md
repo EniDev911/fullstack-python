@@ -142,9 +142,7 @@ Para generar los favicons de una forma más comoda, podemos utilizar herramienta
 
 En la parte principal del curriculum, vamos agrupar el título, nuestra foto de perfil y un subtítulo en lo que sería nuestro encabezado mediante la etiqueta `header`{:.tag}:
 
-{% tabs header %}
-{% tab header html %}
-{% include codeHeader.html %}
+{% include codeHeader.html file='index.html' %}
 ```html
 <!-- header  -->
 <header>
@@ -154,15 +152,12 @@ En la parte principal del curriculum, vamos agrupar el título, nuestra foto de 
 </header>
 ```
 {: .nolineno }
-{% endtab %}
-{% endtabs %}
 
 ---
 
 ## Contenido
 
 Dentro del contenido principal vamos a estar utilizando básicamente secciones para cada apartado como sería los **datos personales**, **formación académica**, **experiencia**, **información complementaria**, etc. Un ejemplo de ello sería lo siguiente:
-
 
 {5 6 7 8 9 10}
 ```html
@@ -196,9 +191,7 @@ Al menos hay que tener en cuenta lo siguiente cuando se define un estilo para im
 
 Un ejemplo de lo anterior sería:
 
-{% tabs printcss %}
-{% tab printcss print.css %}
-{% include codeHeader.html %}
+{% include codeHeader.html file='assets/css/print.css' %}
 ```css
 @media print {
 	body, section {
@@ -219,27 +212,25 @@ Un ejemplo de lo anterior sería:
 	}
 }
 ```
-{% endtab %}
-{% endtabs %}
 
 ---
 
 ## Resultado final
 
-{% tabs base %}
-{% tab base index.html %}
-{% include codeHeader.html %}
+{% tabs curriculum %}
+{% tab curriculum html %}
+{% include codeHeader.html file='index.html' %}
 ```html
 {{ site.data.m2.curriculum.html }}
 ```
 {% endtab %}
-{% tab base script.js %}
-{% include codeHeader.html %}
+{% tab curriculum js %}
+{% include codeHeader.html file='script.js' %}
 ```js
 {{ site.data.m2.curriculum.js }}
 ```
 {% endtab %}
-{% tab base resultado %}
+{% tab curriculum resultado %}
 {% include ifr_results.html 
   src=site.data.m2.curriculum.url %}
 {% endtab %}
