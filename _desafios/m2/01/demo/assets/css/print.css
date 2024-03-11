@@ -6,9 +6,12 @@
 	h1, h2 {
 		text-align: center;
 	}
+	ul {
+		list-style: none;
+	}
 	img, button, footer {
 		display: none;
-	} 
+	}
 	#google_translate_element {
 		display: none !important;
 	}
