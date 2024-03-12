@@ -33,14 +33,14 @@ type: evaluado
 
 
 {% tabs ricomida %}
-{% tab ricomida index.html %}
-{% include codeHeader.html %}
+{% tab ricomida html %}
+{% include codeHeader.html file='index.html' %}
 ```html
 {{ site.data.m2.ricomida.html }}
 ```
 {% endtab %}
-{% tab ricomida style.css %}
-{% include codeHeader.html %}
+{% tab ricomida css %}
+{% include codeHeader.html file='assets/css/style.css' %}
 ```css
 {{ site.data.m2.ricomida.css }}
 ```

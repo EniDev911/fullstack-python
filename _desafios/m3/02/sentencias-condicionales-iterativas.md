@@ -3,7 +3,7 @@ layout: post
 title: Sentencias Condicionales e iterativas
 modulo: m3
 type: evaluado
-challenge: 11
+challenge: 12
 ---
 
 ## Actividad 1
