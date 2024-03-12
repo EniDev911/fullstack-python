@@ -129,14 +129,14 @@ A menudo la expresión (es decir, aquello que terminará inserto en la lista res
 
 **Ejemplos**: 
 
-{% include codeHeader.html %}
+{% include codeHeader.html file='ejemplo.py' %}
 ```py
 x, y = [int(x) for x in input("Ingresa dos valores: ").split()]
 print('Eje x:', x)
 print('Eje y:', y)
 ```
 
-{% include codeHeader.html %}
+{% include codeHeader.html file='ejemplo' %}
 ```py
 x = [int(x) for x in input("Ingrese múltiples valores separados por coma: ").split(",")]
 print("Numeros de la lista: ", x)
@@ -164,7 +164,7 @@ getpass.getpass(prompt='Password: ', stream=None)
 
 Veamos el siguiente ejemplo para comprender su implementación.
 
-{% include codeHeader.html %}
+{% include codeHeader.html file='ejemplo1.py' %}
 ```py
 # Ejemplo 1: Sin argumentos en la llamada.
 import getpass
