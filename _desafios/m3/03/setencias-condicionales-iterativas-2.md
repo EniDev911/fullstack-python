@@ -122,3 +122,11 @@ graph TD
 Se requiere la construcción de una aplicación interactiva `primeros_auxilios.py` que entregue los distintos pasos a seguir dependiendo de las respuestas que el usuario entrega en tiempo real.
 
 
+---
+
+## Actividad 3 - Fuerza Bruta
+
+### Enunciado
+
+¿Que tan seguro es tu password? ¿Intentamos hackear un password?. Mediante el siguiente desafío se busca utilizar un algoritmo muy sencillo, llamado fuerza bruta para determinar cuántos intentos son necesarios para encontrar combinaciones numéricas en minúscula.
+
