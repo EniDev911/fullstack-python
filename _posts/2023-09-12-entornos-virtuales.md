@@ -4,6 +4,22 @@ title: Entornos virtuales con Pipenv
 thumbnail: /assets/img/python-entornos-virtuales.png
 ---
 
+{% capture entorno_graph %}
+graph TD
+    B("<img src='https://raw.githubusercontent.com/EniDev911/assets/d08cddbcf99c8a08cf01b64868633c8b38cb162a/svg/software/python.svg'; width='28'/><br>Python 3.9")
+    B-->C("<img src='https://raw.githubusercontent.com/EniDev911/assets/d08cddbcf99c8a08cf01b64868633c8b38cb162a/svg/software/python.svg'; width='28'/>
+    <img src='https://pngimg.com/uploads/folder/folder_PNG100450.png'; width='10'/>
+    venv1")
+    B-->D("<img src='https://raw.githubusercontent.com/EniDev911/assets/d08cddbcf99c8a08cf01b64868633c8b38cb162a/svg/software/python.svg'; width='28'/><br>venv2")
+    B-->E("<img src='https://raw.githubusercontent.com/EniDev911/assets/d08cddbcf99c8a08cf01b64868633c8b38cb162a/svg/software/python.svg'; width='28' /><br>venv3")
+    subgraph Entornos Virtuales
+    C
+    D
+    E
+    end
+{% endcapture %}
+
+{% include mermaid.html content=entorno_graph %}
 
 ## ¿Qué es Pipenv?
 
