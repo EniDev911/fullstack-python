@@ -4,18 +4,27 @@ title: Entornos virtuales con Pipenv
 thumbnail: /assets/img/python-entornos-virtuales.png
 ---
 
+
+## Qué es un entorno virtual de Python?
+
+Un entorno virtual en Python es una copia de un entorno de Python ya instalado que nos permite trabajar de una forma más limpia en un determinado proyecto ya que estaremos **aislando** un entorno para poder trabajar con los módulos y librerías necesarias para cuyo proyecto.
+
+En la siguiente ilustración veremos un ejemplo de como es un entorno virtual y hacernos la idea de su uso.
+
 {% capture entorno_graph %}
+---
+title: 'Esquema de Entornos Virtuales de Python'
+---
 graph TD
-    B("<img src='https://raw.githubusercontent.com/EniDev911/assets/d08cddbcf99c8a08cf01b64868633c8b38cb162a/svg/software/python.svg'; width='28'/><br>Python 3.9")
-    B-->C("<img src='https://raw.githubusercontent.com/EniDev911/assets/d08cddbcf99c8a08cf01b64868633c8b38cb162a/svg/software/python.svg'; width='28'/>
-    <img src='https://pngimg.com/uploads/folder/folder_PNG100450.png'; width='10'/>
-    venv1")
-    B-->D("<img src='https://raw.githubusercontent.com/EniDev911/assets/d08cddbcf99c8a08cf01b64868633c8b38cb162a/svg/software/python.svg'; width='28'/><br>venv2")
-    B-->E("<img src='https://raw.githubusercontent.com/EniDev911/assets/d08cddbcf99c8a08cf01b64868633c8b38cb162a/svg/software/python.svg'; width='28' /><br>venv3")
-    subgraph Entornos Virtuales
-    C
-    D
-    E
+    B(<img src="{{ 'assets/img/base.png' | relative_url }}" width='28' />Python 3.9)
+    B---T[Entornos Virtuales]
+    T-->C(<img src="{{ 'assets/img/venv1.png' | relative_url }}" width='28' />Python 3.9)
+    T-->D(<img src="{{ 'assets/img/venv2.png' | relative_url }}" width='28' />Python 3.9)
+    T-->E(<img src="{{ 'assets/img/venv3.png' | relative_url }}" width='28' />Python 3.9)
+    subgraph ''
+    C-->CD[Django==2.0]
+    D-->DD[Django==2.2]
+    E-->ED[Django==3.2]
     end
 {% endcapture %}
 
@@ -39,10 +48,12 @@ Por defecto, Pipenv inicializará un proyecto usando cualquier versión de pytho
 
 
 **Versión requerida de Python:** 
-- [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pipenv)](https://www.python.org/){:target='_blank'}
+- [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pipenv){:height='25'}](https://www.python.org/)
+{:style='list-style: none'}
 
 **Página en pipy:** 
-- [![PyPi](https://badgen.net/badge/icon/pypi?icon=pypi&label)](https://pypi.org/project/pipenv/){:target='_blank'}
+- [![PyPi](https://badgen.net/badge/icon/pypi?icon=pypi&label){:height='25'}](https://pypi.org/project/pipenv/)
+{:style='list-style: none'}
 
 En la terminal con el siguiente comando, procedemos a la instalación:
 
