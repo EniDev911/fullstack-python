@@ -4,7 +4,6 @@ title: Entornos virtuales con Pipenv
 thumbnail: /assets/img/python-entornos-virtuales.png
 ---
 
-
 ## Qué es un entorno virtual de Python?
 
 Un entorno virtual en Python es una copia de un entorno de Python ya instalado que nos permite trabajar de una forma más limpia en un determinado proyecto ya que estaremos **aislando** un entorno para poder trabajar con los módulos y librerías necesarias para cuyo proyecto.
@@ -28,8 +27,16 @@ graph TD
     end
 {% endcapture %}
 
+{: #ilustracion }
 {% include mermaid.html content=entorno_graph %}
 
+---
+
+## Creación de entornos virtuales
+
+Cuando **instalamos Python** este ya viene con un módulo llamado `venv` que permite la creación de entornos virtuales, como se mencionó anteriormente y vimos en la [ilustración](#ilustracion)
+
+---
 ## ¿Qué es Pipenv?
 
 **Pipenv** es una herramienta que a punta a traer lo mejor del mundo de empaquetado.
