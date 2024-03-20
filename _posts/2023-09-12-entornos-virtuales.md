@@ -8,7 +8,7 @@ thumbnail: /assets/img/python-entornos-virtuales.png
 
 Un entorno virtual en Python es una copia de un entorno de Python ya instalado que nos permite trabajar de una forma más limpia en un determinado proyecto ya que estaremos **aislando** un entorno para poder trabajar con los módulos y librerías necesarias para cuyo proyecto.
 
-En la siguiente ilustración veremos un ejemplo de como es un entorno virtual y hacernos la idea de su uso.
+En la siguiente ilustración veremos un ejemplo de como es un entorno virtual y hacernos una idea.
 
 {% capture entorno_graph %}
 ---
@@ -34,7 +34,14 @@ graph TD
 
 ## Creación de entornos virtuales
 
-Cuando **instalamos Python** este ya viene con un módulo llamado `venv` que permite la creación de entornos virtuales, como se mencionó anteriormente y vimos en la [ilustración](#ilustracion)
+Cuando **instalamos Python** este ya viene con un módulo llamado `venv` que permite la creación de entornos virtuales, como se mencionó anteriormente y vimos en la [ilustración](#ilustracion) cuando se crea un entorno virtual, se crea una copia de una instalación existente de Python, conocida como `base` del entorno virtual de Python.
+
+La creación de **entornos virtuales** se realiza ejecutando el siguiente comando:
+
+{% include codeHeader.html %}
+```bash
+python -m venv /ruta/nuevo/entorno
+```
 
 ---
 ## ¿Qué es Pipenv?
@@ -146,6 +153,7 @@ pipenv install
 
 ### Ejemplo de Pipfile
 
+{% include codeHeader.html file='Pipfile' %}
 ```
 [[source]]
 url = "https://pypi.org/simple"
