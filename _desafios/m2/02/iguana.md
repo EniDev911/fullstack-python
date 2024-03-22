@@ -44,15 +44,21 @@ Debemos añadir la librería, lo podemos hacer a través **CDN**, aseguremonos d
 
 Los iconos que se utilizan son los siguientes:
 
-<div class="flex my-3">
-	<div class="card">
-		<i class="far fa-eye fs-3"></i>
+<div class="row justify-content-evenly my-3">
+	<div class="col-4">
+		<div class="mini_card">
+			<i class="far fa-eye fs-3"></i>
+		</div>
 	</div>
-	<div class="card">
-		<i class="far fa-hand-peace fs-3"></i>
+	<div class="col-4">
+		<div class="mini_card">
+			<i class="far fa-hand-peace fs-3"></i>
+		</div>	
 	</div>
-	<div class="card">
-		<i class="fas fa-paint-brush fs-3"></i>
+	<div class="col-4">
+		<div class="mini_card">
+			<i class="fas fa-paint-brush fs-3"></i>
+		</div>
 	</div>
 </div>
 
