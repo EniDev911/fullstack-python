@@ -14,23 +14,47 @@ type: evaluado
 │   ├── 📂 css # 👈 para las hojas de estilos
 │   ├── 📂 img # 👈 para las imágenes
 │   └── 📂 favicon # 👈 para los favicon
-└── iguana.html # página principal
+└── index.html # página principal
 ```
 {: .nolineno }
 
 ---
 
-## Implementación de Iconos de Font Awesome
+## Integrar la librería  Font Awesome
 
-Debemos añadir la librería, lo podemos hacer a través **CDN**:
+Debemos añadir la librería, lo podemos hacer a través **CDN**, aseguremonos de poner el script justo antes de la etiqueta de cierre del `body`{: .tag }:
 
-{% include codeHeader.html %}
+{9}
 ```html
-<script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iguana Page</title>
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+</body>
+</html>
 ```
 {: .nolineno }
 
+### Iconos requeridos
+
 Los iconos que se utilizan son los siguientes:
+
+<div class="flex my-3">
+	<div class="card">
+		<i class="far fa-eye fs-3"></i>
+	</div>
+	<div class="card">
+		<i class="far fa-hand-peace fs-3"></i>
+	</div>
+	<div class="card">
+		<i class="fas fa-paint-brush fs-3"></i>
+	</div>
+</div>
 
 {% include codeHeader.html %}
 ```html
@@ -47,6 +71,9 @@ Los iconos que se utilizan son los siguientes:
 
 ## Etiquetas semánticas
 
+Como en cada desafío nos piden utilizar correctamente las etiquetas semánticas. Es por ello que dispondre de la siguiente manera la estructura del **HTML**:
+
+{% include codeHeader.html file='index.html' %}
 ```html
 <!DOCTYPE html>
 <html>
@@ -72,7 +99,6 @@ Los iconos que se utilizan son los siguientes:
 </html>
 ```
 {: .nolineno }
-
 
 ---
 

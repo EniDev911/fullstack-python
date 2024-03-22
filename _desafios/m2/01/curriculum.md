@@ -168,7 +168,7 @@ Dentro del contenido principal vamos a estar utilizando básicamente secciones p
   <section>
     <h3>Título</h3>
     <p>Párrafo</p>
-    <blockquote>Notas</blockquote>>
+    <blockquote>Notas</blockquote>
     <ul></ul>
   </section>
   <section>

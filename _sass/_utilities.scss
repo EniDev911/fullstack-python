@@ -1,6 +1,19 @@
+.flex {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.fs3 {
+	font-size: 2rem;
+}
 .nolineno {
 	.lineno {
 		display: none;
+	}
+}
+my {
+	&-3 {
+		margin: 2rem 0;
 	}
 }
 
@@ -10,12 +23,13 @@
 
 .tag {
 	font-weight: bold;
-	color: #306dcb;
 	&::before {
 		content: '<';
+		color: lightblue;
 	}
 	&::after {
 		content: '>';
+		color: lightblue;
 	}
 }
 
