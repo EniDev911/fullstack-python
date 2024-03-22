@@ -6,7 +6,11 @@
 	</div>
 	{% else %}
 	<div class="me-auto align-self-center">
+		{% if include.icon == 'html' %}
+		<i class="fa-brands fa-html5 fs-5 px-2"></i>
+		{% else %}
 		<i class="fa fa-terminal fs-5 px-2"></i>
+		{% endif %}
 	</div>
 	{% endif %}
 	{% if include.compiler == 'y' %}

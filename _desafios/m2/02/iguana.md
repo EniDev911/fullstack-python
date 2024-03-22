@@ -62,7 +62,7 @@ Los iconos que se utilizan son los siguientes:
 	</div>
 </div>
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon='html' %}
 ```html
 <!-- far fa-eye -->
 <i class="far fa-eye"></i>
