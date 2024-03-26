@@ -9,7 +9,7 @@ type: evaluado
 ## Estructura del proyecto
 
 ```bash
-📂 root
+📂 iguana-page
 ├── 📂 assets
 │   ├── 📂 css # 👈 para las hojas de estilos
 │   ├── 📂 img # 👈 para las imágenes
@@ -111,14 +111,14 @@ Como en cada desafío nos piden utilizar correctamente las etiquetas semánticas
 ## Resultado
 
 {% tabs iguana %}
-{% tab iguana index.html %}
-{% include codeHeader.html %}
+{% tab iguana html %}
+{% include codeHeader.html file='index.html' %}
 ```html
 {{ site.data.m2.iguana.html }}
 ```
 {% endtab %}
-{% tab iguana style.css %}
-{% include codeHeader.html %}
+{% tab iguana css %}
+{% include codeHeader.html file='style.css' %}
 ```css
 {{ site.data.m2.iguana.css }}
 ```

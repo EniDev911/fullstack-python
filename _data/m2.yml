@@ -1088,7 +1088,6 @@ suricata:
       background: var(--primary);
     }
 
-
     .pay-section {
       background: var(--bg-icons);
     }
