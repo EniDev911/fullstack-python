@@ -4,6 +4,7 @@ title: Desafío Curriculum Vitae
 modulo: m2
 challenge: 1
 type: evaluado
+show: true
 ---
 
 ## Descripción

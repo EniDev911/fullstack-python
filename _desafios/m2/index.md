@@ -12,7 +12,7 @@ challenge: 0
 		<th>Desafío</th>
 	</thead>
 {% for item in site.desafios %}
-{% if item.modulo == "m2" %}
+{% if item.modulo == "m2" and item.show %}
 	<tr onclick="location.href='{{ item.url | relative_url }}'" style="cursor: pointer;">
 		<th style="width: 10px;">
 			{{ forloop.index }}
