@@ -239,7 +239,7 @@ Para tu buena suerte, te mostrare una forma muy sencilla (solía usar este truco
 		<p>La iguana es un reptil perteneciente a la familia Iguanadiae. Su tamaño está entre los 15 cm hasta
 			los 2 metros de largo y puede llegar a pesar unos 15 kg. Cuando están jóvenes tienen una coloración
 			con tonos verdes y al ir madurando predomina un color grisáceo con crestas o espinas en su espalda.
-		</p><br>
+		</p>
 		<p>
 			La alimentación de la iguana va variando según su etapa de vida, pero la mayor parte de sus años son
 			herbívoras. Viven en lugares tropicales con mucha vegetación y es un animal que puede ser
@@ -261,37 +261,89 @@ Para tu buena suerte, te mostrare una forma muy sencilla (solía usar este truco
 {% include codeHeader.html icon='css' %}
 ```css
 .desc-section {
+	padding: 3% 6%;
 	display: table;
-	width: 100%;
-	padding: 3%;
-	border: 1px solid red;
-	height: 30vw;
 }
 
 .desc-section__text {
 	display: table-cell;
-	width: 50%;
-	border: 1px solid red;
-	color: #fff;
-	font-size: 1.5vw;
+	width: 55%;
+	font-size: 1.4vw;
+	padding-left: 2.5vw;
 	vertical-align: middle;
 }
 
 .desc-section__image {
-	display: inline-block;
-	border: 1px solid red;
+	display: table-cell;
+}
+
+.desc-section__image img {
 	width: 100%;
 	height: 100%;
-	vertical-align: baseline;
 }
 ```
 {: .nolineno }
 {% endtab %}
 {% endtabs %}
 
+Como pudiste observar en el CSS, aplicamos los siguientes estilos para el contenedor `section class="desc-section"`{: .tag }: 
+
+```css
+.desc-section {
+	padding: 3% 6%;
+	display: table;
+}
+```
+{: .nolineno }
+
+Como vemos sólo hemos dado un relleno (*padding*) que en este caso se le asignó en procentajes, un `3%` tanto arriba como abajo (eje Y) y un `6%` tanto a la izquierda como a la derecha (eje X), como estamos usando una etiqueta `section`{:.tag} no es necesario establecer un ancho, ya que al ser un elemento de bloque usará el `100%`.
+
+> Aquí también se podría definir una altura (*height*) para que delimitemos la zona en la que vamos a trabajar. Para este ejemplo vamos a ignorarlo y trabajaremos con los tamaños de los elementos hijos y el padre adoptará automáticamente la altura adecuada.
+
+Luego como mencione anteriormente estamos asignando el valor `table` a la propiedad `display`, ya que de esta forma será más fácil posicionar los elementos hijos aprovechando el comportamiento de una tabla.
+
+Sigamos pasemos a revisar los estilos del primer hijo:
+
+```css
+.desc-section__text {
+	display: table-cell;
+	width: 55%;
+	font-size: 1.4vw;
+	padding-right: 2vw;
+	vertical-align: middle;
+}
+```
+{: .nolineno }
+
+Como podemos observar el valor de la propiedad `display` para este elemento es `table-cell`, que se utiliza para crear una **celda** y como también hemos especificado la propiedad `width` para que ocupe un `55%` del ancho disponible. Luego asignamos un tamaño de fuente que ya sabemos lo hacemos con medidas relativas al **viewport** asi mismo para el `padding-right` ya que de esta forma no se verá pegada a la imagen, finalmente con la propiedad `vertical-align` podemos posicionar el contenido al medio con el valor `middle`.
+
+Con lo anterior ya hicimos todo, ahora vamos revisar los estilos para el contenedor de la imagen:
+
+```css
+.desc-section__image {
+	display: table-cell;
+}
+```
+{: .nolineno }
+
+En realidad ni siquiera era necesario haber puesto la propiedad anterior, pero por temas de entendimiento vamos a dejar el display en `table-cell` para mantener el contexto de tabla y por ende este contenedor sería la segunda columna o celda, además decirte que no es necesario definir ninguna otra propiedad ya que automáticamente toma el resto de ancho y alto disponible.
+
+Lo que nos resta en esta sección es la imagen y que si o si aquí debemos definir las siguientes propiedades:
+
+```css
+.desc-section__image img {
+	width: 100%;
+	height: 100%;
+}
+```
+{: .nolineno }
+
+> **OJO**<br>Si no establecemos ancho y alto en la imagen tomará sus medidas absolutas de acuerdo a su resolución.
 
 
-### Iconos requeridos
+### Trabajando la sección de características
+
+#### Iconos requeridos
 
 Los iconos que se utilizan son los siguientes:
 
