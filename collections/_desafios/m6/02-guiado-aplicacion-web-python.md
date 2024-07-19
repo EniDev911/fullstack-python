@@ -74,7 +74,7 @@ Vista en el navegador:
 Crear la vista para el `About` de la aplicación:
 
 {% tabs req_2 %}
-{% tab req_2 vista home %}
+{% tab req_2 vista about %}
 {% include codeHeader.html file="app/views.py" %}
 ```python
 def about(request: HttpRequest) -> HttpResponse:
@@ -103,3 +103,69 @@ def about(request: HttpRequest) -> HttpResponse:
 Vista en el navegador:
 
 ![img - vista about]({{ page.img_path | relative_url | append: 'vista-about.png'}}){: .border .rounded }
+
+---
+
+### Requerimiento 3
+
+Crea la vista para el `Contact` de la aplicación y posee un mini formulario de contacto para ejemplificarle al cliente el resultado:
+
+{% tabs req_3 %}
+{% tab req_3 vista contact %}
+{% include codeHeader.html file="app/views.py" %}
+```py
+def contact(request: HttpRequest) -> HttpResponse:
+	template = loader.get_template("contact.html")
+	return HttpResponse(template.render())
+```
+{: .nolineno }
+{% endtab %}
+{% tab req_3 template %}
+{% include codeHeader.html file="app/templates/contact.html" %}
+```html
+<!DOCTYPE html>
+<html lang="es">
+<body>
+	<h1>CONTACTANOS</h1>
+	<form action="mailto:xxx@gmail.com" method="post" enctype="text/plain">
+		<fieldset>
+			<h2>Rellenar formulario completo:</h2>
+			<div>
+				<label id="Nombre" for="Nombre">Nombre:</label>
+				<input class="input" id="Nombre" type="text"required width="300px">
+			</div>
+			<div>
+				<label id="primer" for="primer">Primer Apellido:</label>
+				<input class="input" id="primer" type="text"required width="300px">
+			</div>
+			<div>
+				<label id="Segundo" for="Segundo">Segundo Apellido:</label>
+				<input class="input" id="Segundo" type="text" required width="300px">
+			</div>
+			<div>
+				<label id="mail" for="mail">E-mail de contacto:</label>
+				<input class="input" id="mail" type="text" name="mail" placeholder="xxx@gmail.com" required pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$">
+			</div>
+			<div>
+				<label id="Mensaje" for="Mensaje">Mensaje:<span>*describe tu consulta</span></label>
+				<textarea class="input" id="Mensaje" name="Mensaje" cols="30" rows="10" placeholder="Escribe tu mensaje..."></textarea>
+			</div>
+				<input id="check" type="checkbox" required >
+				<a href="#">He leido y acepto la politica de privacidad</a>
+			<div>
+			<div>
+				<button style="background-color: rgb(0, 225, 255) ;" type="submit">CONTACTAR</button>
+				<button style="background-color: rgb(255, 0, 76) ;" type="reset">Reiniciar</button>
+			</div>
+		</fieldset>
+    </form>
+</body>
+</html>
+```
+{: .nolineno }
+{% endtab %}
+{% endtabs %}
+
+Vista en el navegador:
+
+![img - vista about]({{ page.img_path | relative_url | append: 'vista-contact.png'}}){: .border .rounded }
