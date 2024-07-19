@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<div class="mb-3">
+	{{ content }}
+</div>
+<table class="table table-hover table-dark" id="table">
+	<thead class="fs-5">
+		<th>N°</th>
+		<th>Tipo</th>
+		<th>Desafío</th>
+	</thead>
+	{% assign desafios = site[page.collection]  | where: "modulo", page.modulo %}
+	{% for item in desafios %}
+	{% if item.show %}
+	<tr onclick="location.href='{{ item.url | relative_url }}'" style="cursor: pointer;">
+		<th style="width: 10px;">
+			{{ forloop.index }}
+		</th>
+		<th style="width: 10px;">
+			{% case item.type %}
+			{% when 'guiado' %}{% assign color = 'text-bg-light' %}
+			{% when 'prueba' %}{% assign color = 'text-bg-danger' %}
+			{% else %}{% assign color = 'text-bg-warning' %}
+			{% endcase %}
+			<span class="badge {{ color }}">
+				{{ item.type }}
+			</span>
+		</th>
+		<td>
+			{{ item.title }}
+		</td>
+	</tr>
+	{% endif %}
+	{% endfor %}
+</table>

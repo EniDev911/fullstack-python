@@ -1,0 +1,141 @@
+@import "highlight";
+@import "fonts";
+@import "images";
+@import "blockquotes";
+@import "tabs";
+@import "scrollbar";
+@import "utilities";
+@import "keyboard";
+@import "card";
+@import "headings";
+@import "lists";
+@import "paragraphs";
+
+$bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$fsParagraphSm: 16px;
+$fsParagraphXl: 20px;
+$codeFontJetbrains: "JetBrains Mono", consolas;
+$codeFont: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+
+body {
+  background: $dark-100;
+  color: $gray-400;
+  font-family: $bodyFont;
+  strong, em {
+    // color: #8BABC0;
+    // color: $warning;
+  }
+  text-justify: inter-word;
+  .highlight pre {
+    font-family: $codeFont;
+  }
+}
+
+.mermaid {
+  display: none;
+}
+.page-title {
+  color: #ffbb33ff;
+  font-weight: bolder;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: #000;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px #000, 0 0 16px #cccd0190, 0 0 0.2em #000;
+}
+
+// LINKS
+a {
+  color: #ffcc00;
+  font-weight: 400;
+  text-decoration: none;
+  &:hover {
+    color: #ffcc40;
+  }
+}
+
+a[target='_blank']::after {
+  content: "\25F9";
+  font-size: .6rem;
+  font-weight: bolder;
+  margin-left: 0.1rem;
+  vertical-align: super;
+}
+
+code.language-plaintext {
+  color: #d09923;
+  font-style: italic;
+  padding: 0 3px;
+  border-radius: 4px;
+}
+
+.code-header + [class^='language'] > .highlight,
+[class^='language'] > .code-header + .highlight {
+  border-radius: 0 0 5px 5px !important;
+}
+
+.code-fullscreen-button,
+.code-play-button,
+.copy-code-button,
+.codepen-button {
+  background-color: transparent;
+  border: 0;
+  color: #ddd;
+}
+
+.copy-code-button {
+  display: block;
+  &:hover .fa-regular {
+    background: #130511;
+  }
+}
+.copy-code-button:active {
+  box-shadow: none;
+}
+
+.highlight:hover .code-header {
+  visibility: visible;
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+td, th {
+  color: #ccd;
+}
+
+ol li::marker {
+  color: rgb(219, 201, 6);
+}
+
+@media (min-width: 768px) {
+  body p, ul, ol {
+    font-size: $fsParagraphXl !important;
+  }
+  code.language-plaintext {
+    font-size: $fsParagraphXl;
+  }
+  .contenido {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  svg[id^="mermaid"] {
+    min-width: 60%;
+  }
+  .contenido {
+    padding: 25px;
+  }
+  .flowchartTitleText {
+    font-size: 19px !important;
+  }
+  .node rect, .node polygon {
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7)) !important;
+    /* Similar syntax to box-shadow */
+  }
+}
+
+@import "printer";
+@import "sizing";

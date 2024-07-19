@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "es-CL" }}">
+<head>
+  {% include header.html %}
+</head>
+<body>
+  <!-- 👇 partial de la navegación -->
+  {% include body/navbar_menu.html %}
+  <!-- HERO SECTION -->
+  <div class="pt-5" style="/*height: 80vh; background: #191919*/">
+    <div class="py-5 text-center">
+      <h1 class="display-5 fw-bold page-title mb-5">{{ page.title }}</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="fs-2 my-4 text-uppercase text-light">
+          {{ page.subtitle }}
+        </p>
+      </div>
+    </div>
+    <div class="bg-dark shadow-lg col-12 col-lg-9 mx-auto py-4 px-0 px-lg-3 rounded">
+      {{ content }}
+    </div>
+  </div>
+  <!-- END HERO SECTION -->
+  {% include body/footer.html %}
+  <!-- JS BOOTSTRAP -->
+  <script src="{{ "/assets/scripts/copyClipboard.js"  | relative_url }}"></script>
+  <script src="{{ "/assets/scripts/definePen.js"  | relative_url }}"></script>
+  <script src="{{ "/assets/scripts/popup.js"  | relative_url }}"></script>
+  <script src="{{ "/assets/scripts/tabs.js"  | relative_url }}"></script>
+  <script src="{{ "/assets/scripts/handler.js"  | relative_url }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+  </script>
+  <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
+</body>
+</html>

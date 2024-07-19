@@ -1,0 +1,29 @@
+<div class="card text-light shadow position-relative" style="background-color: #191919; cursor: pointer" onclick="location.href = '{{ include.href | relative_url }}'" title="{{ include.title }}">
+  <div class="px-2 py-1">
+   {% assign category = include.category | downcase %}
+   {% case category %}
+   {% when 'python' %}{% assign color = 'text-bg-warning' %}
+   {% when 'prueba' %}{% assign color = 'text-bg-danger' %}
+   {% else %}{% assign color = 'text-bg-light' %}
+   {% endcase %}
+   <span class="badge {{ color }}">{{ category }}</span>
+ </div>
+ <div class="card-header text-center p-0" style="height: 210px; position: relative;">
+  {% include loading.html %}
+  <img id="{{ include.id }}" src="{{ include.img | relative_url }}" alt="image_post" class="card-img-top" style="object-fit: contain; visibility: hidden;"
+  height="210" loading="lazy" onload="{mostrar(this, this.id)}">
+</div>
+<div class="card-body">
+  <h5 class="card-title text-warning text-center">
+    {{ include.title | truncate:25 }}
+  </h5>
+  <p class="card-text">
+    {{ include.text }}
+  </p>
+</div>
+{% if include.date %}
+<div class="card-footer text-center">
+  {% include date_es.html date=include.date time-attributes='class="post-date"' %}
+</div>
+{% endif %}
+</div>

@@ -1,0 +1,11 @@
+	<!-- Page Header -->
+	<div class="mb-4 d-flex flex-column gap-3 flex-md-row justify-content-between group-btn-post">
+		{% if page.previous.url and page.previous.layout == "post" %}
+		<a class="btn btn-outline-warning" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
+		data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.previous.title }}">&larr; {{ page.previous.title }}</a>
+		{% endif %}
+		{% if page.next.url and page.show_next == true and page.next.layout == "post" %}
+		<a class="btn btn-outline-warning" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
+		data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.next.title }}">{{ page.next.title }} &rarr;</a>
+		{% endif %}
+	</div>

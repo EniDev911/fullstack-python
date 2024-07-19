@@ -1,0 +1,51 @@
+---
+layout: default
+title: Blog
+---
+
+
+<script type="text/javascript">
+	function filterUsingCategory(selectedCategory) {
+		var id = 0;
+		{% for post in site.posts %}
+		var cats = {{ post.categories | jsonify }}
+
+		var postDiv = document.getElementById(++id);
+		postDiv.style.display = (selectedCategory == 'All' || cats.includes(selectedCategory))
+		? 'unset'
+		: 'none';
+		{% endfor %}
+	}
+</script>
+
+<div class="d-flex my-3 gap-3 flex-wrap justify-content-center">
+	<button id="All" onclick="filterUsingCategory('All')"  class="btn btn-outline-light">Todos</button>
+	{% assign categories = site.categories | sort %}
+	{% for category in categories %}
+	{% assign cat = category | first %}
+	<button id="{{ cat }}" onclick="filterUsingCategory(this.id)" class="btn btn-outline-warning position-relative">{{ cat }}
+		<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-dark">
+			{{ site.categories[cat].size }}
+			<span class="visually-hidden">cantidad de posts</span>
+		</button>
+		{% endfor %}
+		<hr />
+	</div>
+	<hr>
+
+	<div class="row g-3 justify-content-center">
+		{% assign id = 0 %}
+		{% for post in site.posts %}
+		{% assign id = id | plus:1 %}
+		<div class="col-10 col-md-6 col-lg-4" id="{{ id }}">
+			{% include card_post.html
+				id=forloop.index0
+				title=post.title
+				date=post.date
+				href=post.url
+				img=post.thumbnail
+				%}
+			</div>
+			{% endfor %}
+		</div>
+

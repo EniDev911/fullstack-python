@@ -1,0 +1,44 @@
+<!-- code-header  -->
+<div class="code-header bg-dark bg-gradient d-flex align-items-center justify-content-evenly rounded-top border border-secondary py-1 px-2">
+	{% if include.file %}
+	<div class="me-auto">
+		<i class="fa-regular fa-file-code"></i>
+		{{ include.file }}
+	</div>
+	{% else %}
+	<div class="me-auto">
+		{% case include.icon %}
+		{% when "html" %}
+		{% assign icon = "fa-brands fa-html5" %}
+		{% when "css" %}
+		{% assign icon = "fa-brands fa-css3-alt" %}
+		{% when "python" %}
+		{% assign icon = "fa-brands fa-python" %}
+		{% else %}
+		{% assign icon = "fa-solid fa-code" %}
+		{% endcase %}
+		<i class="{{ icon }}"></i>
+	</div>
+	{% endif %}
+	{% if include.compiler == 'y' %}
+	<button class="code-play-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Ejecutar">
+		<i class="fa-regular fa-circle-play"></i>
+	</button>
+	{% endif %}
+	{% if include.codepen == 'y' %}
+	<button class="codepen-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Codepen" onclick="definePen({
+		html: this.parentElement.nextSibling.nextSibling.textContent,
+		title: '{{ include.title }}',
+		css: `{{ include.css }}`,
+		fa: '{{ include.fa }}',
+		bs: '{{ include.bs }}'})">
+		<i class="fa-brands fa-codepen"></i>
+	</button>
+	{% endif %}
+	<button class="code-fullscreen-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Aumentar">
+		<i class="fa-solid fa-magnifying-glass"></i>
+	</button>
+	<button class="copy-code-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar">
+		<i class="fa-regular fa-clipboard"></i>
+	</button>
+</div>

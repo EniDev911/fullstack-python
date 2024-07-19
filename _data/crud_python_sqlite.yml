@@ -1,0 +1,63 @@
+db.py: |-
+  import sqlite3
+  from sqlite3 import Error
+
+  def open_db():
+      try:
+          con = sqlite3.connect('cars.db')
+          return con
+
+      except Error as e:
+          print('Error: ', e)
+
+  def run_query(sql, params='', multiple=False):
+      with open_db() as con:
+          cursor = con.cursor()
+          try:
+              if multiple:
+                  return cursor.executemany(sql, params)
+              else:
+                  return cursor.execute(sql, params)
+          except Error as e:
+              print('Error: ', e)
+
+  def create_schema():
+      with open('db/schema.sql', 'r') as sql_file:
+          sql_script = sql_file.read()
+          schema_created = run_query(sql_script)
+          if schema_created.rowcount == -1:
+              print("Database created successfully")
+
+  if __name__ == "__main__":
+      create_schema()
+crud.py:
+  insert_data: |-
+    def insert_data():
+      insert_query = "INSERT INTO cars (brand, model) VALUES(?, ?)"
+      cars_data = [
+          ('Chevrolet', 'Chevrolet Camaro'),
+          ('Chevrolet', 'Chevrolet Captiva'),
+          ('Fiat', 'Fiat 125 Mirafiori'),
+          ('Fiat', 'Fiat 125 Centurion'),
+          ('Honda', 'Honda CR-V'),
+          ('Honda', 'Honda CR-X del Sol'),
+          ('Honda', 'Honda CR-Z')
+      ]
+
+      result = db.run_query(insert_query, cars_data, True)
+      print("Record inserted successfully into table", result.rowcount)
+  get_data: |-
+    def get_data():
+      select_query = "SELECT * FROM cars"
+      result = db.run_query(select_query)
+      mytable = from_db_cursor(result)
+      mytable.align = "l"
+      print(mytable)
+  update_data: |-
+    def update_data(model, newModel):
+      update_query = "UPDATE cars SET model = ? WHERE model = ?"
+      db.run_query(update_query, (newModel, model))
+  delete_data: |-
+    def delete_data(model):
+      delete_query = "DELETE FROM cars WHERE model = ?"
+      db.run_query(delete_query, (model,))

@@ -1,0 +1,8 @@
+- name: "PDF Y MÁS"
+  link: '/recursos'
+- name: "Python Book"
+  link: "https://enidev911.github.io/python-book/"
+- name: "Django Doc"
+  link: https://enidev911.github.io/doc_django/
+- name: "Notas del sitio"
+  link: /notas

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="container">
+	{% for post in site.blog %}
+	<article class="card mb-3 text-gray4" style="background: #222; border: 1px solid #ccc5;">
+		<div class="row g-0 rounded" style="overflow: hidden;">
+			<div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center align-items-center">
+				<img src="{{ post.thumbnail | relative_url }}" alt="thumbnail" style="min-height: 250px; height: 100%; object-fit: contain;">
+			</div>
+			<div class="col-12 col-md-8 col-lg-9">
+				<div class="card-body">
+					<h3 class="card-title p-0 m-0 mb-2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+					<p class="card-text">{{ post.content | strip_html | truncatewords: 50 }}</p>
+					<a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Leer Más</a>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% endfor %}
+
+	<nav class="post-nav">
+		{% if paginator.next_page %}
+		<p><a href="{{ site.baseurl }}{{ paginator.next_page_path }}">Más antiguo</a></p>
+		{% endif %}
+
+		{% if paginator.previous_page %}
+		<p><a href="{{ site.baseurl }}{{ paginator.previous_page_path }}">Más nuevo</a></p>
+		{% endif %}
+	</nav>
+</div>

@@ -1,0 +1,20 @@
+- title: "G9 - M2"
+  text: "Fundamentos de Frontend"
+  img: /assets/img/modulos/m2_fundamentos_frontend.png
+  url: desafios/m2/
+- title: "G9 - M3"
+  text: "Fundamentos de Python"
+  img: /assets/img/modulos/m3_introduccion_python.png
+  url: desafios/m3/
+- title: "G9 - M4"
+  text: "Programación avanzada en Python"
+  img: /assets/img/modulos/m4_python_avanzado.png
+  url: desafios/m4/
+- title: "G9 - M5"
+  text: "Fundamentos de bases de datos relacionales"
+  img: /assets/img/modulos/m5_fundamentos_bd.png
+  url: desafios/m5/
+- title: "G9 - M6"
+  text: "Aplicaciones web con Python Django"
+  img: /assets/img/modulos/m6_aplicaciones_python_django.png
+  url: desafios/m6/

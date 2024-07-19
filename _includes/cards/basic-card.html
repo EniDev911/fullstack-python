@@ -1,0 +1,51 @@
+<style type="text/css">
+	.basic-card {
+		--size: 64px;
+
+		display: inline-grid;
+		place-items: center;
+		gap: 1rem;
+		grid-template-columns: var(--size) 1fr;
+		border: 3px solid #aaa;
+		border-bottom-color: #ddd;
+		border-right-color: #ffbb33;
+		border-left-color: #ffbb33;
+		border-radius: var(--size);
+		padding: 0.5rem 1rem;
+		margin: 0.5rem;
+		background: #222;
+		box-shadow: 3px 2px 12px 2px #111;
+	}
+	.basic-card img {
+		width: var(--size);
+		height: var(--size);
+		border-radius: 50%;
+	}
+	.basic-card span {
+		font-family: "Fira Sans", sans-serif;
+		font-size: 1.5rem;
+		font-weight: 600;
+		font-style: italic;
+	}
+</style>
+
+<user-card name="{{ include.name }}" url="{{ include.href }}"></user-card>
+
+<script type="module">
+	const SIZE = 128;
+
+	class UserCard extends HTMLElement {
+		constructor() {
+			super();
+			const name = this.getAttribute("name");
+			const url = this.getAttribute("url");
+			const html = /* html */`<a href=${url} target="blank"><div class="basic-card">
+			<img src="https://avatars.githubusercontent.com/${name}?size=${SIZE}" alt="${name}">
+			<span>${name}</span>
+			</div></a>`;
+			this.insertAdjacentHTML("beforeend", html);
+		}
+	}
+
+	customElements.define("user-card", UserCard);
+</script>

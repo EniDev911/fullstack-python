@@ -1,0 +1,22 @@
+- title: "✏️ Visual studio code"
+  text: "Editor de código"
+  img: https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/code.visualstudio.svg
+  url: software/vscode/
+- title: "🐍 Python"
+  text: "Interprete de Python"
+  img: assets/svg/python.svg
+  url: software/python/instalacion
+- title: "🐘 POSTGRESQL"
+  text: "ORDBMS Open Source"
+  img: assets/svg/postgres.svg
+  url: software/postgres/instalacion
+  install:
+    - Windows
+    - Linux
+    - macOS
+- title: "🎮 DISCORD"
+  text: "Aplicación de chat"
+  img: assets/svg/discord.svg
+- title: "🗂️ GIT"
+  text: "Control de versiones"
+  img: assets/svg/git.svg

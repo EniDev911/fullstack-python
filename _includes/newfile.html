@@ -1,0 +1,16 @@
+{% assign file = include.file %}
+
+{% tabs #{file} %}
+{% tab #{file} BASH %}
+{% include codeHeader.html icon="terminal" %}
+```bash
+touch {{ file }}
+```
+{% endtab %}
+{% tab #{file} CMD %}
+{% include codeHeader.html icon="terminal" %}
+```bash
+type null > {{ file }}
+```
+{% endtab %}
+{% endtabs %}

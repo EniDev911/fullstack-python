@@ -1,0 +1,23 @@
+auth_1: |-
+  <script>
+    /*
+     fetch("https://mach-911.github.io/fullstack-ror/assets/data/desafios.json")
+     .then(res => res.json())
+     .then((data) => {
+      if (localStorage.getItem("auth") === data.codigo) {
+
+      }
+      else if (window.prompt('Código de autorización') === data.codigo) {
+        localStorage.setItem("auth", data.codigo);
+        location.reload();
+      }
+      else {
+        document.write(`
+          <body style='display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:100vh;'>
+          <h1 style='text-align: center; font-family: sans-serif;'>No estás autorizado</h1>
+          <img src='https://media.tenor.com/G8tm3S_8Un4AAAAd/que-cochino-emoji-triste.gif' alt='gif' height='200' style='border-radius: 50%'/>
+          </body>
+          `)
+      }
+    }) */
+  </script>

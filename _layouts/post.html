@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="container-fluid" id="content">
+	{% include paginator_post.html %}
+	<!-- toc content -->
+	{% if page.toc == false %}
+	{% else %}
+	<details class="bg-dark my-3" open>
+		<summary class="fs-3 text-light p-2">Tabla de contenido 📄</summary>
+		{% include toc.html html=content %}
+	</details>
+	{% endif %}
+	{{ content }}
+	{% include top_button.html %}
+	{% include paginator_post.html %}
+</div>
+{% include progressbar.html %}

@@ -1,0 +1,22 @@
+blockquote p {
+	background: #202030ff;
+	border: 1px solid #636bffff;
+	padding: 10px;
+	border-radius: 4px;
+	color: #b3b7f5ff;
+}
+blockquote {
+	&.prompt-success p {
+		border: 1px solid #ffffD0;
+		background-color: #ffff8020;
+		color: #fff;
+	}
+}
+blockquote p strong,
+blockquote p em {
+	color: #b3b7f5ff;
+}
+blockquote p code.language-plaintext {
+	background: #2c2d52ff;
+	color: #b3b7f5ff;
+}

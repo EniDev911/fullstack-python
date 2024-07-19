@@ -1,0 +1,30 @@
+---
+layout: default
+title: Recursos PDF y más
+pdf_path: '/assets/pdf'
+---
+
+<div class="d-flex flex-wrap gap-3 mb-5">
+	<a href="javascript:void(0)" class="btn btn-outline-warning" data-href='https://mach-911.github.io/fullstack-ror/assets/pdf/gh-cli-cheatsheet.pdf?#view=fitH'>gh-cli cheatsheet</a>
+	<a href="javascript:void(0)" class="btn btn-outline-warning" data-href='https://mach-911.github.io/fullstack-ror/assets/pdf/github-pages.pdf?#view=fitH'>github-pages</a>
+	<a href="javascript:void(0)" class="btn btn-outline-warning" data-href='{{ page.pdf_path | relative_url }}/git_v2.pdf?#view=fitH'>git cheatsheet</a>
+	<a href="javascript:void(0)" class="btn btn-outline-warning" data-href='https://mach-911.github.io/fullstack-ror/assets/pdf/javascript-arrays.pdf?#view=fit'>js arrays</a>
+	<a href="javascript:void(0)" class="btn btn-outline-warning" data-href='https://mach-911.github.io/fullstack-ror/assets/pdf/css3-cheatsheet.pdf?#view=fitH'>css cheatsheet</a>
+	<a href="javascript:void(0)" class="btn btn-outline-warning" data-href='https://docs.google.com/presentation/d/e/2PACX-1vTUOo_iZ6KT4Cc-B-t2eEUMAsqOsIWQ8Y8ThyJDLZ6q4_guT6hAVCalmsmyQNmcpQ/embed?start=false&loop=false&delayms=3000'>postgres general</a>
+</div>
+
+{% include ifr_results.html src='https://mach-911.github.io/fullstack-ror/assets/pdf/gh-cli-cheatsheet.pdf?#view=fitH' target="true" %}
+
+
+<script>
+	const resource = document.querySelector(".resource");
+
+	document.querySelectorAll("a.btn")
+	.forEach((item) => {
+		item.addEventListener('click', (event) => {
+			// alert(event.target.dataset.href)
+			resource.children[0].href = event.target.dataset.href
+			resource.children[1].src = event.target.dataset.href
+		})
+	})
+</script>

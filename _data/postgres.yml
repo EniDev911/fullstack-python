@@ -1,0 +1,10 @@
+install:
+  - title: "Windows"
+    thumbnail: https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg
+    link: /software/postgres/instalacion/windows
+  - title: "Ubuntu"
+    thumbnail: https://upload.wikimedia.org/wikipedia/commons/9/9e/UbuntuCoF.svg
+    link: /software/postgres/instalacion/ubuntu
+  - title: "macOS"
+    thumbnail: https://upload.wikimedia.org/wikipedia/commons/2/22/MacOS_logo_%282017%29.svg
+    link: /software/postgres/instalacion/macos

@@ -1,0 +1,17 @@
+<div class="card text-light shadow" style="background-color: #191919; cursor: pointer;"
+onclick="location.href = '{{ include.href | relative_url }}'">
+<div class="card-header text-center">
+	{% include loading.html %}
+	<img id="{{ include.id }}" src="{{ include.img | relative_url }}" alt="image" class="card-img-top"
+	style="object-fit: contain; visibility: hidden;" height="180" loading="lazy"
+	onload="{mostrar(this, this.id)}">
+</div>
+<div class="card-body">
+	<h5 class="card-title text-warning">
+		{{ include.title  }}
+	</h5>
+	<p class="card-text">
+		{{ include.text | truncatewords: 3 }}
+	</p>
+</div>
+</div>

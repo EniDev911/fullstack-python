@@ -1,0 +1,12 @@
+<div class="position-relative my-5" id="mermaid-container">
+	{% include loading.html %}
+	<button onclick="{!document.fullscreenElement ? this.parentElement.requestFullscreen() : document.exitFullscreen()}" class="btn rounded-0 sticky-top bg-dark">
+		<i class="fa-solid fa-magnifying-glass text-light"></i>
+	</button>
+	<pre class="mermaid visually-hidden" style="display: flex; justify-content: center; background: transparent !important; border: none; box-shadow: none">
+		{{ include.content }}
+		linkStyle default stroke: #f2f5a6
+		classDef default fill:#191919,stroke:#f2f5a6,stroke-width:1px,color:#ccc
+	</pre>
+</div>
+

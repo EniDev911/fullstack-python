@@ -1,0 +1,64 @@
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/fullstack-python" # the subpath of your site, e.g. /blog
+title: "fullstack python" # the name of your site, e.g. ACME Corp.
+plugins:
+  - jekyll-autoprefixer
+  - jekyll-paginate
+  - jekyll-tabs
+  - jemoji
+
+autoprefixer:
+  browsers:
+    - last 4 versions
+
+markdown: kramdown
+highlighter: rouge
+linenos: true
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+social:
+  linkedin-in: https://linkedin.com/in/enidev911
+  github: https://www.github.com/enidev911
+  email: mailto:enidev911@gmail.com
+# permalink: /:categories/:title:output_ext
+permalink: /:categories/:title
+
+
+collections:
+  blog:
+    output: true
+  software:
+    output: true
+    # sort_by: priority
+  desafios:
+    output: true
+  ejercicios:
+    output: true
+  apuntes:
+    output: true
+  notas:
+    output: true
+    permalink: /:categories/:title
+# PAGINATION
+paginate: 5
+paginate_path: /page:num/
+
+defaults:
+  -
+    scope:
+      type: "blog"
+    values:
+      show_next: true
+
+collections_dir: collections

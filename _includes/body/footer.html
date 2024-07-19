@@ -1,0 +1,38 @@
+<style>
+	footer {
+		background-color: #191919;
+	}
+	a.icon:hover {
+		color: #ffc107;
+	}
+	a.icon {
+		text-decoration: none;
+		color: #ddd;
+	}
+</style>
+<footer class="pt-4 text-light d-flex flex-column align-items-center">
+	<ul class="icons d-flex list-inline gap-3">
+		{% for socloc in site.social %}
+		{% if socloc[1] %}
+		{% if socloc[0] == 'email' %}
+		<li><a target="blank" href="{{ socloc[1] }}" class="icon">
+			<i class="fa-solid fa-envelope fa-xl"></i>
+		</a></li>
+		{% else %}
+		<li><a target="blank" href="{{ socloc[1] }}" class="icon">
+			<i class="fa-brands fa-{{ socloc[0] }} fa-xl"></i>
+		</a></li>
+		{% endif %}
+		{% endif %}
+		{% endfor %}
+	</ul>
+	<ul class="fs-5 list-inline">
+		<li>&copy; {% assign thisyear = site.time | date: "%Y" %}
+			{% if site.first_published %}
+			{% capture diff %}{{ site.first_published | minus:thisyear }}{% endcapture %}
+			{% if diff contains '-' %}{{ site.first_published }},{% endif %}
+			{% endif %}
+			{{ thisyear }}
+		{% if site.owner %}{{ site.owner }}{% else %}{{ site.title }}{% endif %}</li>
+	</ul>
+</footer>

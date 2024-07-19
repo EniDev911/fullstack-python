@@ -1,0 +1,13 @@
+---
+layout: default
+title: Notas del sitio
+---
+
+
+<ul class="list-group">
+	{% for item in site.notas %}
+	<a class="list-group-item list-group-item-action list-group-item-dark" href="{{ item.url | relative_url }}">
+		{{ item.date | date: "%Y-%m-%d" }} - {{ item.title }}
+	</a>
+	{% endfor %}
+</ul>

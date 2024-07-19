@@ -1,0 +1,43 @@
+@media print {
+
+	body {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	.group-btn-post, .code-header,
+	.fa-magnifying-glass {
+		display: none !important;
+	}
+	.copy-code-button {
+		display: none;
+	}
+	h1, h2, h3 {
+		color: #191919 !important;
+		text-shadow: none !important;
+		-webkit-text-stroke-width: 0 !important;
+		-webkit-text-stroke-color: 0;
+	}
+	.highlight {
+		box-shadow: none !important;
+	}
+	.node {
+		fill: #ff0 !important;
+	}
+	svg[id^="mermaid"] .default>* {
+		min-width: 60%;
+		fill: #ff0 !important;
+		color: #000 !important;
+		stroke: #000 !important;
+	}
+	iframe {
+		display: none;
+	}
+	ol li::marker {
+		color: #333;
+	}
+	/* HIDDEN */
+	.navbar {
+		display: none;
+	}
+
+}
