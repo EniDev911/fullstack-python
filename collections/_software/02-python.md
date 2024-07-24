@@ -7,7 +7,7 @@ img: /assets/svg/python.svg
 show_next: true
 ---
 
-## Instalación usando el instalador completo
+### Instalación usando el instalador completo
 
 1. Descargar el archivo ejecutable de instalación de la versión más reciente de Python que sea compatible con tu sistema operativo desde [página de descargas](https://www.python.org/downloads/){:target='_blank' class='link'}
 2. Ejecuta el archivo ejecutable de instalación de Python que se descargó anterioremente.<br>
@@ -31,7 +31,7 @@ pip --version
 
 ---
 
-## Instalación silenciosa
+### Instalación silenciosa
 
 Todas las opciones disponibles desde la interfaz de usuario del instalador (como en el caso anterior) también pueden especificarse desde la línea de comandos.
 

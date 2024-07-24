@@ -21,6 +21,7 @@ layout: default
 			{% case item.type %}
 			{% when 'guiado' %}{% assign color = 'text-bg-light' %}
 			{% when 'prueba' %}{% assign color = 'text-bg-danger' %}
+			{% when 'opcional' %}{% assign color = 'text-bg-secondary' %}
 			{% else %}{% assign color = 'text-bg-warning' %}
 			{% endcase %}
 			<span class="badge {{ color }}">
