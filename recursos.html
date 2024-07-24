@@ -24,7 +24,7 @@ pdf_path: '/assets/pdf'
 		item.addEventListener('click', (event) => {
 			// alert(event.target.dataset.href)
 			resource.children[0].href = event.target.dataset.href
-			resource.children[1].src = event.target.dataset.href
+			resource.querySelector("#ifr").src = event.target.dataset.href
 		})
 	})
 </script>
