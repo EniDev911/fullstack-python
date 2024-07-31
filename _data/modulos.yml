@@ -18,3 +18,7 @@
   text: "Aplicaciones web con Python Django"
   img: /assets/img/modulos/m6_aplicaciones_python_django.png
   url: desafios/m6/
+- title: "G9 - M7"
+  text: "Acceso a datos en aplicaciones Python Django"
+  img: /assets/img/modulos/m7_acceso_a_datos_python_django.png
+  url: desafios/m7/
