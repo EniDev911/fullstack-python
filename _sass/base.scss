@@ -119,11 +119,15 @@ ol li::marker {
   }
 }
 
+svg[id^="mermaid"] {
+  min-width: 60%;
+}
 @media (min-width: 1200px) {
 
   svg[id^="mermaid"] {
-    min-width: 60%;
+    min-width: 25%;
   }
+
   .contenido {
     padding: 25px;
   }

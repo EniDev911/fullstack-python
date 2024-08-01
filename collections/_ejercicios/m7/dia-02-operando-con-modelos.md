@@ -196,7 +196,35 @@ El modelo `Producto` debe tener:
 - id (autonumerico)
 - descripción
 
-En `Cliente`, generar un campo `ForeignKey` hacia `Producto`, donde un `Cliente`, puede tener varios productos. 
+En `Producto`, generar un campo `ForeignKey` hacia `Cliente`, donde un `Cliente` puede tener varios productos.
+
+{: align="center" }
+```mermaid
+%%{init: 
+	{ 
+		'erDiagram': 
+		{
+			'layoutDirection': "LR"},
+			'theme': 'dark'} 
+}%%
+---
+title: "Relación Cliente - Producto"
+---
+erDiagram
+    c[Cliente] {
+    	id int "PK"
+        usuario char(50)
+        nombre char(50)
+        apellido char(50)
+        correo char(50)
+    }
+    p[Producto] {
+    	id int "PK"
+    	descripcion char(50)
+    	cliente int "FK"
+    }
+    c ||--o{ p : tiene
+```
 
 Luego aplicar las migraciones y desde la shell de Django hacemos lo siguiente:
 
@@ -204,7 +232,8 @@ Luego aplicar las migraciones y desde la shell de Django hacemos lo siguiente:
 - Agregar dos productos
 - Listar el usuario y los productos
 
-> **Nota**: para recuperar los datos desde el cliente se debe ocupar el `Cliente` con el método `producto_set` (se utiliza el método `_set`, para realizar la consulta reversa). Una consulta directa sería buscar el cliente desde los productos, ya que un producto puede tener un cliente y un cliente muchos productos según nuestro modelo (producto->cliente). Con la consulta reversa, buscamos de una forma más natural para nosotros, desde el cliente a los productos, pero como cliente no tiene una clave foránea apuntando a los productos, debemos realizarlos de esta forma para que el orm haga la búsqueda inversa.
+> **Nota**: para recuperar los datos de los productos desde el cliente se debe ocupar el `Cliente` con el método `producto_set` (se utiliza el método `_set`, para realizar la consulta reversa). Una consulta directa sería buscar el cliente desde los productos, ya que un producto puede tener un cliente y un cliente muchos productos según nuestro modelo (producto->cliente). Con la consulta reversa, buscamos de una forma más natural para nosotros, desde el cliente a los productos, pero como cliente no tiene una clave foránea apuntando a los productos, debemos realizarlos de esta forma para que el orm haga la búsqueda inversa.
+
 
 ```py
 cliente = Cliente.objects.get(pk=1)
@@ -228,11 +257,11 @@ class Cliente(models.Model):
 	nombre = models.CharField(max_length=50)
 	apellido = models.CharField(max_length=50)
 	correo = models.EmailField(max_length=50)
-	productos = models.ForeignKey('Producto', on_delete=models.CASCADE, blank=True, null=True)
 
 class Producto(models.Model):
 	id = models.AutoField(primary_key=True)
 	descripcion = models.CharField(max_length=50)
+	cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 ```
 {: .nolineno }
 
@@ -262,22 +291,47 @@ python manage.py shell
 {% include codeHeader.html icon="python" %}
 ```py
 from testadl.models import Cliente, Producto
-p1 = Producto(descripcion="Bebida")
-p2 = Producto(descripcion="Pan")
-p1.save()
-p2.save()
-cliente = Cliente(usuario="pperez", nombre="Pedro", apellido="Perez", correo="pperez@mail.com")
-cliente.save()
+cliente1 = Cliente(usuario="pperez", nombre="Pedro", apellido="Perez", correo="pperez@mail.com")
+cliente1.save()
+cliente1.producto_set.create(descripcion="Bebida")
+cliente1.producto_set.create(descripcion="Pan")
 ```
 {: .nolineno }
 {% endtab %}
 {% tab stp_4 shell django %}
 ```py
-
+>>> from testadl.models import Cliente, Producto
+>>> cliente1 = Cliente(usuario="pperez", nombre="Pedro", apellido="Perez", correo="pperez@mail.com")
+>>> cliente1.save()
+>>> cliente1.producto_set.create(descripcion="Bebida")
+<Producto: Producto object (1)>
+>>> cliente1.producto_set.create(descripcion="Pan")
+<Producto: Producto object (2)>
 ```
 {: .nolineno }
 {% endtab %}
+{% endtabs %}
 
+{:start="5"}
+5. Consultamos el usuario y recuperamos los productos:
+
+{% tabs stp_5 %}
+{% tab stp_5 python %}
+{% include codeHeader.html icon="python" %}
+```py
+cliente_productos = Cliente.objects.first()
+cliente_productos.producto_set.all()
+```
+{: .nolineno }
+{% endtab %}
+{% tab stp_5 shell django %}
+```py
+>>> cliente_productos = Cliente.objects.first()
+>>> cliente_productos.producto_set.all()
+<QuerySet [<Producto: Producto object (1)>, <Producto: Producto object (2)>]>
+```
+{: .nolineno }
+{% endtab %}
 {% endtabs %}
 
 
