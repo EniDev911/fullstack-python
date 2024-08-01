@@ -8,6 +8,8 @@ show: true
 show_next: true
 ---
 
+## Ejercicio propuesto
+
 En este ejercicio crearemos un proyecto y generamos operaciones sobre datos en el modelo **user**.
 
 Para esto utilizaremos la base de datos por defecto que es sqlite y para realizar los ejercicios **la shell de django**.
@@ -174,3 +176,40 @@ ltorvalds
 {: .nolineno }
 {% endtab %}
 {% endtabs %}
+
+---
+
+## Ejercicio propuesto 2
+
+Sobre el mismo proyecto anterior anterior, crear un modelo llamado `Cliente`, y otro llamado `Producto`, `Cliente` debe tener los campos:
+
+- id (autoincremento)
+- usuario
+- nombre
+- apellido
+- correo
+
+> **Nota**: El **id**, lo podemos definir como un tipo de dato auto-númerico y con el parámetro `primary-key=True`. Si no lo hacemos el ORM automáticamente lo define. Por lo tanto al definirlo, podemos utilizar un nombre distinto para el campo si así lo deseamos.
+
+El modelo `Producto` debe tener:
+
+- id (autonumerico)
+- descripción
+
+En `Cliente`, generar un campo `ForeignKey` hacia `Producto`, donde un `Cliente`, puede tener varios productos. 
+
+Luego aplicar las migraciones y desde la shell de Django hacemos lo siguiente:
+
+- Crear un usuario
+- Agregar dos productos
+- Listar el usuario y los productos
+
+> **Nota**: para recuperar los datos desde el cliente se debe ocupar el `Cliente` con el método `producto_set` (se utiliza el método `_set`, para realizar la consulta reversa). Una consulta directa sería buscar el cliente desde los productos, ya que un producto puede tener un cliente y un cliente muchos productos según nuestro modelo (producto->cliente). Con la consulta reversa, buscamos de una forma más natural para nosotros, desde el cliente a los productos, pero como cliente no tiene una clave foránea apuntando a los productos, debemos realizarlos de esta forma para que el orm haga la búsqueda inversa.
+
+```py
+cliente = Cliente.objects.get(pk=1)
+productos = cliente.productos_set.all()
+```
+{: .nolineno }
+
+> **Nota**: Al utilizar pk=1, estamos refiriéndonos al campo "Primary Key" con una abreviación, también podemos utilizar el nombre del campo, por ejemplo `id=1`.
