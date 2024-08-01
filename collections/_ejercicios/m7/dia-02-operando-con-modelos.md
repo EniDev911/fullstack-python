@@ -8,11 +8,13 @@ show: true
 show_next: true
 ---
 
-## Ejercicio propuesto
+## Ejercicio propuesto 1
 
 En este ejercicio crearemos un proyecto y generamos operaciones sobre datos en el modelo **user**.
 
 Para esto utilizaremos la base de datos por defecto que es sqlite y para realizar los ejercicios **la shell de django**.
+
+### Solución
 
 1. Iniciamos un nuevo entorno virtual y creamos un proyecto nuevo de django:
 
@@ -181,6 +183,75 @@ ltorvalds
 
 ## Ejercicio propuesto 2
 
+Sobre el mismo proyecto anterior, vamos a crear a 2 usuarios en la base de datos del proyecto y vamos a realizar algunas operaciones SQL sobre ellas.
+
+### Solución
+
+1. Entrar en el shell de Django:
+
+{% include codeHeader.html icon="terminal" %}
+```bash
+python manage.py shell
+```
+
+{:start="2"}
+2. Creamos los dos usuarios:
+
+{% tabs stp2 %}
+{% tab stp2 python %}
+{% include codeHeader.html icon="python" %}
+```py
+from django.contrib.auth.models import User
+User.objects.create_user(username='jhondoe', password='123_456')
+User.objects.create_user(username='chucknorris', password='chuck123')
+```
+{: .nolineno }
+{% endtab %}
+{% tab stp2 shell django %}
+```py
+>>> from django.contrib.auth.models import User
+>>> User.objects.create_user(username='jhondoe', password='123_456')
+<User: jhondoe>
+>>> User.objects.create_user(username='chucknorris', password='chuck123')
+<User: chucknorris>
+```
+{: .nolineno }
+{% endtab %}
+{% endtabs %}
+
+{:start="3"}
+3. Realizar una consulta SQL para traer los dos usuarios y desplegarlos en pantalla:
+
+{% tabs stp3 %}
+{% tab stp3 python %}
+{% include codeHeader.html icon="python" %}
+```py
+from django.db import connection
+with connection.cursor() as cursor:
+	cursor.execute("SELECT username FROM auth_user")
+	for row in cursor.fetchall():
+		print(row[0])
+```
+{: .nolineno }
+{% endtab %}
+{% tab stp3 shell django %}
+```py
+>>> from django.db import connection
+>>> with connection.cursor() as cursor:
+... 	cursor.execute("SELECT username FROM auth_user")
+... 	for row in cursor.fetchall():
+... 		print(row[0])
+chucknorris
+jhondoe
+```
+{: .nolineno }
+{% endtab %}
+{% endtabs %}
+
+---
+
+## Ejercicio propuesto 3
+
 Sobre el mismo proyecto anterior anterior, crear un modelo llamado `Cliente`, y otro llamado `Producto`, `Cliente` debe tener los campos:
 
 - id (autoincremento)
@@ -333,5 +404,3 @@ cliente_productos.producto_set.all()
 {: .nolineno }
 {% endtab %}
 {% endtabs %}
-
-
