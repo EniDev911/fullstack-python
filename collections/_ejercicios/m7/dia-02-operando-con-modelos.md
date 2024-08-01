@@ -213,3 +213,71 @@ productos = cliente.productos_set.all()
 {: .nolineno }
 
 > **Nota**: Al utilizar pk=1, estamos refiriéndonos al campo "Primary Key" con una abreviación, también podemos utilizar el nombre del campo, por ejemplo `id=1`.
+
+### Solución
+
+1. Creamos dos modelos en el archivo **testadl/models.py**:
+
+{% include codeHeader.html file="testadl/models.py" %}
+```py
+from django.db import models
+
+class Cliente(models.Model):
+	id = models.AutoField(primary_key=True)
+	usuario = models.CharField(max_length=50)
+	nombre = models.CharField(max_length=50)
+	apellido = models.CharField(max_length=50)
+	correo = models.EmailField(max_length=50)
+	productos = models.ForeignKey('Producto', on_delete=models.CASCADE, blank=True, null=True)
+
+class Producto(models.Model):
+	id = models.AutoField(primary_key=True)
+	descripcion = models.CharField(max_length=50)
+```
+{: .nolineno }
+
+
+{:start="2"}
+2. Desde la consola ejecutamos las migraciones:
+
+{% include codeHeader.html icon="terminal" %}
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+{:start="3"}
+3. Entramos a la shell:
+
+{% include codeHeader.html icon="terminal" %}
+```bash
+python manage.py shell
+```
+
+{:start="4"}
+4. Creamos un cliente y dos productos.
+
+{% tabs stp_4 %}
+{% tab stp_4 python %}
+{% include codeHeader.html icon="python" %}
+```py
+from testadl.models import Cliente, Producto
+p1 = Producto(descripcion="Bebida")
+p2 = Producto(descripcion="Pan")
+p1.save()
+p2.save()
+cliente = Cliente(usuario="pperez", nombre="Pedro", apellido="Perez", correo="pperez@mail.com")
+cliente.save()
+```
+{: .nolineno }
+{% endtab %}
+{% tab stp_4 shell django %}
+```py
+
+```
+{: .nolineno }
+{% endtab %}
+
+{% endtabs %}
+
+
