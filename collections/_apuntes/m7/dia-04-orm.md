@@ -28,4 +28,41 @@ Mirando las relaciones desde el punto de vista de la bases de datos relacionales
 
 Por ejemplo, una empresa podría decidir asignar una oficina a solamente un empleado. Entonces, un empleado puede tener solo una oficina. La misma empresa podría también decidir que un departamento puede tener solo un gerente, entonces un gerente puede dirigir solamente un departamento.
 
-[![](https://mermaid.ink/img/pako:eNqFkV9PwjAUxb9Kc580GWRlYyt9RhMjYIzyIjOkWa_QSNul6xKR7btbGP550PjStLfn3N_JvQcorUTggG6qxMYJXZjC69VcGLFB90wOx3fhjdBIyq1wF-P4khSwuHski-VsVkD_vxO1X_8nqmytvLLmb013PORqipVwXqPxXwEk1qVT1bedxr8ydB98rSRRxgfB9S351JDl4uZ-efUDpUnbDgZtSyThxCs0CBFodFooGYYS2CS08FvUWAAPVync69HfBZ1ovH3YmxK4dw1G0FRSeDyPEfiL2NWhWgkD_ABvwEd0NMzGjMXJZDyJaZ4lEeyBJ-mQhkKWMpaynFLaRfBubegQD_M8T5M8yVgeM5pNRhGgVN66eb-00-5OiKeToc_hbLPZnvndB-Mxmfg?type=png){:width="300"}](https://mermaid.live/edit#pako:eNqFkV9PwjAUxb9Kc580GWRlYyt9RhMjYIzyIjOkWa_QSNul6xKR7btbGP550PjStLfn3N_JvQcorUTggG6qxMYJXZjC69VcGLFB90wOx3fhjdBIyq1wF-P4khSwuHski-VsVkD_vxO1X_8nqmytvLLmb013PORqipVwXqPxXwEk1qVT1bedxr8ydB98rSRRxgfB9S351JDl4uZ-efUDpUnbDgZtSyThxCs0CBFodFooGYYS2CS08FvUWAAPVync69HfBZ1ovH3YmxK4dw1G0FRSeDyPEfiL2NWhWgkD_ABvwEd0NMzGjMXJZDyJaZ4lEeyBJ-mQhkKWMpaynFLaRfBubegQD_M8T5M8yVgeM5pNRhGgVN66eb-00-5OiKeToc_hbLPZnvndB-Mxmfg)
+{: align="center" }
+```mermaid
+%%{init: 
+	{
+		'theme': 'dark'
+	}
+}%%
+erDiagram
+	m[Manager] {
+		name char(50) "NOT NULL"
+		last_name char(50) "NOT NULL"
+		position char(50) "NOT NULL"
+	}
+	d[Department] {
+		description char(100) "NOT NULL"
+		manager_id int "FK NOT NULL UNIQUE"
+	}
+	m ||--|| d : tiene
+```
+
+Ahora, si llevamos esto al ORM, podemos decir que las filas son objetos, por lo tanto, el objeto tiene un campo de un tipo especial que lo relaciona con otro objeto.
+
+El tipo especial de campo del que hablamos se llama `OneToOneField`. Este campo nos permite relacionar dos objetos entre sí (uno a uno), por ejemplo un empleado con su oficina, o un autor con un perfil:
+
+{: align="center" }
+```mermaid
+%%{init: 
+	{
+		'theme': 'dark'
+	}
+}%%
+classDiagram
+	direction LR
+	Office "1" <--> "1" Employee
+	Department "1" <--> "1" Manager
+```
+
+Se diferencia del campo `ForeignKey` en que `OneToOne` nos permite realizar solamente una relación uno a uno y en la query se devolverá solamente un objeto relacionado.
