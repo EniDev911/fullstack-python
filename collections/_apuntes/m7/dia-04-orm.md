@@ -7,7 +7,6 @@ show: true
 show_next: true
 ---
 
-
 ### Parámetros transversales
 
 También existen una serie de parámetros transversales a los campos, los cuales definiremos a continuación:
@@ -66,3 +65,39 @@ classDiagram
 ```
 
 Se diferencia del campo `ForeignKey` en que `OneToOne` nos permite realizar solamente una relación uno a uno y en la query se devolverá solamente un objeto relacionado.
+
+#### Ejemplo OneToOneField
+
+{% include codeHeader.html icon="python" %}
+```py
+from django.db import models
+
+class Modelo1(models.Model):
+	nombre_relacion = models.OneToOneField('Modelo2', blank=False, null=False, on_delete=models.CASCADE)
+```
+{: .nolineno }
+
+En el ejemplo podemos ver una serie de elementos. El primero es el nombre de la relación, el cual **es una instancia del campo OneToOneField**, a través del cual se tendrá acceso al campo relacionado.
+
+Para el parámetro `on_delete` Django nos provee 6 opciones de comportamiento dependiendo de nuestros requerimientos:
+
+{: .list }
+**CASCADE**
+: Cuando se elimina el objeto al que hace referencia, también elimina los objetos que tienen referencias
+
+**PROTECT**
+: Prohíbe la eliminación del objeto referenciado. Para eliminarlo tendrá que eliminar todos los objetos que hacen referencia a él manualmente. Equivalente de SQL: **RESTRICT**
+
+**SET_NULL**
+: Establece la referencia en **NULL** (requiere que el campo sea anulable). Por ejemplo, cuando se elimina un usuario, es posible que desee mantener los comentarios que publicó en las publicaciones del blog, pero digamos que fue publicado por un usuario anónimo (o eliminado). Equivalente de SQL: **SET_NULL**
+
+**SET_DEFAULT**
+: Establece el valor por defecto. Equivalente de SQL: **SET_DEFAULT**
+
+**SET**
+: Establece  un valor dado. Esto no es parte de SQL estándar, es manejado completamente por Django.
+
+**DO_NOTHING**
+: Probablemente sea una mala idea ya que esto crearía problemas de integridad en la base de datos (haciendo referencia a un objeto que en realidad no existe). Equivalente de SQL: **NO_ACTION**.
+
+> **NOTA**:<br>El uso de las opciones anteriores, va a depender de los requerimientos que tengamos, pero una de las más comúnmente usada es **CASCADE** ya que nos permite eliminar datos y no dejar datos relacionados huérfanos o corruptos.
