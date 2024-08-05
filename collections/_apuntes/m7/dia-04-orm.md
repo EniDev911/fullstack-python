@@ -101,3 +101,76 @@ Para el parámetro `on_delete` Django nos provee 6 opciones de comportamiento de
 : Probablemente sea una mala idea ya que esto crearía problemas de integridad en la base de datos (haciendo referencia a un objeto que en realidad no existe). Equivalente de SQL: **NO_ACTION**.
 
 > **NOTA**:<br>El uso de las opciones anteriores, va a depender de los requerimientos que tengamos, pero una de las más comúnmente usada es **CASCADE** ya que nos permite eliminar datos y no dejar datos relacionados huérfanos o corruptos.
+
+### Relación Many to Many
+
+Una relación Many to Many (muchos a muchos) denota un tipo de cardinalidad en donde un registro de una tabla A puede estar relacionada a muchos registros de una tabla B y, a su vez, los registros de la tabla B pueden estar relacionados a muchos registros de la tabla A.
+
+Un ejemplo más concreto puede ser la relación entre las tablas Libro y Autor. Un libro puede tener varios, y su vez un autor puede haber participado o escrito muchos libros.
+
+{: align="center" }
+```mermaid
+%%{init: { 'theme': 'dark'}}%%
+erDiagram
+	Book }|--|{ Author : "N - N"
+```
+
+Al igual que en la relación One to One, en Many to Many tenemos un campo para realizar la relación, este es ManyToManyField.
+
+Para el ejemplo que realizaremos, debemos generar estos dos modelos:
+
+{% include codeHeader.html file="views.py" %}
+```py
+from django.db import models
+
+class Libro(models.Model):
+	titulo = models.CharField(max_length=100, null=False, blank=False)
+	year = models.IntegerField(null=False, blank=False)
+
+class Autor(models.Model):
+	nombre = models.CharField(max_length=50, null=False, blank=False)
+	apellido = models.CharField(max_length=50, null=False, blank=False)
+	libros = models.ManyToManyField(Libro, related_name="autores")
+```
+{: .nolineno }
+
+En el código anterior, podemos ver el modelo `Libro` que tiene dos campos **titulo** y **year**. Por su lado, el modelo `Autor` tiene los campos **nombre**, **apellido** y **libros**, donde libros es la relación many to many. En este caso, pusimos la relación en `Autor`.
+
+En el campo ManyToManyField, tenemos 2 parámetros, el primero es el objeto con el cual se relaciona, y el segundo, **related_name**, nos permite agregar un nombre para la relación inversa ya que sino lo utilizamos, tenemos que volver a ocupar el sufijo **_set** que nos permite realizar la query inversa.
+
+#### Tabla intermedia con campos extra
+
+En ocasiones, los requerimientos del proyecto nos pueden llevar a necesitar agregar información acerca de la relación, por ejemplo, la fecha de creación de la relación y algún identificador de quien la creó, entre otras. Para esos casos Django nos permite utilizar un modelo personalizado haciendo las veces del modelo intermedio anteriormente revisado.
+
+{: align="center" }
+```mermaid
+---
+config:
+  theme: dark
+---
+erDiagram
+	a[Autor] {
+		id int "NOT NULL PK"
+		nombre char(50) "NOT NULL"
+		apellido char(50) "NOT NULL"
+	}
+	al[AutorLibro] {
+		id int "NOT NULL PK"
+		autor_id int "NOT NULL FK1"
+		libro_id int "NOT NULL FK2"
+		creado_por char(100) "NOT NULL"
+		creacion datetime "NOT NULL"
+	}
+	l[Libro] {
+		id int "NOT NULL PK"
+		titulo char(100) "NOT NULL"
+		year int "NOT NULL"
+	}
+
+	a ||--|{ al : "1-N"
+	l ||--|{ al : "1-N"
+```
+
+Para realizar esta relación personalizada utilizamos un par de elementos extra. Primero, debemos crear un modelo de relación ya que necesitamos uno más completo que el provisto por el ORM. Este modelo utiliza el campo `ForeignKey` donde creamos dos claves, una apuntando a `Autor` y otra a `Libro`, además de agregar los nuevos campos que necesitamos.
+
+
