@@ -73,10 +73,10 @@ Registramos la aplicación en `settings.py` y generamos los modelos correspondie
 from django.db import models
 
 class Conductor(models.Model):
-	rut = models.CharField(max_length=9, primary_key=True), 
+	rut = models.CharField(max_length=9, primary_key=True)
 	nombre = models.CharField(max_length=50, null=False, blank=False)
 	apellido = models.CharField(max_length=50, null=False, blank=False)
-	fecha_nac = models.DateField(null=False, blank=false)
+	fecha_nac = models.DateField(null=False, blank=False)
 
 class Direccion(models.Model):
 	calle = models.CharField(max_length=50, null=False, blank=False)
@@ -85,7 +85,7 @@ class Direccion(models.Model):
 	comuna = models.CharField(max_length=50, null=False, blank=False)
 	ciudad = models.CharField(max_length=50, null=False, blank=False)
 	region = models.CharField(max_length=50, null=False, blank=False)
-	conductor = models.OneToOneField("Conductor", null=False, blank=false, on_delete=models.CASCADE)
+	conductor = models.OneToOneField("Conductor", null=False, blank=False, on_delete=models.CASCADE)
 
 class Vehiculo(models.Model):
 	patente = models.CharField(max_length=6, null=False, blank=False)
@@ -93,5 +93,68 @@ class Vehiculo(models.Model):
 	modelo = models.CharField(max_length=50, null=False, blank=False)
 	year = models.DateField(null=False, blank=False)
 	conductor = models.ForeignKey("Conductor", null=False, blank=False, on_delete=models.CASCADE)
+```
+{: .nolineno }
+
+
+Creamos el archivo `registro_conductor/service.py`:
+
+{% include codeHeader.html file="service.py" %}
+```py
+from .models import Conductor, Direccion, Vehiculo
+from datetime import date
+
+def imprimir_modelos():
+	conductores = Conductor.objects.all()
+	for c in conductores:
+		print(f"[{c.rut}]: {c.nombre} {c.apellido} - {c.fecha_nac}")
+		if hasattr(c, "direccion"):
+			print(f"direccion: {d.calle} {d.numero} / {d.comuna}  {d.ciudad} / {d.region}")
+		if hasattr(c, "vehiculo_set"):
+			vehiculos = c.vehiculo_set.all()
+			for v in vehiculos:
+				print(f"Vehiculo: {v.marca} / {v.modelo}  {v.patente} / {v-year}")
+
+def crear_conductor(rut, nombre, apellido, fecha_nac):
+	if not rut.isdigit() and not isinstance(fecha_nac, date):
+		print("por favor validar los datos del conductor")
+		return
+
+	conductor = Conductor(rut=rut, nombre=nombre, apellido=apellido, fecha_nac=fecha_nac)
+	conductor.save()
+	imprimir_modelos()
+
+def obtener_conductor(rut):
+	return Conductor.objects.get(rut=rut)
+
+def crear_direccion(conductor, calle, dpto, comuna, ciudad, region):
+	direccion = Direccion(
+		conductor=conductor,
+		calle=calle,
+		dpto=dpto,
+		comuna=comuna,
+		ciudad=ciudad,
+		region=region
+	)
+	direccion.save()
+	imprimir_modelos()
+
+def agregar_un_vehiculo(conductor, patente, marca, modelo, year):
+	vehiculo = Vehiculo(
+		conductor=conductor,
+		patente=patente,
+		marca=marca,
+		modelo=modelo,
+		year=year
+	)
+	vehiculo.save()
+	imprimir_modelos()
+
+def eliminar_vehiculo(vehiculo):
+	Vehiculo.objects.get(id=vehiculo.id).delete()
+	imprimir_modelos()
+
+def eliminar_conductor(conductor):
+	Conductor.objects.get(rut=conductor.rut).delete()
 ```
 {: .nolineno }
