@@ -4,8 +4,6 @@ if (document.getElementById('ifr') !== null) {
 	}
 }
 
-
-
 const textToSpeech = (text) => {
 	let utterance = new SpeechSynthesisUtterance(text);
 	utterance.lang = "es-CL";
