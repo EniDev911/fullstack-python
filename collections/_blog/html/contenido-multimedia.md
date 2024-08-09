@@ -66,7 +66,7 @@ Una de las primeras ventajas que nos ofrece estas etiquetas es la de utilizar fo
 
 {% tabs ex_picture_cat %}
 {% tab ex_picture_cat html %}
-{% include codeHeader.html icon="html" %}
+{% include codeHeader.html icon="html" codepen="y" %}
 ```html
 <picture>
   <source media="(min-width: 650px)" srcset="https://googlechrome.github.io/samples/picture-element/images/kitten-large.png">
@@ -78,7 +78,7 @@ Una de las primeras ventajas que nos ofrece estas etiquetas es la de utilizar fo
 {: .nolineno }
 {% endtab %}
 {% tab ex_picture_cat resultado %}
-<picture style="display: block; width: 100%; text-align: center">
+<picture style="display: block; width: 100%; text-align: center" id="picture">
   <source media="(min-width: 650px)" srcset="https://googlechrome.github.io/samples/picture-element/images/kitten-large.png">
   <source media="(min-width: 465px)" srcset="https://googlechrome.github.io/samples/picture-element/images/kitten-medium.png">
   <!-- img tag para para navegadores que no soportan el elemento <picture> -->
@@ -86,6 +86,8 @@ Una de las primeras ventajas que nos ofrece estas etiquetas es la de utilizar fo
 </picture>
 {% endtab %}
 {% endtabs %}
+
+> **Nota**:<br>La etiqueta `source`{: .tag } especifica recursos de medios múltiples para las etiquetas `picture`{: .tag }, `audio`{: .tag }, `video`{: .tag }.
 
 ---
 
@@ -129,7 +131,7 @@ Un primer ejemplo muy básico para colocar un audio en nuestra página sería ut
 {% endtab %}
 {% endtabs %}
 
-La etiqueta `audio`{: .tag } también permite utilizar etiquetas `source`{: .tag } para mayor control sobre los navegadores.
+La etiqueta `audio`{: .tag } también permite utilizar la etiqueta `source`{: .tag } para mayor control sobre los navegadores.
 
 {% include codeHeader.html icon='html' %}
 ```html
@@ -201,55 +203,50 @@ Si quisieras un control más personalizado, podemos usar JavaScript para manipul
 {: .nolineno }
 {% endtab %}
 {% tab audio_2 resultado %}
-<body>
-    <audio id="myAudio">
-        <source src="https://github.com/EniDev911/assets/blob/main/audios/serene-piano.mp3?raw=true" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
-    <div class="controls">
-        <button class="button" onclick="playAudio()">Reproducir</button>
-        <button class="button" onclick="pauseAudio()">Pausar</button>
-        <button class="button" onclick="stopAudio()">Detener</button>
-    </div>
+<audio id="myAudio">
+    <source src="https://github.com/EniDev911/assets/blob/main/audios/serene-piano.mp3?raw=true" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+</audio>
+<div class="controls">
+    <button class="button" onclick="playAudio()">Reproducir</button>
+    <button class="button" onclick="pauseAudio()">Pausar</button>
+    <button class="button" onclick="stopAudio()">Detener</button>
+</div>
 <script>
-    var audio = document.getElementById('myAudio');
+  var audio = document.getElementById('myAudio');
 
-    function playAudio() {
-        audio.play();
-    }
+  function playAudio() {
+      audio.play();
+  }
 
-    function pauseAudio() {
-        audio.pause();
-    }
+  function pauseAudio() {
+      audio.pause();
+  }
 
-    function stopAudio() {
-        audio.pause();
-        audio.currentTime = 0; // Reinicia la reproducción al inicio
-    }
+  function stopAudio() {
+      audio.pause();
+      audio.currentTime = 0; // Reinicia la reproducción al inicio
+  }
 </script>
-</body>
 {% endtab %}
 {% endtabs %}
 
 
 ---
 
-## Videos
+## videos
 
-En  **HTML5** se introduce la interesante posibilidad de **mostrar videos directamente** desde nuestro nevagdor. De hecho, si arrastramos un video a la ventana del navegador, veremos que comienza a reproducirse en él. Para insertar videos en nuestras páginas HTML tenemos que utilizar la etiqueta `video`{: .video }, que junto a la etiqueta `source`{: .tag } nos permiten utilizar estas capacidades multimedia de **HTML5**.
+En  **HTML5** se introduce la interesante posibilidad de **mostrar videos directamente** desde nuestro nevagdor. De hecho, si arrastramos un video a la ventana del navegador, veremos que comienza a reproducirse en él. Para insertar videos en nuestras páginas HTML tenemos que utilizar la etiqueta `video`{: .video }, que junto a la etiqueta `source`{: .tag } nos permiten utilizar estas capacidades multimedia en documentos de **HTML5**.
 
-
-La etiqueta `source`{: .tag } especifica recursos de medios múltiples para las etiquetas `picture`{: .tag }, `audio`{: .tag }, `video`{: .tag }.
-
-### Video (*modo básico*)
+### modo básico
 
 La etiqueta `video`{: .tag } tiene varios atributos como veremos a continuación:
 
 {: .table .table-dark }
 |Atributo|Valor|Descripción|
 |:-------|:----|:----------|
-|`src`|Dirección `url`|Video a reproducir. (**Obligatorio** si actua como etiqueta contenedora)|
-|`poster`|Dirección `url`|Muestra una imagen a modo de presentación.|
+|`src`|URL|Video a reproducir. (**Obligatorio** si actua como etiqueta contenedora)|
+|`poster`|URL|Muestra una imagen a modo de presentación.|
 |`preload`|**auto** \| metadata \| none|Indica como realizar la precarga del video.|
 |`muted`|**false**|Establece el video sin sonido (silenciado).|
 |`constrols`|**false**|Muestra los controles de reproducción. Por defecto no se muestran.|
@@ -258,57 +255,89 @@ La etiqueta `video`{: .tag } tiene varios atributos como veremos a continuación
 
 Un primer ejemplo muy básico para colocar un video en nuestra página web sería el siguiente:
 
-
 {% tabs ex_video_normal %}
 {% tab ex_video_normal html %}
 {% include codeHeader.html icon="html" %}
 ```html
-<video src="video.mp4" width="640" height="460"></video>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Video en HTML5</title>
+</head>
+<body>
+    <video width="350" height="350">
+        <source src="https://cdn.pixabay.com/video/2015/08/08/117-135736418_large.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+</body>
+</html>
 ```
 {: .nolineno }
 {% endtab %}
 {% tab ex_video_normal resultado %}
-<video src="https://eidev911.github.io/fullstackjsg33/src/guides/html/fast-guide/assets/estrella_de_la_muerte.mp4" class="w-100"></video>
+<video width="350" height="350" style="object-fit: cover">
+    <source src="https://cdn.pixabay.com/video/2015/08/08/117-135736418_large.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de video.
+</video>
 {% endtab %}
 {% endtabs %}
 
-Sin embargo, esto mostrará el primer fotograma del video, con un tamaño de 640x460, pero se verá como una imagen, ya que no muestra los controles del video y tampoco tiene la autoreproducción activada. Podríamos solucionarlo indicando los atributos `controls` y `autoplay`.
+Sin embargo, esto mostrará el primer fotograma del video, con un tamaño de 350x350, pero se verá como una imagen, ya que no muestra los controles del video y tampoco tiene la autoreproducción activada. Podríamos solucionarlo indicando los atributos `controls` y `autoplay`.
 
-Otro ejemplo básico para colocar un video pero mostrando los constroles:
+Otro ejemplo básico para colocar un video pero mostrando los controles:
 
 {% tabs ex_video_controls %}
 {% tab ex_video_controls html %}
-{% include codeHeader.html icon="html" %}
+{% include codeHeader.html icon="html" codepen="y" title="Ejemplo de video en HTML5" %}
 ```html
-<video src="video.mp4" width="640" height="460" controls></video>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Video en HTML5</title>
+</head>
+<body>
+    <h1>Reproductor de Video en HTML5</h1>
+    <video controls width="350" height="350">
+        <source src="https://cdn.pixabay.com/video/2015/08/08/117-135736418_large.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+</body>
+</html>
 ```
 {: .nolineno }
 {% endtab %}
 {% tab ex_video_controls resultado %}
-<video src="https://enidev911.github.io/fullstackjsg33/src/guides/html/fast-guide/assets/estrella_de_la_muerte.mp4" class="w-100" controls></video>
+<video controls width="350" height="350" style="object-fit: cover">
+  <source src="https://cdn.pixabay.com/video/2015/08/08/117-135736418_large.mp4" type="video/mp4">
+</video>
 {% endtab %}
 {% endtabs %}
 
 ### El atributo (*poster*)
 
-Por defecto, las etiquetas `video`{: .tag } muestran el primer fotograma del video enlazado o una pantalla negra inicial. Sin embargo, podemos mostrar una imagen personalizada como si fuera una carátula o una miniatura de un video de Youtube, de tal forma que el video no se llega a mostrar hasta que el usuario pulsa en el botón de **play**.
+Por defecto, las etiquetas `video`{: .tag } muestran el primer fotograma del video enlazado o una pantalla negra inicial. Sin embargo, podemos mostrar una imagen personalizada como si fuera una carátula o una miniatura de un video de Youtube, de tal forma que el video no se llega a mostrar hasta que el usuario pulsa en el botón de *play*.
 
-Para ello, utilizaremos el atributo `poster`, que funciona de forma similar al tributo `src` de las etiquetas `img`{: .tag }. En ella podemos vincular introduciendo la dirección de la imagen que queremos utilizar:
+Para ello, utilizaremos el atributo `poster`, que funciona de forma similar al tributo `src` de las etiquetas `img`{: .tag }. En ella podemos incrustar la imagen introduciendo la dirección de destino de respectiva imagen que queremos mostrar:
 
 {% tabs video_con_poster %}
 {% tab video_con_poster html %}
-{% include codeHeader.html icon="html" %}
+{% include codeHeader.html icon="html" codepen="y" title="Ejemplo video con atributo poster" %}
 ```html
-<video src="video.mp4"
-	type="video/mp4"
-	poster="poster.jpg" 
+<video
+  src="https://github.com/EniDev911/assets/blob/main/videos/darth-maul_vs_obiwan.mp4?raw=true"
+  type="video/mp4"
+  poster="https://pbs.twimg.com/media/EhADsOUXYAYOuOp.jpg" 
 	controls>
 </video>
 ```
 {: .nolineno }
 {% endtab %}
 {% tab video_con_poster resultado %}
-<video poster="https://pbs.twimg.com/media/EhADsOUXYAYOuOp.jpg" src="{{ page.video_path | relative_url }}/maul_vs_obiwan.mp4" type="video/mp4" class="w-100" controls></video>
+<video src="https://github.com/EniDev911/assets/blob/main/videos/darth-maul_vs_obiwan.mp4?raw=true" poster="https://pbs.twimg.com/media/EhADsOUXYAYOuOp.jpg" type="video/mp4" class="w-100" controls></video>
 {% endtab %}
 {% endtabs %}
 
