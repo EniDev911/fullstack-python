@@ -19,9 +19,10 @@ Para incluir imágenes en el contenido de la página, podemos utilizar la etique
 |`width`|Indica el ancho de la imagen en píxeles. (sin usar la unidad px)|
 |`height`|Indica el alto de la imagen en píxeles. (sin usar la unidad px)|
 
+
 ## Nuevas etiquetas de imágenes
 
-**HTML 5.1** incorporta un nuevo sistema para utilizar imágenes en nuestros documento **HTML** de forma mucho más flexible que la tradicional etiqueta `img`{: .tag } que nos permitirá mostrar imágenes dependiendo de nuestras necesidades. Para ello, podemos utilizar  las siguientes etiquetas:
+**HTML5** incorporó un nuevo sistema para utilizar imágenes en nuestros documento **HTML** de forma mucho más flexible que la tradicional etiqueta `img`{: .tag } que nos permitirá mostrar imágenes dependiendo de nuestras necesidades. Para ello, podemos utilizar  las siguientes etiquetas:
 
 
 {: .table .table-dark  }
@@ -42,7 +43,6 @@ Como podemos ver, lo interesante está en la etiqueta `source`{: .tag }, que tie
 |`media`|Condición que se debe cumplir para que se muestre la imagen.|
 |`type`|Tipo de formato de imagen. (Opcional)|
 
-
 Una de las primeras ventajas que nos ofrece estas etiquetas es la de utilizar formatos diferentes, dependiendo del soporte del navegador. Podríamos hacer algo como lo siguiente:
 
 {% tabs ex_picture_cat %}
@@ -59,9 +59,6 @@ Una de las primeras ventajas que nos ofrece estas etiquetas es la de utilizar fo
 {: .nolineno }
 {% endtab %}
 {% tab ex_picture_cat resultado %}
-
-A continuación veremos la imagén que cumpla con las condiciones en el código anterior:
-
 <picture style="display: block; width: 100%; text-align: center">
   <source media="(min-width: 650px)" srcset="https://googlechrome.github.io/samples/picture-element/images/kitten-large.png">
   <source media="(min-width: 465px)" srcset="https://googlechrome.github.io/samples/picture-element/images/kitten-medium.png">
@@ -76,7 +73,7 @@ A continuación veremos la imagén que cumpla con las condiciones en el código 
 
 ## Audios
 
-En **html5** también es posible añadir archivos de audio y colocar sonidos, podscats, o simplemente música como ambientación.
+En **HTML5** también es posible añadir archivos de audio y colocar sonidos, podscats, o simplemente música como ambientación.
 
 Para ello tenemos la etiqueta `audio`{: .tag } que tiene algunos atributos disponibles para utilizar. Vamos a ver para que sirve cada uno:
 
@@ -93,6 +90,18 @@ Un primer ejemplo muy básico para colocar un audio en nuestra página sería ut
 <audio src="audio.mp3"></audio>
 ```
 {: .nolineno }
+
+Otra forma de incluir un audio pero de manera más controlada es el siguiente ejemplo:
+
+{% include codeHeader.html icon='html' %}
+```html
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg">
+  Tu navegador no soporta el elemento de audio.
+</audio>
+```
+{: .nolineno }
+
 
 ---
 

@@ -5,10 +5,6 @@
 	}
 }
 
-.cursor {
-	cursor: pointer;
-}
-
 .tag {
 	font-weight: bold;
 	&::before {
@@ -30,9 +26,6 @@
 	min-width: max-content;
 }
 
-thead {
-	background: #191919;
-}
 
 :target {
 	scroll-margin-top: 70px;
@@ -144,19 +137,25 @@ details[open] > summary {
 }
 // Table
 .table  {
-	border-collapse: collapse;
-	border-radius: .6em;
+	// border-collapse: collapse;
 	overflow: hidden;
-	box-shadow: 2px 3px 12px 2px #0006;
 	color: #ff0;
+	border-radius: .4rem;
+	border: 1px solid #444;
+	box-shadow: 0 0 0 0.8px #444;
 }
+
+
 .table th,
 .table td {
-	border: none;
+	border: 1px solid #444;
+}
+.table thead {
+	border: 1px solid #444;
 }
 .table thead,
 .table tr {
-	border-bottom: 2px solid #212529;
+	border: 1px solid #444;
 }
 
 .table tr:nth-last-child(1) {
