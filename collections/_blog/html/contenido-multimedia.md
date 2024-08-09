@@ -7,9 +7,9 @@ video_path: '/assets/videos'
 thumbnail: '/assets/img/contenido-multimedia.png'
 ---
 
-## Imágenes
+## imágenes
 
-Para incluir imágenes en el contenido de la página, podemos utilizar la etiqueta `img`{: .tag }, que es una etiqueta que dispone de varios atributos para modificar como se verá la imagen, sin embargo los atributos `src` y `alt` son obligatorios. Veamos el resto de atributos:
+Para incrustar imágenes en una página web, podemos utilizar la etiqueta `img`{: .tag } que dispone de varios atributos para modificar como se verá la imagen, sin embargo los atributos `src` y `alt` son obligatorios. Veamos el resto de atributos en la tabla que viene a continuación.
 
 {: .table .table-dark }
 |Atributo|Descripción|
@@ -19,14 +19,31 @@ Para incluir imágenes en el contenido de la página, podemos utilizar la etique
 |`width`|Indica el ancho de la imagen en píxeles. (sin usar la unidad px)|
 |`height`|Indica el alto de la imagen en píxeles. (sin usar la unidad px)|
 
+**Ejemplo práctico:**
 
-## Nuevas etiquetas de imágenes
+{% include codeHeader.html icon="html5" codepen="y" %}
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de imagen</title>
+</head>
+<body>
+    <h1>Ejemplo de Imagen en HTML</h1>
+    <img src="https://robohash.org/XPX.png?set=set3" alt="Una imagen de robot" width="500">
+</body>
+</html>
+```
+{: .nolineno }
 
-**HTML5** incorporó un nuevo sistema para utilizar imágenes en nuestros documento **HTML** de forma mucho más flexible que la tradicional etiqueta `img`{: .tag } que nos permitirá mostrar imágenes dependiendo de nuestras necesidades. Para ello, podemos utilizar  las siguientes etiquetas:
+## nuevas etiquetas de imágenes
 
+**HTML5** incorporó un nuevo sistema para incluir imágenes de forma mucho más flexible que la tradicional etiqueta `img`{: .tag } y nos permitirá mostrar imágenes dependiendo de nuestras necesidades. La etiqueta `picture`{: .tag } en **HTML5** se utiliza para ofrecer a los navegadores diferentes versiones de una imagen y elegir la más adecuada según ciertas condiciones. Esto es especialmente útil para la adaptabilidad en diferentes dispositivos y resoluciones de pantalla. La etiqueta `picture`{: .tag} se usa junto con las etiquetas `source`{: .tag } y `img`{: .tag } veamos la descripción en la siguiente tabla.
 
 {: .table .table-dark  }
-|Atributo|Atributos|Descripción|
+|Etiqueta|Atributos|Descripción|
 |:-------|:--------|:----------|
 |`picture`{: .tag }||Agrupa una serie de imágenes. (Etiqueta contenedora)|
 |`source`{: .tag }|`srcset, sizes, media, type`|Mostrará la imagen que cumpla una serie de criterios opcionales.|
@@ -43,7 +60,9 @@ Como podemos ver, lo interesante está en la etiqueta `source`{: .tag }, que tie
 |`media`|Condición que se debe cumplir para que se muestre la imagen.|
 |`type`|Tipo de formato de imagen. (Opcional)|
 
-Una de las primeras ventajas que nos ofrece estas etiquetas es la de utilizar formatos diferentes, dependiendo del soporte del navegador. Podríamos hacer algo como lo siguiente:
+Una de las primeras ventajas que nos ofrece estas etiquetas es la de utilizar formatos diferentes, dependiendo del soporte del navegador. Podríamos hacer algo como lo siguiente.
+
+**Ejemplo práctico:**
 
 {% tabs ex_picture_cat %}
 {% tab ex_picture_cat html %}
@@ -68,30 +87,49 @@ Una de las primeras ventajas que nos ofrece estas etiquetas es la de utilizar fo
 {% endtab %}
 {% endtabs %}
 
-
 ---
 
-## Audios
+## audios
 
 En **HTML5** también es posible añadir archivos de audio y colocar sonidos, podscats, o simplemente música como ambientación.
 
-Para ello tenemos la etiqueta `audio`{: .tag } que tiene algunos atributos disponibles para utilizar. Vamos a ver para que sirve cada uno:
+Para ello tenemos la etiqueta `audio`{: .tag } que tiene algunos atributos disponibles para utilizar. Vamos a ver para que sirve cada uno en la siguiente tabla.
 
 {: .table .table-dark }
 |Atributo|Descripción|
 |:-------|:----------|
 |`src`|Audio a reproducir. Obligatorio si no se proporciona `source`{: .tag }.|
 |`preload`|Indica como realizar la precarga del audio.|
+|`controls`|Añade los controles de usuario al reproductor de audio. Estos controles permiten interactuar con el audio, como reproducir, pausar, ajustar el volumen y ver la duración del archivo.|
 
-Un primer ejemplo muy básico para colocar un audio en nuestra página sería utilizando el atributo `src` para indicar el archivo multimedia de audio:
+**Uso básico**
 
-{% include codeHeader.html icon='html' %}
+Un primer ejemplo muy básico para colocar un audio en nuestra página sería utilizando el atributo `src` para indicar el archivo multimedia de audio y el atributo `controls`:
+
+{% tabs audio_1 %}
+{% tab audio_1 html  %}
+{% include codeHeader.html icon='html' codepen="y" %}
 ```html
-<audio src="audio.mp3"></audio>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo básico - audio</title>
+</head>
+<body>
+  <audio src="https://github.com/EniDev911/assets/blob/main/audios/serene-piano.mp3?raw=true" controls></audio>
+</body>
+</html>
 ```
 {: .nolineno }
+{% endtab %}
+{% tab audio_1 resultado %}
+<audio src="https://github.com/EniDev911/assets/blob/main/audios/serene-piano.mp3?raw=true" controls></audio>
+{% endtab %}
+{% endtabs %}
 
-Otra forma de incluir un audio pero de manera más controlada es el siguiente ejemplo:
+La etiqueta `audio`{: .tag } también permite utilizar etiquetas `source`{: .tag } para mayor control sobre los navegadores.
 
 {% include codeHeader.html icon='html' %}
 ```html
@@ -101,6 +139,97 @@ Otra forma de incluir un audio pero de manera más controlada es el siguiente ej
 </audio>
 ```
 {: .nolineno }
+
+### controles personalizados
+
+Si quisieras un control más personalizado, podemos usar JavaScript para manipular el audio.
+
+**Ejemplo básico práctico:**
+
+{% tabs audio_2 %}
+{% tab audio_2 html %}
+{% include codeHeader.html icon="html5" codepen="y" title="Audio con Controles Personalizados" %}
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio con Controles Personalizados</title>
+    <style>
+        .controls {
+            margin-top: 10px;
+        }
+        .button {
+            padding: 5px 10px;
+            margin: 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reproductor de Audio con Controles Personalizados</h1>
+    <audio id="myAudio">
+        <source src="https://github.com/EniDev911/assets/blob/main/audios/serene-piano.mp3?raw=true" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <div class="controls">
+        <button class="button" onclick="playAudio()">Reproducir</button>
+        <button class="button" onclick="pauseAudio()">Pausar</button>
+        <button class="button" onclick="stopAudio()">Detener</button>
+    </div>
+
+    <script>
+        var audio = document.getElementById('myAudio');
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+
+        function stopAudio() {
+            audio.pause();
+            audio.currentTime = 0; // Reinicia la reproducción al inicio
+        }
+    </script>
+</body>
+</html>
+```
+{: .nolineno }
+{% endtab %}
+{% tab audio_2 resultado %}
+<body>
+    <audio id="myAudio">
+        <source src="https://github.com/EniDev911/assets/blob/main/audios/serene-piano.mp3?raw=true" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <div class="controls">
+        <button class="button" onclick="playAudio()">Reproducir</button>
+        <button class="button" onclick="pauseAudio()">Pausar</button>
+        <button class="button" onclick="stopAudio()">Detener</button>
+    </div>
+<script>
+    var audio = document.getElementById('myAudio');
+
+    function playAudio() {
+        audio.play();
+    }
+
+    function pauseAudio() {
+        audio.pause();
+    }
+
+    function stopAudio() {
+        audio.pause();
+        audio.currentTime = 0; // Reinicia la reproducción al inicio
+    }
+</script>
+</body>
+{% endtab %}
+{% endtabs %}
 
 
 ---

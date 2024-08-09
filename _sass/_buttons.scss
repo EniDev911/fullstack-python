@@ -1,0 +1,28 @@
+.btn_top {
+	position: fixed;
+	right: -140px;
+	bottom: 40px;
+	border: none;
+	cursor: pointer;
+	z-index: 2;
+	transition: right .2s ease;
+	background: transparent;
+	// animation: pulse .9s ease infinite alternate;
+	padding: 0;
+}
+
+.btn_top i {
+	font-size: 25px;
+	color: #fff;
+	box-shadow: 1px 0 4px 1px #111;
+}
+@media (min-width: 992px) {
+	.btn_top i {
+		font-size: 35px;
+	}
+}
+
+@keyframes pulse {
+	from { transform: scale(1); }
+	to { transform: scale(0); }
+}

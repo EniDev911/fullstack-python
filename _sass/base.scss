@@ -10,11 +10,12 @@
 @import "headings";
 @import "lists";
 @import "paragraphs";
+@import "buttons";
 
 $bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
 sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$fsParagraphSm: 16px;
-$fsParagraphXl: 20px;
+$fsParagraphSm: 15px;
+$fsParagraphXl: 18px;
 $codeFontJetbrains: "JetBrains Mono", consolas;
 $codeFont: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 
@@ -22,10 +23,6 @@ body {
   background: $dark-100;
   color: $gray-400;
   font-family: $bodyFont;
-  strong, em {
-    // color: #8BABC0;
-    // color: $warning;
-  }
   text-justify: inter-word;
   .highlight pre {
     font-family: $codeFont;
