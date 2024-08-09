@@ -255,9 +255,7 @@ La etiqueta `video`{: .tag } tiene varios atributos como veremos a continuación
 
 Un primer ejemplo muy básico para colocar un video en nuestra página web sería el siguiente:
 
-{% tabs ex_video_normal %}
-{% tab ex_video_normal html %}
-{% include codeHeader.html icon="html" %}
+{% include codeHeader.html icon="html" codepen="y" title="Ejemplo básico video HTML5" %}
 ```html
 <!DOCTYPE html>
 <html lang="es">
@@ -275,14 +273,6 @@ Un primer ejemplo muy básico para colocar un video en nuestra página web serí
 </html>
 ```
 {: .nolineno }
-{% endtab %}
-{% tab ex_video_normal resultado %}
-<video width="350" height="350" style="object-fit: cover">
-    <source src="https://cdn.pixabay.com/video/2015/08/08/117-135736418_large.mp4" type="video/mp4">
-    Tu navegador no soporta el elemento de video.
-</video>
-{% endtab %}
-{% endtabs %}
 
 Sin embargo, esto mostrará el primer fotograma del video, con un tamaño de 350x350, pero se verá como una imagen, ya que no muestra los controles del video y tampoco tiene la autoreproducción activada. Podríamos solucionarlo indicando los atributos `controls` y `autoplay`.
 
@@ -290,7 +280,7 @@ Otro ejemplo básico para colocar un video pero mostrando los controles:
 
 {% tabs ex_video_controls %}
 {% tab ex_video_controls html %}
-{% include codeHeader.html icon="html" codepen="y" title="Ejemplo de video en HTML5" %}
+{% include codeHeader.html icon="html" codepen="y" title="Ejemplo de video con controles en HTML5" %}
 ```html
 <!DOCTYPE html>
 <html lang="es">
@@ -301,7 +291,7 @@ Otro ejemplo básico para colocar un video pero mostrando los controles:
 </head>
 <body>
     <h1>Reproductor de Video en HTML5</h1>
-    <video controls width="350" height="350">
+    <video controls>
         <source src="https://cdn.pixabay.com/video/2015/08/08/117-135736418_large.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
     </video>
@@ -311,7 +301,7 @@ Otro ejemplo básico para colocar un video pero mostrando los controles:
 {: .nolineno }
 {% endtab %}
 {% tab ex_video_controls resultado %}
-<video controls width="350" height="350" style="object-fit: cover">
+<video controls class="w-100" style="object-fit: cover">
   <source src="https://cdn.pixabay.com/video/2015/08/08/117-135736418_large.mp4" type="video/mp4">
 </video>
 {% endtab %}
