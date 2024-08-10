@@ -160,7 +160,90 @@ En nuestro `index.html` seguido de la etiqueta `body`{:.tag} de apertura tendrí
 En nuestro archivo `assets/css/style.css` tendría que contener lo siguiente:
 {% include codeHeader.html file='assets/css/style.css' %}
 ```css
-{{ page.css.header }}
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+body {
+    font-family: 'Raleway', sans-serif, monospace;
+    background: #000;
+    color: #fff;
+}
+
+/*HEADER PAGE*/
+.header {
+    width: 100%;
+    height: auto;
+}
+
+.header__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4.5vw;
+    padding: 30px 0;
+}
+
+.header__hero {
+    display: block;
+    height: 100vh;
+    background: url('../img/bg-header.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.desc-section {
+    padding: 3% 6%;
+    display: table;
+}
+
+.desc-section__text {
+    display: table-cell;
+    width: 55%;
+    font-size: 1.4vw;
+    padding-right: 2.5vw;
+    vertical-align: middle;
+}
+
+.desc-section__image {
+    display: table-cell;
+}
+
+.desc-section__image img {
+    width: 100%;
+}
+
+.icons-section {
+    background: #1E1A13;
+    text-align: center;
+    color: #fff;
+    padding: 0 4%;
+}
+
+.icons-section__title {
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 3vw;
+}
+
+.icons-section__content {
+    list-style: none;
+}
+
+.icons-section__content li {
+    display: inline-block;
+}
+
+.icons-section__content li i {
+    font-size: 6vw;
+}
+
+.icons-section__content li div {
+    font-size: 2.4vw;
+}
 ```
 {: .nolineno }
 {% endtab %}
