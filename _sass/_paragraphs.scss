@@ -3,3 +3,9 @@ p, ul {
 	letter-spacing: .03rem;
 	line-height: 1.8rem;
 }
+
+@media (min-width: 992px) {
+	p {
+		font-size: 19px;
+	}
+}

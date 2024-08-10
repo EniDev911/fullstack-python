@@ -7,94 +7,6 @@ type: evaluado
 img_path: /assets/img/desafios/iguana/
 show: true
 show_next: true
-css:
-  header: |-
-    /* GENERAL */
-    * {
-    	margin: 0;
-    	padding: 0;
-    	box-sizing: border-box;
-    }
-    
-    body {
-    	font-family: 'Raleway', sans-serif, monospace;
-    	background: #000;
-    	color: #fff;
-    }
-    
-    /*HEADER PAGE*/
-    
-    .header {
-    	width: 100%;
-    	height: auto;
-    }
-    
-    .header__title {
-    	text-align: center;
-    	text-transform: uppercase;
-    	font-size: 4.5vw;
-    	padding: 30px 0;
-    }
-    
-    .header__hero {
-    	display: block;
-    	height: 100vh;
-    	background: url('../img/bg-header.jpg');
-    	background-size: 100% 100%;
-    	background-position: center;
-    	background-repeat: no-repeat;
-    }
-  desc: |-
-    .desc-section {
-    	padding: 3% 6%;
-    	display: table;
-    }
-    
-    .desc-section__text {
-    	display: table-cell;
-    	width: 55%;
-    	font-size: 1.4vw;
-    	padding-right: 2.5vw;
-    	vertical-align: middle;
-    }
-    
-    .desc-section__image {
-    	display: table-cell;
-    }
-    
-    .desc-section__image img {
-    	width: 100%;
-    }
-  icons: |-
-    .icons-section {
-    	background: #1E1A13;
-    	text-align: center;
-    	color: #fff;
-    	padding: 0 4%;
-    }
-    
-    .icons-section__title {
-    	font-size: 4vw;
-    	text-transform: uppercase;
-    	font-weight: normal;
-    	margin-bottom: 3vw;
-    }
-    
-    .icons-section__content {
-    	list-style: none;
-    }
-    
-    .icons-section__content li {
-    	display: inline-block;
-    }
-    
-    .icons-section__content li i {
-    	font-size: 6vw;
-    }
-    
-    .icons-section__content li div {
-    	font-size: 2.4vw;
-    }
 ---
 
 ## Descripción
@@ -146,21 +58,19 @@ Igual como en el [{{ page.previous.title }}]({{ page.previous.url | relative_url
 
 Debemos añadir la librería para los íconos, lo podemos hacer a través de **CDN**, aseguremonos de poner el la etiqueta `script`{:.tag} justo antes de la etiqueta de cierre del `body`{: .tag }:
 
-{9}
+{% include codeHeader.html icon="html" %}
+{7}
 ```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iguana Page</title>
+    ...
 </head>
 <body>
     <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
 </body>
 </html>
 ```
-{: .nolineno }
 
 ### Añadir la fuente Raleway de Google Font
 
@@ -171,6 +81,7 @@ Otro de los requisitos es integrar la fuente [Raleway de Google fonts](https://f
 
 Una vez seleccionada las fuentes, las vinculamos dentro de `head`{: .tag } usando la etiqueta `link`{: .tag}:
 
+{% include codeHeader.html icon="html" %}
 {6 7 8}
 ```html
 <!DOCTYPE html>
@@ -257,6 +168,7 @@ En nuestro archivo `assets/css/style.css` tendría que contener lo siguiente:
 
 Si observaste bien al principio de la hoja de estilos, usamos un selector general como primera regla **CSS**, empleando el asterisco (`*`) y definimos algunas propiedades para que sean aplicadas a todos los elementos de la página y de esa forma tener un reseteo rápido de los estilos predeterminados de las etiquetas **HTML**:
 
+{% include codeHeader.html icon="css" %}
 ```css
 * {
 	padding: 0;
@@ -268,6 +180,7 @@ Si observaste bien al principio de la hoja de estilos, usamos un selector genera
 
 Sin embargo entendamos mejor la parte de la imagen grande, que lo que hicimos fue usar el selector del elemento `div class="header__hero"`{:.tag} y establecer la imagen como fondo a través de la propiedad `background`:
 
+{% include codeHeader.html icon="css" %}
 ```css
 .header__hero {
 	height: 100vh;

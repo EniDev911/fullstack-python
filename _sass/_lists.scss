@@ -5,3 +5,9 @@ ol {
 		margin: 13px 0;
 	}
 }
+
+@media (min-width: 992px) {
+	ol, ul {
+		font-size: 19px;
+	}
+}

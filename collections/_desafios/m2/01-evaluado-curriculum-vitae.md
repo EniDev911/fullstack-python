@@ -23,7 +23,7 @@ Para cumplir con éxito el desafío, vamos a ir paso a paso para ir clarificando
 
 ### Estructura del proyecto
 
-Cuando estamos trabajando en un sitio web de forma local, debemos mantener todos los archivos relacionados en solo directorio o carpeta. Este directorio se puede crear en el lugar que desees, pero te recomiendo lo hagas en algún lugar donde lo puedas encontrar fácilmente, tal vez en el **Escritorio**.
+Cuando estamos trabajando en un sitio web de forma local, debemos mantener todos los archivos relacionados en solo directorio o carpeta. Este directorio se puede crear en el lugar que desees, pero te recomiendo encarecidamente que lo hagas en algún lugar donde lo puedas encontrar fácilmente, tal vez en el **escritorio**.
 
 > **Recomendacion**: Elige un lugar para almacenar los proyectos de tus sitios web. **Ej**: crea un directorio llamado **proyectosweb** (o algo similar). Aquí viviran todos los proyectos que vallas creando.
 
@@ -48,7 +48,6 @@ Para nuestro proyecto **CV** vamos a crear entonces el siguiente árbol de direc
 └─ index.html
 ```
 {: .nolineno }
-
 
 
 > **Nota**: Busca la foto que desees para colocar en el directorio `img`. En [https://robohash.org/](https://robohash.org/){: target='_blank' } puedes conseguir algunas imágenes de buena calidad basados en robots y más.
@@ -87,6 +86,7 @@ Un ejemplo de ello, es el siguiente:
 
 {% tabs opg %}
 {% tab opg html %}
+{% include codeHeader.html icon="html" %}
 {3 4 5 6 7}
 ```html
 <html prefix="og: https://ogp.me/ns#">
@@ -110,11 +110,11 @@ Un ejemplo de ello, es el siguiente:
 {% endtab %}
 {% endtabs %}
 
-
 ### Etiquetas meta para describir la página
 
-A pesar de que los motores de búsqueda como [Google](//google.com){:target='_blank'} analiza el contenido de la página para determinar automáticamente el fragmento adecuado para la descripción. También puede usar la información descriptiva del elemento `<meta name="description">` si resulta más apropiado que otras partes del contenido.
+A pesar de que los motores de búsqueda como [Google](//google.com){:target='_blank'} analizan el contenido de la página para determinar automáticamente el fragmento adecuado para la descripción. También puede usar la información descriptiva del elemento `<meta name="description">` si resulta más apropiado que otras partes del contenido.
 
+{% include codeHeader.html icon="html" %}
 {3}
 ```html
 <head>
@@ -126,14 +126,13 @@ A pesar de que los motores de búsqueda como [Google](//google.com){:target='_bl
 
 > Una descripción meta es una información importante para los motores de búsqueda y los usuarios.
 
-
 ### Favicon (icono de pestaña)
 
 Cuando tenemos varias pestañas en nuestro navegador, para una búsqueda más fácil e intuitiva entre pestañas, el navegador suele colocar iconos a la izquierda del título de las pestañas. Estos iconos son conocidos como **favicons** (*iconos favoritos*) ya que [fue un invento de Internet Explorer](https://es.wikipedia.org/wiki/Favicon#:~:text=La%20forma%20original%20de%20definir%20un%20favicono%20era%20poniendo%20un%20archivo%20llamado%20favicon.ico%20en%20el%20directorio%20ra%C3%ADz%20del%20servidor%20web%2C%20el%20cual%20era%20mostrado%20autom%C3%A1ticamente%20en%20los%20favoritos%20de%20Internet%20Explorer){:target='_blank'} para colocar icono cuando el usuario añadía una página a favoritos.
 
-
 Para generar los favicons de una forma más comoda, podemos utilizar herramientas como [Real Favicon Generator](https://realfavicongenerator.net/){:target='_blank'}, a la cúal le pasamos un logo de alta resolución y nos genera un paquete **.zip** con los archivos y el código necesario para las diferentes versiones y resoluciones de los iconos. Ejemplo de ello sería el siguiente código:
 
+{% include codeHeader.html icon="html" %}
 {3 4 5 6 7}
 ```html
 <head>

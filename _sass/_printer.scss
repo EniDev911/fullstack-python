@@ -1,8 +1,13 @@
 @media print {
-
+	@page {
+		size: A4 landscape;
+	}
 	body {
 		padding: 0 !important;
 		margin: 0 !important;
+	}
+	.no-printer {
+		display: none;
 	}
 	.group-btn-post, .code-header,
 	.fa-magnifying-glass {

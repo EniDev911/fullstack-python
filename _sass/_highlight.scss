@@ -1,20 +1,20 @@
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
+
 .highlight {
-  border: 1px solid #ccc8;
+  border: 1px solid #ccc3;
   border-radius:5px;
   box-shadow: 1px 2px 9px 1px #0008;
   padding: 10px 0 0 0;
   margin: 0 0 20px 0;
-  font-size: 17px;
+  // font-size: 17px;
   pre {
-    padding: 0 10px
+    // padding: 0 10px
   }
 }
-figure.highlight .nt, .hll {
-  padding: 0 10px;
+figure.highlight .nt, .hll, .cp {
+  padding: 0 0 0 5px;
 }
-
 pre {
   tab-size: 2;
 }
@@ -32,7 +32,7 @@ pre.highlight {
   user-select: none;
   border-right: 1px solid #ccc5;
   padding: 0 10px 0 0;
-  color: #d2a8ff;
+  color: #ccc3;
 }
 
 .highlight, .highlight .w {

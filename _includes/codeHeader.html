@@ -1,5 +1,5 @@
 <!-- code-header  -->
-<div class="code-header d-flex align-items-center justify-content-evenly rounded-top border border-secondary px-2">
+<div class="code-header d-flex align-items-center justify-content-evenly rounded-top px-2" style="background-color: #1a1a1a; border: 1px solid #ccc4">
 	{% if include.file %}
 	<div class="me-auto">
 		<i class="fa-regular fa-file-code"></i>
@@ -41,10 +41,10 @@
 	<button onclick="increaseFontSize(this)" class="font-button">
 		<i class="fa-solid fa-font fa text-light"></i>
 	</button>
-	<button class="code-fullscreen-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Aumentar">
+	<button onclick="fscreenBlock(this)" class="code-fullscreen-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Aumentar">
 		<i class="fa-solid fa-magnifying-glass"></i>
 	</button>
-	<button class="copy-code-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar">
+	<button onclick="copyCode(this)" class="copy-code-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar">
 		<i class="fa-regular fa-clipboard"></i>
 	</button>
 </div>
