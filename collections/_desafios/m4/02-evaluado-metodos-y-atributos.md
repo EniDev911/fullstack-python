@@ -12,7 +12,7 @@ github:
 
 ## Descripción
 
-Una cadena de pizzerías deseas crear una aplicación para que los clientes puedan autogestionar sus pedidos. Por ahora, se te solicita crear un prototipo que resuelva el algoritmo que permita a un usuario ordenar una pizza de 3 ingredientes, y escoger el tipo de masa. Para ello debes utilizar Python y las características de la POO.
+Una cadena de pizzería desea crear una aplicación para que los clientes puedan autogestionar sus pedidos. Por ahora, se te solicita crear un prototipo que resuelva el algoritmo que permita a un usuario ordenar una pizza de 3 ingredientes, y escoger el tipo de masa. Para ello debes utilizar Python y las características de la POO.
 
 En esta cadena, una pizza puede tener **2 tipos de ingredientes**, **vegetales** y **proteicos**, y su **masa** puede ser **tradicional** o **delgada**. Dentro de los vegetales, las posibilidades son **tomate**, **aceitunas** y **champiñones**. Dentro de los proteicos, las posibilidades son **pollo**, **vacuno** o **carne vegetal**. Sin embargo, los ingredientes posibles pueden variar debido al **stock** y/o estacionalidad, por lo que se debe considerar que no siempre serán las alternativas posibles. Cualquier pizza ordenada debe tener 1 ingrediente proteico y 2 vegetales. Todas las pizzas tienen un precio de **$10.000** y **tamaño familiar**.
 
@@ -62,7 +62,13 @@ La solución a este requerimiento es la siguiente:
 {% tabs demo_method %}
 {% tab demo_method método %}
 {% include codeHeader.html file="pizza.py" %}
+{6 7 8}
 ```python
+class Pizza:
+
+	precio = 10000
+	tamanio = "familiar"
+
 	@staticmethod
 	def validar(elemento: str, opciones: list) -> bool:
 		return False if elemento not in opciones else True

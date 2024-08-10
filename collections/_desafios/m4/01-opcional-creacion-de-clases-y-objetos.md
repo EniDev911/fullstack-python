@@ -45,7 +45,7 @@ Creemos el archivo correspondiente:
 Como sabemos los todos los té deben tener ciertos valores, en nuestra clase lo podemos declarar los siguientes **atributo estático**:
 
 
-> **Ojo**: Ya que debe ser un atributo común en todas las instancias. Como buena practica este valor no debería ser modificado. Es por ello que en vez de almacenar los posibles valores en un diccionario o lista, lo hacemos en una tupla ya que se trata de una estructura inmutable.
+> **Ojo**: Ya que debe ser un atributo común en todas las instancias. Como buena práctica este valor no debería ser modificado. Es por ello que en vez de almacenar los posibles valores en un diccionario o lista, lo hacemos en una tupla ya que se trata de una estructura inmutable.
 
 Entonces podemos agregar lo siguiente a nuestro script `te.py`:
 

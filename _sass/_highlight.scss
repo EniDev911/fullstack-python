@@ -12,8 +12,27 @@
     // padding: 0 10px
   }
 }
+
+.hll {
+  // background-color: #ffff8015;
+  display: block;
+  border-left: 2px solid #ffff80;
+  width: 100%;
+  min-width: max-content;
+  position: relative;
+}
+.hll::after {
+  content: "";
+  width: 100%;
+  background-color: #e1e8f520;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 figure.highlight .nt, .hll, .cp {
-  padding: 0 0 0 5px;
+  padding: 0;
 }
 pre {
   tab-size: 2;
@@ -32,13 +51,14 @@ pre.highlight {
   user-select: none;
   border-right: 1px solid #ccc5;
   padding: 0 10px 0 0;
-  color: #ccc3;
+  color: #ccc5;
 }
 
 .highlight, .highlight .w {
   color: #c9d1d9;
   // background-color: #161b22;
   background-color: #1a1a1a;
+  padding: 4px 8px;
 }
 
 .highlight > .highlight,.highlight > pre {
