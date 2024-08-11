@@ -38,12 +38,26 @@ La etiqueta `form`{: .tag } dispone de varios **atributos** que se pueden utiliz
 
 La etiqueta `input`{: .tag } puede tomar diferentes valores en su atributo `type` para permitir al usuario introducir información, además de otra etiqueta denominada `textarea`{: .tag } para introducir cantidades más grande de texto:
 
-{: .table .table-dark }
-|Tipo de información|Etiqueta|Ejemplo|
-|:------------------|:-------|:------|
-|Texto alfanumérico|`input type="text"`{: .tag}|<input type="text" placeholder="john doe" class="w-100">|
-|Texto para búsquedas|`input type="search"`{: .tag }|<input type="search" placeholder="buscar" class="w-100">|
-|Número de teléfono o móvil|`input type="tel"`{: .tag }|<input type="tel" placeholder="987654321" class="w-100">|
-|Dirección URl|`input type="url"`{: .tag }|<input type="url" placeholder="https://developer.mozilla.org" class="w-100">|
-|Campo oculto (no mostrar al usuario)|`input type="hidden"`{: .tag }|<input type="hidden" class="w-100">|
-|Texto alfanumérico libre (extenso)|`textarea`{: .tag }|<textarea class="w-100" placeholder="Campo de texto más extenso. Para comentarios o descripciones"></textarea>|
+`input type="text"`{: .tag}
+: Para texto alfanumérico. Ej:
+<input type="text" placeholder="john doe" class="w-100">
+
+`input type="search"`{: .tag }
+: Texto para búsquedas. Ej:
+<input type="search" placeholder="buscar" class="w-100">
+
+`input type="tel"`{: .tag }
+: Para número de teléfono o móvil. Ej:
+<input type="tel" placeholder="987654321" class="w-100">
+
+`input type="url"`{: .tag }
+: Para introducir direcciones URL. Ej:
+<input type="url" placeholder="https://developer.mozilla.org" class="w-100">
+
+`input type="hidden"`{: .tag }
+: Para campos ocultos (no mostrar al usuario).
+<input type="hidden" class="w-100">
+
+`textarea`{: .tag }
+: Para texto alfanumérico libre (extenso). Ej: <textarea class="w-100" placeholder="Campo de texto más extenso. Para comentarios o descripciones"></textarea>
+
