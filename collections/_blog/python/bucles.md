@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Loops
-category: "Python"
+category: "python"
 toc: false
 thumbnail: /assets/img/loops-python.png
 ---

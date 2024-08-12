@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Entornos virtuales con Pipenv
-category: "Python"
+category: "python"
 thumbnail: /assets/img/python-entornos-virtuales.png
 ---
 
