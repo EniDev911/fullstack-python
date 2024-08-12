@@ -5,6 +5,11 @@
 		<i class="fa-regular fa-file-code"></i>
 		{{ include.file }}
 	</div>
+	{% elsif include.folder %}
+	<div class="me-auto">
+		<i class="fa-regular fa-folder"></i>
+		{{ include.folder }}
+	</div>
 	{% else %}
 	<div class="me-auto">
 		{% case include.icon %}
