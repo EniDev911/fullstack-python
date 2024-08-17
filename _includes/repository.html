@@ -2,6 +2,20 @@
 {% tab repository github %}
 [![github](https://socialify.git.ci/{{ include.repo.name }}/image?description=1&descriptionEditable={{ page.modulo | upcase }}%20%3A%20{{ page.title }}%20-%20Desaf%C3%ADo%20{{ page.type }}&language=1&name=1&owner=1&pattern=Charlie%20Brown&theme=Dark){: .card }](https://github.com/{{ include.repo.name }})
 {% endtab %}
+{% if include.repo.branch %}
+{% tab repository github cli %}
+{% include codeHeader.html icon="terminal" %}
+```bash
+gh repo clone {{ include.repo.name }} -- --branch {{ include.repo.branch }}
+```
+{% endtab %}
+{% tab repository ssh %}
+{% include codeHeader.html icon="terminal" %}
+```bash
+git clone --branch {{ include.repo.branch }} git@github.com:{{ include.repo.name | append: '.git' }}
+```
+{% endtab %}
+{% else %}
 {% tab repository github cli %}
 {% include codeHeader.html icon="terminal" %}
 ```bash
@@ -14,4 +28,5 @@ gh repo clone {{ include.repo.name }}
 git clone git@github.com:{{ include.repo.name | append: '.git' }}
 ```
 {% endtab %}
+{% endif %}
 {% endtabs %}
