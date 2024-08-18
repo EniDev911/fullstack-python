@@ -8,9 +8,8 @@ thumbnail: '/assets/img/estructuras-de-control.png'
 
 Al hacer una página interactiva con javascript necesitaremos establecer **condiciones** o **decisiones**, donde buscamos que el navegador realice una **acción A** si se cumple una condición o una **acción B** si no se cumple. Este es el primer tipo de estructuras de control que contraremos. Pero existen varias estructuras de control:
 
-<div class="table-respinsive" markdown="1">
 
-{: .table border="1" }
+{: .table .table-dark }
 |Estructura de control|Descripción|
 |:--------------------|:----------|
 |`if`{: .bg-warning .text-dark }|**Condición simple:** si ocurre esto, haz lo siguiente...|
@@ -18,7 +17,6 @@ Al hacer una página interactiva con javascript necesitaremos establecer **condi
 |`?:`{: .bg-warning .text-dark }|**Operador ternario:** equivalente al `if/else`, pero en formato abreviado.|
 |`switch`{: .bg-warning .text-dark }|**Estructura para casos específicos** similar a varios `if/else` anidados.|
 
-</div>
 
 ---
 
@@ -78,7 +76,7 @@ graph LR
 {% endcapture %}
 {% include mermaid.html content=es_positivo_graph %}
 
-Ahora llevemos el caso anterior al código en javascript, podemos pegar el código directamente en la consola con <kbd class="menu">clic derecho > inspeccionar</kbd> o <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd>:
+Ahora llevemos el caso anterior al código en javascript, podemos pegar el código directamente en la consola con **clic derecho** > **inspeccionar** o <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd>:
 
 {% include codeHeader.html icon='js' %}
 ```js
@@ -92,7 +90,7 @@ if (numero > 0) {
 
 Ahora hagamos lo mismo pero mostrando el resultado en un documento **HTML**:
 
-{% include codeHeader.html file="index.html" %}
+{% include codeHeader.html file="index.html"  codepen="y" title="probando if en js y manipular el html" %}
 ```html
 <!DOCTYPE html>
 <html lang="en">

@@ -8,7 +8,7 @@ thumbnail: /assets/img/bucles-js.png
 
 Una de las principales ventajas de la programación es la posibilidad de crear **bucles y repiticiones** para tareas específicas, y que no tengamos que realizarlas varias veces de forma manual. Existen muchas formas de realizar bucles, vamos a ver los más básicos, similares en otros lenguajes de programación:  
 
-{: .table }
+{: .table .table-dark }
 |Tipo de bucle|Descripción|
 |:------------|:----------|
 |`while`|Bucles simples.|
@@ -17,7 +17,6 @@ Una de las principales ventajas de la programación es la posibilidad de crear *
 |`for..in`|Bucles sobre posiciones de un array.|
 |`for..of`|Bucles sobre elementos de un array.|
 |`Arrays functions`|Bucles específicos de un array.|
-
 
 
 Antes de comenzar a ver que tipos de bucles existen en javascript, es necesario conocer algunos conceptos básicos de los bucles:  

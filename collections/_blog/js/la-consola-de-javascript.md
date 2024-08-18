@@ -21,7 +21,7 @@ La consola de JavaScript es una gran herramienta que viene integrada en la mayor
 
 Para acceder a la consola de JavaScript existen diversas formas desde el navegador, podemos realizar las siguientes combinaciones de teclado:
 
-{: .table border='1' }
+{: .table .table-dark }
 |Atajo|Descripción|
 |:----|:----------|
 |<strong><kbd>f12</kbd></strong> o <strong><kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>I</kbd></strong>| Abrir las herramientas para desarrolladores (*DevTools*).|
@@ -49,9 +49,8 @@ console.log(2 + 2); // 4
 
 Tenemos varias funciones para mostrar mensajes en la consola. Cada uno se enmarca en un contexto de uso, la siguiente tabla nos muestra algunas:
 
-<div class="table-responsive" markdown="1">
 
-{: .table border="1" }
+{: .table .table-dark }
 |Función|Descripción|
 |:------|:----------|
 |`console`.`log`|Muestra la información por la consola.|
@@ -59,8 +58,6 @@ Tenemos varias funciones para mostrar mensajes en la consola. Cada uno se enmarc
 |`console`.`warn`{: .bg-warning .text-dark }|Se utiliza para información de advertencia. Aparece en color amarillo.|
 |`console`.`error`{: .bg-danger .text-light }|Se utiliza para información de error. Aparece en color rojo.|
 |`console`.`clear`{: .bg-light .text-dark }|Se utiliza para limpiar la consola. Equivalente a pulsar <strong><kbd>CTRL</kbd> + <kbd>L</kbd></strong>|
-
-</div>
 
 La idea es utilizar en nuestro código la función que más se adapte a nuestra situación en cada caso (*errores graves con `console.error()`, errores leves con `console.warn()`*, etc..).
 
