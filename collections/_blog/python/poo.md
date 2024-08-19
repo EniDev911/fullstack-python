@@ -1,7 +1,7 @@
 ---
 layout: post
 title: POO - Python
-category: "Python"
+category: "python"
 thumbnail: /assets/img/python-poo.png
 img_path: /assets/img/posts/python-poo
 ---

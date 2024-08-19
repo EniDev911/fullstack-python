@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Consumir Apis"
-category: "Python"
+category: "python"
 thumbnail: /assets/img/python-apis.png
 ---
 
