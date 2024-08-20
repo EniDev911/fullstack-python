@@ -10,22 +10,19 @@ img_path: /assets/img/posts/python-poo
 
 ### ¿Qué es una Clase?
 
-Podemos pensar en **clases** como en **plantillas** para crear **objetos**. Define de manera genérica cómo van a ser los objetos de determinado tipo. Por ejemplo, en la vida real, una clase para representar a personas puede llamarse **Persona** y tener una serie de **atributos** como **nombre**, **apellido**, **estatura** (que normalmente son propiedades), y una serie de **comportamientos** que pueden tener, como **hablar**, **caminar** o **comer** y que se implementan como **métodos de clases** (*funciones*).
+Podemos pensar en **clases** como en **plantillas** para crear **objetos**. Define de manera genérica cómo van a ser los objetos de determinado tipo. Por ejemplo, en la vida real, una clase para representar a personas puede llamarse **Persona** y tener una serie de **atributos** como **nombre**, **apellido**, **estatura** (que normalmente son propiedades), y una serie de **comportamientos** que pueden tener, como **hablar**, **caminar** o **comer** y que se implementan como **métodos de clases**.
 
-Una clase por sí sola no sirve de nada, pues no es más que un concepto, sin entidad real. Para poder utilizar una clase en un programa lo que hay que hacer es **instanciarla**. Instanciar una clase consiste en **crear un nuevo objeto concreto de la misma**. Es decir, **un objeto ya es una entidad concreta** que se crea a partir de la plantilla que es la clase. Este nuevo objeto tiene ya "una existencia" real, puesto que ocupa memoria y se puede utilizar en el programa. Asi un objeto puede ser una persona que se llame **Marco, de 1.78 mt de estatura** o **María, de 1.64 mt de estatura** y que en nuestro programa podría hablar, caminar o comer, que son los comportamientos que estarían definidos en la clase.
+### ¿Qué es una Instancia?
 
-Pasemos a ver mejor una sencilla ilustración ya que una imagen vale más que mil palabras.
-
+Una clase por sí sola no sirve de nada, pues no es más que un concepto, sin entidad real. Para poder utilizar una clase en un programa lo que hay que hacer es **instanciarla**. Instanciar una clase consiste en **crear un nuevo objeto concreto de la misma**. Es decir, **un objeto ya es una entidad concreta** que se crea a partir de la plantilla que es la clase. Este nuevo objeto tiene ya "una existencia" real, puesto que ocupa memoria y se puede utilizar en el programa. Asi un objeto puede ser una persona que se llame **Marco, de 1.78 mt de estatura** o **María, de 1.64 mt de estatura** y que en nuestro programa podría hablar, **caminar** o **comer**, que son los **comportamientos** que estarían definidos en la clase.
 
 {: align="center" }
-![img - clases e instancias]({{ page.img_path | relative_url }}/clases_e_instancias.png)
 *Diferencia entre clases VS instancias*
+![img - clases e instancias]({{ page.img_path | relative_url }}/clases_e_instancias.png)
 
 De este modo, si tenemos que manejar personas podemos ir creándolas a medida que necesitemos, y actuar sobre ellas individualmente. Cada una tiene sus propios datos y sus propias acciones.
 
 > **Recordar**: La clase define de forma genérica cómo son las personas, y los objetos son personas concretas.
-
-La POO es muy potente porque nos permite modelar de manera sencilla datos y comportamientos del mundo real. Al poder manejar los datos y los comportamientos de cada objeto de manera independiente nos evita tener que mantener datos globales y coordinar todo eso.
 
 ### Los cuatro pilares de la POO
 

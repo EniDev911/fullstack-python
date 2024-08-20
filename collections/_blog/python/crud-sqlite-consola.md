@@ -1,12 +1,16 @@
 ---
 layout: post
 title: "Crud Python - Sqlite"
-category: "Python"
-description: Guía paso a paso como hacer un SQLITE CRUD en Python.
+category: "python"
+subtitle: Guía paso a paso como hacer un SQLITE CRUD en Python.
 thumbnail: "https://enidev911.github.io/guias/assets/images/python/crud-sqlite-consola.png"
 ---
 
 ## Comenzando
+
+Creamos un nuevo archivo `main.py`:
+
+{% include newfile.html file="main.py" %}
 
 {% include codeHeader.html file='main.py' %}
 ```py
@@ -16,15 +20,14 @@ def init():
 if __name__ == "__main__":
     init()
 ```
-
+{: .nolineno }
 
 La instrucción `if __name__ == "__main__":` comprueba si el script se está ejecutando como programa principal. Si es así, llama a la función `init()` que de momento solo tiene la declaración `pass` esto es más que nada para promover la modularidad y la reutilización. Permite que el script sirva como programa independiente y como módulo importable.
 
----
-
-## Abrir una nueva conexión a SQLITE
+### Abrir una nueva conexión a SQLITE
 
 {% include codeHeader.html file='main.py' %}
+{1 4}
 ```py
 import sqlite3
 
@@ -35,17 +38,74 @@ if __name__ == "__main__":
     init()
 ```
 
+Ahora como se puede observar en el código anterior, importamos el módulo de `sqlite3` que viene integrado con Python y dentro de la función `init()` que arranca junto a la ejecución del programa almacenamos en la variable `conexion` una nueva conexión a un archivo llamado **`cars.db`**.
 
-Ahora como se puede observar en el código anterior, importamos el módulo de `sqlite3` que viene integrado con Python y dentro de la función `init()` que arranca junto a la ejecución del programa almacenamos en la variable `conexion` una nueva conexión a un archivo llamado **cars.db**.
+### Crear una tabla en la base de datos
 
----
+Para facilitarnos la existencia, vamos a modularizar el código, quiere decir que vamos subdividir el programa en más archivos.
 
-## Crear una tabla en la base de datos
+Creamos un nuevo archivo `db.py`:
 
-Para facilitarnos la existencia, vamos a modularizar el código, quiere decir que vamos subdividir el programa en partes más pequeñas:
+{% include newfile.html file="db.py" %}
+
+{% capture dbmodule %}
+import sqlite3
+from sqlite3 import Error
+import os
+
+CURDIR = os.path.dirname(os.path.abspath(__file__))
+FILENAME = "schema.sql"
+FILE = os.path.join(CURDIR, "db", FILENAME)
+
+def open_db():
+    try:
+        con = sqlite3.connect('cars.db')
+        return con
+    except Error as e:
+        print('Error: ', e)
+
+def run_query(sql, params='', multiple=False):
+
+    with open_db() as con:
+        cursor = con.cursor()
+        try:
+            if multiple:
+                return cursor.executemany(sql, params)
+            else:
+                return cursor.execute(sql, params)
+        except Error as e:
+            print('Error: ', e)
+
+def create_schema():
+    with open(FILE, 'r') as sql_file:
+        sql_script = sql_file.read()
+        schema_created = run_query(sql_script)
+        if schema_created.rowcount == -1:
+            print("Database created successfully")
+
+if __name__ == "__main__":
+    create_schema()
+{% endcapture %}
+
+{% include codeHeader.html file='db.py' %}
+```py
+{{ dbmodule }}
+```
+{: .nolineno }
+
+Como vemos en primer lugar tenemos que importar el módulo, luego tenemos que definir algunas funciones como:
+
+**`open_db()`**
+: Se encargará de crear o abrir la base de datos envultos en un bloque `try/except` para manejar posibles errores.
+
+**`run_query`**
+: Esta función va a utilizar la conexión que retorna `open_db` y con ella podemos realizar consultas a la base de datos.
+
+**`create_schema()`**
+: La función va a construir el esquema de la base de datos que tenemos que crearlo luego en un archivo `schema.sql`.
 
 {% tabs create_table %}
-{% tab create_table Main %}
+{% tab create_table main %}
 {% include codeHeader.html file='main.py' %}
 ```py
 import db
@@ -61,10 +121,9 @@ if __name__ == "__main__":
 {% tab create_table db module %}
 {% include codeHeader.html file='db.py' %}
 ```py
-{{ site.data.crud_python_sqlite["db.py"] }}
+{{ dbmodule }}
 ```
 {% endtab %}
-
 {% tab create_table sql %}
 {% include codeHeader.html file='db/schema.sql' %}
 ```sql
@@ -74,25 +133,48 @@ CREATE TABLE IF NOT EXISTS cars(
 );
 ```
 {% endtab %}
-{% tab create_table resultado %}
-```
-Database created successfully
-```
-{: .nolineno }
-{% endtab %}
 {% endtabs %}
 
+### Insertar Datos
 
----
+Para comenzar con las operaciones del CRUD, creamos un nuevo archivo `crud.py`:
 
-## Insertar Datos
+{% include newfile.html file="crud.py"  %}
 
-Ahora, insertemos nuevos registros de autos en la tabla **cars**:
+Y en el archivo vamos a crear una función que pueda utilizar el módulo `db.py` para llamar a la función `run_query` y así insertar algunos datos:
+
+{% capture insert_data %}
+import db
+
+def insert_data():
+  insert_query = "INSERT INTO cars (brand, model) VALUES(?, ?)"
+  cars_data = [
+      ('Chevrolet', 'Chevrolet Camaro'),
+      ('Chevrolet', 'Chevrolet Captiva'),
+      ('Fiat', 'Fiat 125 Mirafiori'),
+      ('Fiat', 'Fiat 125 Centurion'),
+      ('Honda', 'Honda CR-V'),
+      ('Honda', 'Honda CR-X del Sol'),
+      ('Honda', 'Honda CR-Z')
+  ]
+
+  result = db.run_query(insert_query, cars_data, True)
+  print("Record inserted successfully into table", result.rowcount)
+{% endcapture %}
+
+{% include codeHeader.html file="crud.py" %}
+```py
+{{ insert_data}}
+```
+{: .nolineno }
+
+Ahora, desde el módulo principal `main.py` importamos al módulo `crud.py` y ejecutamos la función `insert_data`:
 
 
 {% tabs insertdata %}
 {% tab insertdata main %}
 {% include codeHeader.html file='main.py' %}
+{6}
 ```py
 import db
 import crud
@@ -108,15 +190,13 @@ if __name__ == "__main__":
 {% tab insertdata crud module %}
 {% include codeHeader.html file='crud.py' %}
 ```py
-import db
-
-{{ site.data.crud_python_sqlite["crud.py"].insert_data }}
+{{ insert_data }}
 ```
 {% endtab %}
 {% tab insertdata db module %}
 {% include codeHeader.html file='db.py' %}
 ```py
-{{ site.data.crud_python_sqlite["db.py"] }}
+{{ dbmodule }}
 ```
 {% endtab %}
 {% tab insertdata resultado %}
@@ -127,9 +207,7 @@ Record inserted successfully into table 7
 {% endtab %}
 {% endtabs %}
 
----
-
-## Consultado los datos de la tabla
+### Consultado los datos de la tabla
 
 Recuperamos los datos insertados anteriormente:
 
