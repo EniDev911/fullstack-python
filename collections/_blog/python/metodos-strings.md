@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Métodos de strings"
-category: "Python"
+category: "python"
 thumbnail: /assets/img/python-metodos-de-string.png
 ---
 
@@ -13,7 +13,7 @@ thumbnail: /assets/img/python-metodos-de-string.png
 
 Retorna la cadena con su primera letra en mayúscula:
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon="python" compiler="y" %}
 ```py
 print("hello world".capitalize()) # Hello world
 ```
@@ -23,7 +23,7 @@ print("hello world".capitalize()) # Hello world
 
 Cambia las mayúsculas por minúsculas y viceversa:
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon="python" compiler="y" %}
 ```py
 print("Hello World".swapcase()) # hEELO wORLD
 ```
@@ -34,7 +34,7 @@ print("Hello World".swapcase()) # hEELO wORLD
 
 Retornan una copia de la cadena con todas sus letras en mayúsculas:
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon="python" compiler="y" %}
 ```py
 print("Hello".upper()) # HELLLO
 ```
@@ -45,7 +45,7 @@ print("Hello".upper()) # HELLLO
 
 Retornan una copia de la cadena con todas sus letras en minúsculas:
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon="python" compiler="y" %}
 ```py
 print("HELLO WORLD".casefold()) # hello world
 print("HELLO WORLD".lower()) # hello world
@@ -71,7 +71,7 @@ nueva_cadena = cadena.[center,ljust,rjust](ancho[, caracter_de_relleno])
 - **ancho**: Es un entero que representa el ancho total deseado de la nueva cadena después de la alineación.
 - **caracter_de_relleno**: (opcional): Es el carácter que se utiliza para rellenar los espacios vacíos a los lados de la cadena. De forma predeterminada utiliza el espacio en blanco.
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon="python" compiler="y" %}
 ```py
 print("hello".center(10)) # ..hello...
 print("hello".ljust(10)) # hello.....
@@ -89,7 +89,7 @@ print("hello".center(10, "*")) # ***Hola***
 
 El método para dividir una cadena según un **carácter separador** es `split()`. Cuyo separador por defecto son espacios en blancos y saltos de líneas:
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon="python" compiler="y" %}
 ```py
 str = "Hello World!\n¡Hola Mundo!".split()
 print(str) # ['Hello', 'World!', '¡Hola', 'Mundo']
@@ -98,8 +98,7 @@ print(str) # ['Hello', 'World!', '¡Hola', 'Mundo']
 
 El indicador o separador se puede pasar como argumento:
 
-
-{% include codeHeader.html %}
+{% include codeHeader.html icon="python" compiler="y" %}
 ```py
 str = "Hello World!\n¡Hola Mundo!".split(" ") # indicador espacio en blanco
 print(str) # ['Hello', 'World!\n¡Hola', 'Mundo']
@@ -109,7 +108,7 @@ print(str) # ['Hello', 'World!\n¡Hola', 'Mundo']
 
 O bien , para separar únicamente según saltos de líneas usando el método `splitlines()`:
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon="python" compiler="y" %}
 ```py
 str = "Hello World!\n¡Hola Mundo!".splitlines()
 print(str) # ['Hola Mundo!', 'Hello World!'] (equivalente a split("\n"))

@@ -37,7 +37,7 @@ Todas las opciones disponibles desde la interfaz de usuario del instalador (como
 
 Las siguientes opciones ( encontradas al ejecutar el instalador con `/?`) pueden ser pasadas al instalador:
 
-{: .table }
+{: .table .table-dark }
 |Nombre|Descripción|
 |------|-----------|
 |`/pasive`|para mostrar el progreso sin requerir interacción del usuario|

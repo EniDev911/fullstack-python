@@ -8,7 +8,7 @@ img: https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/code.v
 show_next: true
 ---
 
-## Obtener VS Code
+## Instalar VS Code
 
 Para utilizar **Visual Studio Code**, puedes descargarlo desde la página oficial: [Visual Studio Code](https://code.visualstudio.com/){:target='_blank'}. Si te interesa una versión **open source**, descarga [Visual Studio Codium](https://vscodium.com/){:target='_blank'}
 
@@ -18,10 +18,9 @@ A continuación muestro un listado de las extensiones de **VS CODE** que más su
 
 
 ### Tema y Coloreado
+{: .text-info }
 
-<div class="table-responsive" markdown="1">
-
-{: .table .table-bordered  }
+{: .table .table-dark  }
 |Nombre|Descripción|Enlace|
 |:-----|:----------|:-----|
 |*VSCode Color Picker*|Color Picker para otro tipo de documentos. Ideal para colores en Javascript o WebComponents.|[link](https://marketplace.visualstudio.com/items?itemName=AntiAntiSepticeye.vscode-color-picker){: target='_blank' }|
@@ -29,32 +28,23 @@ A continuación muestro un listado de las extensiones de **VS CODE** que más su
 |*Image preview*|Muestra una previsualización de la imagen referenciada en el margen de la línea.|[link](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview){: target='_blank' }|
 |*indent-rainbow*|Colorea las indentaciones con columnas de colores.|[link](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow){: target='_blank' }|
 
-</div>
 
 ### Uso frontend
 
-<div class="table-responsive" markdown="1">
-
-{: .table .table-bordered  }
+{: .table .table-dark  }
 |Nombre|Descripción|Enlace|
 |:-----|:----------|:-----|
 |*colorize*|Muestra los colores CSS escritos en el fondo del propio código..|[link](https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize){: target='_blank' }|
 |*HTML to CSS/LESS/SCSS*|Permite copiar código HTML y pegar la estructura en forma de código CSS.|[link](https://marketplace.visualstudio.com/items?itemName=tautvydasderzinskas.vscode-html-to-css){: target='_blank' }|
 
-</div>
-
 
 ### Uso backend
 
-<div class="table-responsive" markdown="1">
-
-{: .table .table-bordered  }
+{: .table .table-dark  }
 |Nombre|Descripción|Enlace|
 |:-----|:----------|:-----|
 |*PostgreSQL*|Permite la gestión de conexiones a PostgreSQL.|[link](https://marketplace.visualstudio.com/items?itemName=ckolkman.vscode-postgres){: target='_blank' }|
 |*Jupyter*|Permite la edición de cuadernos de Jupyter en VS Code.|[link](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter){: target='_blank' }|
-
-</div>
 
 
 ### Configuración
@@ -63,11 +53,9 @@ Toda la configuración en VSCODE se maneja desde el archivo `setting.json`. Para
 
 ![img - open setting](https://enidev911.github.io/fullstackjsg33/src/guides/vs-code/use-guide/assets/img/file/settings1.png)
 
-
 ## Fragmentos (Snippets)
 
 Se puede definir fácilmente *snippets* sin usar ninguna extensión. Los *snippets* están escritos en formato [JSON](http://www.json.org/json-es){: target='_blank' }
-
 
 ### Crear tus propios fragmentos
 
@@ -84,11 +72,10 @@ A continuación **seleccione el lenguaje** para que el identificador de lenguaje
 A continuación, veremos un ejemplo de un fragmento para diferentes lenguajes:
 
 
-
 {% tabs snippets %}
 {% tab snippets javascript %}
 {% include codeHeader.html file="Code/User/snippets/javascript.json" %}
-```json
+```js
 {
 	"For Loop": {
 		"prefix": ["for", "for-const"],
@@ -101,7 +88,7 @@ A continuación, veremos un ejemplo de un fragmento para diferentes lenguajes:
 {% endtab %}
 {% tab snippets python %}
 {% include codeHeader.html file="Code/User/snippets/python.json" %}
-```json
+```js
 {
 	"Getter": {
 		"prefix": ["@propery", "property", "getter"],
@@ -114,6 +101,23 @@ A continuación, veremos un ejemplo de un fragmento para diferentes lenguajes:
 {% endtab %}
 {% endtabs %}
 
+---
+
+## Extensión de PostgreSQL
+
+### Añadir nueva conexión
+
+![img - nueva conexión]({{ page.img_path | relative_url | append: 'extension-postgres-new-conn.png'}})
+
+### Configurar parámetros del servidor
+
+{: align="center" }
+![img - configurar servidor]({{ page.img_path | relative_url | append: 'extension-postgres-config.png'}}){: .card .w-100 .w-lg-50 }
+
+### Obtener datos de tablas
+
+{: align="center" }
+![img - configurar servidor]({{ page.img_path | relative_url | append: 'extension-postgres-fetch.png'}})
 
 *[VSCODE]: Visual Studio Code
 *[JSON]: JavaScript Object Notation

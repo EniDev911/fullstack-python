@@ -151,7 +151,9 @@ details[open] > summary {
 	box-shadow: 0 0 0 0.8px #444;
 }
 
-
+.table-dark thead th {
+	background-color: #141414 !important;
+}
 .table th,
 .table td {
 	border: 1px solid #444;
