@@ -4,7 +4,7 @@ title: "Proyecto Django ArriendosYA - Hito I"
 subtitle: "M7 - Hito I"
 show: true
 show_next: true
-type: evaludo
+type: evaluado
 modulo: m7
 toc: false
 ---
