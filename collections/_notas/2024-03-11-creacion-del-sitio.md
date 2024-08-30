@@ -99,7 +99,7 @@ Ya por último empujamos los cambios a la rama *gh-pages*:
 git push -u origin gh-pages
 ```
 
-Esperamos algunos minutos para que podamos ver el sitio en la siguiente url <https://enidev911.github.io/fullstack-python>.
+Esperamos algunos minutos para que podamos ver el sitio en la siguiente url [https://enidev911.github.io/fullstack-python](https://enidev911.github.io/fullstack-python){:target='_blank'}.
 
 Hasta aquí todo bien, ahora me faltaba decidir que editor y extensiones podría utilizar para ser más rápido y productivo al momento de dedicarme al desarrollo del sitio web, ya que esto lo haré en **mis tiempos libres**. Quizás en la próxima nota te cuente acerca de las herramientas que estaré utilizando.
 

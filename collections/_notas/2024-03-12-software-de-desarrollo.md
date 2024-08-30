@@ -5,7 +5,6 @@ img_path: /assets/img/notas/
 show_next: true
 ---
 
-
 ### Editor -  Sublime Text
 
 Por supuesto, cualquier editor de Markdown serviría, pero me alegró mucho saber que existen **complementos** de **Jekyll** para mi editor favorito, **Sublime Text**, que facilita la publicación.
@@ -28,7 +27,7 @@ Los textos con las reglas marcadas para las citas de bloque y el código fuente 
 
 Atajos de teclado de MarkdownEditing:
 
-{: .table }
+{: .table .table-dark }
 |Combinación|Descripción|
 |:---------:|-----------|
 |<kbd>Alt</kbd>+<kbd>b</kbd>|Escribir el texto en negrita.|
