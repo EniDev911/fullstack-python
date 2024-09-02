@@ -106,6 +106,7 @@ urlpatterns = [
 
 Creamos la vista para manejar la página de inicio:
 
+{% include codeHeader.html file="users/views.py" %}
 ```py
 def home(request):
 	return render(request, 'home.html')
