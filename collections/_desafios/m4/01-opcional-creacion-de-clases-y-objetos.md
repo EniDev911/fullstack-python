@@ -34,22 +34,22 @@ Utilizando Python y las características de la POO, se solicita en primera insta
 
 ### Requerimiento 1
 
-Crear en un archivo llamado `te.py` una clase que permita instanciar objetos de tipo **Te**. Para ello, debe considerar un nombre adecuado para la clase, y el o los atributos de clase.
+Crear en un archivo llamado `te.py` una clase que permita instanciar objetos de tipo `Te`. Para ello, debe considerar un nombre adecuado para la clase, y el o los atributos de clase necesarios.
 
-Creemos el archivo correspondiente:
+Creamos el archivo correspondiente:
 
 {% include newfile.html file="te.py" %}
 
-> **Recordar**: Un atributo de clase es aquel que se define a nivel de clase, y que todas las *instancias* tendrán el mismo valor.
+> **Recordar**:<br>Un atributo de clase es aquel que se define a nivel de clase, y que **todas las instancias** tendrán el mismo valor.
 
-Como sabemos los todos los té deben tener ciertos valores, en nuestra clase lo podemos declarar los siguientes **atributo estático**:
+Como sabemos todos los té deben tener ciertos valores, en nuestra clase `Te` podemos declarar algunos **atributos estáticos**. Entonces podemos agregar lo siguiente a nuestro script `te.py`:
 
 
-> **Ojo**: Ya que debe ser un atributo común en todas las instancias. Como buena práctica este valor no debería ser modificado. Es por ello que en vez de almacenar los posibles valores en un diccionario o lista, lo hacemos en una tupla ya que se trata de una estructura inmutable.
+> **Ojo**:<br>Cuando un atributo común que se comparte en todas las instancias. Como buena práctica este valor no debería ser modificado. Es por ello que en vez de almacenar los posibles valores en un diccionario o lista, lo hacemos en una tupla ya que se trata de una estructura inmutable.
 
-Entonces podemos agregar lo siguiente a nuestro script `te.py`:
 
 {% include codeHeader.html file="te.py" %}
+{3 4 5}
 ```py
 class Te:
 
@@ -57,7 +57,6 @@ class Te:
 	formato = (300, 500)
 	sabor = ('Té negro', 'Té verde', 'Agua de hierba')
 ```
-{: .nolineno }
 
 ### Requerimiento 2
 
@@ -173,7 +172,7 @@ A partir de esta clase:
 - Cree dos instancias.
 - Almacene el tipo de dato de cada instancia creada en una variable (**Tip**: use la función `type()`).
 - Muestre por pantalla, usando `print()`, el valor de cada tipo de dato almacenado.
-- En caso de que ambos tipos almacenados sean iguales, muestre por pantalla, usando `print()`, el mensaje "Ambos objetos son del mismo tipo". En caso contrario, mostrar mensaje "Los objetos no son del mismo tipo".
+- En caso de que ambos tipos almacenados sean iguales, muestre por pantalla, usando `print()`, el mensaje `"Ambos objetos son del mismo tipo"`. En caso contrario, mostrar mensaje `"Los objetos no son del mismo tipo"`.
 
 Procedemos a crear el nuevo archivo:
 

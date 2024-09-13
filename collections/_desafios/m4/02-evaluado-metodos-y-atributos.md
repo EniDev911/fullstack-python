@@ -122,10 +122,10 @@ La solución a este requerimiento es la siguiente:
 		self.vegetal1 = input("Ingresa el primer ingrediente vegetal: ").lower()
 
 		if Pizza.validar(self.vegetal1, I_VEGETALES):
-			tmp_vegeles = I_VEGETALES.copy()
-			tmp_vegeles.remove(self.vegetal1)
+			copy_vegetales = I_VEGETALES.copy()
+			copy_vegetales.remove(self.vegetal1)
 
-		print(f"\nIngredientes disponibles: {tmp_vegeles}")
+		print(f"\nIngredientes disponibles: {copy_vegetales}")
 		self.vegetal2 = input("\nIngresa el segundo ingrediente vegetal: ").lower()
 
 		print(f"\nIngredientes disponibles: {T_MASA}")
@@ -163,10 +163,10 @@ class Pizza:
 		self.vegetal1 = input("Ingresa el primer ingrediente vegetal: ").lower()
 
 		if Pizza.validar(self.vegetal1, self.I_VEGETALES):
-			tmp_vegeles = self.I_VEGETALES.copy()
-			tmp_vegeles.remove(self.vegetal1)
+			copy_vegetales = self.I_VEGETALES.copy()
+			copy_vegetales.remove(self.vegetal1)
 
-		print(f"\nIngredientes disponibles: {tmp_vegeles}")
+		print(f"\nIngredientes disponibles: {copy_vegetales}")
 		self.vegetal2 = input("\nIngresa el segundo ingrediente vegetal: ").lower()
 
 		print(f"\nIngredientes disponibles: {self.T_MASA}")
@@ -193,7 +193,7 @@ if __name__ == "__main__":
 
 Dentro del mismo método del requerimiento 3, una vez asignados los valores a los atributos de instancia, debe evaluarse si se trata de un ingreso válido, usando el método del requerimiento 2. **Si los 3 ingredientes y el tipo de masa son válidos**, deberá almacenar en un atributo el valor `True`. En caso contrario, deberá almacenar el valor `False`. Este atributo permitirá saber si una instancia específica es o no una Pizza válida.
 
-> **Tip**: Si lo deseas, puedes crear un archivo `ingredientes.py`que contenga 3 **variables de tipo lista**, una con los valores de ingredientes cárnicos posibles, otra con los valores de ingredientes de tipo vegetales, y otra con los valores posibles del tipo masa, e importar este archivo en el de la clase.
+> **Tip**:<br>Si lo deseas, puedes crear un archivo `ingredientes.py` que contenga 3 **variables de tipo lista**, una con los valores de ingredientes cárnicos posibles, otra con los valores de ingredientes de tipo vegetales, y otra con los valores posibles del tipo masa, e importar este archivo en el de la clase.
 
 La solución a este requerimiento es la siguiente:
 
@@ -267,7 +267,7 @@ En un archivo llamado `evaluaciones.py`, importe la clase creada en el requerimi
 - Usar la función `print()`, para que al ejecutar el script se muestre en pantalla los valores de los atributos de clase de la clase importada (**Pizza**), sin crear una instancia de ella.
 - Usar la función `print()`, para que al ejecutar el script se muestre en pantalla si el elemento `"salsa de tomate"` se encuentra presente en la lista `["salsa de tomate", "salsa bbq"]`. Para ello use el método creado en el requerimiento 2, sin crear una instancia de la clase importada.
 - Crear una instancia de la clase importada, y luego llamar al método del requerimiento 3, para que al ejecutar el script se solicite ingredientes y tipo de masa al usuario.
-- Usar la función `print()`, para que al ejecutar script, luego de que el usuario haya ingresado los ingredientes y tipo de masa, se muestre en pantalla los ingredientes vegetales, el ingrediente proteico y el tipo de masa de la instancia creada en el paso anterior, y si esa instancia es una pizza válida
+- Usar la función `print()`, para que al ejecutar script, luego de que el usuario haya ingresado los ingredientes y tipo de masa, se muestre en pantalla los ingredientes vegetales, el ingrediente proteico y el tipo de masa de la instancia creada en el paso anterior, y si esa instancia es una pizza válida.
 - Usar la función `print()`, para mostrar en pantalla si la clase Pizza es una pizza válida o no, haciendo uso del atributo creado en el requerimiento 4, **sin crear una instancia de la clase**. En este punto, la ejecución del script debe mostrar un error (todos los pasos anteriores se deben haber ejecutado correctamente).
 
 La solución a este requerimiento es la siguiente:
@@ -278,10 +278,29 @@ La solución a este requerimiento es la siguiente:
 ```py
 from pizza import Pizza
 
-# 1 al ejecutar el script se muestre en pantalla los valores de lo atributos clase
-# de la clase importada Pizza, sin crear una instacia de ella.
+
 print(Pizza.precio)
 print(Pizza.tamanio)
+print(Pizza.validar("salsa de tomate", ["salsa de tomate", "salsa bbq"]))
+
+p = Pizza()
+
+p.ordenar()
+
+print(f"Ingredientes Vegetales: {p.vegetal1}, {p.vegetal2}")
+print(f"Ingrediente Proteico: {p.proteico}")
+print(f"Tipo de masa: {p.t_masa}")
+print(f"¿Es una pizza válida?: {p.es_valido}")
+
+""" REQUERIMIENTO 5
+
+Usar la función print(), para mostrar en pantalla
+si la clase Pizza es una pizza válida o no,
+sin crear una instancia de la clase. En este punto,
+la ejecución del script debe mostrar un error
+(todos los pasos anteriores se deben haber ejecutado correctamente).
+"""
+print(Pizza.es_valido)
 ```
 {: .nolineno }
 {% endtab %}

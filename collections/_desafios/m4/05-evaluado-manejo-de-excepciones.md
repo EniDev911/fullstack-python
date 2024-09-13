@@ -16,7 +16,7 @@ Usted trabaja para una empresa que se encuentra desarrollando una aplicación de
 
 Se le proporciona el código que permite crear instancias de Foto, donde usted debe agregar el **lanzamiento de la excepción** en los métodos setter de ancho y alto, según las condiciones indicadas.
 
-> **Apoyo**: descargar el [Material de Apoyo aquí](apoyo-desafio-manejo-de-excepciones.zip) :point_left:
+> **Apoyo**:<br>descargar el [Material de Apoyo aquí](apoyo-desafio-manejo-de-excepciones.zip) :point_left:
 
 ---
 

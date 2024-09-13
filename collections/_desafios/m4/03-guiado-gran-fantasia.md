@@ -15,7 +15,7 @@ github:
 
 Has sido contratado por la startup **Juego por comida**, y se te ha solicitado desarrollar el algoritmo de la primera escena de su próximo juego "**Gran Fantasía**".
 
-El prototipo debe desarrollarse utilizando una aplicación de consola escrita en Python, que conste de un script principal que ejecute el juego, y una clase que permita crear personajes, que debe ser importada en el script principal. Las opciones de juego del usuario, así como el nombre de su personaje, se deben solicitar mediante *`input()`*.
+El prototipo debe desarrollarse utilizando una aplicación de consola escrita en Python, que conste de un script principal que ejecute el juego, y una clase que permita crear personajes, que debe ser importada en el script principal. Las opciones de juego del usuario, así como el nombre de su personaje, se deben solicitar mediante `input()`.
 
 La clase que permite crear personajes debe considerar lo siguiente:
 
@@ -27,11 +27,11 @@ La clase que permite crear personajes debe considerar lo siguiente:
 	- Cada **100 puntos** de experiencia recibidos, el personaje sube 1 nivel y experiencia 0. Si se asigna 250 a su estado, pasará a tener nivel 3 y experiencia 50.
 	- Si la experiencia recibida es negativa, se debe restar a la experiencia actual del personaje. Cada vez que la experiencia sea menor a 0, el personaje baja de nivel (su nivel disminuye en 1). Ejemplo: el personaje tiene actualmente nivel 3 y experiencia 50. Si **se asigna -150** a su estado, pasará a tener nivel 2 y experiencia 0. Si el personaje ya tiene nivel 1 y experiencia 0, no se altera su nivel ni su experiencia al recibir experiencia negativa.
 	
-> **Tip**: Puede usar una variable temporal que corresponda a la suma entre la **experiencia actual** del personaje y **la asignada al estado**. Luego, mediante ciclos `while` puede ir actualizando este valor y nivel del personaje, terminados los ciclos, se asigna la experiencia actual el valor de la suma temporal actualizado. Otra posible solución es utilizando división redondeada (`//`) y módulo (`%`).
+> **Tip**:<br>Puede usar una variable temporal que corresponda a la suma entre la **experiencia actual** del personaje y **la asignada al estado**. Luego, mediante ciclos `while` puede ir actualizando este valor y nivel del personaje, terminados los ciclos, se asigna la experiencia actual el valor de la suma temporal actualizado. Otra posible solución es utilizando división redondeada (`//`) y módulo (`%`).
 
 - Un personaje se considera mayor a otro si tiene mayor nivel, y se considera menor a otro si tiene menor nivel.
 
-> **Tip**: Investiga sobre los métodos especiales `__gt__` y `__lt__`. Puedes revisar la documentación oficial en el siguiente [link](https://docs.python.org/es/3/library/operator.html#operator.__lt__){: target='_blank' }
+> **Tip**:<br>Investiga sobre los métodos especiales `__gt__` y `__lt__`. Puedes revisar la documentación oficial en el siguiente [link](https://docs.python.org/es/3/library/operator.html#operator.__lt__){: target='_blank' }
 
 El script principal que ejecuta la escena del juego debe considerar el siguiente flujo:
 
@@ -42,21 +42,18 @@ El script principal que ejecuta la escena del juego debe considerar el siguiente
 	- Si el jugador es **mayor al orco**, tiene un **66%** de probabilidad de ganar.
 	- Si el jugador es **igual al orco**, tiene un **50%** de probabilidad de ganar.
 
-> **Tip**: Puede agregar en la clase un **método de instancia** que retorne la probabilidad de la instancia actual de ganar versus otra instancia.
+> **Tip**:<br>Puede agregar en la clase un **método de instancia** que retorne la probabilidad de la instancia actual de ganar versus otra instancia.
 
 - Informar por pantalla al jugador que ha aparecido un orco y la probabilidad que tiene de ganarle. Informarle también que **en caso de ganarle, recibirá 50 puntos de experiencia** y **el orco perderá 30** y que, en **caso de perder**, **perderá 30 puntos de experiencia** mientras que **el orco ganará 50**. Consultar finalmente al jugador si desea atacar o huir. El jugador debe ingresar **1 para atacar** y **2 para huir**.
 
 
-> **Tip**: Puedes agregar en la clase **un método estático** que reciba por parámetro la probabilidad, muestre en pantalla todo lo requerido y retorne la opción de juego del usuario.
-
+> **Tip**:<br>Puedes agregar en la clase **un método estático** que reciba por parámetro la probabilidad, muestre en pantalla todo lo requerido y retorne la opción de juego del usuario.
 
 - Mientras la opción de juego del usuario sea "**Atacar (1)**", se debe realizar lo siguiente:
-	- Obtener el resultado del ataque del jugador al orco, donde los resultados posibles son "**Gana**" o "**Pierde**". Para ello, **genere un número al azar entre 0 y 1**. Si **el número obtenido es menor o igual que la probabilidad calculada**, entonces **el resultado del ataque es "Gana"**. En **caso contrario, el resultado es "Pierde"**.
-	{: .my-3 }
-	- > **Tip**: puede usar el módulo `uniform()` del módulo `random`.
+	- Obtener el resultado del ataque del jugador al orco, donde los resultados posibles son "**Gana**" o "**Pierde**". Para ello, **genere un número al azar entre 0 y 1**. Si **el número obtenido es menor o igual que la probabilidad calculada**, entonces **el resultado del ataque es "Gana"**. En **caso contrario, el resultado es "Pierde"** (**Tip**: puede usar el módulo `uniform()` del módulo `random`).
 	- **Informar al jugador el resultado** del ataque, **los puntos de experiencia** ganados o perdidos según corresponda, **actualizar el estado del orco**, **actualizar el estado de su personaje** y mostrar sus estados posteriores a la actualización. Recordar que si el jugador gana, obtiene 50 puntos de experiencia y el orco pierde 30, y en caso contrario, el jugador pierde 30 puntos de experiencia y el orco gana 50.
 	- Con el estado modificado, **actualizar el valor de probabilidad de ganar al orco**, y **volver a consultar al jugador su opción** de juego.
-- Si el jugador ha incluido huir, mostrar un mensaje en pantalla informando que el orco ha quedado atrás.
+- Si el jugador a seleccionado huir, mostrar un mensaje en pantalla informando que el orco ha quedado atrás.
 
 
 ---

@@ -26,17 +26,17 @@ El equipo te ha solicitado diseñar e implementar la arquitectura de clases que 
 - Los productos tienen un **nombre**, un **precio** y un **stock**. Los 3 valores se deben solicitar al momento de crear un producto nuevo, pero **si no se indica stock**, se asume que es **0**. No se puede modificar el nombre ni el precio de un producto, solo su stock. Si se intenta **modificar el stock por un valor menor a 0**, se debe **asignar 0** en su lugar. De cada producto se puede obtener su nombre, su precio o su stock.
 
 
-> **Nota**: Se asume que cada producto es específico de una tienda. Es decir, un producto no existe por sí mismo, sino que como parte de una tienda.
+> **Nota**:<br>Se asume que cada producto es específico de una tienda. Es decir, un producto no existe por sí mismo, sino que como parte de una tienda.
 
 Respecto del comportamiento de cada tipo de tienda, considere lo siguiente:
 
 - Para **ingresar un producto a una tienda**, se debe solicitar los datos requeridos del producto. Una vez creado el producto, éste se añade a la lista de productos de la tienda (dado por su nombre), se debe modificar su stock, sumando al valor existente el stock del nuevo ingreso. Se conserva el precio del primer ingreso de un mismo producto. **Tip** pruebe sobrecargar los operadores `__add__`, `__sub__` y `__eq__`.
 
-> **Nota**: Los productos de las tiendas tipo **Restaurante** siempre tienen stock igual a 0, ya que el producto se fabrica al momento de que se realiza la venta. Es decir, aunque se especifique un valor de stock, los productos de estas tiendas se crean con stock 0 y este no se modifica si se añade nuevamente el mismo producto a la lista de productos existentes de la tienda.
+> **Nota**:<br>Los productos de las tiendas tipo **Restaurante** siempre tienen stock igual a 0, ya que el producto se fabrica al momento de que se realiza la venta. Es decir, aunque se especifique un valor de stock, los productos de estas tiendas se crean con stock 0 y este no se modifica si se añade nuevamente el mismo producto a la lista de productos existentes de la tienda.
 
 - Al **listar los productos existentes**, se debe ocultar el stock de los productos en el caso de la tiendas tipo **Restaurante** y **Farmacia**. Las tiendas de tipo **Supermercado** deben añadir el mensaje "Pocos productos disponibles" junto a la cantidad de stock del producto, en caso de que el stock del producto sea inferior a 10. Las tiendas tipo **Farmacia** deben añadir el mensaje "Envío gratis al solicitar este producto" junto al precio de los productos con un valor superior a los $15.000.
 
-> **Nota**: Considera que el método para listar los productos será llamado dentro de la función `print()`, por lo que debe retornar un string.
+> **Nota**:<br>Considera que el método para listar los productos será llamado dentro de la función `print()`, por lo que debe retornar un string.
 
 - Para **realizar una venta**, se debe solicitar el nombre del producto que desea vender y la cantidad requerida. Las tiendas de tipo **Farmacia** y **Supermercado** deben tener stock existente del producto indicado (si no poseen stock, o no existe el producto solicitado, no se realiza ninguna acción). Sin embargo, los productos de las tiendas tipo **Restaurante** siempre tienen stock 0, por lo que no es necesario hacer esta validación ni modificar el stock (**Tip**: puede usar `pass`). Además, en el caso específico de las tiendas de tipo **Farmacia**, no se puede solicitar una cantidad superior a 3 por producto en cada venta (si se solicita una cantidad mayor a 3, no se realiza ninguna acción). En el caso de las tiendas de tipo **Farmacia** o **Supermercado**, si la cantidad requerida es mayor a la existente, solo se venderá la cantidad disponible (quedando entonces el stock del producto en 0).
 
@@ -72,7 +72,7 @@ Los "**Getters**"" y "**Setters**" se utilizan en POO para garantizar el princip
 
 Por ende vamos a implementar los getter exclusivamente para nombre y precio, en el caso del stock implementamos el getter y setter:
 
-> **Ojo**: Si se intenta modificar el stock por un valor menor a 0, se debe asignar 0.
+> **Ojo**:<br>Si se intenta modificar el stock por un valor menor a 0, se debe asignar 0.
 
 {% include codeHeader.html file="producto.py" %}
 ```python
@@ -104,9 +104,9 @@ En un archivo `tienda.py`, definir la o las clases necesarias para instanciar lo
 - Un método para listar productos
 - Un método para realizar ventas (utilice **COLABORACIÓN**)
 
-> **NOTA**: Una clase compuesta puede tener una lista de componentes del mismo tipo, almacenado en un atributo de tipo lista.
+> **NOTA**:<br>Una clase compuesta puede tener una lista de componentes del mismo tipo, almacenado en un atributo de tipo lista.
 
-> **NOTA2**: Si utilizas un método sobrecargado, también se considera colaboración.
+> **NOTA2**:<br>Si utilizas un método sobrecargado, también se considera colaboración.
 
 #### Solución
 
@@ -302,6 +302,14 @@ En las farmacias se debe añadir el mensaje `"Envío gratis al solicitar este pr
 
 {% include codeHeader.html file="tienda.py" %}
 ```python
+	def listar_productos(self) -> list:
+
+		return [
+			f"Nombre: {p.nombre}\nPrecio: ${p.precio} (Envío gratis al solicitar este producto)"
+			if p.precio > 15000
+			else f"Nombre: {p.nombre}\nPrecio: ${p.precio}"
+			for p in self.__productos
+			]
 ```
 {: .nolineno }
 
@@ -313,9 +321,81 @@ Las tiendas de tipo Supermercado deben añadir el mensaje “Pocos productos dis
 
 En un archivo `programa.py`, implementa la lógica necesaria para crear una tienda e ingresar sus productos. Se debe solicitar ingresar productos hasta que el usuario indique lo contrario. Luego, se le debe dar al usuario **las opciones** de **listar los productos existentes**, **realizar una venta**, o **salir del programa**. Para las primeras dos opciones, debe hacer llamados a los métodos de su instancia y luego volver a consultar cuál de las 3 acciones se desea realizar. Si se escoge la tercera opción, se finaliza la ejecucción del programa.
 
+#### Solución
+
+La solución al requerimiento es la siguiente:
+
+{% include codeHeader.html file="programa.py" %}
+```py
+from tienda import Supermercado, Farmacia, Restaurante
+from producto import Producto
+import os, time
+
+if __name__ == "__main__":
+
+    clear = lambda: os.system("cls" if os.name == "nt" else "clear")
+
+    while True:
+        opciones = ["1. Restaurante", "2. Supermercado", "3. Farmacia"]
+        print("¿Qué tipo de tienda desea crear?", *opciones, sep="\n")
+        tienda = int(input("> "))
+    
+        tipo_tienda = {
+            tienda == 1: Restaurante, 
+            tienda == 2: Supermercado, 
+            tienda == 3: Farmacia
+        }.get(True, False)
+
+        clear()
+
+        if not tipo_tienda:
+            print("¡Opción inválida!")
+            time.sleep(1)
+        else:
+            break
+    
+    nombre_tienda = input(f"Nombre para la tienda tipo {tipo_tienda.__name__}:\n> ")
+    costo_delivery = int(input("\nCosto de los delevery:\n> "))
+    tienda = tipo_tienda(nombre_tienda, costo_delivery)
+
+    opcion = int(input("\n¿Desea ingresar un producto?\n1. Sí\n2. No\n"))
+
+    while opcion == 1:
+
+        clear()
+        nombre = input("Ingrese nombre del producto:\n> ")
+        precio = int(input("\nIngrese el precio del producto:\n> "))
+        stock = int(input("\nIngrese stock del producto:\n> "))
+        tienda.agregar_producto(nombre, precio, stock)
+        opcion = int(input("\n¿Desea ingresar otro producto?\n1. Sí\n2. No\n"))
+
+    while True:
+
+        clear()
+        opciones = ["1. Listar productos existentes", "2. Realizar una venta", "3. Salir del programa"]
+        print("¿Qué operación desea realizar?", *opciones, sep="\n")
+        operacion = int(input("> "))
+
+        if operacion == 1:
+            clear()
+            print(*tienda.listar_productos(), sep="\n\n")
+            time.sleep(2)
+
+        elif operacion == 2:
+            nombre = input("Ingrese nombre del producto:\n> ")
+            cantidad = int(input("\nIngrese cantidad del producto:\n> "))
+            tienda.realizar_ventas(nombre, cantidad)
+
+        elif operacion == 3:
+            break
+```
+{: .nolineno }
+
 
 ---
 
 ## Repositorio
 
 {% include repository.html repo=page.github %}
+
+*[POO]: Programación orientada a objetos
