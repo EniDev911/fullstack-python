@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Diagrama de clases"
-subtitle: "M4 - Desafío Guiado"
+subtitle: "M4 - Día 9 Desafío Evaluado"
 show: true
 show_next: true
 type: evaluado
@@ -16,9 +16,7 @@ Sobre las **alternativas**:
 
 - Una alternativa tiene:
 	- Un contenido (texto)
-	- Una ayuda (texto, opcional)
-- Ambos se pueden consultar y modificar libremente
-
+	- Una ayuda (texto, opcional)<br>Ambos se pueden consultar y modificar libremente.
 - Una alternativa solo puede existir como parte de una pregunta.
 - Debe haber un mecanismo para **mostrar una alternativa**, donde se muestra su contenido y ayuda, si es que la posee.
 

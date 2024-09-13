@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Abstracción y Encapsulamiento
+title: Día 05 - Abstracción y Encapsulamiento
 subtitle: Ejercicios Guiados - Día 5
 modulo: m4
 type: ejercicio

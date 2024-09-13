@@ -53,3 +53,8 @@ IMPLEMENTADO AÚN"`.
 - Se debe incluir en el constructor de la clase `Campaña` los parámetros y la lógica necesaria para instanciar **dentro de él** los anuncios a incorporar en el atributo que almacena **el listado de anuncios**. Como sugerencia, puede usar el constructor un parámetro que sea una estructura de datos que contenga la información necesaria para crear cada instancia de `Anuncio` (por ejemplo, una tupla con diccionarios). Opcionalmente, puede refactorizar esta lógica específica en un método privado.
 - Al querer modificar el nombre de una campaña ya creada, se debe validar que el nuevo nombre no supere los **250 caracteres**. De ser así, se debe lanzar una excepción `LargoExcedidoException`.
 - Para esta etapa no se solicita implementar las reglas de los atributos `fecha_inicio`
+
+---
+
+## Desarrollo
+

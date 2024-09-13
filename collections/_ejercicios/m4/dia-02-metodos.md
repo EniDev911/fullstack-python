@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Métodos
+title: Día 02 - Métodos
 subtitle: Ejercicios Guiados - Día 2
 modulo: m4
 type: ejercicio

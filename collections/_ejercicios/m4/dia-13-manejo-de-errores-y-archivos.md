@@ -32,8 +32,9 @@ class Televisor():
 
 
 {: start='2' }
-2. En un archivo `monitor.py`, importar la clase `Televisor`, y crear la clase `Monitor`, con el atributo de instancia resolución:
+2. En un nuevo archivo `monitor.py`, importar la clase `Televisor`, y crear la clase `Monitor`, con el atributo de instancia resolución:
 
+{% include newfile.html file="monitor.py"  %}
 
 {% include codeHeader.html file="monitor.py" %}
 ```py
@@ -45,3 +46,22 @@ class Monitor():
 ```
 {: .nolineno }
 
+{: start='3'}
+3. A continuación, en el mismo archivo, crear la clase `MonitorLED`, la cual hereda de la clase `Monitor`:
+
+{% include codeHeader.html file="monitor.py" %}
+```py
+class MonitorLED(Monitor):
+	pass
+```
+{: .nolineno }
+
+{: start='4'}
+4. Finalmente, en el mismo archivo, crear la clase `MonitorTelevisor`, la cual hereda tanto de `Monitor` como de `Televisor`:
+
+{% include codeHeader.html file="monitor.py" %}
+```py
+class MonitorTelevisor(Monitor, Televisor):
+	pass
+```
+{: .nolineno }

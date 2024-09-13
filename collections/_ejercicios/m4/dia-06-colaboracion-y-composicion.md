@@ -8,7 +8,7 @@ show: true
 show_next: true
 ---
 
-### Módulo de venta de productos
+## Ejercico guiado - Módulo de venta de productos
 
 Desde la tienda "**Mis Mascotas**", la cual se dedica a la venta de productos para mascotas (perro, gato y exótico), te han solicitado desarrollar un prototipo para el backend del módulo de venta de su sitio web de e-commerce. El prototipo debe ser una aplicación de consola en Python, donde los ingresos de cada detalle de venta (producto y cantidad) deben realizarse mediante `input`.
 
@@ -230,5 +230,8 @@ Finalmente, fuera del ciclo, imprimir el detalle de la venta ingresada:
 print(venta.detalle)
 ```
 {: .nolineno }
+
+
+### Ejercicio en replit
 
 {% include ifr_results.html src="https://replit.com/@marcocontreraas/dia-6-modulo-de-venta?embed=true" %}

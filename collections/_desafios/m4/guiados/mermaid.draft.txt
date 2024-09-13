@@ -1,0 +1,56 @@
+classDiagram
+    %% Definición de las clases
+    class Alternativa {
+        +String contenido
+        +String ayuda
+        +void saludar()
+        +void cumplirAnios()
+    }
+
+    class Pregunta {
+        +String enunciado
+        +String ayuda
+        +List alternativas
+        +void mostrar_alternativas()
+        +void recibirSalario()
+    }
+
+    class Encuesta {
+        +int idCliente
+        +String tipoCliente
+        +void hacerCompra()
+        +void solicitarInformacion()
+    }
+
+    %% Definición de instancias
+    class p1["Persona: Juan Pérez"] {
+        +nombre: "Juan Pérez"
+        +edad: 30
+        +direccion: "Av. Principal 123"
+        +saludar()
+        +cumplirAnios()
+    }
+
+    class e1["Empleado: Ana Martínez"] {
+        +idEmpleado: 001
+        +puesto: "Desarrolladora"
+        +salario: 50000
+        +trabajar()
+        +recibirSalario()
+    }
+
+    class c1["Cliente: Carlos Gómez"] {
+        +idCliente: 1001
+        +tipoCliente: "Premium"
+        +hacerCompra()
+        +solicitarInformacion()
+    }
+
+    %% Relaciones entre clases
+    Persona <|-- Empleado
+    Persona <|-- Cliente
+
+    %% Relaciones entre instancias y clases
+    p1 --|> Persona
+    e1 --|> Empleado
+    c1 --|> Cliente

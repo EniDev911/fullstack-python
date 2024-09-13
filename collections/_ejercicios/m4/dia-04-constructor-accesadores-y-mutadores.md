@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Constructor, accesadores y mutadores
+title: Día 04 - Constructor, accesadores y mutadores
 subtitle: Ejercicios Guiados - Día 4
 modulo: m4
 type: ejercicio
@@ -186,7 +186,7 @@ print(f"El precio final del medicamento es {m1.precio_final}")
 
 ---
 
-### Stock de medicamentos
+### 2. Stock de medicamentos
 
 Desde la cadena farmacéutica para la cual has venido desarrollando un programa para manejar los medicamentos en venta, te solicitan esta vez crear un prototipo que permita manejar el stock de medicamentos a medida que son ingresados. En este contexto, el cliente especifica que el programa debe considerar lo siguiente:
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Definir clase y crear instancias
+title: Día 01 - Definir clase y crear instancias
 subtitle: Ejercicios Guiados - Día 1
 modulo: m4
 type: ejercicio
@@ -8,7 +8,7 @@ show: true
 show_next: true
 ---
 
-### Definir la clase Medicamento
+## Ejercicio Guiado - Definir la clase Medicamento
 
 Trabajas como programador para una cadena de farmacias que desea desarrollar un software para manejar su stock de medicamentos.
 
@@ -29,27 +29,27 @@ class Medicamento():
 Agregar el atributo `descuento` con un valor 0.05:
 
 {% include codeHeader.html icon="python" %}
+{2}
 ```python
 class Medicamento():
 	descuento = 0.05
 ```
-{: .nolineno }
 
 **Paso 3**.
 
 Agregar el atributo `IVA` con valor 0.18:
 
 {% include codeHeader.html icon="python" %}
+{3}
 ```python
 class Medicamento():
 	descuento = 0.05
 	IVA = 0.18
 ```
-{: .nolineno }
 
 ---
 
-### Crear una instancia de Medicamento
+## Ejercicio Guiado - Crear una instancia de Medicamento
 
 Desde la cadena farmaceútica, ahora solicitan que cada vez que se inicie el programa se debe generar una nueva instancia de un **Medicamento**.
 
@@ -79,7 +79,7 @@ primer_medicamento = Medicamento()
 
 ---
 
-### Uso de la clase de Medicamento
+## Ejercicio Guiado - Uso de la clase de Medicamento
 
 Desde la cadena farmacéutica donde se está desarrollando el software que permite manejar el stock de medicamentos, te informan que se requiere agregar una nueva funcionalidad al programa, y esta consiste en que cada medicamento creado no puede tener un precio igual o menor a 0.
 
