@@ -1,5 +1,13 @@
 classDiagram
     %% Definición de las clases
+    class Usuario {
+        - correo: String
+        - edad: int
+        - region: int
+        + get_correo(): String
+        + set_correo(correo: String): void
+
+    }
     class Alternativa {
         +String contenido
         +String ayuda
@@ -16,10 +24,10 @@ classDiagram
     }
 
     class Encuesta {
-        +int idCliente
-        +String tipoCliente
-        +void hacerCompra()
-        +void solicitarInformacion()
+        +String nombre
+        -List pregustas
+        -List respuestas
+        +void mostrar_encuesta()
     }
 
     %% Definición de instancias
