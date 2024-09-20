@@ -6,6 +6,8 @@ show: true
 show_next: true
 type: evaluado
 modulo: m4
+github:
+  name: enidev911/m4-evaluado-diagrama-de-clases
 ---
 
 ## Descripción
@@ -304,7 +306,6 @@ class Encuesta:
     def mostrar_respuestas(self):
         print(self.__respuestas)
 
-
 class EncuestaLimitadaEdad(Encuesta):
     EDAD_MINIMA = 18
     EDAD_MAXIMA = 65
@@ -333,7 +334,6 @@ class EncuestaLimitadaEdad(Encuesta):
         else:
             print("No cumples con el rango de edad para responder esta encuesta.")
 
-
 class EncuestaLimitadaRegion(Encuesta):
     def __init__(self, nombre):
         super().__init__(nombre)
@@ -357,18 +357,75 @@ A partir del diagrama de clases del requerimiento 1, en un archivo `usuario.py`,
 - Dentro de la clase, incluir todo lo especificado en el diagrama de clases.
 - **Opcional**: implementar la lógica de las operaciones. En caso de hacerlo, debe primero crear la clase **ListadoRespuestas**, y luego implementar el comportamiento de esta clase.
 
+### Solución a la clase Usuario
+
+{% include codeHeader.html file="usuario.py" %}
+```py
+from encuesta import Encuesta
+
+class Usuario():
+    def __init__(self, correo, edad, region):
+        self.__correo = correo
+        self.__edad = edad
+        self.__region = region
+    
+    @property
+    def correo(self):
+        return self.__correo
+
+    @correo.setter
+    def correo(self, new_correo):
+        self.__correo = new_correo
+
+    @property
+    def edad(self):
+        return self.__edad
+    
+    @edad.setter
+    def edad(self, new_edad):
+        self.__edad = new_edad
+    
+    @property
+    def region(self):
+        return self.__region
+
+    @region.setter
+    def region(self, new_region):
+        self.__region = new_region
+    
+    def contestar_encuesta(self, encuesta: Encuesta, respuestas):
+        encuesta.mostrar_encuesta()
+        encuesta.agregar_respuestas(respuestas)
+            # respuesta = Respuesta(respuesta_texto)
+
+if __name__ == "__main__":
+    usuario1 = Usuario("marco@mail.com", 30, 3)
+```
+{: .nolineno }
+
 ## Requerimiento 6
 
 A partir del diagrama de clases del requerimiento 1, en un archivo `listado_respuestas.py`, crear la clase que permita crear objetos de tipo **ListadoRespuestas**.
 
 - Dentro de la clase, incluir todo lo especificado en el diagrama de clases.
 
-### Solución
+### Solución a la clase ListadoRespuesta
 
 {% include codeHeader.html file="listado_respuesta.py" %}
 ```py
-class ListaRespuesta():
-	pass
+class ListadoRespuestas():
+    def __init__(self, respuestas = []) -> None:
+        self.__respuestas = respuestas
+
+    @property
+    def respuestas(self):
+        return self.__respuestas
 ```
 {: .nolineno }
+
+---
+
+## Repositorio
+
+{% include repository.html repo=page.github %}
 
