@@ -267,6 +267,89 @@ A partir del diagrama de clases del requerimiento 1, en un archivo `encuesta.py`
 
 > **Tip**: Considera que las preguntas son entregadas como una lista de diccionarios.
 
+### Solución a la clase Encuesta
+
+{% include codeHeader.html file="encuesta.py" %}
+```py
+from listado_respuestas import ListadoRespuestas
+from pregunta import Pregunta
+
+class Encuesta:
+    def __init__(self, nombre):
+        self.__nombre = nombre
+        self.__preguntas = []
+        self.__respuestas = []
+
+    def agregar_pregunta(self, pregunta: Pregunta):
+        self.__preguntas.append(pregunta)
+
+    def agregar_respuestas(self, respuestas: ListadoRespuestas):
+        self.__respuestas = ListadoRespuestas(respuestas)
+
+    @property
+    def nombre(self):
+        return self.__nombre
+
+    @nombre.setter
+    def nombre(self, new_nombre):
+        self.__nombre = new_nombre
+
+    def mostrar_encuesta(self):
+        print(self.nombre.upper())
+        print("------------------")
+        for pregunta in self.__preguntas:
+            pregunta.mostrar_enunciado()
+            print()
+
+    def mostrar_respuestas(self):
+        print(self.__respuestas)
+
+
+class EncuestaLimitadaEdad(Encuesta):
+    EDAD_MINIMA = 18
+    EDAD_MAXIMA = 65
+
+    def __init__(self, nombre, edad):
+        super().__init__(nombre)
+        self.__edad = edad
+
+    @staticmethod
+    def validar_edad(edad):
+        return (
+            True
+            if edad > EncuestaLimitadaEdad.EDAD_MINIMA
+            and edad < EncuestaLimitadaEdad.EDAD_MAXIMA
+            else False
+        )
+
+    @property
+    def edad(self):
+        if self.validar_edad(self.__edad):
+            return self.__edad
+
+    def agregar_respuestas(self, respuestas):
+        if self.validar_edad(self.__edad):
+            super().agregar_respuestas(respuestas)
+        else:
+            print("No cumples con el rango de edad para responder esta encuesta.")
+
+
+class EncuestaLimitadaRegion(Encuesta):
+    def __init__(self, nombre):
+        super().__init__(nombre)
+        self.__region = 0
+        self.__regiones = [region for region in range(1, 17)]
+
+    def agregar_respuestas(self, respuestas):
+        if self.__region in self.__regiones:
+            super().agregar_respuestas(respuestas)
+        else:
+            print(
+                "No cumples con ser de una región válida para responder esta encuesta."
+            )
+```
+{: .nolineno }
+
 ## Requerimiento 5
 
 A partir del diagrama de clases del requerimiento 1, en un archivo `usuario.py`, crear la clase que permita crear objetos de tipo **Usuarios**.
