@@ -70,5 +70,222 @@ Considerar incluir:
 - Operaciones
 - Relaciones entre clases
 
+### Diagrama desarrollado
 
+```mermaid
+---
+config:
+  theme: dark
+---
+classDiagram
+    %% Definición de las clases
+    class Usuario {
+        - correo: String
+        - edad: int
+        - region: int
+        - lista_respuesta: ListaRespuesta
+        + get_correo(): String
+        + set_correo(correo: String): void
+        + contestar_encuesta(encuesta: Encuesta): void
+    }
+    class ListaRespuesta {
+        - respuestas: List&lt;int&gt;
+        - get_respuestas(): List
+    }
+    class Alternativa {
+        - contenido: String
+        - ayuda: String = ""
+        + get_contenido(): String
+        + set_contenido(contenido: String): void
+        + get_ayuda(): String
+        + set_ayuda(ayuda: String): void
+        + mostrar_alternativa(): void
+    }
+
+    class Pregunta {
+        - enunciado: String
+        - ayuda: String
+        - requerida: Boolean = True
+        + alternativas: List&lt;Alternativa&gt;
+        + get_enunciado(): String
+        + set_enunciado(enunciado: String): void
+        + agregar_alternativa(alternativa: Alternativa): void
+        + mostrar_enunciado(): void
+    }
+
+    class Encuesta {
+        - nombre: String
+        - preguntas: List&lt;Pregunta&gt;
+        - respuestas: List = []
+        + get_nombre(): String
+        + set_nombre(nombre: String): void
+        + agregar_pregunta(pregunta: Pregunta): void
+        + agregar_respuestas(respuestas: List): void
+        + mostrar_encuesta(): void
+    }
+    class EncuestaLimitadadEdad {
+        - edad: int
+        + get_edad(): String
+        + agregar_respuestas() // aplica reglas
+    }
+    class EncuestaLimitadaRegion {
+        - regiones: List&lt;int&gt;
+        + get_regiones(): List&lt;int&gt;
+        + agregar_respuestas() // aplica reglas
+    }
+    %% Relaciones
+    Usuario "1" --o  "1" ListaRespuesta: "contesta"
+    ListaRespuesta --> Usuario : "generada por"
+    ListaRespuesta "1" --* "1" Encuesta: "pertenece"
+    Pregunta "1" *-- "*" Alternativa : contiene
+    Alternativa --> Pregunta : "creada por"
+    Encuesta "1" *-- "*" Pregunta : contiene
+    Encuesta <|-- EncuestaLimitadadEdad : hereda
+    Encuesta <|-- EncuestaLimitadaRegion : hereda
+```
+
+## Requerimiento 2
+
+A partir del diagrama de clases del requerimiento 1, en un archivo `alternativa.py`, crear la clase que permita crear objetos de tipo **Alternativas**.
+
+- Dentro de la clase, incluir todo  lo especificado en el diagrama de clase.
+- **Opcional**: implementar la lógica de las operaciones.
+
+### Solución a la clase Alternativa
+
+{% include codeHeader.html file="alternativa.py" compiler="y" %}
+```py
+class Alternativa():
+
+    def __init__(self, contenido, ayuda = '') -> None:
+        self.__contenido = contenido
+        self.__ayuda = ayuda
+
+    @property
+    def contenido(self) -> str:
+        return self.__contenido
+
+    @contenido.setter
+    def contenido(self, new_contenido) -> None:
+        self.__contenido = new_contenido
+    
+    @property
+    def ayuda(self) -> str:
+        if self.__ayuda:
+            return self.__ayuda
+
+    @ayuda.setter
+    def ayuda(self, new_ayuda) -> None:
+        self.__ayuda = new_ayuda
+    
+    def mostrar_alternativa(self) -> None:
+        print(self.contenido, '[{}]'.format(self.ayuda) if self.ayuda else '')
+
+if __name__ == "__main__":
+    a1 = Alternativa('Alternativa n° 1', 'ayuda de alternativa 1')
+    a2 = Alternativa('Alternativa n° 2')
+    a1.mostrar_alternativa()
+    a2.mostrar_alternativa()
+```
+{: .nolineno }
+
+## Requerimiento 3
+
+A partir del diagrama de clases del requerimiento 1, en un archivo `pregunta.py`, crear la clase que permita crear objetos de tipo **Pregunta**.
+
+- Dentro de la clase, incluir todo lo especificado en el diagrama de clases.
+- **Opcional**: implementar lógica de las operaciones.
+
+> **Tip**: Considera que las alternativas son entregadas como una lista de diccionarios.
+
+### Solución a la clase Pregunta
+
+{% include codeHeader.html file="pregunta.py" %}
+```py
+from alternativa import Alternativa
+
+class Pregunta():
+    def __init__(self, enunciado, ayuda=None, requerida=True):
+        self.__enunciado = enunciado
+        self.__ayuda = ayuda
+        self.__requerida = requerida
+        self.__alternativas = []
+
+    def agregar_alternativa(self, contenido, ayuda=None):
+        nueva_alternativa = Alternativa(contenido, ayuda)
+        self.__alternativas.append(nueva_alternativa)
+
+    @property
+    def enunciado(self):
+        return self.__enunciado
+
+    @enunciado.setter
+    def enunciado(self, new_enunciado):
+        self.__enunciado = new_enunciado
+
+    @property
+    def ayuda(self):
+        return self.__ayuda
+
+    @ayuda.setter
+    def ayuda(self, new_ayuda):
+        self.__ayuda = new_ayuda
+
+    @property
+    def requerida(self):
+        return self.__requerida
+    
+    @requerida.setter
+    def requerida(self, new_requerida):
+        if new_requerida not in (True, False):
+            raise ValueError("El valor debe ser True o False")
+        else:    
+            self.__requerida = new_requerida
+
+    def mostrar_enunciado(self) -> None:
+        print(self.enunciado, '[{}]'.format(self.ayuda) if self.ayuda else '')
+        print('(pregunta requerida)' if self.requerida else '(pregunta opcional)')
+        for num, alternativa in enumerate(self.__alternativas, 1):
+            print(f"{num})", end=" ")
+            alternativa.mostrar_alternativa()
+
+if __name__ == "__main__":
+    p1 = Pregunta('¿Cómo se dice hola en inglés?', requerida=False)
+    p1.agregar_alternativa("Hi")
+    p1.agregar_alternativa("Yes")
+    p1.agregar_alternativa("Thanks")
+    p1.mostrar_enunciado()
+```
+{: .nolineno }
+
+## Requerimiento 4
+
+A partir del diagrama de clases del requerimiento 1, en un archivo `encuesta.py`, crear las clases que permitan crear objetos de tipo **Encuesta**, **EncuestaLimitadaEdad** y **EncuestaLimitadaRegion**.
+
+- Dentro de la clase, incluir todo lo especificado en el diagrama de clases.
+- **Opcional**: implementar la lógica de las operaciones.
+
+> **Tip**: Considera que las preguntas son entregadas como una lista de diccionarios.
+
+## Requerimiento 5
+
+A partir del diagrama de clases del requerimiento 1, en un archivo `usuario.py`, crear la clase que permita crear objetos de tipo **Usuarios**.
+
+- Dentro de la clase, incluir todo lo especificado en el diagrama de clases.
+- **Opcional**: implementar la lógica de las operaciones. En caso de hacerlo, debe primero crear la clase **ListadoRespuestas**, y luego implementar el comportamiento de esta clase.
+
+## Requerimiento 6
+
+A partir del diagrama de clases del requerimiento 1, en un archivo `listado_respuestas.py`, crear la clase que permita crear objetos de tipo **ListadoRespuestas**.
+
+- Dentro de la clase, incluir todo lo especificado en el diagrama de clases.
+
+### Solución
+
+{% include codeHeader.html file="listado_respuesta.py" %}
+```py
+class ListaRespuesta():
+	pass
+```
+{: .nolineno }
 

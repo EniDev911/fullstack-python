@@ -6,6 +6,16 @@ ol, ul {
 	}
 }
 
+ul.section-toc {
+	margin: 0;
+	list-style: square;
+	ul {
+		margin: 0;
+		list-style: inside;
+	}
+}
+
+
 @media (min-width: 992px) {
 	ol, ul {
 		font-size: 19px;
