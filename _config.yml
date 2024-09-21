@@ -51,8 +51,8 @@ collections:
     output: true
     permalink: /:categories/:title
 # PAGINATION
-paginate: 5
-paginate_path: /page:num/
+paginate: 6
+paginate_path: "/page:num/"
 
 defaults:
   -

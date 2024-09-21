@@ -10,13 +10,13 @@ thumbnail: '/assets/img/git.svg'
 
 Para comenzar a personalizar aspectos básicos y avanzados de **Git** debemos saber del funcionamiento y cómo modificar su configuración predeterminada. Una herramienta inherente de **Git** llamada `git config` permite establecer y obtener variables de configuración que controlan aspectos del funcionamiento y la apariencia de **Git**. Estas variables se pueden almacenar en tres lugares diferentes:
 
-<i class="fa-regular fa-file-lines"></i> `[path]/etc/gitconfig`{: .bg-warning .text-dark }
+`[path]/etc/gitconfig`{: .bg-warning .text-dark }
 : Contiene los valores aplicados a cada usuario en el sistema y todos sus repositorios (si pasa la opción `--system` a `git config`, lee y escribe desde este archivo de configuración específicamente. Debido a que se trata de un archivo de configuración del sistema, se necesitaría información administrativa o **privilegios de superusuario** para realizar cambios.
 
-<i class="fa-regular fa-file-lines"></i> `~/.gitconfig`{: .bg-warning .text-dark }<br><i class="fa-regular fa-file-lines"></i> `~/.config/git/config`{: .bg-warning .text-dark }
+`~/.gitconfig`{: .bg-warning .text-dark }<br>`~/.config/git/config`{: .bg-warning .text-dark }
 : Contiene valores específicos personalmente para el usuario. Puedes hacer que **Git** lea y escriba en este archivo específicamente al pasar la opción `--global` a `git config`, y esto afecta todos los repositorios con los que trabaja en el sistema del usuario.
 
-<i class="fa-regular fa-file-lines"></i> `.git/config`{: .bg-warning .text-dark }
+`.git/config`{: .bg-warning .text-dark }
 : Específico para ese único repositorio. Puede obligar a **Git** a leer y escribir en este archivo pasando la opción `--local` a `git config`, pero de hecho es la predeterminada. Como es de esperar, necesita estar ubicado en algún lugar de un repositorio de **Git** para que esta opción funcione correctamente.
 
 > **Nota**<br>Cada nivel anula los valores del nivel anterior, por lo que los valores en `.git/config` superan a los de `[path]/etc/gitconfig`.
@@ -62,7 +62,7 @@ De todas formas, cuando usamos git y no tenemos configurado el usuario, nos most
 <video src="{{ page.video_path | relative_url }}/config-user.mp4" width="100%" height="100%" controls class="border border-secondary"></video>
 
 
-### Configurar VS Code como el editor por defecto para git
+### Configurar VSCode como el editor por defecto para git
 
 {% include codeHeader.html %}
 ```bash

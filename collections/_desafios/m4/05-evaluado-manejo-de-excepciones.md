@@ -12,7 +12,7 @@ github:
 
 ## Descripción
 
-Usted trabaja para una empresa que se encuentra desarrollando una aplicación de galería de fotos. Le han solicitado controlar que no sea posible modificar el alto o el ancho de una foto creada, en caso de que se **esté intentando** modificar alguno de estos atributos por un valor menor a 1, o mayor al valor máximo determinado por el atributo de clase `MAX` de la clase `FOTO`. Le solicitan además hacer este control mediante una **excepción propia**, ya que se desea utilizar la misma excepción en otro sector del programa que recibe los valores de ancho y alto, y desea validarlos antes de crear nuevas fotos.
+Usted trabaja para una empresa que se encuentra desarrollando una aplicación de galería de fotos. Le han solicitado controlar que no sea posible modificar el **alto** o el **ancho** de una foto creada, en caso de que se **esté intentando** **modificar** alguno de estos atributos **por un valor menor a 1**, **o mayor** al valor máximo determinado por el atributo de clase `MAX` de la clase `FOTO`. Le solicitan además hacer este control mediante una **excepción propia**, ya que se desea utilizar la misma excepción en otro sector del programa que recibe los valores de ancho y alto, y desea validarlos antes de crear nuevas fotos.
 
 Se le proporciona el código que permite crear instancias de Foto, donde usted debe agregar el **lanzamiento de la excepción** en los métodos setter de ancho y alto, según las condiciones indicadas.
 
@@ -24,7 +24,7 @@ Se le proporciona el código que permite crear instancias de Foto, donde usted d
 
 ### Requerimiento 1
 
-En un archivo llamado `error.py`, crear la excepción `DimensionError` derivada de `Exception`. Sobresscribir el constructor, recibiendo los parámetros `mensaje`, `dimension` y `maximo`, y asignándole los respectivos atributos de instancia.
+En un archivo llamado `error.py`, crear la excepción `DimensionError` derivada de `Exception`. Sobrescribir el constructor, recibiendo los parámetros `mensaje`, `dimension` y `maximo`, y asignándole los respectivos atributos de instancia.
 
 Creamos un nuevo archivo:
 
@@ -71,9 +71,9 @@ En la misma clase anterior, sobrecargar el método `__str__`, de forma tal que s
 En el archivo `foto.py` entregado, modificar los métodos `setter` de `alto` y `ancho`, de forma tal que se lance una excepción de tipo `DimensionError` en caso de que el nuevo valor ingresado no cumpla con las condiciones descritas. En caso contrario, asignar el nuevo valor al atributo de instancia correspondiente:
 
 {% include codeHeader.html file="foto.py" %}
+{16 17 18 19 20 21 22 23 24 31 32 33 34 35 36 37 38 39}
 ```python
 from error import DimensionError
-
 
 class Foto:
 	MAX = 2500
@@ -89,7 +89,14 @@ class Foto:
 
 	@ancho.setter
 	def ancho(self, ancho) -> None:
-		self.__ancho = ancho
+		if ancho < 1 or ancho > self.MAX:
+			raise DimensionError(
+				f"No puede ingresar un valor menor a 1 o mayor a {self.MAX}",
+				ancho,
+				self.MAX,
+			)
+		else:
+			self.__ancho = ancho
 
 	@property
 	def alto(self) -> int:
