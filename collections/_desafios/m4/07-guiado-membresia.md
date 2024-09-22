@@ -95,6 +95,24 @@ Vamos a crear el archivo `membresia.py`:
 
 {% include newfile.html file="membresia.py" %}
 
+Luego en el archivo `membresia.py` vamos a comenzar definiendo nuestra clase abstracta **Membresia** y el **método abstracto** que deberán implementar todas las subclases:
+
+{% include codeHeader.html file="membresia.py" %}
+{1 9 10 11}
+```py
+from abc import ABC, abstractmethod
+
+class Membresia(ABC):
+
+	def __init__(self, correo, nro_tarjeta):
+		self.correo_suscriptor = correo
+		self.numero_tarjeta = nro_tarjeta
+
+	@abstractmethod
+	def _crear_nueva_membresia(self):
+		pass
+```
+
 ### Requerimiento 2
 
 En el mismo archivo, crear la clase que permita crear instancias de membresías de tipo **Gratis**. Considere.
@@ -104,7 +122,29 @@ En el mismo archivo, crear la clase que permita crear instancias de membresías 
 - Definir los métodos necesarios (en caso de que se justifique).
 - Sobrescribir los métodos necesarios (en caso de que se justifique).
 
-**Requerimiento 3**
+Continuamos en el mismo archivo `membresia.py` en el cual vamos a definir la clase **Gratis** que heredará de la clase abstracta **Membresia**:
+
+{% include codeHeader.html file="membresia.py" %}
+{2 3}
+```py
+class Gratis(Membresia):
+	VALOR = 0
+	DISPOSITIVOS = 1
+
+	def _crear_nueva_membresia(self, membresia: int):
+		if membresia == 1:
+			return Basico(self.correo_suscriptor, self.numero_tarjeta)
+		elif membresia == 2:
+			return Familiar(self.correo_suscriptor, self.numero_tarjeta)
+		elif membresia == 3:
+			return SinConexion(self.correo_suscriptor, self.numero_tarjeta)
+		elif membresia == 4:
+			return Pro(self.correo_suscriptor, self.numero_tarjeta)
+		else:
+			return Gratis(self.correo_suscriptor, self.numero_tarjeta)
+```
+
+### Requerimiento 3
 
 En el mismo archivo, crear la clase que permita crear instancias de membresías de tipo **Básica**. Considere:
 - Heredar la o las clases necesarias para evitar repetir implementaciones.
@@ -114,7 +154,7 @@ En el mismo archivo, crear la clase que permita crear instancias de membresías 
 
 > **Tip**: Puede usar `isinstance` para establecer los días de regalo.
 
-**Requerimiento 4**
+### Requerimiento 4
 
 En el mismo archivo, crear la clase que permita crear instancias de membresías de tipo **Familiar**. Considere:
 
@@ -123,7 +163,7 @@ En el mismo archivo, crear la clase que permita crear instancias de membresías 
 - Definir los métodos necesarios (en caso de que se justifique).
 - Sobrescribir los métodos necesarios (en caso de que se justifique).
 
-**Requerimiento 5**
+### Requerimiento 5
 
 En el mismo archivo, crear la clase que permita crear instancias de membresías de tipo **Sin Conexión**. Considere:
 
@@ -132,7 +172,7 @@ En el mismo archivo, crear la clase que permita crear instancias de membresías 
 - Definir los métodos necesarios (en caso de que se justifique).
 - Sobrescribir los métodos necesarios (en caso de que se justifique).
 
-**Requerimiento 6**
+### Requerimiento 6
 
 En el mismo archivo, crear la clase que permita crear instancias de membresías de tipo **Pro**. Considere:
 
