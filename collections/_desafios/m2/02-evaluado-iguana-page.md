@@ -31,7 +31,7 @@ También contamos con un material de apoyo que podemos descargar [aquí]({{ page
 
 ## Desarrollo
 
-Para cumplir con éxito nuestro desafío es necesario tener una organización como corresponde de los diferentes archivos es por eso que se recomienda utilizar una **estructura de assets** para trabajar.
+Para cumplir con éxito nuestro desafío es necesario tener una organización como corresponde de los diferentes archivos, es por eso que se recomienda utilizar una **estructura de assets** para trabajar.
 
 ### Estructura del proyecto
 
@@ -56,7 +56,7 @@ Igual como en el [{{ page.previous.title }}]({{ page.previous.url | relative_url
 
 ### Integrar la librería  Font Awesome
 
-Debemos añadir la librería para los íconos, lo podemos hacer a través de **CDN**, aseguremonos de poner el la etiqueta `script`{:.tag} justo antes de la etiqueta de cierre del `body`{: .tag }:
+Debemos añadir la librería para los íconos, lo podemos hacer a través de **CDN**, asegurémonos de poner la etiqueta `script`{:.tag} justo antes de la etiqueta de cierre del `body`{: .tag }:
 
 {% include codeHeader.html icon="html" %}
 {7}
@@ -137,7 +137,7 @@ Visto lo anterior, ya podemos entrar en tierra derecha, vamos a trabajar la sigu
 
 ![img - iguana]({{ page.img_path | relative_url | append: '01.png' }})
 
-De esta forma podemos indentificar nuestro modelo de cajas que consiste en 3 cajas un `header`{: .tag} contenedor, un `h1`{:.tag} para el título y un `div`{:.tag} para la imagen grande que posicionaremos a través de **CSS**, por defecto las etiquetas antes mencionadas son **cajas de bloques** quiere decir que utilizarán el 100% de su contenedor.
+De esta forma podemos indentificar nuestro modelo de cajas que consiste en 3 cajas un `header`{: .tag} contenedor, un `h1`{:.tag} para el título y un `div`{:.tag} para la imagen grande que posicionaremos a través de **CSS**, por defecto las etiquetas antes mencionadas son **cajas de bloques** quiere decir que tienen su propiedad `display:block` lo que significa que utilizarán el 100% disponible de su contenedor.
 
 > **Ojo**:<br>La maqueta del desafío te presentará algunas propiedades como el ancho y el alto en píxeles y eso complica las cosas para que el diseño se vea proporcional a cada pantalla. Por ello en lo que resta del desarrollo estaré usando unidades avanzadas que dependen del **viewport** (región visible de la página web en el navegador).
 
@@ -193,56 +193,6 @@ body {
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-}
-.desc-section {
-    padding: 3% 6%;
-    display: table;
-}
-
-.desc-section__text {
-    display: table-cell;
-    width: 55%;
-    font-size: 1.4vw;
-    padding-right: 2.5vw;
-    vertical-align: middle;
-}
-
-.desc-section__image {
-    display: table-cell;
-}
-
-.desc-section__image img {
-    width: 100%;
-}
-
-.icons-section {
-    background: #1E1A13;
-    text-align: center;
-    color: #fff;
-    padding: 0 4%;
-}
-
-.icons-section__title {
-    font-size: 4vw;
-    text-transform: uppercase;
-    font-weight: normal;
-    margin-bottom: 3vw;
-}
-
-.icons-section__content {
-    list-style: none;
-}
-
-.icons-section__content li {
-    display: inline-block;
-}
-
-.icons-section__content li i {
-    font-size: 6vw;
-}
-
-.icons-section__content li div {
-    font-size: 2.4vw;
 }
 ```
 {: .nolineno }
@@ -317,7 +267,26 @@ Para tu buena suerte, te mostrare una forma muy sencilla (solía usar este truco
 {% tab desc_section css %}
 {% include codeHeader.html file='assets/css/style.css' %}
 ```css
-{{ page.css.desc }}
+.desc-section {
+    padding: 3% 6%;
+    display: table;
+}
+
+.desc-section__text {
+    display: table-cell;
+    width: 55%;
+    font-size: 1.4vw;
+    padding-right: 2.5vw;
+    vertical-align: middle;
+}
+
+.desc-section__image {
+    display: table-cell;
+}
+
+.desc-section__image img {
+    width: 100%;
+}
 ```
 {: .nolineno }
 {% endtab %}
@@ -325,6 +294,8 @@ Para tu buena suerte, te mostrare una forma muy sencilla (solía usar este truco
 
 Como pudiste observar en el CSS, aplicamos los siguientes estilos para el contenedor `section class="desc-section"`{: .tag }: 
 
+{% include codeHeader.html icon="css" %}
+{2 3}
 ```css
 .desc-section {
 	padding: 3% 6%;
@@ -333,14 +304,16 @@ Como pudiste observar en el CSS, aplicamos los siguientes estilos para el conten
 ```
 {: .nolineno }
 
-Como vemos sólo hemos dado un relleno (*padding*) que en este caso se le asignó en procentajes, un `3%` tanto arriba como abajo (eje Y) y un `6%` tanto a la izquierda como a la derecha (eje X), como estamos usando una etiqueta `section`{:.tag} no es necesario establecer un ancho, ya que al ser un elemento de bloque usará el `100%`.
+Como vemos sólo hemos dado un relleno (*padding*) que en este caso se le asignó en porcentajes, un `3%` tanto arriba como abajo (eje Y) y un `6%` tanto a la izquierda como a la derecha (eje X), como estamos usando una etiqueta `section`{:.tag} no es necesario establecer un ancho, ya que al ser un elemento de bloque usará el `100%`.
 
-> Aquí también se podría definir una altura (*height*) para que delimitemos la zona en la que vamos a trabajar. Para este ejemplo vamos a ignorarlo y trabajaremos con los tamaños de los elementos hijos y el padre adoptará automáticamente la altura adecuada.
+> **Nota**<br>Aquí también se podría definir una altura (*height*) para que delimitemos la zona en la que vamos a trabajar. Para este ejemplo vamos a ignorarlo y trabajaremos con los tamaños de los elementos hijos y el padre adoptará automáticamente la altura adecuada.
 
-Luego como mencione anteriormente estamos asignando el valor `table` a la propiedad `display`, ya que de esta forma será más fácil posicionar los elementos hijos aprovechando el comportamiento de una tabla.
+Luego como mencionaba anteriormente, estamos asignando el valor `table` a la propiedad `display`, ya que, de esta forma será más fácil posicionar los elementos hijos, aprovechando el comportamiento de una tabla.
 
 Sigamos pasemos a revisar los estilos del primer hijo:
 
+{% include codeHeader.html icon="css" %}
+{2 3 6}
 ```css
 .desc-section__text {
 	display: table-cell;
@@ -352,10 +325,11 @@ Sigamos pasemos a revisar los estilos del primer hijo:
 ```
 {: .nolineno }
 
-Como podemos observar el valor de la propiedad `display` para este elemento es `table-cell`, que se utiliza para crear una **celda** y como también hemos especificado la propiedad `width` para que ocupe un `55%` del ancho disponible. Luego asignamos un tamaño de fuente que ya sabemos lo hacemos con medidas relativas al **viewport** asi mismo para el `padding-right` ya que de esta forma no se verá pegada a la imagen, finalmente con la propiedad `vertical-align` podemos posicionar el contenido al medio con el valor `middle`.
+Como podemos observar el valor de la propiedad `display` para este elemento es `table-cell`, que se utiliza para crear una **celda** y como también hemos especificado la propiedad `width` para que ocupe un `55%` del ancho disponible. Luego asignamos un tamaño de fuente que ya sabemos, lo hacemos con medidas relativas al **viewport** asi mismo para el `padding-right` ya que de esta forma no se verá pegada a la imagen, finalmente con la propiedad `vertical-align` podemos posicionar el contenido al medio con el valor `middle`.
 
 Con lo anterior ya hicimos todo, ahora vamos revisar los estilos para el contenedor de la imagen:
 
+{% include codeHeader.html icon="css" %}
 ```css
 .desc-section__image {
 	display: table-cell;
@@ -363,10 +337,12 @@ Con lo anterior ya hicimos todo, ahora vamos revisar los estilos para el contene
 ```
 {: .nolineno }
 
-En realidad ni siquiera era necesario haber puesto la propiedad anterior, pero por temas de entendimiento vamos a dejar el display en `table-cell` para mantener el contexto de tabla y por ende este contenedor sería la segunda columna o celda, además decirte que no es necesario definir ninguna otra propiedad ya que automáticamente toma el resto de ancho y alto disponible.
+En realidad ni siquiera era necesario haber puesto la propiedad anterior, pero por temas de entendimiento vamos a dejar la propiedad `display` en `table-cell` para mantener el contexto de tabla y por ende este contenedor sería la segunda columna o celda, además decirte que no es necesario definir ninguna otra propiedad ya que automáticamente toma el resto de ancho y alto disponible (comportamiento de una tabla).
 
 Lo que nos resta en esta sección es la imagen y que si o si aquí debemos definir las siguientes propiedades:
 
+{% include codeHeader.html icon="css" %}
+{2 3}
 ```css
 .desc-section__image img {
 	width: 100%;
@@ -445,9 +421,33 @@ Ya como podemos observar en esta sección vamos a requerir el uso de más etique
 {: .nolineno }
 {% endtab %}
 {% tab icon_section css %}
-{% include codeHeader.html icon='css3' %}
+{% include codeHeader.html file='style.css' %}
 ```css
-{{ page.css.icons }}
+.icons-section {
+	background: #1E1A13;
+	text-align: center;
+	padding: 4% 0;
+}
+
+.icons-section__title {
+	font-size: 4vw;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin-bottom: 3vw;
+}
+
+.icons-section__content {
+    list-style: none;
+}
+
+.icons-section__content li {
+    display: inline-block;
+    margin: 0 3vw;
+}
+
+.icons-section__content li i {
+	font-size: 6vw;
+}
 ```
 {: .nolineno }
 {% endtab %}
@@ -455,17 +455,20 @@ Ya como podemos observar en esta sección vamos a requerir el uso de más etique
 
 Como podemos observar tenemos en la etiqueta contenedora los siguientes estilos:
 
+{% include codeHeader.html icon="css" %}
+{2 3}
 ```css
 .icons-section {
 	background: #1E1A13;
 	text-align: center;
-	padding: 0 4%;
+	padding: 4% 0;
 }
 ```
 {: .nolineno }
 
 Definimos el color de fondo que se corresponde con el de la maqueta y en formato hexadecimal tal cual se nos pide en el desafío. Luego tenemos la propiedad `text-align: center` que al igual como lo hemos hecho en los títulos pondrá el contenido centrado y esto nos permite así centrar tanto el contenido del título como el resto de elementos hijos.
 
+{% include codeHeader.html icon="css" %}
 ```css
 .icons-section__title {
 	font-size: 4vw;
@@ -476,10 +479,12 @@ Definimos el color de fondo que se corresponde con el de la maqueta y en formato
 ```
 {: .nolineno }
 
-El título simplemente le hemos definido el tamaño de fuente, formatear el contenido para que se vea en mayúscula, cambiamos el ancho de la fuente que para las etiquetas `h1`{: .tag} hasta la `h6`{: .tag} que por defecto el ancho o peso (*weight*) es **bold** (700) para que sea **normal** (400) y por último aplicamos un `margin-bottom: 3vw` para que separemos el título del contenido.
+En el título simplemente le hemos definido el tamaño de fuente, formatear el contenido para que se vea en mayúscula, cambiamos el ancho de la fuente que para las etiquetas `h1`{: .tag} hasta la `h6`{: .tag} que por defecto el ancho o peso (*weight*) es **bold** (700) para que sea **normal** (400) y por último aplicamos un `margin-bottom: 3vw` para que separemos el título del contenido.
 
 Después tenemos lo siguiente:
 
+{% include codeHeader.html icon="css" %}
+{2}
 ```css
 .icons-section__content {
     list-style: none;
@@ -489,8 +494,10 @@ Después tenemos lo siguiente:
 
 Como sabemos las etiquetas de listas como `ul`{: .tag } vienen con una viñeta para cada item de la lista es por ello que con la propiedad `list-style: none` le estamos quitando esa viñeta que viene por defecto.
 
-Para que nuestros íconos con su respectivo texto se vean uno al lado del otro tuvimos que añadir lo siguiente a las etiquetas `li`{: .tag }
+Para que nuestros íconos con su respectivo texto, se vean uno al lado del otro tuvimos que añadir lo siguiente a las etiquetas `li`{: .tag }
 
+{% include codeHeader.html icon="css" %}
+{2 3}
 ```css
 .icons-section__content li {
     display: inline-block;
@@ -501,8 +508,10 @@ Para que nuestros íconos con su respectivo texto se vean uno al lado del otro t
 
 Sin embargo para que no se vieran tan juntos añadimos un margen con `margin: 0 3vw` para que sea la misma cantidad tanto de la izquierda y derecha.
 
-Luego tuvimos que aumentar el tamaño de los íconos con las siguiente propiedad:
+Luego tenemos que aumentar el tamaño de los íconos con las siguiente propiedad:
 
+{% include codeHeader.html icon="css" %}
+{2}
 ```css
 .icons-section__content li i {
 	font-size: 6vw;
@@ -512,6 +521,8 @@ Luego tuvimos que aumentar el tamaño de los íconos con las siguiente propiedad
 
 Y por último aumentamos el tamaño de los textos:
 
+{% include codeHeader.html icon="css" %}
+{2}
 ```css
 .icons-section__content li div {
 	font-size: 2.4vw;
@@ -529,7 +540,7 @@ Como siempre tenemos el siguiente código que luego comentamos:
 
 {% tabs gallery_section %}
 {% tab gallery_section html %}
-{% include codeHeader.html icon='html' %}
+{% include codeHeader.html file='index.html' %}
 ```html
 <section class="gallery-section">
 	<div class="gallery-section__box">
@@ -556,7 +567,7 @@ Como siempre tenemos el siguiente código que luego comentamos:
 {: .nolineno }
 {% endtab %}
 {% tab gallery_section css %}
-{% include codeHeader.html icon='css' %}
+{% include codeHeader.html file='style.css' %}
 ```css
 .gallery-section {
 	display: table;
@@ -584,7 +595,8 @@ Como te mencionaba, formas de alinear hay muchas, yo opte por repetir la técnic
 {: align='center' }
 ![img - gif](https://c.tenor.com/oWKq4IvxM-4AAAAC/tenor.gif){:height='180'}
 
-
+{% include codeHeader.html icon="css" %}
+{2 3 4}
 ```css
 .gallery-section {
 	display: table;
@@ -596,8 +608,10 @@ Como te mencionaba, formas de alinear hay muchas, yo opte por repetir la técnic
 
 Si te fijas, tenemos lo mismo que en secciones anteriores, el mismo relleno (*padding*), pero sin embargo ahora tenemos la propiedad `border-spacing: 1vw` que es la forma de crear un espaciador entre los elementos hijo que se configuren como celda.
 
-Luego vamos a darle los estilos como ancho y altura para los elementos contenedores de las imágenes que se comportarán como las columnas de la tabla:
+Luego vamos a darle los estilos, como ancho y altura para los elementos contenedores de las imágenes, que se comportarán como las columnas de la tabla:
 
+{% include codeHeader.html icon="css" %}
+{3 4}
 ```css
 .gallery-section__box {
 	display: table-cell;
@@ -611,7 +625,8 @@ Luego vamos a darle los estilos como ancho y altura para los elementos contenedo
 
 Y por último tenemos que ajustar las imágenes para que ocupen el 100% de su contenedor:
 
-
+{% include codeHeader.html icon="css" %}
+{2 3 4}
 ```css
 .gallery-section__box img {
 	width: 100%;
@@ -625,6 +640,8 @@ Y por último tenemos que ajustar las imágenes para que ocupen el 100% de su co
 
 Pero lo mejor es tener nuestras imágenes en otros contenedores así nos da la posibilidad de hacer algunos efectos muy simple como una transición que cuando se pase el mouse por encima de cada imagen (*hover*) escalamos su tamaño original, tal como lo muestra el código anterior con la propiedad `transition: transform .5s ease`:
 
+{% include codeHeader.html icon="css" %}
+{2}
 ```css
 .gallery-section__box img:hover {
 	transform: scale(1.3);
@@ -638,6 +655,7 @@ Hemos llegado quizás a la parte más sencilla de la página valga la redundanci
 
 {% tabs footer_iguana %}
 {% tab footer_iguana html %}
+{% include codeHeader.html file="index.html" %}
 ```html
 <footer>
 	Visita <a href="https://www.anipedia.net/iguanas/iguana-verde/" target="_blank"
@@ -647,6 +665,7 @@ Hemos llegado quizás a la parte más sencilla de la página valga la redundanci
 {: .nolineno }
 {% endtab %}
 {% tab footer_iguana css %}
+{% include codeHeader.html file="style.css" %}
 ```css
 footer {
     background-color: #1E1A13;
@@ -654,11 +673,24 @@ footer {
     font-size: 1.5vw;
     padding: 2% 0;
 }
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    transition: color .3s ease;
+}
+
+footer a:visited {
+    color: #cac;
+}
+
+footer a:hover {
+    color: peru;
+}
 ```
 {: .nolineno  }
 {% endtab %}
 {% endtabs %}
-
 
 ---
 
@@ -682,7 +714,7 @@ git clone git@github.com:EniDev911/m2-evaluado-iguana-page.git
 {% endtab %}
 {% tab iguana github page %}
 {% include ifr_results.html 
-  src='https://enidev911.github.io/m2-evaluado-iguana-page/' %}
+  src='https://enidev911.github.io/m2-evaluado-iguana-page/' target="true" %}
 {% endtab %}
 {% endtabs %}
 
