@@ -1,17 +1,85 @@
+blockquote {
+	position: relative;
+}
 blockquote p {
 	background: #202030ff;
 	border: 1px solid #636bffff;
 	padding: 10px;
 	border-radius: 4px;
 	color: #b3b7f5ff;
+	box-shadow: 0 1px 8px 0 #222;
 }
 blockquote {
 	&.prompt-success p {
-		border: 1px solid #ffffD0;
-		background-color: #ffff8020;
+		background-color: #183022;
+		border: none;
 		color: #fff;
+		padding-left: 40px;
+		& strong, & em{
+			color: #ddd;
+		}
+		&::before {
+			content: '\f0eb';
+			font-family: 'Font Awesome 5 Free';
+			position: absolute;
+			left: 13px;
+			color: #118f11;
+			top: 40%;
+			display: inline-flex;
+			align-self: center;
+		}
 	}
+	&.prompt-info p {
+		background: #0b355999;
+		border: none;
+		padding-left: 40px;
+		&::before {
+			content: '\f0eb';
+			font-family: 'Font Awesome 5 Free';
+			position: absolute;
+			left: 13px;
+			top: 40%;
+			display: inline-flex;
+			align-self: center;
+		}
+	}
+	&.prompt-note p {
+		background: #1b313b;
+		border: none;
+		padding-left: 40px;
+		&::before {
+			content: '\f15c';
+			font-family: 'Font Awesome 5 Free';
+			position: absolute;
+			left: 13px;
+			top: 40%;
+			display: inline-flex;
+			align-self: center;
+		}
+	}
+	&.prompt-warning p {
+		background: #362e25;
+		color: #eee;
+		border: none;
+		padding-left: 40px;
+		& strong {
+			color: #ddd;
+		}
+		&::before {
+			content: '\f071';
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+			color: #ff9100;
+			position: absolute;
+			left: 10px;
+			top: 40%;
+			display: inline-flex;
+			align-self: center;
+		}
+	}
+
 }
+
 blockquote p strong,
 blockquote p em {
 	color: #b3b7f5ff;

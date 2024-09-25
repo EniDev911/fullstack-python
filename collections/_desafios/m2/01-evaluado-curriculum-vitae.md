@@ -6,6 +6,8 @@ type: evaluado
 show: true
 show_next: true
 img_path: /assets/img/desafios/curriculum/
+github:
+  name: eniDev911/m2-evaluado-curriculum
 ---
 
 ## Descripción
@@ -23,18 +25,19 @@ Para cumplir con éxito el desafío, vamos a ir paso a paso para ir clarificando
 
 ### Estructura del proyecto
 
-Cuando estamos trabajando en un sitio web de forma local, debemos mantener todos los archivos relacionados en solo directorio o carpeta. Este directorio se puede crear en el lugar que desees, pero te recomiendo encarecidamente que lo hagas en algún lugar donde lo puedas encontrar fácilmente, tal vez en el **escritorio**.
+Cuando estamos trabajando en un sitio web de forma local, debemos mantener todos los archivos relacionados en un solo directorio o carpeta. Este directorio se puede crear en el lugar que desees, pero te recomiendo encarecidamente que lo hagas en algún lugar donde lo puedas encontrar fácilmente, tal vez en el escritorio.
 
-> **Recomendacion**: Elige un lugar para almacenar los proyectos de tus sitios web. **Ej**: crea un directorio llamado **proyectosweb** (o algo similar). Aquí viviran todos los proyectos que vallas creando.
+> **Recomendacion**:<br>Elige un lugar para almacenar los proyectos de tus sitios web. **Ej**: crea un directorio llamado **proyectos_web** (o algo similar). Aquí vivirán todos los proyectos que vayas creando.
+{: .prompt-success }
 
-La estructura del proyecto es fundamental, veamos qué estructura debería tener nuestro proyecto. Pensemos en las cosas más comunes que tendrás en cualquier proyecto web simple:
+La estructura del proyecto es fundamental, veamos como estructurar nuestro proyecto. Pensemos en las cosas más comunes que encontramos en cualquier proyecto web simple:
 
-- Un archivo html principal (Ej: `index.html`)
-- Directorio para contener las imágenes (Ej: `portada.jpg` o `portada.png`)
-- Directorio para contener archivos de estilos (Ej: `estilo.css`)
-- Directorio para contener archivos script (Ej: `funciones.js`)
+- Un archivo html principal (Ej: *`index.html`*)
+- Directorio para contener las imágenes (Ej: *`portada.jpg`* o *`portada.png`*)
+- Directorio para contener archivos de estilos (Ej: *`estilo.css`*)
+- Directorio para contener archivos script (Ej: *`funciones.js`*)
 
-De esta forma podemos tener nuestro proyecto bien organizado, además es común ver que todos los directorios relacionados con las hojas de estilos, scripts e imágenes se encuentran a su vez dentro de un directorio llamado **assets**.
+De esta forma, podemos tener nuestro proyecto bien organizado, además es común ver que todos los directorios relacionados con las hojas de estilos, scripts e imágenes se encuentran a su vez dentro de un directorio llamado **assets**.
 
 Para nuestro proyecto **CV** vamos a crear entonces el siguiente árbol de directorios y archivos:
 
@@ -50,18 +53,19 @@ Para nuestro proyecto **CV** vamos a crear entonces el siguiente árbol de direc
 {: .nolineno }
 
 
-> **Nota**: Busca la foto que desees para colocar en el directorio `img`. En [https://robohash.org/](https://robohash.org/){: target='_blank' } puedes conseguir algunas imágenes de buena calidad basados en robots y más.
+> **Nota**:<br>Busca la foto que desees para colocar en el directorio `img`. En [https://robohash.org/](https://robohash.org/){: target='_blank' } puedes conseguir algunas imágenes de buena calidad basados en robots y más.
+{: .prompt-note }
 
 ### Cabecera de un documento HTML
 
 Como sabemos  la estructura de un documento HTML debía contener siempre dos etiquetas principales:
 
-- La cabecera de la página o `head`{:.tag}
-- El cuerpo de la página o `body`{:.tag}
+- La cabecera de la página ( `head`{:.tag} )
+- El cuerpo de la página ( `body`{:.tag} )
 
-El primero de ellos, se encarga de contener [etiquetas de metadatos](https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML){: target="_blank" } (*información sobre el documento*) así como establecer **relaciones con otro documentos** y el segundo se encarga de la parte visual que se mostrará al usuario en el navegador. Veamos la siguiente ilustración que muestra las etiquetas principales de cualquier documento **HTML5**:
+El primero de ellos, se encarga de contener [etiquetas de metadatos](https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML){: target="_blank" } (*información sobre el documento*) así como establecer **relaciones con otros documentos** y el segundo se encarga de la parte visual que se mostrará al usuario en el navegador. Veamos la siguiente ilustración que muestra las etiquetas principales de cualquier documento **HTML5**:
 
-![img doc html](https://enidev911.github.io/fullstackjsg33/guias/html/guia-general/images/estructura-documento.png){: .card }
+![img doc html](https://enidev911.github.io/fullstackjsg33/guias/html/guia-general/images/estructura-documento.png){: .rounded }
 
 Existen varias etiquetas que podemos utilizar en esta sección de cabecera del documento:
 
@@ -124,13 +128,14 @@ A pesar de que los motores de búsqueda como [Google](//google.com){:target='_bl
 </head>
 ```
 
-> Una descripción meta es una información importante para los motores de búsqueda y los usuarios.
+> **Nota**<br>Una descripción meta es una información importante para los motores de búsqueda y los usuarios.
+{: .prompt-note }
 
 ### Favicon (icono de pestaña)
 
 Cuando tenemos varias pestañas en nuestro navegador, para una búsqueda más fácil e intuitiva entre pestañas, el navegador suele colocar iconos a la izquierda del título de las pestañas. Estos iconos son conocidos como **favicons** (*iconos favoritos*) ya que [fue un invento de Internet Explorer](https://es.wikipedia.org/wiki/Favicon#:~:text=La%20forma%20original%20de%20definir%20un%20favicono%20era%20poniendo%20un%20archivo%20llamado%20favicon.ico%20en%20el%20directorio%20ra%C3%ADz%20del%20servidor%20web%2C%20el%20cual%20era%20mostrado%20autom%C3%A1ticamente%20en%20los%20favoritos%20de%20Internet%20Explorer){:target='_blank'} para colocar icono cuando el usuario añadía una página a favoritos.
 
-Para generar los favicons de una forma más comoda, podemos utilizar herramientas como [Real Favicon Generator](https://realfavicongenerator.net/){:target='_blank'}, a la cúal le pasamos un logo de alta resolución y nos genera un paquete **.zip** con los archivos y el código necesario para las diferentes versiones y resoluciones de los iconos. Ejemplo de ello sería el siguiente código:
+Para generar los favicons de una forma más comoda, podemos utilizar herramientas como [Real Favicon Generator](https://realfavicongenerator.net/){:target='_blank'}, donde podemos pasarle una imagen de alta resolución y nos genera un paquete **.zip** con los archivos y el código necesario para las diferentes versiones y resoluciones de los íconos. Ejemplo de ello sería el siguiente código:
 
 {% include codeHeader.html icon="html" %}
 {3 4 5 6 7}
@@ -146,7 +151,8 @@ Para generar los favicons de una forma más comoda, podemos utilizar herramienta
 </head>
 ```
 
-> **Ojo**: Según la estructura del proyecto se deben afinar las rutas hacia los vínculos.
+> **Ojo**:<br>Según la estructura que tenga el proyecto, se deben afinar los vínculos hacia los archivos.
+{: .prompt-warning }
 
 
 <div class="row g-3 my-3">
@@ -159,15 +165,18 @@ Para generar los favicons de una forma más comoda, podemos utilizar herramienta
 </div>
 
 
-> **Nota**: El problema principal con los **favicons**, es que esta característica no está definida en la especificación, por lo que cada navegador y cada sistema operativo la implementa como quiere. Hay navegadores que sólo soportan favicon en formato **PNG**, otros que solo soportan resoluciones específicas, etc.
+> **Nota**:<br>El problema principal con los **favicons**, es que esta característica no está definida en la especificación, por lo que cada navegador y cada sistema operativo lo implementa como quiere. Hay navegadores que sólo soportan favicon en formato **PNG**, otros que solo soportan resoluciones específicas, etc.
+{: .prompt-note }
 
-Si quieres íconos para utilizar en tus proyectos, te recomiendo las siguientes páginas: [Icons8](https://iconos8.es/){: target='_blank' }, [FlatIcon](https://www.flaticon.es/){: target='_blank' }
+
+> **Recomendación**<br>Si quieres íconos para utilizar en tus proyectos, te recomiendo las siguientes páginas: [Icons8](https://iconos8.es/){: target='_blank' }, [FlatIcon](https://www.flaticon.es/){: target='_blank' }
+{: .prompt-success }
 
 ### Encabezado
 
 En la parte principal del curriculum, vamos agrupar el título, nuestra foto de perfil y un subtítulo en lo que sería nuestro encabezado mediante la etiqueta `header`{:.tag}:
 
-{% include codeHeader.html file='index.html' %}
+{% include codeHeader.html file='index.html' codepen="y" %}
 ```html
 <!-- header  -->
 <header>
@@ -182,6 +191,7 @@ En la parte principal del curriculum, vamos agrupar el título, nuestra foto de 
 
 Dentro del contenido principal vamos a estar utilizando básicamente secciones para cada apartado como sería los **datos personales**, **formación académica**, **experiencia**, **información complementaria**, etc. Un ejemplo de ello sería lo siguiente:
 
+{% include codeHeader.html file="index.html" codepen="y" %}
 {5 6 7 8 9 10}
 ```html
 <header>
@@ -202,12 +212,12 @@ Dentro del contenido principal vamos a estar utilizando básicamente secciones p
 
 ### Estilos para imprimir @media print
 
-Este es un punto que se suele pasar por alto cuando se crean páginas o sitios web y es poner un estilo específico para cuando alguien quiera imprimir y para nuestro curriculum sería positivo.
+Este es un punto que se suele pasar por alto cuando se crean páginas o sitios web, y es poner un estilo específico para cuando alguien quiera imprimir y para nuestro curriculum sería positivo.
 
 Al menos hay que tener en cuenta lo siguiente cuando se define un estilo para imprimir:
 
 - Eliminar todo el contenido irrelevante como botones, menús, anuncios, etc.
-- Al imprimir se pierde la interactividad y por tanto hay que tener en cuenta que los enlaces generalmente no se pone la **url** y si tenemos enlaces debemos mostrar esas **url**.
+- Al imprimir se pierde la interactividad y por lo tanto hay que tener en cuenta que los enlaces generalmente no muestran la **url**, y si tenemos enlaces debemos mostrar esas **url**.
 - Centrar el título principal y subtítulo, eliminar emojis y caracteres raros.
 
 Un ejemplo de lo anterior sería:
@@ -229,13 +239,14 @@ Un ejemplo de lo anterior sería:
 		text-decoration: none;
 	}
 	a[href^='https']:after {
-		content: " (" attr(href) ")";
+		content: " (" attr(href) ")"; /* mostramos la url del enlace */
 	}
 }
 ```
 
 Luego debemos vincular ese archivo desde nuestro HTML:
 
+{% include codeHeader.html file="index.html" %}
 {3}
 ```html
 <head>
@@ -248,27 +259,7 @@ Luego debemos vincular ese archivo desde nuestro HTML:
 
 ## Repositorio
 
-{% tabs curriculum %}
-{% tab curriculum github %}
-[![github](https://socialify.git.ci/enidev911/m2-evaluado-curriculum/image?description=1&descriptionEditable=M2%20%3A%20Mi%20Curriculum%20Vitae%20en%20HTML%20-%20Desaf%C3%ADo%20evaluado&language=1&name=1&owner=1&pattern=Charlie%20Brown&theme=Dark){: .card }](https://github.com/EniDev911/m2-evaluado-curriculum)
-{% endtab %}
-{% tab curriculum github cli %}
-{% include codeHeader.html icon="terminal" %}
-```bash
-gh repo clone EniDev911/m2-evaluado-curriculum
-```
-{% endtab %}
-{% tab curriculum ssh %}
-{% include codeHeader.html icon="terminal" %}
-```bash
-git clone git@github.com:EniDev911/m2-evaluado-curriculum.git
-```
-{% endtab %}
-{% tab curriculum github page %}
-{% include ifr_results.html 
-  src="https://enidev911.github.io/m2-evaluado-curriculum" target="true" %}
-{% endtab %}
-{% endtabs %}
+{% include repository.html repo=page.github %}
 
 
 *[CV]: Curriculum Vitae
