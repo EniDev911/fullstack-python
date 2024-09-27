@@ -20,6 +20,14 @@ django-admin startproject _site .
 
 Remplaza **`_site`** con el nombre que desees para el proyecto. Esto generará la estructura de archivos y configuraciones básicas para el proyecto Django.
 
+### Instalar Pillow
+
+Primero, necesitamos instalar Pillow, que es la biblioteca que Django utiliza para manejar imágenes. Ejecutar el siguiente comando:
+
+{% include codeHeader.html icon="terminal" %}
+```bash
+pip install pillow
+```
 
 ### Crear una aplicación
 
@@ -34,7 +42,7 @@ Remplaza **`galeria`** con el nombre que quieras darle a la aplicación. Esto cr
 
 ### Configurar la aplicación en el proyecto
 
-Antes de continuar, es importante configurar adecuadamente la aplicación y el proyecto Django. Abrimos el archivo `settings.py` dentro de la carpeta de la carpeta del proyecto y realizamos las siguientes modificaciones:
+Antes de continuar, es importante configurar adecuadamente la aplicación y el proyecto Django. Abrimos el archivo `settings.py` dentro de la carpeta del proyecto y realizamos las siguientes modificaciones:
 
 {% include codeHeader.html file="_site/settings.py"  %}
 {3 7 8}
@@ -57,8 +65,10 @@ Estas configuraciones son necesarias para que Django pueda manejar la subida y v
 En esta etapa, definiremos el modelo necesario para almacenar las imágenes y sus descripciones o subtítulo. Abrimos el archivo `models.py` de la carpeta de la aplicación y definimos el modelo:
 
 {% include codeHeader.html file="galeria/models.py" %}
+{2 5 6 8 10 12 13 14 19 20 21 22 23 24 25}
 ```py
 from django.db import models
+import os
 
 class Imagen(models.Model):
     caption = models.CharField(max_length=100)
@@ -87,13 +97,12 @@ class Imagen(models.Model):
     def __str__(self):
         return self.caption
 ```
-{: .nolineno }
 
 En este modelo, hemos definido el campo `caption` para el texto que acompañará a la imagen y definimos `image` para la imagen en sí. La imagen se guardará en la carpeta `media/images/` siguiendo la estructura **año**, **mes** y **día** en la que se subió. Lo interesante aquí es que sobrescribimos el método `delete` para que cuando eliminemos una instancia que tenga una imagen asociada, es importante también eliminar el archivo físico del sistema de archivos para evitar ocupar espacio innecesario.
 
 ### Crear el formulario de la imagen
 
-A continuación, vamos a crear un formulario para permitir a los usuarios subit imágenes. Crea un nuevo archivo llamado `forms.py` dentro de la carpeta de la aplicación y agrega el siguiente código:
+A continuación, vamos a crear un formulario para permitir a los usuarios subir imágenes. Crea un nuevo archivo llamado `forms.py` dentro de la carpeta de la aplicación y agrega el siguiente código:
 
 {% include codeHeader.html file="galeria/forms.py" %}
 ```py
