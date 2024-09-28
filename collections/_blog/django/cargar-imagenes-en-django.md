@@ -218,7 +218,7 @@ Una vez tengamos configurado correctamente la aplicación de Django, podrás acc
 
 #### Captura de resultado
 
-![img]({{ page.img_path | relative_url | append: 'django-subir-imagenes.png' }})
+![img]({{ page.img_path | relative_url | append: 'django-subir-imagenes.PNG' }})
 
 ### Repositorio
 
