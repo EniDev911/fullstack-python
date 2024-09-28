@@ -7,7 +7,10 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
 
-gem "jekyll-paginate", "~> 1.1"
+# gem "jekyll-paginate", "~> 1.1"
+group :jekyll_plugins do
+	gem "jekyll-paginate-v2"
+end
 
 gem 'jekyll-tabs', '~> 1.1'
 
