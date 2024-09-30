@@ -11,53 +11,54 @@ layout: default
 <div class="container">
   {% if paginator.total_pages > 1 %}
   <ul class="pager">
-      {% if paginator.first_page %}
-      <li class="previous">
-          <a href="{{ paginator.first_page_path | prepend: site.baseurl | replace: '//', '/' }}">Inicio</a>
-      </li>
-      {% endif %}
+    {% if paginator.first_page %}
+    <li class="previous">
+      <a href="{{ paginator.first_page_path | prepend: site.baseurl | replace: '//', '/' }}">Inicio</a>
+    </li>
+    {% endif %}
 
-      {% if paginator.previous_page %}
-      <li class="previous">
-          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Posts nuevos</a>
-      </li>
-      {% endif %}
+    {% if paginator.previous_page %}
+    <li class="previous">
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Posts nuevos</a>
+    </li>
+    {% endif %}
 
-      {% if paginator.page_trail %}
-        {% for trail in paginator.page_trail %}
-          <li {% if page.url == trail.path %}class="selected"{% endif %}>
-              <a href="{{ trail.path | prepend: site.baseurl | replace: '//', '/' }}" title="{{trail.title}}">{{ trail.num }}</a>
-          </li>
-        {% endfor %}
-      {% endif %}
+    {% if paginator.page_trail %}
+    {% for trail in paginator.page_trail %}
+    <li {% if page.url == trail.path %}class="selected"{% endif %}>
+      <a href="{{ trail.path | prepend: site.baseurl | replace: '//', '/' }}" title="{{trail.title}}">{{ trail.num }}</a>
+    </li>
+    {% endfor %}
+    {% endif %}
 
-      {% if paginator.next_page %}
-      <li class="next">
-          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Posts antiguos &rarr;</a>
-      </li>
-      {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Posts antiguos &rarr;</a>
+    </li>
+    {% endif %}
 
-       {% if paginator.last_page %}
-      <li class="previous">
-          <a href="{{ paginator.last_page_path | prepend: site.baseurl | replace: '//', '/' }}">Último</a>
-      </li>
-      {% endif %}
+    {% if paginator.last_page %}
+    <li class="previous">
+      <a href="{{ paginator.last_page_path | prepend: site.baseurl | replace: '//', '/' }}">Último</a>
+    </li>
+    {% endif %}
   </ul>
   {% endif %}
-	{% for post in paginator.posts %}
-	<article class="card mb-3 text-gray4" style="background: #222; border: 1px solid #ccc5;">
-		<div class="row g-0 rounded" style="overflow: hidden;">
-			<div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center align-items-center p-2">
-				<img src="{{ post.thumbnail | relative_url }}" alt="thumbnail" style="min-height: 250px; height: 100%; object-fit: contain;">
-			</div>
-			<div class="col-12 col-md-8 col-lg-9">
-				<div class="card-body">
-					<h3 class="card-title p-0 m-0 mb-2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-					<p class="card-text">{{ post.content | strip_html | truncatewords: 50 }}</p>
-					<a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Leer Más</a>
-				</div>
-			</div>
-		</div>
-	</article>
-	{% endfor %}
+  {% for post in paginator.posts %}
+  <article class="card mb-3 shadow" style="background: #222; border: 1px solid #444; border-radius: 14px">
+    <a href="{{ post.url | relative_url }}">
+      <div class="row g-0 rounded" style="overflow: hidden;">
+       <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-2 img_preview">
+        <img src="{{ post.thumbnail | relative_url }}" alt="thumbnail" class="img-fluid">
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="card-body">
+         <h3 class="card-title p-0 m-0 mb-3">{{ post.title }}</h3>
+         <p class="card-text text-gray4">{{ post.content | strip_html | truncatewords: 35 }}</p>
+       </div>
+     </div>
+   </div>
+ </a>
+</article>
+{% endfor %}
 </div>

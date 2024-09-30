@@ -52,6 +52,7 @@ code.language-plaintext {
   border-radius: 0 0 5px 5px !important;
 }
 
+
 .code-fullscreen-button,
 .code-play-button,
 .copy-code-button,
@@ -82,6 +83,9 @@ svg[id^="mermaid"] {
   min-width: 60%;
 }
 @media (min-width: 1200px) {
+  .img_preview  {
+    order: 2;
+  }
 
   svg[id^="mermaid"] {
     min-width: 25%;
