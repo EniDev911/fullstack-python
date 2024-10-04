@@ -3,8 +3,8 @@ layout: default
 title: Blog
 ---
 
-<div class="d-flex my-3 gap-3 flex-wrap justify-content-center">
-  <a id="All" href="{{ '/blog/' | relative_url }}"  class="btn btn-outline-light">Todos</a>
+<div class="d-flex my-3 gap-2 justify-content-center flex-wrap">
+  <a id="All" href="{{ '/blog/' | relative_url }}"  class="btn btn-outline-light {% if page.category == 'all' %}active{% endif %}">Todos</a>
   {% assign categories = site.blog | group_by: "category" | sort: "name" %}
   {% for category in categories %}
   {% assign cat = category | first %}
