@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Atributos data"
+date: 2024-03-05
 category: "html"
 thumbnail: 'https://github.com/EniDev911/assets/blob/main/images/svg/programming/html5.svg?raw=true'
 toc: false

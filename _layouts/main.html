@@ -1,0 +1,56 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="d-flex my-3 gap-3 flex-wrap justify-content-center">
+  <a id="All" href="{{ '/blog/' | relative_url }}"  class="btn btn-outline-light">Todos</a>
+  {% assign categories = site.blog | group_by: "category" | sort: "name" %}
+  {% for category in categories %}
+  {% assign cat = category | first %}
+  <a id="{{ cat[1] }}" href="{{ cat[1] | prepend: 'blog/' | relative_url }}" class="btn btn-outline-warning position-relative {% if page.category == category.name %}active{% endif %}">{{ category.name }}
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-dark">
+      {{ category.size }}
+      <span class="visually-hidden">cantidad de posts</span>
+    </a>
+    {% endfor %}
+    <hr />
+  </div>
+  <hr>
+  <div class="row g-3 justify-content-center">
+    {% assign id = 0 %}
+    {% if page.category == "all" %}
+    {% for post in site.blog %}
+    {% assign id = id | plus:1 %}
+    {% if post.hidden != true %}
+    <div class="col-10 col-md-6 col-lg-4">
+      {% include card_post.html
+        id=forloop.index0
+        title=post.title
+        date=post.date
+        category=post.category
+        href=post.url
+        img=post.thumbnail
+        %}
+      </div>
+    {% endif %}
+      {% endfor %}
+      {% else %}
+      {% assign aux = 0 %}
+      {% for post in site.blog %}
+      {% if post.categories contains page.category and post.hidden != true %}
+      <div class="col-10 col-md-6 col-lg-4">
+        {% include card_post.html
+          id=aux
+          title=post.title
+          date=post.date
+          category=post.category
+          href=post.url
+          img=post.thumbnail
+          %}
+        </div>
+        {% assign aux = aux | plus:1 %}
+        {% endif %}
+        {% endfor %}
+      {% endif %}
+  </div>

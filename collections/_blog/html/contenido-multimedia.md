@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Contenido Multimedia en HTML"
-category: "html"
+category: html
 flash_path: '/assets/flash'
 video_path: '/assets/videos'
 thumbnail: '/assets/img/contenido-multimedia.png'

@@ -1,5 +1,14 @@
 @font-face {
 	font-family: "JetBrains Mono";
-	src: url("../../assets/fonts/jetbrains-mono-nl-regular.ttf");
+	src: url("../fonts/jetbrains-mono-nl-regular.ttf") format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
+// Cousine
+@font-face {
+	font-family: 'Cousine';
+	src: url('../fonts/cousine/cousine-regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

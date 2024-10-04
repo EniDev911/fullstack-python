@@ -1,8 +1,11 @@
 // Ordered Lists
 ol, ul {
 	margin: 20px 0;
+	ol, ul {
+		margin: 3px 0;
+	}
 	li {
-		margin: 5px 0;
+		margin: 7px 0;
 	}
 }
 

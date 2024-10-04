@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tablas en HTML"
+title: "Usabilidad web"
 category: "html"
 toc: false
 thumbnail: assets/img/usabilidad.png
