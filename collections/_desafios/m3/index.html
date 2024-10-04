@@ -1,33 +1,8 @@
 ---
-layout: default
+layout: list-collection
 title: Desafíos - M3
-subtitle: "FUNDAMENTOS DE PROGRAMACIÓN EN PYTHON"
+subtitle: Fundamentos de programación en python
+modulo: m3
+collection: desafios
+permalink: /desafios/m3/
 ---
-
-
-<table class="table table-hover table-dark">
-	<thead class="fs-5">
-		<th>N°</th>
-		<th>Tipo</th>
-		<th>Desafío</th>
-	</thead>
-	{% assign desafios = site.desafios | where: "modulo", "m3" %}
-	{% for item in desafios %}
-	{% if item.show %}
-	<tr onclick="location.href='{{ item.url | relative_url }}'" style="cursor: pointer;">
-		<th style="width: 10px;">
-			{{ forloop.index }}
-		</th>
-		<th style="width: 10px;">
-			<span class="badge {% if item.type == 'guiado' %}text-bg-light{% else %}text-bg-warning{% endif %}">
-				{{ item.type }}
-			</span>
-		</th>
-		<td>
-			{{ item.title }}
-		</td>
-	</tr>
-	{% endif %}
-	{% endfor %}
-</table>
-
