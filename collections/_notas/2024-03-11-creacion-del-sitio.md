@@ -7,7 +7,7 @@ show_next: true
 
 {% include date_es.html date=page.date time-attributes=' class="post-date"' %}
 
-### Un nuevo proyecto de Jekyll
+## Crear un nuevo proyecto de Jekyll
 
 Empecé creando un nuevo proyecto en blanco de jekyll:
 

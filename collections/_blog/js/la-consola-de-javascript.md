@@ -3,6 +3,7 @@ layout: post
 title: "La consola de javascript"
 category: "javascript"
 thumbnail: /assets/img/consola_js.png
+img_path: /assets/img/posts/javascript/consola/
 ---
 
 
@@ -34,16 +35,25 @@ Para acceder a la consola de JavaScript existen diversas formas desde el navegad
 En esta consola de JavaScript, podemos escribir cualquier código JavaScript como funciones o sentencias que estarán actuando en la página actual del navegador. De esta forma podemos observar los resultados que nos devuelve la consola al realizar diferentes acciones.
 
 
-Cuando se comienza a programar, es típico crear un programa que muestre por pantalla un texto, generalmente el texto &lt;&lt;**Hola Mundo**&gt;&gt;. También podemos realizar, por ejemplo operaciones artiméticas ingresando números y los operadores correspondientes. En la consola de javascript podemos hacer esto de forma muy sencilla y directa:
+Cuando se comienza a programar, es típico crear un programa que muestre por pantalla un texto, generalmente el texto &lt;&lt;**Hola Mundo**&gt;&gt;. También podemos realizar, por ejemplo operaciones aritméticas, ingresando números y los operadores correspondientes.
+
+En la consola de javascript podemos hacer esto de forma muy sencilla y directa:
 
 <a name="ejemplo-hola-mundo">
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon="js" %}
 ```js
 console.log("Hola mundo"); // Hola Mundo
 console.log(2 + 2); // 4
 ```
 {: .nolineno }
+
+{: align='center'}
+![img - consola]({{ page.img_path | relative_url | append: 'comandos-basicos.png' }})
+*Comandos básicos en la  Consola de JavaScript*
+
+> `console.log()` es un método que se utiliza para imprimir información en la consola, pero no devuelve un valor. Por eso, cuando se usa `console.log()` en la consola de JavaScript, verás [undefined](https://developer.mozilla.org/es/docs/Glossary/Undefined){:target='_blank' } como resultado de esa línea.
+{: .prompt-note }
 
 ### Funciones para la consola
 
@@ -61,7 +71,7 @@ Tenemos varias funciones para mostrar mensajes en la consola. Cada uno se enmarc
 
 La idea es utilizar en nuestro código la función que más se adapte a nuestra situación en cada caso (*errores graves con `console.error()`, errores leves con `console.warn()`*, etc..).
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon="js" %}
 ```js
 console.info("Yo apareceré en celeste o en blanco");
 console.error("Yo apareceré en rojo");
@@ -69,11 +79,15 @@ console.warn("Yo apareceré en amarillo");
 ```
 {: .nolineno }
 
+{: align='center'}
+![img - consola]({{ page.img_path | relative_url | append: 'comandos-con-contextos.png' }})
+*Comandos básicos con contexto en la Consola de JavaScript*
+
 ### Aplicar varios datos
 
-En el [ejemplo anterior](#ejemplo-hola-mundo), solo hemos aportado un dato por cada línea (*un texto o una operación aritmética*), pero `console.log()` y sus funciones hermanas permiten añadir varios datos en una misma línea, separándolo por comás (`,`):  
+En los ejemplos anteriores, solo hemos aportado un dato por cada línea (*un texto o una operación aritmética*), pero `console.log()` y sus funciones hermanas permiten añadir varios datos en una misma línea, separándolo por comás (`,`):  
 
-{% include codeHeader.html %}
+{% include codeHeader.html icon="js" compiler="y" %}
 ```js
 console.log("¡Hola a todos!", "miren el siguiente número:", 5 + 18);
 ```
@@ -91,12 +105,12 @@ console.log("%cEniDev911!",
 ```
 {: .nolineno }
 
->Es importante recalcar que cuando escribimos directamente en la consola de javascript podemos obviar el `console.log()` y escribir directamente la información, pero si queremos mostrar algo en la consola desde nuestra página web o aplicación javascript, es absolutamente necesario escribir `console.log()` (o cualquiera de las funciones de su familia) en nuestro código.
+> Es importante recalcar que cuando escribimos directamente en la consola de javascript podemos obviar el `console.log()` y escribir directamente la información, pero si queremos mostrar algo en la consola desde nuestra página web o aplicación javascript, es absolutamente necesario escribir `console.log()` (o cualquiera de las funciones de su familia) en nuestro código.
+{: .prompt-note }
 
 ## Trucos adicionales
 
 En cualquier navegador **Google chrome** podemos pulsar ya sea <strong><kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>I</kbd></strong> o <strong><kbd>f12</kbd></strong> para abrir el panel, una vez dentro podemos hacer algunos trucos. 
-
 
 ### Hacer una captura de la pantalla
 

@@ -1,37 +1,33 @@
 <nav class="navbar navbar-dark navbar-expand-lg sticky-top" style="background-color: #191919">
   <div class="container">
-    <a href="#">
-      <img src="https://github.com/EniDev911/assets/blob/main/png/logo/logo_con_bg.png?raw=true" alt="logo" class="navbar-brand" height="50">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbar">
-      <div class="navbar-nav ms-auto">
-        {% for item in site.data.navigation %}
-        <a href="{{ item.link | relative_url }}"
-        class="nav-link fs-6 text-uppercase"
-        {% if page.url == item.link %}
-        style="color: lightsalmon;"
-        {% endif %}>
-        {{ item.name }}
-      </a>
-      {% endfor %}
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          RECURSOS ADICIONALES
+        <a href="#">
+            <img src="https://github.com/EniDev911/assets/blob/main/png/logo/logo_con_bg.png?raw=true" alt="logo" class="navbar-brand" height="50">
         </a>
-        <ul class="dropdown-menu dropdown-menu-dark">
-          {% for item in site.data.resources %}
-          <li>
-            <a class="dropdown-item text-gray4" href="{{ item.link | relative_url }}">
-              {{ item.name }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-nav ms-auto">
+                {% for item in site.data.navigation %}
+                <a href="{{ item.link | relative_url }}" class="nav-link fs-6 text-uppercase" {% if page.url==item.link %} style="color: lightsalmon;" {% endif %}>
+                    {{ item.name }}
+                </a>
+                {% endfor %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        RECURSOS ADICIONALES
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        {% for item in site.data.resources %}
+                        <li>
+                            <a class="dropdown-item text-gray4" href="{{ item.link | relative_url }}">
+                                {{ item.name }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </nav>

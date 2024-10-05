@@ -1,3 +1,6 @@
+<div>
+<span class="bg-light" style="height: 1px; width: 100%; display: block;"></span>
+<span class="pt-1 pb-1 px-2 text-bg-light rounded-bottom">
 <time datetime="{{ include.date }}" {% if include.time-attributes %} {{ include.time-attributes}} {% endif %}>
 
   {{ include.date | date: '%-d' }} de
@@ -22,3 +25,5 @@
 
   {{ include.date | date: '%Y' }}
 </time>
+</span>
+</div>
