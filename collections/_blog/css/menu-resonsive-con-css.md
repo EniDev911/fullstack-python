@@ -133,7 +133,7 @@ header {
 
 ### Resultado
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="PoMGWPP" data-pen-title="Untitled" data-user="EniDev911" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="PoMGWPP" data-pen-title="Untitled" data-user="EniDev911" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/EniDev911/pen/PoMGWPP">
   Untitled</a> by EniDev911 (<a href="https://codepen.io/EniDev911">@EniDev911</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
