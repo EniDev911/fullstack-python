@@ -63,7 +63,8 @@ _site
 Gemfile.lock
 ```
 
-> **Nota**: el sitio creado se sirve a través de GitHub Pages, por ende añadi tambiém el `Gemfile.lock` al archivo `.gitignore`. Esto se debe a que si llevo la gema versionada estrictamente y sus dependencias. Github Pages potencialmente podría resultar en el uso de versiones obsoletas de la gema.
+> el sitio creado se sirve a través de GitHub Pages, por ende añadi también el `Gemfile.lock` al archivo `.gitignore`. Esto se debe a que si llevo la gema versionada estrictamente y sus dependencias. Github Pages potencialmente podría resultar en el uso de versiones obsoletas de la gema.
+{: .prompt-note }
 
 Entonces, vamos a iniciar git y hacer el primer commit:
 
@@ -75,7 +76,8 @@ git commit -m "first commit"
 git branch -M gh-pages
 ```
 
-> **Nota**: Si queremos que nuestro sitio se despliegue automáticamente, debemos tener una rama con el nombre de gh-pages.
+> si queremos que nuestro sitio se despliegue automáticamente, debemos tener una rama con el nombre de gh-pages.
+{: .prompt-note }
 
 Listo, ya nos queda sólo crear el repositorio en Github y que mejor que hacerlo a través de la terminal con la herramienta [Gh Cli](https://cli.github.com/){: target='_blank'}:
 
