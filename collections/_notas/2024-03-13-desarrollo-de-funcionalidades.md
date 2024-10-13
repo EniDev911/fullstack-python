@@ -109,7 +109,7 @@ function copyCode(e) {
 
 ### Paso 3: Resumen
 
-- **`parentNode` y `children`**: Para acceder al elemento padre.
+- **`parentNode`**: Para acceder al elemento padre.
 - **`nextElementSibling`**: Para obtener el siguiente hermano.
 - **`previousElementSibling`**: Para obtener el hermano anterior.
 - **`querySelector`**: Para seleccionar hermanos específicos utilizando selectores CSS.

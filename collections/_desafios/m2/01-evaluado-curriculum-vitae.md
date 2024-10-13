@@ -53,7 +53,7 @@ Para nuestro proyecto **CV** vamos a crear entonces el siguiente árbol de direc
 {: .nolineno }
 
 
-> **Nota**:<br>Busca la foto que desees para colocar en el directorio `img`. En [https://robohash.org/](https://robohash.org/){: target='_blank' } puedes conseguir algunas imágenes de buena calidad basados en robots y más.
+> Busca la foto que desees para colocar en el directorio `img`. En [https://robohash.org/](https://robohash.org/){: target='_blank' } puedes conseguir algunas imágenes de buena calidad basados en robots y más.
 {: .prompt-note }
 
 ### Cabecera de un documento HTML
@@ -128,7 +128,7 @@ A pesar de que los motores de búsqueda como [Google](//google.com){:target='_bl
 </head>
 ```
 
-> **Nota**<br>Una descripción meta es una información importante para los motores de búsqueda y los usuarios.
+> Una descripción meta es una información importante para los motores de búsqueda y los usuarios.
 {: .prompt-note }
 
 ### Favicon (icono de pestaña)
@@ -165,7 +165,7 @@ Para generar los favicons de una forma más comoda, podemos utilizar herramienta
 </div>
 
 
-> **Nota**:<br>El problema principal con los **favicons**, es que esta característica no está definida en la especificación, por lo que cada navegador y cada sistema operativo lo implementa como quiere. Hay navegadores que sólo soportan favicon en formato **PNG**, otros que solo soportan resoluciones específicas, etc.
+> El problema principal con los **favicons**, es que esta característica no está definida en la especificación, por lo que cada navegador y cada sistema operativo lo implementa como quiere. Hay navegadores que sólo soportan favicon en formato **PNG**, otros que solo soportan resoluciones específicas, etc.
 {: .prompt-note }
 
 

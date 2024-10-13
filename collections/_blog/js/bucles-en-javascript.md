@@ -51,6 +51,7 @@ while (i < 5) {
 {: .nolineno }
 
 > La operación **i = i + 1** es lo que se suele llamar un incremento de una variable. Es muy común simplificarlo como **i++**, que hace exactamente lo mismo: aumenta su valor en 1.
+{: .prompt-note }
 
 Lo que ocurre a la hora de hacer funcionar este código es lo siguiente:  
 
@@ -85,7 +86,7 @@ for (i = 0; i < 5; i++) {
 Como vemos, la sintaxis de un **bucle for** es mucho más compacta y rápida de escribir a diferencia del **bucle while**. La primera vez puede parecer algo confuso, pero es mucho más práctica porque te obliga a escribir la **inicialización**, la **condición** y el **incremento** antes del propio bucle, y eso hace que no te olvides de estos tres puntos fundamentales.
 
 >En programación es muy habitual empezar a contar desde **cero**. Mientras que en la vida real se contaría **desde 1 hasta 10**, en programación se contaría **desde 0 hasta 9**.
-
+{: .prompt-note }
 
 ### Ejemplos: Dibujando formas
 

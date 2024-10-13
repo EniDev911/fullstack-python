@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Loops
+title: Bucles
 category: "python"
 toc: false
 thumbnail: /assets/img/loops-python.png
@@ -27,6 +27,7 @@ while (i < 5):
 {: .nolineno }
 
 > La operación `i = i + 1` es lo que se suele llamar un incremento de una variable. Es muy común simplificarlo con un operador de incremento `i += 1`, que hace exactamente lo mismo: aumenta su valor en 1
+{: .prompt-note }
 
 ---
 
