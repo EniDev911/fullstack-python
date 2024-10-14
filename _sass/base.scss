@@ -88,6 +88,10 @@ svg[id^="mermaid"] {
   }
 }
 
+.contenido {
+  overflow: hidden;
+}
+
 @media (min-width: 992px) {
   .contenido {
     padding: 0 30px;

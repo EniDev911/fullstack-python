@@ -69,7 +69,9 @@ El primero de ellos, se encarga de contener [etiquetas de metadatos](https://dev
 
 Existen varias etiquetas que podemos utilizar en esta sección de cabecera del documento:
 
-{: .table.table-dark }
+<div class="t-responsive" markdown="1">
+
+{: .table .table-dark  }
 |Etiqueta|Atributos|Descripción|
 |:-------|:--------|:----------|
 |`title`{:.tag}||Título de la página.|
@@ -77,6 +79,7 @@ Existen varias etiquetas que podemos utilizar en esta sección de cabecera del d
 |`link`{:.tag}|*`href`*, *`hreflang`*, *`rel`*, *`media`*, *`type`*|Establece una relación del documento actual con otro externo.|
 |`meta`{:.tag}|*`name`*,*`content`*,*`http-equiv`*,*`charset`*|Establece un metadato un metadato específico en el documento actual.|
 
+</div>
 
 También en la cabera se suele utilizar las etiquetas **Open Graph** que permiten destacar más nuestro sitio o página web.
 

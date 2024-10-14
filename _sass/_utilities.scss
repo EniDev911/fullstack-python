@@ -142,13 +142,19 @@ details[open] > summary {
 	overflow: hidden;
 }
 // Table
+
+.t-responsive {
+	overflow: auto;
+	padding: 0;
+}
+
 .table  {
-	// border-collapse: collapse;
-	overflow: hidden;
+	border-collapse: collapse;
 	color: #ff0;
 	border-radius: .4rem;
 	border: 1px solid #444;
 	box-shadow: 0 0 0 0.8px #444;
+	margin: 0;
 }
 
 .table-dark thead th {
