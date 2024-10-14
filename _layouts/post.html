@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="container-fluid">
+<div>
 	{% include paginator_post.html %}
 	<!-- toc content -->
 	{% if page.toc == false %}
@@ -12,7 +12,7 @@ layout: default
 		{% include toc.html html=content class="section-toc" %}
 	</details>
 	{% endif %}
-	<div style="font-family: Cousine;" class="contenido">
+	<div style="font-family: Cousine;">
 		{{ content }}
 	</div>
 	{% include top_button.html %}

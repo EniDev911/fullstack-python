@@ -32,14 +32,78 @@ Para cumplir con éxito el desafío, vamos a ir paso a paso para ir clarificando
 └── index.html # página principal
 ```
 
-> Debido a las fallas de la plataforma en cuanto a la descarga del **Material de Apoyo**, que básicamente es un archivo, para descargar el archivo [`index.html haz click aquí`]({{ page.img_path | relative_url | append: 'notas-finales-apoyo.zip' }}){:download='material.zip'} 👈
+> Debido a las fallas de la plataforma en cuanto a la descarga del **Material de Apoyo**, que básicamente es un archivo, para descargar el archivoindex.html haz [`clic aquí`]({{ page.img_path | relative_url | append: 'notas-finales-apoyo.zip' }}){:download='material.zip'} 👈
 {: .prompt-warning }
 
 Si por alguna razón no pudiste descargar el material de apoyo, pega el siguiente código en tu `index.html`:
 
 {% include codeHeader.html file='index.html' codepen='y' title='Notas Finales' %}
 ```html
-{{ site.data.m2.notas_finales.html }}
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Notas finales</title>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h1 class="my-5">Notas Finales</h1>
+    <div class="row mb-2">
+      <div class="col-2 fw-bold">Nombre</div>
+      <div class="col-2">Marco Contreras</div> <!-- Cambia esto al nombre que corresponda -->
+    </div>
+    <div class="row mb-3">
+      <div class="col-2 fw-bold">Carrera</div>
+      <div class="col-2">Desarrollo web</div>
+    </div>
+    <table class="table">
+      <thead class="bg-dark text-light">
+        <tr>
+          <th scope="col">Ramo</th>
+          <th scope="col">Nota 1</th>
+          <th scope="col">Nota 2</th>
+          <th scope="col">Nota 3</th>
+          <th scope="col">Promedio</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <tr>
+          <td id="html" class="fw-bold">HTML</td>
+          <td id="html-nota1" class=""></td>
+          <td id="html-nota2" class=""></td>
+          <td id="html-nota3" class=""></td>
+          <td id="html-promedio" class=""></td>
+        </tr>
+        <tr>
+          <td id="css" class="fw-bold">CSS</td>
+          <td id="css-nota1" class=""></td>
+          <td id="css-nota2" class=""></td>
+          <td id="css-nota3" class=""></td>
+          <td id="css-promedio" class=""></td>
+        </tr>
+        <tr>
+          <td id="js" class="fw-bold">JavaScript</td>
+          <td id="js-nota1" class=""></td>
+          <td id="js-nota2" class=""></td>
+          <td id="js-nota3" class=""></td>
+          <td id="js-promedio" class=""></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-danger" id="btn_html">HTML</button>
+    <button class="btn btn-primary" id="btn_css">CSS</button>
+    <button class="btn btn-warning" id="btn_js">JS</button>
+  </div>
+  <!-- JS BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+  <!-- Nuestro Script -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
 ```
 
 ### Variables globales
@@ -51,6 +115,7 @@ Quiero dejarte en claro lo siguiente, estas son las diferencias de `let`, `var` 
 - `let`: nos permite definir variables al alcance de su bloque mas cercano, osea de su estructura. Otro detalle, se usa let para definir una variable que si tenga su valor por el programador.
 
 > Mi opinión personal, es que en estos momentos no te compliques si usar una declaración u otra, sólo utiliza `var` porque primero se debe aprender a pensar y razonar, luego dedicate a cosas de estándares y demás.
+{: .prompt-note }
 
 Vamos a comenzar declarando unas variables globales para que esten disponible a lo largo del script actual:
 

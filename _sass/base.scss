@@ -23,7 +23,6 @@ body {
   font-family: $bodyFont;
 }
 
-
 // LINKS
 a {
   color: #ffcc00;
@@ -40,16 +39,6 @@ a[target='_blank']::after {
   font-weight: bolder;
   margin-left: 0.1rem;
   vertical-align: super;
-}
-
-code.language-plaintext {
-  border-radius: 4px;
-}
-
-.code-header + [class^='language'] > .highlight,
-[class^='language'] > .code-header + .highlight,
-.code-header + figure.highlight {
-  border-radius: 0 0 5px 5px !important;
 }
 
 .code-fullscreen-button,
@@ -96,6 +85,12 @@ svg[id^="mermaid"] {
     -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
     filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7)) !important;
     /* Similar syntax to box-shadow */
+  }
+}
+
+@media (min-width: 992px) {
+  .contenido {
+    padding: 0 30px;
   }
 }
 

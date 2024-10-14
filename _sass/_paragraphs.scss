@@ -2,10 +2,13 @@ p {
 	word-spacing: .1rem;
 	letter-spacing: .02rem;
 	font-size: 15px;
+	margin: 0 15px;
 }
 
 @media (min-width: 992px) {
 	p {
 		font-size: 17px;
+		margin-left: 0;
+		margin-right: 0;
 	}
 }

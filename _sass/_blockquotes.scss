@@ -2,10 +2,10 @@ blockquote {
 	position: relative;
 }
 blockquote p {
+	position: relative;
 	background: #202030ff;
 	border: 1px solid #636bffff;
 	padding: 10px;
-	border-radius: 4px;
 	color: #b3b7f5ff;
 	box-shadow: 0 1px 8px 0 #222;
 }
@@ -97,4 +97,10 @@ blockquote p em {
 blockquote p code.language-plaintext {
 	background: #2c2d52ff;
 	color: #b3b7f5ff;
+}
+
+@media (min-width: 992px) {
+	blockquote p {
+		border-radius: 8px;
+	}
 }
