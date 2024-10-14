@@ -6,6 +6,8 @@ type: guiado
 show: true
 img_path: /assets/img/desafios/notas-finales/
 show_next: true
+github:
+  name: eniDev911/notas-finales
 ---
 
 ## Descripción
@@ -158,7 +160,8 @@ function pedirNotas() {
 ```
 {: .nolineno }
 
-> **OJO:**<br>El uso de `+prompt("...")` convertirá la respuesta en un número, no precisamente en un número entero. Este es un buen truco, pero no una solución definitiva y mucho menos limpia es solo una forma rápida de convertir un tipo de dato a otro, si quieres hacer verificaciones más profunda te recomiendo el uso de funciones como `parseInt()` o el constructor `Number`.
+> El uso de `+prompt("...")` convertirá la respuesta en un número, no precisamente en un número entero. Este es un buen truco, pero no una solución definitiva y mucho menos limpia es solo una forma rápida de convertir un tipo de dato a otro, si quieres hacer verificaciones más profunda te recomiendo el uso de funciones como `parseInt()` o el constructor `Number`.
+{: .prompt-warning }
 
 ### Mostrar resultado
 
@@ -202,22 +205,4 @@ botonJs.onclick = function(){
 
 ## Repositorio
 
-{% tabs notas_finales %}
-{% tab notas_finales html %}
-{% include codeHeader.html file='index.html' %}
-```html
-{{ site.data.m2.notas_finales.html }}
-```
-{% endtab %}
-{% tab notas_finales js %}
-{% include codeHeader.html file='assets/js/script.js' %}
-```js
-{{ site.data.m2.notas_finales.js }}
-```
-{% endtab %}
-{% tab notas_finales github %}
-Repositorio 👉 <a href="https://github.com/EniDev911/notas-finales" target="_blank">https://github.com/EniDev911/notas-finales</a>
-
-Github Pages 👉 <a href="https://enidev911.github.io/notas-finales/" target="_blank">https://enidev911.github.io/notas-finales/</a>
-{% endtab %}
-{% endtabs %}
+{% include repository.html repo=page.github %}

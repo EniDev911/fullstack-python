@@ -1,5 +1,5 @@
 	<!-- Page Header -->
-	<div class="mb-4 d-flex flex-column gap-3 flex-md-row justify-content-between group-btn-post">
+	<div class="mb-4 d-flex flex-column gap-3 flex-md-row justify-content-between group-btn-post  px-2 px-lg-0">
 		{% if page.previous.url and page.previous.layout == "post" %}
 		<a class="btn btn-outline-warning" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
 		data-bs-toggle="tooltip" data-bs-placement="top" title="{{ page.previous.title }}">&larr; {{ page.previous.title }}</a>

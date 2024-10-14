@@ -261,6 +261,5 @@ Luego debemos vincular ese archivo desde nuestro HTML:
 
 {% include repository.html repo=page.github %}
 
-
 *[CV]: Curriculum Vitae
 *[HTML]: HyperText Markup Language
