@@ -47,7 +47,8 @@ Eso en resumen, ya que nos proporciona los íconos de [fontawesome](https://font
 	</div>
 </div>
 
-> **Ojo**: Descargar los logos y demás imágenes desde la plataforma o en su defecto [aquí]({{ page.img_path | relative_url | append: 'imagenes-olivi-ros.zip' }}) :point_left:
+> Descargar los logos y demás imágenes desde la plataforma o en su defecto, puedes descargar los assets [aquí]({{ page.img_path | relative_url | append: 'imagenes-olivi-ros.zip' }}) :point_left:
+{: .prompt-note }
 
 ---
 
@@ -57,7 +58,7 @@ Para cumplir con éxito el desafío, vamos a ir paso a paso para ir clarificando
 
 ### Añadir Bootstrap
 
-Para este proyecto nos piden integrar bootstrap vía **CDN**, te dejo a continuación el *starter template* que contiene lo siguiente:
+Para este proyecto nos piden integrar bootstrap vía **CDN**, te dejo a continuación un **starter template** que contiene lo siguiente:
 
 - `CDN Bootstrap CSS`
 - `CDN Bootstrap JS`
@@ -66,7 +67,7 @@ Para este proyecto nos piden integrar bootstrap vía **CDN**, te dejo a continua
 
 Para copiar y pegar en tu `index.html`:
 
-{% include codeHeader.html file='index.html' %}
+{% include codeHeader.html file='index.html' codepen="y" %}
 ```html
 <!doctype html>
 <html lang="es">
@@ -91,9 +92,7 @@ Para copiar y pegar en tu `index.html`:
 
 ### Desarrollando el (*navbar*)
 
-Ya como hemos visto en [{{ page.previous.title }}]({{ page.previous.url  | relative_url }}) en la sección de [entender el componente navbar]({{ page.previous.url  | relative_url }}#entender-el-componente-navbar) donde explique todo lo necesario sobre el componente [Navbar](https://getbootstrap.com/docs/5.3/components/navbar/){:target='_blank'} de **bootstrap**, vamos a pasar directamente al código necesario para obtener la barra tal como nos muestra la maqueta:
-
-> **Recordar**: pegar el código justo después de la etiqueta `body`{: .tag }
+Ya como hemos visto en [{{ page.previous.title }}]({{ page.previous.url  | relative_url }}) en la sección de [entender el componente navbar]({{ page.previous.url  | relative_url }}#entender-el-componente-navbar) donde explique todo lo necesario sobre el componente [Navbar](https://getbootstrap.com/docs/5.3/components/navbar/){:target='_blank'} de **bootstrap**, vamos a pasar directamente al código necesario para obtener la barra tal como nos muestra la maqueta ( **Recordar**: pegar el código justo después de la etiqueta `body`{: .tag } ):
 
 {% include codeHeader.html icon='html' codepen='y' title='navbar olivia-ros' bs=true %}
 ```html
@@ -126,7 +125,7 @@ Ya como hemos visto en [{{ page.previous.title }}]({{ page.previous.url  | relat
 
 ### Desarrollar el (*hero section*)
 
-Cuando hablamos de *hero section* normalmente nos referimos a la sección principal de un sitio web, es común ver un *banner* grande que se muestra en la parte superior después del menú. Un *hero section* suele consistir en una imagen o un vídeo destacado, acompañado de algún texto para captar la atención del usuario y un llamado a una acción en concreto, para llevar a cabo con éxito esta sección debemos identificar los elementos involucrados, tal como lo muestra la ilustración:
+Cuando hablamos de [*hero section*](https://en.wikipedia.org/wiki/Web_banner){: target='_blank'} normalmente nos referimos a la sección principal de un sitio web, es común ver un *banner* grande que se muestra en la parte superior después del menú. Un *hero section* suele consistir en una imagen o un vídeo destacado, acompañado de algún texto para captar la atención del usuario y un llamado a una acción en concreto, para llevar a cabo con éxito esta sección debemos identificar los elementos involucrados, tal como lo muestra la ilustración:
 
 ![img - hero]({{ page.img_path | relative_url | append: 'bg-hero.png' }})
 
@@ -167,11 +166,12 @@ Cuando hablamos de *hero section* normalmente nos referimos a la sección princi
 {% endtab %}
 {% endtabs %}
 
-### Desarrollar sección (*acerca de mí*)
+### Desarrollar sección ( *acerca de mí* )
 
 Como en el [desafío guiado anterior]({{ page.previous.url | relative_url }}), para desarrollar con éxito esta sección tenemos que usar correctamente la grilla de bootstrap en conjunto con otro componente como podría ser un [Card](https://getbootstrap.com/docs/5.3/components/card/){:target='_blank'}
 
-> **Ojo**: no olvides incluir la librería de [FontAwesome](https://fontawesome.com/){:target='_blank'} para que se puedan visualizar los íconos.
+> no olvides incluir la librería de [FontAwesome](https://fontawesome.com/){:target='_blank'} para que se puedan visualizar los íconos.
+{: .prompt-warning }
 
 {% include codeHeader.html file='index.html' codepen='y' title='olivia-ros - acerca de mí' bs=true fa=true %}
 ```html
@@ -224,7 +224,8 @@ Como en el [desafío guiado anterior]({{ page.previous.url | relative_url }}), p
 
 El siguiente código usa las tarjetas con las imágenes del desafío olivia-ros y distribuidas en la grilla de bootstrap:
 
-> **Nota**: Las imágenes son las mismas que las del desafío, pero están siendo vinculadas en otro servidor, por lo que debes indicar la ruta que corresponde a las imágenes de tu proyecto.
+> Las imágenes son las mismas que las del desafío, pero están siendo vinculadas en otro servidor, por lo que debes indicar la ruta que corresponde a las imágenes de tu proyecto.
+{: .prompt-note }
 
 {% tabs olivia_ros_trabajos %}
 {% tab olivia_ros_trabajos html %}
