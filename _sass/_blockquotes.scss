@@ -71,6 +71,11 @@ blockquote {
 			color: #ddd;
 		}
 		&::before {
+			content: "Ojo:\A";
+			font-weight: bold;
+			white-space: pre-line;
+		}
+		&::after {
 			content: '\f071';
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 900;

@@ -56,8 +56,8 @@ De todas formas veamos el siguiente *wireframe* donde podemos ver un esquema gen
 
 ![mockup]({{ page.img_path | relative_url }}/mockup.png)
 
-> **Nota**: El término *wireframe* tiene diferentes uso, pero es empleado en el diseño y desarrollo de aplicaciones móviles y páginas web como una representación visual con el fin de establecer la estructura básica de una página.
-
+> El término *wireframe* tiene diferentes uso, pero es empleado en el diseño y desarrollo de aplicaciones móviles y páginas web como una representación visual con el fin de establecer la estructura básica de una página.
+{: .prompt-note }
 
 ---
 
@@ -69,8 +69,8 @@ Para cumplir con éxito nuestro desafío es necesario tener una organización co
 
 Igual como en el [{{ page.previous.title }}]({{ page.previous.url | relative_url }}) podemos usar el siguiente árbol de directorios basado en la **estructura assets**:
 
-> **Ojo**: Descargar los logos y demás imágenes desde la plataforma o en su defecto [aquí]({{ page.img_path | relative_url | append: 'imagenes-suricata.zip' }}) :point_left:
-
+> Descargar los logos y demás imágenes desde la plataforma o bien, en su defecto las puedes descargar [aquí]({{ page.img_path | relative_url | append: 'imagenes-suricata.zip' }}) :point_left:
+{: .prompt-warning }
 
 ```bash
 📂 suricata
@@ -123,12 +123,12 @@ Los archivos descargados entonces deberían quedar de la siguiente forma:
 ```
 {: .nolineno }
 
-
 ### Vincular bootstrap
 
 Luego de mover los archivos descargados de bootstrap donde corresponde, vamos abrir el `index.html` para vincular los archivos externos como lo muestra el siguiente código:
 
 {% include codeHeader.html file='index.html' %}
+{7 14}
 ```html
 <!DOCTYPE html>
 <html lang="es">
@@ -187,7 +187,6 @@ Como sabemos los componentes *navbars* son responsivos y tienen funcionalidad po
 
 Después de haber añadido bootstrap y ver la estructura y como se compone un *navbar*, vamos a desarrollar la nuestra para el desafío, el siguiente código debe ir a continuación de la etiqueta `body`{: .tag} de nuestra estructura básica:
 
-
 {% tabs navbar_suricata %}
 {% tab navbar_suricata html %}
 {% include codeHeader.html file='index.html' codepen='y' title='navbar suricata' css=page.css.navbar bs=true %}
@@ -237,6 +236,7 @@ Seguido tenemos un `div class="container"`{: .tag } y es para que nuestros eleme
 
 Después tenemos un etiqueta de **enlace** `a`{:.tag} con la clase `.navbar-brand` que normalmente corresponde poner el nombre de la empresa o producto, pero como tenemos un logo es que dentro de esta etiqueta vinculamos la imagen del logo con una etiqueta de imagen y le definimos la ruta hacia la imagen en el atributo `src` y también su tamaño con el atributo `height`:
 
+{% include codeHeader.html icon="html" %}
 {2}
 ```html
 <a class="navbar-brand" href="#">
@@ -246,6 +246,7 @@ Después tenemos un etiqueta de **enlace** `a`{:.tag} con la clase `.navbar-bran
 
 Seguido tenemos el botón que como sabemos se mostrará sólo en dispositivos móviles y no basta sólo con llevar la clase `.navbar-toggler` ya que para usar el complemento de alternar el menú de navegación cuando se presione el botón (mostrar/ocultar) debemos si o si tener los siguientes atributos que estarán resaltado a continuación:
 
+{% include codeHeader.html icon="css" %}
 {3 4}
 ```html
 <button class="navbar-toggler"
@@ -260,6 +261,7 @@ Seguido tenemos el botón que como sabemos se mostrará sólo en dispositivos m�
 
 Por último tenemos el contenido plegable:
 
+{% include codeHeader.html icon="html" %}
 ```html
 <div class="collapse navbar-collapse" id="main-navbar">
 	<ul class="navbar-nav ms-auto">
@@ -281,7 +283,7 @@ Por último tenemos el contenido plegable:
 
 ## Entender la grilla de bootstrap
 
-**Bootstrap** ofrece una cuadrícula (*grid*) formado por filas compuestas por 12 columnas, en ella se puede especificar cuántas columnas ocupará un solo elemento. No importa cuántos elementos tenga una fila, al final deberán sumar 12 columnas. Por ejemplo veamos un protitipo de página si la quisiera diseñar con la grilla de bootstrap:
+**Bootstrap** ofrece una cuadrícula ( *grid* ) formado por filas compuestas por 12 columnas, en ella se puede especificar cuántas columnas ocupará un solo elemento. No importa cuántos elementos tenga una fila, al final deberán sumar 12 columnas. Por ejemplo veamos un protitipo de página si la quisiera diseñar con la grilla de bootstrap:
 
 <div class="container mb-4">
   <div class="row border border-light" style="background: #292929">
@@ -318,6 +320,7 @@ Se debe especificar un contenedor usando una clase `.container` o `.container-fl
 
 Primero se creará un contenedor como se mencionó, con la clase `.container`:
 
+{% include codeHeader.html icon="html" %}
 {1}
 ```html
 <div class="container">
@@ -327,6 +330,7 @@ Primero se creará un contenedor como se mencionó, con la clase `.container`:
 
 Luego se especificará una fila con la clase `.row`:
 
+{% include codeHeader.html icon="html" %}
 {2}
 ```html
 <div class="container">
@@ -338,9 +342,8 @@ Luego se especificará una fila con la clase `.row`:
 
 Finalmente dentro de la fila podemos crear las columnas con la clase `.col` como sabemos son 12 columnas:
 
-> **Nota**: Añadimos la clase `.border` para ver lo que ocupa cada columna.
-
 {% include codeHeader.html icon='html' codepen='y' title='demo grilla' bs=true %}
+{3 4 5 6 7 8 9 10 11 12 13 14}
 ```html
 <div class="container">
 	<div class="row">
@@ -361,7 +364,8 @@ Finalmente dentro de la fila podemos crear las columnas con la clase `.col` como
 ```
 {: .nolineno }
 
-> **Nota**: **Bootstrap** no permite el uso de más de 12 columnas, en caso de que se especifique de esa manera, la columna sobrante se colocará inmediatamente debajo del resto de las columnas o sea abajo de la primera columna.
+> Añadimos la clase `.border` para ver lo que ocupa cada columna. **Bootstrap** no permite el uso de más de 12 columnas, en caso de que se especifique de esa manera, la columna sobrante se colocará inmediatamente debajo del resto de las columnas o sea abajo de la primera columna.
+{: .prompt-note }
 
 ### Opciones de cuadrícula
 
@@ -370,7 +374,7 @@ Finalmente dentro de la fila podemos crear las columnas con la clase `.col` como
 También **bootstrap** nos ofrece un prefijo para configurar una columna según el dispositivo, basandonos en la siguiente tabla nos podremos guiar de una mejor forma:
 
 <div class="table-responsive">
-<table class="table" border="1">
+<table class="table table-dark">
   <thead class="text-center">
     <th class="h1 bg-secondary">📺</th>
     <th class="fit">Muy pequeño<br /><span class="font-weight-normal">&lt;576 px</span></th>
@@ -381,7 +385,7 @@ También **bootstrap** nos ofrece un prefijo para configurar una columna según 
   </thead>
   <tbody>
     <tr>
-      <th class="fit">Prefijo clase</th>
+      <th class="fit" style="background: #191919">Prefijo clase</th>
       <td align="center" class="fit"><code class="fs-5 text-warning">.col-</code></td>
       <td align="center" class="fit"><code class="fs-5 text-warning">.col-sm-</code></td>
       <td align="center" class="fit"><code class="fs-5 text-warning">.col-md-</code></td>
@@ -392,7 +396,6 @@ También **bootstrap** nos ofrece un prefijo para configurar una columna según 
 </table>
 </div>
 
-
 ### Configuración de las columnas
 
 Si tuvieramos que hacer la siguiente distribución para **pantallas grandes** como lo muestra la siguiente ilustración:
@@ -402,23 +405,24 @@ Si tuvieramos que hacer la siguiente distribución para **pantallas grandes** co
 Sería fácil aplicar esa configuración de la cuadrícula pensando en que nuestro objetivo son puras pantallas grandes:
 
 {% include codeHeader.html icon='html' codepen='y' title='demo grilla' css='.col-4 { padding: 30px;}' bs=true %}
+{4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21}
 ```html
 <div class="container">
 	<h2 align="center">Primera Fila</h2>
 	<div class="row">
-		<div class="col-4 border">
+		<div class="col-4 border"> <!-- Columna (1 - 4) de 12 -->
 		 <h5>Columna 1</h5>
 		 <div class="card">
 			<img src="https://simerdeka.untirta.ac.id/_assets/img/simerdeka/konten/default.jpg" alt="" class="card-img-top">
 		 </div>
 		</div>
-		<div class="col-4 border">
+		<div class="col-4 border"> <!-- Columna (5 - 8) de 12 -->
 		 <h5>Columna 2</h5>
 		 <div class="card">
 			<img src="https://simerdeka.untirta.ac.id/_assets/img/simerdeka/konten/default.jpg" alt="" class="card-img-top">
 		 </div>
 		</div>
-		<div class="col-4 border">
+		<div class="col-4 border"> <!-- Columna (9 - 12) de 12 -->
 		 <h5>Columna 3</h5>
 		 <div class="card">
 			<img src="https://simerdeka.untirta.ac.id/_assets/img/simerdeka/konten/default.jpg" alt="" class="card-img-top">
@@ -428,19 +432,19 @@ Sería fácil aplicar esa configuración de la cuadrícula pensando en que nuest
 
 	<h2 align="center">Segunda Fila</h2>
 	<div class="row">
-		<div class="col-4 border">
+		<div class="col-4 border"> <!-- Columna (1 - 4) de 12 -->
 		 <h5>Columna 1</h5>
 		 <div class="card">
 			<img src="https://simerdeka.untirta.ac.id/_assets/img/simerdeka/konten/default.jpg" alt="" class="card-img-top">
 		 </div>
 		</div>
-		<div class="col-4 border">
+		<div class="col-4 border"> <!-- Columna (5 - 8) de 12 -->
 		 <h5>Columna 2</h5>
 		 <div class="card">
 			<img src="https://simerdeka.untirta.ac.id/_assets/img/simerdeka/konten/default.jpg" alt="" class="card-img-top">
 		 </div>
 		</div>
-		<div class="col-4 border">
+		<div class="col-4 border"> <!-- Columna (9 - 12) de 12 -->
 		 <h5>Columna 3</h5>
 		 <div class="card">
 			<img src="https://simerdeka.untirta.ac.id/_assets/img/simerdeka/konten/default.jpg" alt="" class="card-img-top">
@@ -453,36 +457,17 @@ Sería fácil aplicar esa configuración de la cuadrícula pensando en que nuest
 
 El problema se genera cuando abrimos el inspector con clic derecho y seleccionamos **inspeccionar** o con la combinación de teclas (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>i</kbd>).
 
-Es ahora que necesitamos aplicar la filosofía de *mobile first* y con **boostrap** simplemente consiste en ordenar las clases usando su prefijo `col-` para decirle cuantas columnas usará en los distintivos dispositivos. Vamos al siguiente ejemplo para que comprendas es similar al anterior pero notarás la diferencia:
+Es ahora que necesitamos aplicar la filosofía de *mobile first* y con **boostrap** simplemente consiste en ordenar las clases usando su prefijo `col-` para decirle cuantas columnas usará en los distintivos dispositivos. Vamos al siguiente ejemplo para que comprendas, es similar al anterior pero notarás la diferencia:
 
 {% include codeHeader.html icon='html' codepen='y' title='demo grilla responsive' css='.col-12, .col-4 { padding: 30px;}' bs=true %}
+{5 6}
 ```html
 <div class="container">
 	<h2 align="center">Primera Fila</h2>
 	<div class="row">
 		<div class="col-12 col-lg-4 border">
-		 <h5>Columna 1</h5>
-		 <div class="card">
-			<img src="https://simerdeka.untirta.ac.id/_assets/img/simerdeka/konten/default.jpg" alt="" class="card-img-top">
-		 </div>
-		</div>
-		<div class="col-12 col-lg-4 border">
-		 <h5>Columna 2</h5>
-		 <div class="card">
-			<img src="https://simerdeka.untirta.ac.id/_assets/img/simerdeka/konten/default.jpg" alt="" class="card-img-top">
-		 </div>
-		</div>
-		<div class="col-12 col-lg-4 border">
-		 <h5>Columna 3</h5>
-		 <div class="card">
-			<img src="https://simerdeka.untirta.ac.id/_assets/img/simerdeka/konten/default.jpg" alt="" class="card-img-top">
-		 </div>
-		</div>
-	</div>
-
-	<h2 align="center">Segunda Fila</h2>
-	<div class="row">
-		<div class="col-12 col-lg-4 border">
+		<!-- col-12: ocupa todo el ancho disponible en pantallas pequeñas -->
+		<!-- col--lg-4: en pantallas grandes, la columna ocupará 4 de las 12 columnas disponibles -->
 		 <h5>Columna 1</h5>
 		 <div class="card">
 			<img src="https://simerdeka.untirta.ac.id/_assets/img/simerdeka/konten/default.jpg" alt="" class="card-img-top">
@@ -525,6 +510,7 @@ Dado que las tarjetas (*cards*) son etiquetas `div`{:.tag}, abarcarán todo el a
 
 
 {% include codeHeader.html icon='html' codepen='y' title='demo componente card' bs=true %}
+{4 5 6 7 8 9 10 11 12 13 14 15 16}
 ```html
 <div class="container">
 	<h2 align="center">Componente card</h2>
@@ -558,7 +544,8 @@ Una card no se limita a usar solo una imagen, un título y texto también podemo
 
 Para terminar veamos el siguiente código usando las tarjetas con las imágenes de suricata y distribuidas en la grilla de bootstrap:
 
-> **Nota**: Las imágenes son las mismas que las del desafío, pero están siendo vinculadas en otro servidor, por lo que debes indicar la ruta que corresponde a las imágenes de tu proyecto
+> Las imágenes son las mismas que las del desafío, pero están siendo vinculadas en otro servidor, por lo que debes indicar la ruta que corresponde a las imágenes de tu proyecto
+{: .prompt-note }
 
 {% include codeHeader.html icon='html' codepen='y' title='demo grilla responsive suricata' bs=true %}
 ```html

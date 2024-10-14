@@ -11,7 +11,7 @@ show_next: true
 
 ## Descripción
 
-En este desafío se nos pide los siguientes requerimientos:
+En este desafío se nos pide crear una página web con los siguientes requerimientos:
 
 - Aplicar correctamente las etiquetas semánticas de **HTML5**.
 - Emplear correctamente los selectores en **CSS** ya sea para definir reglas por `id`, `clase` o `etiqueta`.
@@ -25,7 +25,8 @@ Para lo anterior se nos proporciona la siguiente [maqueta](https://xd.adobe.com/
 
 También contamos con un material de apoyo que podemos descargar [aquí]({{ page.img_path | relative_url | append: 'imagenes-iguana-page.zip' }}){: download='material-de-apoyo.zip' } :point_left:.
 
-> **Nota**: El material de apoyo básicamente contiene las imágenes necesarias para trabajar en el desafío.
+> El material de apoyo básicamente contiene las imágenes necesarias para trabajar en el desafío.
+{: .prompt-note }
 
 ---
 
@@ -105,26 +106,27 @@ Una vez seleccionada las fuentes, las vinculamos dentro de `head`{: .tag } usand
 Como en cada desafío nos piden utilizar correctamente las etiquetas semánticas. Es por ello que dispondremos de la siguiente forma la distribución de las etiquetas **HTML** (*en resumen*):
 
 {% include codeHeader.html file='index.html' %}
+{5 9 12 15 19}
 ```html
 <!DOCTYPE html>
 <html>
 <body>
   <header>
-	<!-- ... -->
+	<!-- el header contiene la imagen grande -->
   </header>
   <main>
     <section>
-      <!-- ... -->
+      <!-- seccción de texto junto a la imagen -->
     </section>
     <section>
-      <!-- ... -->
+      <!-- sección de los iconos -->
     </section>
     <section>
-      <!-- ... -->
+      <!-- sección de la galería de imagenes -->
      </section>
   </main>
   <footer>
-	<!-- ... -->
+	<!-- el pie de página -->
   </footer>
 </body>	
 </html>
@@ -139,7 +141,8 @@ Visto lo anterior, ya podemos entrar en tierra derecha, vamos a trabajar la sigu
 
 De esta forma podemos indentificar nuestro modelo de cajas que consiste en 3 cajas un `header`{: .tag} contenedor, un `h1`{:.tag} para el título y un `div`{:.tag} para la imagen grande que posicionaremos a través de **CSS**, por defecto las etiquetas antes mencionadas son **cajas de bloques** quiere decir que tienen su propiedad `display:block` lo que significa que utilizarán el 100% disponible de su contenedor.
 
-> **Ojo**:<br>La maqueta del desafío te presentará algunas propiedades como el ancho y el alto en píxeles y eso complica las cosas para que el diseño se vea proporcional a cada pantalla. Por ello en lo que resta del desarrollo estaré usando unidades avanzadas que dependen del **viewport** (región visible de la página web en el navegador).
+> La maqueta del desafío te presentará algunas propiedades como el ancho y el alto en píxeles y eso complica las cosas para que el diseño se vea proporcional a cada pantalla. Por ello en lo que resta del desarrollo estaré usando unidades avanzadas que dependen del **viewport** (región visible de la página web en el navegador).
+{: .prompt-warning }
 
 Pasemos a ver el código, tenemos las siguientes tabs que nos permiten alternar y mirar el código que corresponde al **HTML** y **CSS** respectivamente:
 
@@ -233,7 +236,8 @@ Ya podemos continuar con la siguiente sección. Pero antes que nada en el desaf�
 
 ![img - iguana]({{ page.img_path | relative_url | append: '02.png' }})
 
-> **Nota**<br>Formas de alinear nuestras cajas en esta sección existen muchas, comenzando con la más sencilla que sería con flexbox (cosa que aquí no lo hare por la simple razón que no hemos entrado en esa materia).
+> Formas de alinear nuestras cajas en esta sección existen muchas, comenzando con la más sencilla que sería con flexbox (cosa que aquí no lo hare por la simple razón que no hemos entrado en esa materia).
+{: .prompt-note }
 
 Para tu buena suerte, te mostrare una forma muy sencilla (solía usar este truco en mis comienzos) que consiste en cambiar el display del elemento padre con el valor de `table`, para que se comporte como una tabla tradicional de html, pasemos a ver el código necesario en el **HTML** y **CSS** para luego comentarlo:
 
@@ -306,7 +310,8 @@ Como pudiste observar en el CSS, aplicamos los siguientes estilos para el conten
 
 Como vemos sólo hemos dado un relleno (*padding*) que en este caso se le asignó en porcentajes, un `3%` tanto arriba como abajo (eje Y) y un `6%` tanto a la izquierda como a la derecha (eje X), como estamos usando una etiqueta `section`{:.tag} no es necesario establecer un ancho, ya que al ser un elemento de bloque usará el `100%`.
 
-> **Nota**<br>Aquí también se podría definir una altura (*height*) para que delimitemos la zona en la que vamos a trabajar. Para este ejemplo vamos a ignorarlo y trabajaremos con los tamaños de los elementos hijos y el padre adoptará automáticamente la altura adecuada.
+> Aquí también se podría definir una altura (*height*) para que delimitemos la zona en la que vamos a trabajar. Para este ejemplo vamos a ignorarlo y trabajaremos con los tamaños de los elementos hijos y el padre adoptará automáticamente la altura adecuada.
+{: .prompt-note }
 
 Luego como mencionaba anteriormente, estamos asignando el valor `table` a la propiedad `display`, ya que, de esta forma será más fácil posicionar los elementos hijos, aprovechando el comportamiento de una tabla.
 
@@ -351,8 +356,8 @@ Lo que nos resta en esta sección es la imagen y que si o si aquí debemos defin
 ```
 {: .nolineno }
 
-> **OJO**<br>Si no establecemos ancho y alto en la imagen tomará sus medidas absolutas de acuerdo a su resolución.
-
+> Si no establecemos ancho y alto en la imagen tomará sus medidas absolutas de acuerdo a su resolución.
+{: .prompt-note }
 
 ### Trabajando la sección de características
 
@@ -622,7 +627,6 @@ Luego vamos a darle los estilos, como ancho y altura para los elementos contened
 ```
 {: .nolineno }
 
-
 Y por último tenemos que ajustar las imágenes para que ocupen el 100% de su contenedor:
 
 {% include codeHeader.html icon="css" %}
@@ -636,7 +640,8 @@ Y por último tenemos que ajustar las imágenes para que ocupen el 100% de su co
 ```
 {: .nolineno }
 
-> **Nota**<br>El poner las imágenes dentro de una etiqueta `div`{: .tag} es opcional ya que podemos establecer un ancho y alto con los atributos *width* y *height* respectivamente en las etiquetas `img`{: .tag }
+> El poner las imágenes dentro de una etiqueta `div`{: .tag} es opcional ya que podemos establecer un ancho y alto con los atributos *width* y *height* respectivamente en las etiquetas `img`{: .tag }
+{: .prompt-note }
 
 Pero lo mejor es tener nuestras imágenes en otros contenedores así nos da la posibilidad de hacer algunos efectos muy simple como una transición que cuando se pase el mouse por encima de cada imagen (*hover*) escalamos su tamaño original, tal como lo muestra el código anterior con la propiedad `transition: transform .5s ease`:
 

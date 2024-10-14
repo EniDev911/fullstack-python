@@ -6,7 +6,7 @@ const codepenButtons = document.querySelectorAll('.codepen-button');
 const codeFullscreenButtons = document.querySelectorAll('.code-fullscreen-button');
 
 function copyCode(e) {
-  const code = e.parentElement.nextSibling.nextSibling.querySelector('code').textContent;
+  const code = e.parentElement.nextElementSibling.querySelector('code').textContent;
   const codeSplit = code.split("\n").filter((ele) => !ele.match(/^[1-9]/));
   window.navigator.clipboard.writeText(codeSplit.join("\n").trim());
   const tooltipInstance = bootstrap.Tooltip.getInstance(e);
