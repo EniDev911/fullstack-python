@@ -22,7 +22,6 @@ Para cumplir con éxito el desafío, vamos a ir paso a paso para ir clarificando
 
 ### Estructura del proyecto
 
-
 ```bash
 📂 notas-finales
 ├── 📂 assets
@@ -33,7 +32,8 @@ Para cumplir con éxito el desafío, vamos a ir paso a paso para ir clarificando
 └── index.html # página principal
 ```
 
-> **Ojo**: Debido a las fallas de la plataforma en cuanto a la descarga del **Material de Apoyo**, que básicamente es un archivo, para descargar el archivo [`index.html haz click aquí`]({{ page.img_path | relative_url | append: 'notas-finales-apoyo.zip' }}){:download='material.zip'} 👈
+> Debido a las fallas de la plataforma en cuanto a la descarga del **Material de Apoyo**, que básicamente es un archivo, para descargar el archivo [`index.html haz click aquí`]({{ page.img_path | relative_url | append: 'notas-finales-apoyo.zip' }}){:download='material.zip'} 👈
+{: .prompt-warning }
 
 Si por alguna razón no pudiste descargar el material de apoyo, pega el siguiente código en tu `index.html`:
 

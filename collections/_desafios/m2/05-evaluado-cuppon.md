@@ -93,7 +93,8 @@ Para este desafío nos piden integrar bootstrap vía **CDN**, te dejo a continua
 
 Ya hemos hecho este paso de crear las barras de navegación en desafíos anteriores, así que sólo tenemos que ir agregando el siguiente código seguido de la etiqueta `body`{: .tag}:
 
-> **Nota**: Las imágenes son las mismas que las del desafío, pero están siendo vinculadas en otro servidor, por lo que debes indicar la ruta que corresponde a las imágenes de tu proyecto.
+> Las imágenes son las mismas que las del desafío, pero están siendo vinculadas en otro servidor, por lo que debes indicar la ruta que corresponde a las imágenes de tu proyecto.
+{: .prompt-note }
 
 {% tabs cuppon_navbar %}
 {% tab cuppon_navbar html %}
@@ -142,7 +143,6 @@ Ya hemos hecho este paso de crear las barras de navegación en desafíos anterio
 {% endtab %}
 {% endtabs %}
 
-
 Como vemos el componente [navbar](https://getbootstrap.com/docs/5.3/components/navbar/){:target='_blank'} ya es responsivo, y sólo nos basta con indicar con la clase `navbar-expand-md` para que su comportamiento cambie cuando el dispositivo tenga un ancho **≥ 768px**.
 
 ### Creando el layout responsivo
@@ -178,13 +178,13 @@ Como sabemos **bootstrap** ofrece una grilla compuesta por 12 columnas, en ella 
   </div>
 </div>
 
-### Punto de interrupción (*breakpoint*)
+### Punto de interrupción ( *breakpoint* )
 
 Los puntos de interrupción son claves para un **diseño responsive** son anchos personalizables que determinan como se deben comportar los elementos afectados. **Boostrap en su versión 5** en adelante incluye 6 puntos de interrupción:
 
 <div class="table-responsive" markdown="1">
 
-{: .table }
+{: .table .table-dark }
 |Breakpoint|Dispositivo|Tamaño|
 |:---------|:----------|:-----|
 |`x-small`|**None**|< 576px|
@@ -200,6 +200,7 @@ Los puntos de interrupción son claves para un **diseño responsive** son anchos
 
 Para crear nuestro layout responsive, aquí si tenemos que usar la grilla de bootstrap.
 
+{% include codeHeader.html icon="html" %}
 {2}
 ```html
 <!-- PROMOS SECTION -->
@@ -215,6 +216,7 @@ Como podemos observar, tenemos un `section class='container my-5'`{: .tag } como
 
 Luego de especificar un contenedor para colocar los elementos, seguido se especificará una fila:
 
+{% include codeHeader.html icon="html" %}
 {2}
 ```html
 <section class="container-lg my-5">
@@ -226,10 +228,10 @@ Luego de especificar un contenedor para colocar los elementos, seguido se especi
 
 Ahora para continuar con las columnas, ya vimos que lo que son los (*breakpoints*) asi que esto es importante para que cada columna pueda ocupar el ancho que corresponda según el disposiivo.
 
-Veamos rápidamente el uso de (*breakpoints*) en columnas:
+Veamos rápidamente el uso de ( *breakpoints* ) en columnas:
 
 <div class="table-responsive">
-<table class="table" border="1">
+<table class="table table-dark">
   <thead class="text-center">
     <th class="h1 bg-secondary">📺</th>
     <th>Muy pequeño<br><span class="font-weight-normal">&lt;576 px</span></th>
@@ -267,6 +269,7 @@ Configurar una columna correctamente con sus respectivos *breakpoints* nos dará
 </div>
 </div>
 
+{% include codeHeader.html icon="html" %}
 {3}
 ```html
 <section class="container-lg my-5">
@@ -279,12 +282,14 @@ Configurar una columna correctamente con sus respectivos *breakpoints* nos dará
 ```
 
 > En la fila añadimos el la clase `justify-content-center` ya que al tratarse de un contenedor flexible, nos posicionará el contenido al centro.
+{: .prompt-note }
 
 Como podemos observar en el ejemplo, tenemos la columna configurada de forma responsiva para los diferentes dispositivo, cada columna abarcará 11 espacios de la grilla en dispositivos pequeños (*mobile*), 6 espacios de la grilla en dispositivos medianos (*tablets*) y 4 espacios de la grilla en dispositivos grandes (*desktop*)
 
 El código para terminar la sección de las tarjetas dentro de la grilla sería el siguiente:
 
-> **Nota**: Las imágenes son las mismas que las del desafío, pero están siendo vinculadas en otro servidor, por lo que debes indicar la ruta que corresponde a las imágenes de tu proyecto.
+> Las imágenes son las mismas que las del desafío, pero están siendo vinculadas en otro servidor, por lo que debes indicar la ruta que corresponde a las imágenes de tu proyecto.
+{: .prompt-note }
 
 {% include codeHeader.html file='index.html' codepen='y' title='grilla - cuppon' bs=true fa=true %}
 ```html
@@ -397,7 +402,7 @@ El código para terminar la sección de las tarjetas dentro de la grilla sería 
 {: .nolineno }
 
 
-### Desarrollar sección (*formulario*)
+### Desarrollar sección ( *formulario* )
 
 Esta sección es más de lo mismo, si realizaste el [desafío guiado anterior en la sección de contacto]({{ page.previous.url | relative_url }}#desarrollar-sección-contacto), claro que debemos cambiar algunas cosas el color de fondo, pero vamos al código y lo pegas a continuación de la sección anterior y también no te olvides de agregar el CSS que es para cambiar el color de fondo, que se acerca más al de la maqueta ya que la clase `bg-success`  de bootstrap no es el mismo color que la maqueta:
 
@@ -438,7 +443,8 @@ Esta sección es más de lo mismo, si realizaste el [desafío guiado anterior en
 
 Hemos llegado a la parte más sencilla, solo es cosa de ver el **HTML** y te darás cuenta que está pasando:
 
-> **Nota** Las imágenes son las mismas que las del desafío, pero están siendo vinculadas en otro servidor, por lo que debes indicar la ruta que corresponde a las imágenes de tu proyecto.
+> Las imágenes son las mismas que las del desafío, pero están siendo vinculadas en otro servidor, por lo que debes indicar la ruta que corresponde a las imágenes de tu proyecto.
+{: .prompt-note }
 
 {% include codeHeader.html file='index.html' codepen='y' title='footer - cuppon' bs=true %}
 ```html
@@ -470,9 +476,5 @@ gh repo clone EniDev911/m2-evaluado-cuppon
 ```bash
 git clone git@github.com:EniDev911/m2-evaluado-cuppon.git
 ```
-{% endtab %}
-{% tab cuppon github page %}
-{% include ifr_results.html 
-  src='https://enidev911.github.io/m2-evaluado-cuppon/' %}
 {% endtab %}
 {% endtabs %}
