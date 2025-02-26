@@ -36,9 +36,9 @@ Descargar los *assets* (imágenes) [aquí](assets-viajes-chile.zip) 👈
 
 ---
 
-## Estructura del proyecto
+## __Estructura del proyecto__
 
-Bien como nos piden en el desafío, nuestro proyecto estará organizado en una estructura de **assets** tal como lo muestra el siguiente árbol de archivos y directorios:
+El proyecto estará organizado en una __estructura de assets__, tal como lo muestra el siguiente árbol de archivos y directorios:
 
 
 ```bash
