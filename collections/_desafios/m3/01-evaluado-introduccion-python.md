@@ -8,12 +8,9 @@ show: true
 show_next: true
 ---
 
-## Descripción
+En este desafío nos piden desarrollar 2 actividades, realizar cálculos simples en Python usando operaciones básicas.
 
-En este desafío nos piden desarrollar 2 actividades para validar los conocimientos realizando cálculos simples en Python usando operaciones básicas.
-
-
-## Actividad 1 - Velocidad de escape
+### Actividad 1 - Velocidad de escape
 
 La velocidad de escape de un planeta se define como la mínima velocidad necesaria para salir de un planeta venciendo la gravedad. La velocidad de escape se calcula mediante la siguiente fórmula:
 
@@ -30,7 +27,7 @@ $V_e=\sqrt{2gr}$
 2. El programa debe especificar claramente el formato en el que se deben entregar los
 datos de entrada con instrucciones apropiadas.
 
-**Ejemplo**:
+__Ejemplo__:
 
 - `"Ingrese el radio en Kilómetros:"`
 - `"Ingrese la constante g:"`
@@ -38,7 +35,7 @@ datos de entrada con instrucciones apropiadas.
 {: start="3" }
 3. La respuesta del programa también debe mostrarse con un texto apropiado:
 
-**Ejemplo**:
+__Ejemplo__:
 
 - `"La velocidad de Escape es 11174.6 [m/s]"`
 
@@ -121,9 +118,8 @@ Ingrese el radio en Kilómetros: 6371
 Velocidad de Escape = 11174.6 [m/s]
 ```
 
----
 
-## Actividad 2 - Rentabilidad
+### Actividad 2 - Rentabilidad
 
 Un emprededor quiere crear una app que provea un servicio para entregar comida de mascotas. Este proyecto tiene buenos pronósticos, pero su éxito dependerá de cuántos usuarios puedan alcanzar. La manera en la que se medirá esto es calculando las utilidades del proyecto. Estas utilidades se pueden calcular mediante la siguiente formula:
 
@@ -136,7 +132,7 @@ Donde:
 - **GT**: Gastos Totales
 
 
-### Rentabilidad - Requerimiento 1
+#### Requerimiento 1
 
 Crear el programa `emprendedor1.py` que utilice la fórmula descrita anteriormente para calcular las utilidades de un proyecto. Para ello utiliza `input()` para solicitar como dato el precio de suscripción P, el número de usuarios U y el gasto total GT.
 
@@ -196,7 +192,7 @@ Ingresar el gasto total: 120000
 Total utilidades generadas: 130000
 ```
 
-### Rentabilidad - Requerimiento 2
+#### Requerimiento 2
 
 Ahora nos dicen que el emprendedor considera 2 tipos de usuarios los **usuarios normales** y los **usuarios premium** a los cuales se le cobrará una suscripción un 50% mayor. Crea una segunda versión llamada `emprendedor2.py` que permita considerar el caso recién expuesto. Para ello debemos modificar lá función para que solicite mediante `input()` los siguientes parámetros de entrada:
 
@@ -267,7 +263,7 @@ Ingresar el gasto total: 100000
 Total utilidades generadas: 140000
 ```
 
-### Rentabilidad - Requerimiento 3
+#### Rentabilidad - Requerimiento 3
 
 Considera ahora una tercera versión llamada `emprendedor3.py` utilizando la formula original de utilidades donde el usuario ingrese los siguientes datos:
 

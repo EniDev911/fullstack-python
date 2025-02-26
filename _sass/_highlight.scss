@@ -50,6 +50,12 @@ pre.highlight {
 .language-bat .rouge-gutter {
   display: none;
 }
+.language-bash {
+  .highlight {
+    border-radius: 4px;
+  }
+}
+
 
 .rouge-table .lineno {
   user-select: none;

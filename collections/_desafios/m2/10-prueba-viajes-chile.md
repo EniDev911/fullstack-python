@@ -9,7 +9,7 @@ show: true
 
 ## Requerimientos
 
-1. [Construir la estructura de la página](#estructura-del-proyecto)
+1. [Construir la estructura de la página](#estructura-proyecto)
     - Construir la estructura de un archivo HTML, utilizando correctamente las etiquetas semánticas para definir las distintas secciones de la página.
     - Realizar correctamente la carga de archivos y organización del directorio.
 
@@ -36,7 +36,7 @@ Descargar los *assets* (imágenes) [aquí](assets-viajes-chile.zip) 👈
 
 ---
 
-## __Estructura del proyecto__
+## Estructura Proyecto
 
 El proyecto estará organizado en una __estructura de assets__, tal como lo muestra el siguiente árbol de archivos y directorios:
 
@@ -92,7 +92,7 @@ La carga la vemos a continuación en la próxima sección (*starter template*) y
 
 ---
 
-## Starter template
+## Starter Template
 
 Para este desafío vamos a comenzar el *starter template* para copiar y pegar en tu `index.html`. El *starter template* incluye:
 
@@ -103,8 +103,7 @@ Para este desafío vamos a comenzar el *starter template* para copiar y pegar en
 - `CDN JQuery 3.6 minificado`
 - `link a nuestro script.js`
 
-
-Case destacar que en el requerimiento 2 item 2 nos solicita explicítamente este aspecto:
+Cabe destacar que en el requerimiento 2 item 2 nos solicita explicítamente este aspecto:
 
 {: .card .text-dark .p-2 }
 Utilizar recursos externos como Google Fonts y Font Awesome, para definir estilos de fuente.

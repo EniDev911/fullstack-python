@@ -18,7 +18,9 @@ $codeFontJetbrains: "JetBrains Mono", consolas;
 $codeFont: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 
 body {
-  background: $dark-100;
+  // background: $dark-100;
+  background: #151515;
+  // background: #131826;
   color: $gray-400;
   font-family: $bodyFont;
 }
@@ -88,16 +90,18 @@ svg[id^="mermaid"] {
   }
 }
 
-.contenido {
-  overflow: hidden;
-}
-
-@media (min-width: 992px) {
-  .contenido {
-    padding: 0 30px;
+@media (min-width: 1400px) {
+  #content {
+    font-size: 1.25rem;
+  }
+  h2 { font-size: 3rem; margin-bottom: 3rem;}
+  h3 { margin: 2.7rem 0;}
+  p {
+    margin-bottom: 2.5rem;
   }
 }
 
 @import "printer";
 @import "sizing";
+
 
