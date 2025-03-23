@@ -8,9 +8,13 @@ show: true
 show_next: true
 ---
 
-En este desafío nos piden desarrollar 2 actividades, realizar cálculos simples en Python usando operaciones básicas.
+## __Contexto__
 
-### Actividad 1 - Velocidad de escape
+En este desafío, se nos piden desarrollar 2 actividades, realizar cálculos simples en Python usando operaciones básicas.
+
+## __Desarrollo Paso a Paso__
+
+### __1. Velocidad de escape__
 
 La velocidad de escape de un planeta se define como la mínima velocidad necesaria para salir de un planeta venciendo la gravedad. La velocidad de escape se calcula mediante la siguiente fórmula:
 

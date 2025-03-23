@@ -15,9 +15,9 @@ css:
     }
 ---
 
-## Descripción
+## __Contexto__
 
-En este desafío guiado no nos proporcionan más información que lo siguiente:
+En este desafío, se nos proporciona desarrollar una página web, considerando lo siguiente:
 
 - Implementar [Bootstrap](https://getbootstrap.com/){:target='_blank'}
 - Desarrollar un diseño responsivo siguiendo la filosofía de *mobile first*.
@@ -50,13 +50,12 @@ Eso en resumen, ya que nos proporciona los íconos de [fontawesome](https://font
 > Descargar los logos y demás imágenes desde la plataforma o en su defecto, puedes descargar los assets [aquí]({{ page.img_path | relative_url | append: 'imagenes-olivi-ros.zip' }}) :point_left:
 {: .prompt-note }
 
----
 
-## Desarrollo
+## __Desarrollo Paso a Paso__
 
 Para cumplir con éxito el desafío, vamos a ir paso a paso para ir clarificando cada tema y dejando algunas sugerencias o recomendaciones.
 
-### Añadir Bootstrap
+### __Añadir Bootstrap__
 
 Para este proyecto nos piden integrar bootstrap vía **CDN**, te dejo a continuación un **starter template** que contiene lo siguiente:
 

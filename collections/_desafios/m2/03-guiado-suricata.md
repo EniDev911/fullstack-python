@@ -17,15 +17,17 @@ css:
       .navbar {
           background: var(--pink);
       }
+github:
+  name: enidev911/m2-guiado-suricata
 ---
 
-## Descripción
+## __Contexto__
 
-En este desafío nos piden crear la página web de **Suricata** aplicando los conceptos y herramientas aprendidas, en nuestro desarrollo debemos considerar lo siguiente:
+En este desafío, se nos pide crear la página web "**Suricata**" aplicando los conceptos y herramientas aprendidas. Para nuestro desarrollo, debemos considerar lo siguiente:
 
-- Construir un **layout responsivo** (*Mobile First*).
-- Realizar la construcción de HTML y CSS siguiendo la maqueta proporcionada.
-- Utilizar  [Bootstrap](https://getbootstrap.com/){: target='_blank'}
+- Construir un **layout responsivo** siguiendo la metodología __*Mobile First*__.
+- Implementar la estructura de __HTML__ y __CSS__ respetando la maqueta proporcionada.
+- Utilizar  [Bootstrap](https://getbootstrap.com/){: target='_blank'} para el diseño y la estilización.
 
 - **Tipografías**
 	- [Open Sans](https://fonts.google.com/specimen/Open+Sans?query=Open){:target='_blank'}
@@ -50,7 +52,7 @@ En este desafío nos piden crear la página web de **Suricata** aplicando los co
 {% endfor %}
 </div>
 
-Para lo anterior se nos proporciona [maqueta](https://xd.adobe.com/spec/dcf92897-39ba-4e9a-4d25-af16b55e2c78-aac8/grid){: target='_blank'} la cual posee dos vistas una para dispositivos móviles y para **PC** de escritorio.
+Para lo anterior, se nos proporciona [maqueta](https://xd.adobe.com/spec/dcf92897-39ba-4e9a-4d25-af16b55e2c78-aac8/grid){: target='_blank'} la cual posee dos vistas, una para dispositivos **móviles** y otra para **PC** de escritorio.
 
 De todas formas veamos el siguiente *wireframe* donde podemos ver un esquema general:
 
@@ -59,13 +61,12 @@ De todas formas veamos el siguiente *wireframe* donde podemos ver un esquema gen
 > El término *wireframe* tiene diferentes uso, pero es empleado en el diseño y desarrollo de aplicaciones móviles y páginas web como una representación visual con el fin de establecer la estructura básica de una página.
 {: .prompt-note }
 
----
 
-## Desarrollo
+## __Desarrollo Paso a Paso__
 
 Para cumplir con éxito nuestro desafío es necesario tener una organización como corresponde de los diferentes archivos es por eso que se recomienda utilizar una **estructura de assets** para trabajar.
 
-### Estructura del proyecto
+### __1. Estructura del proyecto__
 
 Igual como en el [{{ page.previous.title }}]({{ page.previous.url | relative_url }}) podemos usar el siguiente árbol de directorios basado en la **estructura assets**:
 
@@ -92,7 +93,7 @@ Igual como en el [{{ page.previous.title }}]({{ page.previous.url | relative_url
 ```
 {: .nolineno }
 
-### Añadir Bootstrap
+### __Añadir Bootstrap__
 
 Para este proyecto nos piden integrar [bootstrap](https://getbootstrap.com/){:target='_blank'}, descargando los archivos e incluirlos en el proyecto.
 
@@ -123,7 +124,7 @@ Los archivos descargados entonces deberían quedar de la siguiente forma:
 ```
 {: .nolineno }
 
-### Vincular bootstrap
+### __Vincular bootstrap__
 
 Luego de mover los archivos descargados de bootstrap donde corresponde, vamos abrir el `index.html` para vincular los archivos externos como lo muestra el siguiente código:
 
@@ -314,7 +315,7 @@ Por último tenemos el contenido plegable:
   </div>
 </div>
 
-### Contenedores, Filas y Columnas
+### __Contenedores, Filas y Columnas__
 
 Se debe especificar un contenedor usando una clase `.container` o `.container-fluid` para colocar elementos dentro de él. Ahí se especificará una fila y las columnas que se tendrán dentro de ella.
 
@@ -367,7 +368,7 @@ Finalmente dentro de la fila podemos crear las columnas con la clase `.col` como
 > Añadimos la clase `.border` para ver lo que ocupa cada columna. **Bootstrap** no permite el uso de más de 12 columnas, en caso de que se especifique de esa manera, la columna sobrante se colocará inmediatamente debajo del resto de las columnas o sea abajo de la primera columna.
 {: .prompt-note }
 
-### Opciones de cuadrícula
+### __Opciones de cuadrícula__
 
 **Bootstrap** utiliza medidas `em` o `rem` en la mayoría de los tamaños, pero cuando se trata de comportamiento responsivo los puntos de interrupción (*breakpoints*) son establecidos en `px` (*píxeles*) así como los anchos de los contenedores. Esto se debe a que el ancho de la ventana gráfica de los diferentes dispositivos se encuentran en **píxeles** y no cambia con el **tamaño de la fuente**.
 
@@ -396,7 +397,7 @@ También **bootstrap** nos ofrece un prefijo para configurar una columna según 
 </table>
 </div>
 
-### Configuración de las columnas
+### __Configurar las columnas__
 
 Si tuvieramos que hacer la siguiente distribución para **pantallas grandes** como lo muestra la siguiente ilustración:
 
@@ -497,9 +498,8 @@ Si entendiste como funciona la grilla, vas muy bien para lo que sigue, así que 
 {:align='center'}
 ![meme](https://i.redd.it/rexwi5zdll531.jpg){:height='300'}
 
----
 
-## Utilizar el componente card
+### __Utilizar el componente card__
 
 Este componente es muy sencillo y se compone básicamente de 3 partes principales:
 
@@ -664,30 +664,14 @@ Para terminar veamos el siguiente código usando las tarjetas con las imágenes 
 ```
 {: .nolineno }
 
+
+## __Repositorio__
+
+{% include repository.html repo=page.github %}
+
 ---
 
-## Repositorio
+## __Recursos Adicionales__
 
-{% tabs suricata %}
-{% tab suricata github %}
-[![github](https://socialify.git.ci/enidev911/m2-guiado-suricata/image?description=1&descriptionEditable=M2%20%3A%20Suricata%20-%20Desaf%C3%ADo%20guiado&language=1&name=1&owner=1&pattern=Charlie%20Brown&theme=Dark){: .card }](https://github.com/EniDev911/m2-guiado-suricata)
-{% endtab %}
-{% tab suricata github cli %}
-{% include codeHeader.html icon='terminal' %}
-```bash
-gh repo clone EniDev911/m2-guiado-suricata
-```
-{% endtab %}
-{% tab suricata ssh %}
-{% include codeHeader.html icon='terminal' %}
-```bash
-git clone git@github.com:EniDev911/m2-guiado-suricata.git
-```
-{% endtab %}
-{% tab suricata github page %}
-{% include ifr_results.html 
-  src='https://enidev911.github.io/m2-guiado-suricata/' %}
-{% endtab %}
-{% endtabs %}
-
-*[VSC]: Visual Studio Code
+- [Documentación de Bootstrap](https://getbootstrap.com/docs){:target='_blank'}: Guía oficial de Bootstrap con ejemplos y componentes listos para usar.
+- [CodePen](https://codepen.io/){:target='_blank'}: Plataforma para probar y compartir fragmentos de código HTML, CSS y JS.
