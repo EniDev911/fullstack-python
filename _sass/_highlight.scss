@@ -184,9 +184,12 @@ pre.highlight {
   font-weight: bold;
 }
 
-@media (min-width: 1200px) {
-  .highlight {
-    font-size: 19px;
+@media (min-width: 1300px) {
+  .code-header {
+    font-size: 20px !important;
+  }
+  .highlight, figure.highlight {
+    font-size: 22px;
   }
 }
 

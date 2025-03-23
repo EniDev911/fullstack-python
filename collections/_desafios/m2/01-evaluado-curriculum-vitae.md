@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Desafío Curriculum Vitae
+title: Curriculum Vitae en HTML
 modulo: m2
 type: evaluado
 show: true
@@ -10,53 +10,55 @@ github:
   name: eniDev911/m2-evaluado-curriculum
 ---
 
-## Descripción
+## Contexto
 
-En este desafío nos piden armar un **CV** en **HTML** utilizando una estructura organizada y las etiquetas semántica correspondiente. Para ello nos dan la siguiente imagen como referencia para el desarrollo:
+En este desafío, se nos piden armar un Curriculum Vitae (**CV**) en **HTML**, utilizando una estructura organizada y las etiquetas semántica correspondiente. Como referencia para el desarrollo, se nos proporciona la siguiente imagen:
 
 {: align="center" }
 ![img ronaldo]({{ page.img_path | relative_url | append: 'referencia.png'}}){: .w-100 .w-lg-50 .card }
 
----
 
-## Desarrollo
+## __Desarrollo Paso a Paso__
 
-Para cumplir con éxito el desafío, vamos a ir paso a paso para ir clarificando cada tema y dejando algunas sugerencias o recomendaciones.
+Para completar el desafío con éxito, avanzaremos paso a paso, aclarando cada tema y proporcionando sugerencias y recomendaciones, comenzando por la estructura del proyecto.
 
-### Estructura del proyecto
+### __Estructura del proyecto__
 
-Cuando estamos trabajando en un sitio web de forma local, debemos mantener todos los archivos relacionados en un solo directorio o carpeta. Este directorio se puede crear en el lugar que desees, pero te recomiendo encarecidamente que lo hagas en algún lugar donde lo puedas encontrar fácilmente, tal vez en el escritorio.
+Cuando trabajamos en un sitio web o página web de forma local, es importante mantener todos los archivos relacionados en un solo directorio o carpeta. Puedes crear este directorio en cualquier ubicación del sistema, pero es recomendable elegir un lugar de fácil acceso, como el escritorio.
 
-> **Recomendacion**:<br>Elige un lugar para almacenar los proyectos de tus sitios web. **Ej**: crea un directorio llamado **proyectos_web** (o algo similar). Aquí vivirán todos los proyectos que vayas creando.
+> Elige un lugar específico para almacenar tus proyectos web. Por ejemplo, puedes crear un directorio llamado **proyectos_web** (o algo similar), donde organizarás todos los proyectos que desarrolles.
 {: .prompt-success }
 
-La estructura del proyecto es fundamental, veamos como estructurar nuestro proyecto. Pensemos en las cosas más comunes que encontramos en cualquier proyecto web simple:
+La estructura de un proyecto es fundamental. Veamos cómo organizar nuestro proyecto de manera adecuada. Para ello pensemos en las cosas más comunes que encontramos en cualquier proyecto web simple:
 
-- Un archivo html principal (Ej: *`index.html`*)
-- Directorio para contener las imágenes (Ej: *`portada.jpg`* o *`portada.png`*)
-- Directorio para contener archivos de estilos (Ej: *`estilo.css`*)
-- Directorio para contener archivos script (Ej: *`funciones.js`*)
+- Un archivo html principal (Ejemplo: **`index.html`**)
+- Directorio para contener las imágenes (Ejemplo: **`portada.jpg`**)
+- Directorio para contener archivos de estilos (Ejemplo: **`estilos.css`**)
+- Directorio para contener archivos script (Ejemplo: **`funciones.js`**)
 
-De esta forma, podemos tener nuestro proyecto bien organizado, además es común ver que todos los directorios relacionados con las hojas de estilos, scripts e imágenes se encuentran a su vez dentro de un directorio llamado **assets**.
+Siguiendo esta estructura, mantendremos nuestro proyecto bien organizado. Además, es común agrupar estos directorios dentro de una carpeta llamada **`📂 assets`**.
 
 Para nuestro proyecto **CV** vamos a crear entonces el siguiente árbol de directorios y archivos:
 
 ```
-📂 curriculum/
-├─ 📂 assets/
-│  ├─ 📁 css/
-│  ├─ 📁 js/
-│  └─ 📂 img/
-│     └─ foto.jpg
-└─ index.html
+/mi_cv  
+│── index.html  
+│── /assets  
+│   │── /css  
+│   │   ├── estilo.css  
+│   │── /js  
+│   │   ├── funciones.js  
+│   │── /img  
+│       ├── portada.jpg  
+│       ├── perfil.png  
 ```
-{: .nolineno }
+{: .nolineno .noheader }
 
 
 > Busca la foto que desees para colocar en el directorio `img`. En [https://robohash.org/](https://robohash.org/){: target='_blank' } puedes conseguir algunas imágenes de buena calidad basados en robots y más.
 {: .prompt-note }
 
-### Cabecera de un documento HTML
+### __Cabecera de un documento HTML__
 
 Como sabemos  la estructura de un documento HTML debía contener siempre dos etiquetas principales:
 
@@ -83,11 +85,11 @@ Existen varias etiquetas que podemos utilizar en esta sección de cabecera del d
 
 También en la cabera se suele utilizar las etiquetas **Open Graph** que permiten destacar más nuestro sitio o página web.
 
-### ¿Qué es Open Graph?
+### __¿Qué es Open Graph?__
 
-¿Te haz preguntado como es que cuando compartes una página, un blog, un video de YouTube o una canción de Spotify aparece una silueta de una tarjeta junto una imagen con su título?
+¿Te haz preguntado cómo, al compartir una página web, un blog, un video de YouTube o una canción de Spotify, aparece una vista previa con una imagen y su título?
 
-Desde el año 2010, facebook introdujo el [protocolo Open Graph](https://ogp.me/){:target='_blank'} que permite que cualquier página web se pueda convertir en un objeto gráfico.
+Desde el año 2010, facebook introdujo el [protocolo Open Graph](https://ogp.me/){:target='_blank'}, que permite convertir cualquier página web en un objeto gráfico, mejorando su presentación en redes sociales.
 
 Un ejemplo de ello, es el siguiente:
 
@@ -109,15 +111,15 @@ Un ejemplo de ello, es el siguiente:
 </html>
 ```
 {% endtab %}
-{% tab opg compartido en whatsapp %}
+{% tab opg vista en whatsapp %}
 ![img - opg whatsapp]({{ '/assets/img/ws-opg.png' | relative_url }}){:height='180'}
 {% endtab %}
-{% tab opg compartido en facebook %}
+{% tab opg vista en facebook %}
 ![img - opg facebook]({{ '/assets/img/fb-opg.png' | relative_url }}){:height='180' width='380'}
 {% endtab %}
 {% endtabs %}
 
-### Etiquetas meta para describir la página
+### __Etiquetas meta para describir la página__
 
 A pesar de que los motores de búsqueda como [Google](//google.com){:target='_blank'} analizan el contenido de la página para determinar automáticamente el fragmento adecuado para la descripción. También puede usar la información descriptiva del elemento `<meta name="description">` si resulta más apropiado que otras partes del contenido.
 
@@ -134,7 +136,7 @@ A pesar de que los motores de búsqueda como [Google](//google.com){:target='_bl
 > Una descripción meta es una información importante para los motores de búsqueda y los usuarios.
 {: .prompt-note }
 
-### Favicon (icono de pestaña)
+### __Favicon (icono de pestaña)__
 
 Cuando tenemos varias pestañas en nuestro navegador, para una búsqueda más fácil e intuitiva entre pestañas, el navegador suele colocar iconos a la izquierda del título de las pestañas. Estos iconos son conocidos como **favicons** (*iconos favoritos*) ya que [fue un invento de Internet Explorer](https://es.wikipedia.org/wiki/Favicon#:~:text=La%20forma%20original%20de%20definir%20un%20favicono%20era%20poniendo%20un%20archivo%20llamado%20favicon.ico%20en%20el%20directorio%20ra%C3%ADz%20del%20servidor%20web%2C%20el%20cual%20era%20mostrado%20autom%C3%A1ticamente%20en%20los%20favoritos%20de%20Internet%20Explorer){:target='_blank'} para colocar icono cuando el usuario añadía una página a favoritos.
 
@@ -154,7 +156,7 @@ Para generar los favicons de una forma más comoda, podemos utilizar herramienta
 </head>
 ```
 
-> **Ojo**:<br>Según la estructura que tenga el proyecto, se deben afinar los vínculos hacia los archivos.
+> Según la estructura que tenga el proyecto, se deben afinar los vínculos hacia los archivos.
 {: .prompt-warning }
 
 
@@ -172,8 +174,6 @@ Para generar los favicons de una forma más comoda, podemos utilizar herramienta
 {: .prompt-note }
 
 
-> **Recomendación**<br>Si quieres íconos para utilizar en tus proyectos, te recomiendo las siguientes páginas: [Icons8](https://iconos8.es/){: target='_blank' }, [FlatIcon](https://www.flaticon.es/){: target='_blank' }
-{: .prompt-success }
 
 ### Encabezado
 
@@ -258,11 +258,15 @@ Luego debemos vincular ese archivo desde nuestro HTML:
 </head>
 ```
 
----
 
 ## Repositorio
 
 {% include repository.html repo=page.github %}
 
-*[CV]: Curriculum Vitae
-*[HTML]: HyperText Markup Language
+---
+
+## __Recursos Adicionales__
+
+Si quieres íconos para utilizar en tus proyectos, te recomiendo las siguientes páginas:
+- [Icons8](https://iconos8.es/){: target='_blank' }: Ofrece una gran variedad de íconos gratuitos y personalizables en diferentes estilos, además de herramientas como generadores de imágenes y fondos.
+- [FlatIcon](https://www.flaticon.es/){: target='_blank' }: Una biblioteca de íconos vectoriales, con opciones en formato PNG, SVG y más, ideales para diseño web y aplicaciones.
