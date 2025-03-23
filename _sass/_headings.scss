@@ -33,5 +33,13 @@ h4 {
 		margin-left: 0;
 		margin-right: 0;
 	}
+}
 
+@media (min-width: 1300px) {
+	h2, h3 {
+		word-spacing: -4px;
+	}
+	h2 {
+		margin: 45px 0;
+	}
 }

@@ -7,11 +7,13 @@ type: evaluado
 img_path: /assets/img/desafios/iguana/
 show: true
 show_next: true
+github:
+  name: eniDev911/m2-evaluado-iguana-page
 ---
 
-## Descripción
+## __Contexto__
 
-En este desafío se nos pide crear una página web con los siguientes requerimientos:
+En este desafío, se nos pide crear una página web con los siguientes requerimientos:
 
 - Aplicar correctamente las etiquetas semánticas de **HTML5**.
 - Emplear correctamente los selectores en **CSS** ya sea para definir reglas por `id`, `clase` o `etiqueta`.
@@ -28,13 +30,12 @@ También contamos con un material de apoyo que podemos descargar [aquí]({{ page
 > El material de apoyo básicamente contiene las imágenes necesarias para trabajar en el desafío.
 {: .prompt-note }
 
----
 
-## Desarrollo
+## __Desarrollo Paso a Paso__
 
-Para cumplir con éxito nuestro desafío es necesario tener una organización como corresponde de los diferentes archivos, es por eso que se recomienda utilizar una **estructura de assets** para trabajar.
+Para completar con éxito nuestro desafío, es fundamental mantener una organización adecuada de los archivos. Por ello, se recomienda utilizar una **estructura de assets** para trabajar, donde agrupemos los diferentes recursos del proyecto de manera ordenada.
 
-### Estructura del proyecto
+### __Estructura del proyecto__
 
 Igual como en el [{{ page.previous.title }}]({{ page.previous.url | relative_url }}) podemos usar el siguiente árbol de directorios basado en la **estructura assets**:
 
@@ -55,7 +56,7 @@ Igual como en el [{{ page.previous.title }}]({{ page.previous.url | relative_url
 {: .nolineno }
 
 
-### Integrar la librería  Font Awesome
+### __Agregar la librería Font Awesome__
 
 Debemos añadir la librería para los íconos, lo podemos hacer a través de **CDN**, asegurémonos de poner la etiqueta `script`{:.tag} justo antes de la etiqueta de cierre del `body`{: .tag }:
 
@@ -73,7 +74,7 @@ Debemos añadir la librería para los íconos, lo podemos hacer a través de **C
 </html>
 ```
 
-### Añadir la fuente Raleway de Google Font
+### __Añadir fuentes de Google Fonts__
 
 Otro de los requisitos es integrar la fuente [Raleway de Google fonts](https://fonts.google.com/specimen/Raleway){: target='_blank' class='link'} en las siguientes variantes:
 
@@ -101,7 +102,7 @@ Una vez seleccionada las fuentes, las vinculamos dentro de `head`{: .tag } usand
 </html>
 ```
 
-### Etiquetas semánticas
+### __Etiquetas semánticas__
 
 Como en cada desafío nos piden utilizar correctamente las etiquetas semánticas. Es por ello que dispondremos de la siguiente forma la distribución de las etiquetas **HTML** (*en resumen*):
 
@@ -697,30 +698,14 @@ footer a:hover {
 {% endtab %}
 {% endtabs %}
 
+
+## __Repositorio__
+
+{% include repository.html repo=page.github %}
+
 ---
 
-## Repositorio
+## __Recursos Adicionales__
 
-{% tabs iguana %}
-{% tab iguana github %}
-[![github](https://socialify.git.ci/enidev911/m2-evaluado-iguana-page/image?description=1&descriptionEditable=M2%20%3A%20Iguana%20Page%20-%20Desaf%C3%ADo%20evaluado&language=1&name=1&owner=1&pattern=Charlie%20Brown&theme=Dark){: .card }](https://github.com/EniDev911/m2-evaluado-iguana-page)
-{% endtab %}
-{% tab iguana github cli %}
-{% include codeHeader.html icon='terminal' %}
-```bash
-gh repo clone EniDev911/m2-evaluado-iguana-page
-```
-{% endtab %}
-{% tab iguana ssh %}
-{% include codeHeader.html icon='terminal' %}
-```bash
-git clone git@github.com:EniDev911/m2-evaluado-iguana-page.git
-```
-{% endtab %}
-{% tab iguana github page %}
-{% include ifr_results.html 
-  src='https://enidev911.github.io/m2-evaluado-iguana-page/' target="true" %}
-{% endtab %}
-{% endtabs %}
-
-*[CDN]: Content Delivery Network
+- [Configurar el Kit de FontAwesome](https://docs.fontawesome.com/web/setup/use-kit){: target='_blank' }
+- [Artículo de la MDN sobre el modelo de cajas](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Box_model){:target='_blank'}: La MDN (Mozilla Developer Network) es un sitio web de Mozilla que documenta tecnologías web.

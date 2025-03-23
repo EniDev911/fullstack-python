@@ -188,7 +188,9 @@ pre.highlight {
   .code-header {
     font-size: 20px !important;
   }
-  .highlight, figure.highlight {
+  .highlight,
+  pre.highlight,
+  figure.highlight {
     font-size: 22px;
   }
 }

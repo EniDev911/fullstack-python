@@ -10,7 +10,7 @@ github:
   name: eniDev911/m2-evaluado-curriculum
 ---
 
-## Contexto
+## __Contexto__
 
 En este desafío, se nos piden armar un Curriculum Vitae (**CV**) en **HTML**, utilizando una estructura organizada y las etiquetas semántica correspondiente. Como referencia para el desarrollo, se nos proporciona la siguiente imagen:
 
@@ -40,20 +40,17 @@ Siguiendo esta estructura, mantendremos nuestro proyecto bien organizado. Ademá
 
 Para nuestro proyecto **CV** vamos a crear entonces el siguiente árbol de directorios y archivos:
 
-```
-/mi_cv  
-│── index.html  
-│── /assets  
-│   │── /css  
-│   │   ├── estilo.css  
-│   │── /js  
-│   │   ├── funciones.js  
-│   │── /img  
-│       ├── portada.jpg  
-│       ├── perfil.png  
+```bash
+📂 mi-cv
+├── 📂 assets
+│   ├── 📂 css # 👈 para las hojas de estilos
+│   │   └─ estilos.css
+│   ├── 📂 img # 👈 para las imágenes
+│   │   └─ perfil.png
+│   └── 📁 favicons # 👈 para los favicons (opcional)
+└── index.html # página principal
 ```
 {: .nolineno .noheader }
-
 
 > Busca la foto que desees para colocar en el directorio `img`. En [https://robohash.org/](https://robohash.org/){: target='_blank' } puedes conseguir algunas imágenes de buena calidad basados en robots y más.
 {: .prompt-note }
@@ -174,8 +171,7 @@ Para generar los favicons de una forma más comoda, podemos utilizar herramienta
 {: .prompt-note }
 
 
-
-### Encabezado
+### __Encabezado del CV__
 
 En la parte principal del curriculum, vamos agrupar el título, nuestra foto de perfil y un subtítulo en lo que sería nuestro encabezado mediante la etiqueta `header`{:.tag}:
 
@@ -190,7 +186,7 @@ En la parte principal del curriculum, vamos agrupar el título, nuestra foto de 
 ```
 {: .nolineno }
 
-### Contenido
+### __Contenido del Documento__
 
 Dentro del contenido principal vamos a estar utilizando básicamente secciones para cada apartado como sería los **datos personales**, **formación académica**, **experiencia**, **información complementaria**, etc. Un ejemplo de ello sería lo siguiente:
 
@@ -213,7 +209,7 @@ Dentro del contenido principal vamos a estar utilizando básicamente secciones p
 </main>
 ```
 
-### Estilos para imprimir @media print
+### __Estilos para imprimir__
 
 Este es un punto que se suele pasar por alto cuando se crean páginas o sitios web, y es poner un estilo específico para cuando alguien quiera imprimir y para nuestro curriculum sería positivo.
 
