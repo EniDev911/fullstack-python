@@ -12,17 +12,13 @@ github:
 
 ## __Contexto__
 
-En este desafío, se nos piden armar un Curriculum Vitae (**CV**) en **HTML**, utilizando una estructura organizada y las etiquetas semántica correspondiente. Como referencia para el desarrollo, se nos proporciona la siguiente imagen:
-
-{: align="center" }
-![img ronaldo]({{ page.img_path | relative_url | append: 'referencia.png'}}){: .w-100 .w-lg-50 .card }
-
+En este desafío, se nos piden armar un Curriculum Vitae (**CV**) en **HTML**, utilizando una estructura organizada y las etiquetas semántica correspondiente. Como referencia para el desarrollo, se nos proporciona la [siguiente imagen de referencia]({{ page.img_path | relative_url | append: 'referencia.webp'}}){:target='_blank'}.
 
 ## __Desarrollo Paso a Paso__
 
-Para completar el desafío con éxito, avanzaremos paso a paso, aclarando cada tema y proporcionando sugerencias y recomendaciones, comenzando por la estructura del proyecto.
+Para completar el desafío con éxito, avanzaremos paso a paso de forma estructurada, aclarando cada tema en detalle y ofreciendo sugerencias y recomendaciones útiles. Comenzaremos por definir la estructura del proyecto.
 
-### __Estructura del proyecto__
+### __✍️ Paso 1: Estructura del proyecto__
 
 Cuando trabajamos en un sitio web o página web de forma local, es importante mantener todos los archivos relacionados en un solo directorio o carpeta. Puedes crear este directorio en cualquier ubicación del sistema, pero es recomendable elegir un lugar de fácil acceso, como el escritorio.
 
@@ -55,14 +51,20 @@ Para nuestro proyecto **CV** vamos a crear entonces el siguiente árbol de direc
 > Busca la foto que desees para colocar en el directorio `img`. En [https://robohash.org/](https://robohash.org/){: target='_blank' } puedes conseguir algunas imágenes de buena calidad basados en robots y más.
 {: .prompt-note }
 
-### __Cabecera de un documento HTML__
+### __✍️ Paso 2: Cabecera de un documento HTML__
 
-Como sabemos  la estructura de un documento HTML debía contener siempre dos etiquetas principales:
+Como sabemos, la estructura básica de un documento HTML debe incluir siempre dos secciones o etiquetas principales:
 
-- La cabecera de la página ( `head`{:.tag} )
-- El cuerpo de la página ( `body`{:.tag} )
+- La **cabecera del documento** ( `head`{:.tag} )
+- El **cuerpo del documento** ( `body`{:.tag} )
 
-El primero de ellos, se encarga de contener [etiquetas de metadatos](https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML){: target="_blank" } (*información sobre el documento*) así como establecer **relaciones con otros documentos** y el segundo se encarga de la parte visual que se mostrará al usuario en el navegador. Veamos la siguiente ilustración que muestra las etiquetas principales de cualquier documento **HTML5**:
+
+La sección `head`{:.tag} se encarga de incluir [metadatos sobre la página]((https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML){: target="_blank" }), como el título del documento, la codificación de caracteres, enlaces a hojas de estilo, scripts y otros recursos externos. Esta parte no es visible directamente para el usuario.
+
+Por otro lado, la sección `body`{:.tag} contiene todo el contenido visual que se muestra en el navegador, como texto, imágenes, enlaces, botones, etc.
+
+A continuación, veamos una ilustración que representa las etiquetas principales de cualquier documento HTML5:
+
 
 ![img doc html](https://enidev911.github.io/fullstackjsg33/guias/html/guia-general/images/estructura-documento.png){: .rounded }
 
@@ -171,18 +173,33 @@ Para generar los favicons de una forma más comoda, podemos utilizar herramienta
 {: .prompt-note }
 
 
-### __Encabezado del CV__
+### __✍️ Paso 3: Encabezado del Currículum__
 
-En la parte principal del curriculum, vamos agrupar el título, nuestra foto de perfil y un subtítulo en lo que sería nuestro encabezado mediante la etiqueta `header`{:.tag}:
+En la parte principal del CV, vamos a agrupar el título, nuestra foto de perfil y los datos personales utilizando como contenedor la etiqueta `header`{:.tag}.
+
+Para ello, nos guiaremos con la siguiente ilustración a modo de ejemplo:
+
+![encabezado]({{ page.img_path | relative_url | append: 'encabezado.webp'}})
 
 {% include codeHeader.html file='index.html' codepen="y" %}
 ```html
-<!-- header  -->
-<header>
-	<h1>Curriculum Vitae</h1>
-	<img src="./assets/img/perfil.png" width="260" alt="cv photo">
-	<h2>Marco Contreras</h2>
+<header align="center">
+  <img src="https://i.ibb.co/SXnSFrkB/profile.png" width="80" height="80" alt="cv photo">
+  <h1>Marco Contreras</h1>
+  <table align="center">
+    <tr>
+      <td align="left">
+        📍 Coquimbo, Chile | ✉️ mcherrera@mail.com
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        📞 +56 956120021 | 💼 linkedin.com/in/mcherrera911
+      </td>
+    </tr>
+  </table>
 </header>
+<hr>
 ```
 {: .nolineno }
 

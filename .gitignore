@@ -3,3 +3,4 @@ _site/
 ejercicios/
 .DS_Store
 Gemfile.lock
+**/**/*.png

@@ -115,13 +115,12 @@ python escape.py
 
 Resultado esperado:
 
-{: .shadow .p-3 .fs-6 style='background: #000; border: 1px solid #333'}
-```txt
+
+```cmd
 Ingrese la constante g en : 9.8
 Ingrese el radio en Kilómetros: 6371
 Velocidad de Escape = 11174.6 [m/s]
 ```
-
 
 ### Actividad 2 - Rentabilidad
 
@@ -188,8 +187,7 @@ python emprendedor1.py
 
 Resultado esperado:
 
-{: .shadow .p-3 .fs-6 style='background: #000; border: 1px solid #333'}
-```txt
+```cmd
 Ingresar el precio de suscripción: 5000
 Ingresar el número de usuarios: 50
 Ingresar el gasto total: 120000
@@ -258,8 +256,7 @@ python emprendedor2.py
 
 Resultado esperado:
 
-{: .shadow .p-3 .fs-6 style='background: #000; border: 1px solid #333'}
-```txt
+```cmd
 Ingresar el precio de suscripción: 8000
 Ingresar el número de usuarios (normal): 25
 Ingresar el número de usuarios (premium): 10
@@ -331,8 +328,7 @@ python emprendedor3.py
 
 Resultado esperado:
 
-{: .shadow .p-3 .fs-6 style='background: #000; border: 1px solid #333'}
-```txt
+```cmd
 Ingresar el precio de suscripción: 5000
 Ingresar el número de usuarios: 30
 Ingresar el gasto total: 120000
