@@ -1,10 +1,36 @@
-<div>
-<span class="bg-light" style="height: 1px; width: 100%; display: block;"></span>
-<span class="pt-1 pb-1 px-2 text-bg-light rounded-bottom">
-<time datetime="{{ include.date }}" {% if include.time-attributes %} {{ include.time-attributes}} {% endif %}>
-
-  {{ include.date | date: '%-d' }} de
-
+<style scoped>
+.calendar {
+  margin: 20px auto 30px auto;
+  width: 180px;
+  height: 140px;
+  text-align: center;
+  background: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 10px;
+  color: #000;
+  box-shadow: 3px 4px 1px #ABABAB,
+      4px 3px 1px #ABABAB;
+}
+.year {
+  text-transform: uppercase;
+  font-size: 19px;
+  padding: 4px;
+  background: #b00;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+.month {
+  text-transform: uppercase;
+  font-size: 25px;
+}
+.day {
+  font-size: 50px;
+  font-weight: bold;
+}
+</style>
+<div class="calendar">
+<div class="year">{{ include.date | date: '%Y' }}</div>
+<div class="month">
   {% assign m = include.date | date: '%-m' %}
   {% case m %}
   {% when '1' %}enero
@@ -20,10 +46,8 @@
   {% when '11' %}noviembre
   {% when '12' %}diciembre
   {% endcase %}
-
-  del
-
-  {{ include.date | date: '%Y' }}
-</time>
-</span>
+</div>
+<div class="day">
+  {{ include.date | date: '%-d' }}
+</div>
 </div>

@@ -97,7 +97,9 @@ details[open] > summary .fa-folder-open {
       {% else %}
         <div class="file">
           {% if item.icon == "image" %}
+          <a href="#">
             <i class="fa-solid fa-image"></i> {{ item.name }}
+          </a>
           {% else %}
             <i class="fa-brands fa-{{ item.icon }}"></i>
           {% endif %}

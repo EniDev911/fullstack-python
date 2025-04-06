@@ -5,7 +5,9 @@ img_path: /assets/img/notas/
 show_next: true
 ---
 
-### Editor -  Sublime Text
+{% include date_es.html date=page.date time-attributes=' class="post-date"' %}
+
+## __Editor - Sublime Text__
 
 Por supuesto, cualquier editor de Markdown serviría, pero me alegró mucho saber que existen **complementos** de **Jekyll** para mi editor favorito, **Sublime Text**, que facilita la publicación.
 

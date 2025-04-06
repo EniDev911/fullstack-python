@@ -7,9 +7,14 @@ show_next: true
 
 {% include date_es.html date=page.date time-attributes=' class="post-date"' %}
 
-## Crear un nuevo proyecto de Jekyll
 
-Empecé creando un nuevo proyecto en blanco de jekyll:
+Decidí crear un sitio web usando [Jekyll](https://jekyllrb.com/){:target='_blank'} con el objetivo de aprender y organizar las soluciones a las pruebas o desafíos del programa **Full Stack Python**.
+
+Este sitio no solo sería de utilidad para mí, sino también para otros compañeros estudiantes que, al igual que yo, pueden estar buscando soluciones a los desafíos.
+
+## __Crear un Proyecto en Blanco de Jekyll__
+
+Empecé creando un nuevo proyecto en blanco de Jekyll:
 
 {% include codeHeader.html icon="terminal" %}
 ```bash
@@ -18,13 +23,14 @@ jekyll new fullstack-python --blank
 
 Al ser un proyecto en blanco, no tardó demasiado en crearse y mostrarme los mensajes de que el proyecto se ha creado:
 
-```bash
-New jekyll site installed in /home/user/fullstack-python.
+```cmd
+C:\Users\marco> jekyll new fullstack-python --blank
+New jekyll site installed in C:\Users\marco\fullstack-python.
 ```
 
-### Añadir Jekyll
+## __Añadir Jekyll__
 
-Dentro del proyecto usamos **Bundler** para crear un **Gemfile** vacío y luego agregamos Jekyll como dependencia:
+Dentro del proyecto, usamos **Bundler** para crear un `Gemfile` vacío y luego agregamos jekyll como dependencia:
 
 {% include codeHeader.html icon="terminal" %}
 ```bash
@@ -32,7 +38,7 @@ bundle init
 bundle add jekyll
 ```
 
-### Servir el sitio
+## __Servir el sitio__
 
 Una vez instaladas las dependencias, utilicé nuevamente **Bundler** para construir el proyecto y servirlo en local:
 
@@ -45,7 +51,7 @@ Por último abri el navegador en <http://127.0.0.1:4000/> y ya se ve algo :relax
 
 ![img - nuevo proyecto]({{ page.img_path | relative_url | append: 'nuevo_proyecto.png'}}){: .card }
 
-### Despliegue
+## __Despliegue__
 
 Ya teniendo el proyecto corriendo en local, necesito hacerlo publico para el resto, así que lo voy a desplegar en **Github Page**, pero antes tenemos que crear un archivo `.gitignore`, para decirle a Git, que ignore todo lo que no es necesario en el proceso de compilación de Jekyll.
 
@@ -88,11 +94,10 @@ gh repo create --public -s=. -r=origin
 
 El comando anterior nos mostrará los siguientes mensajes:
 
+```cmd
+✓ Created repository enidev911/fullstack-python on GitHub
+✓ Added remote git@github.com:enidev911/fullstack-python.git
 ```
-✓ Created repository <user-name>/<repo-name> on GitHub
-✓ Added remote git@github.com:<user-name>/<repo-name>.git
-```
-{: .nolineno }
 
 Ya por último empujamos los cambios a la rama *gh-pages*:
 

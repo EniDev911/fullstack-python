@@ -36,7 +36,7 @@ folder_tree:
 
 ## __Contexto__
 
-En este desafío, se nos piden armar un Curriculum Vitae (**CV**) en **HTML**, utilizando una estructura organizada y las etiquetas semántica correspondiente. Como referencia para el desarrollo, se nos proporciona la [siguiente imagen de referencia]({{ page.img_path | relative_url | append: 'referencia.webp'}}){:target='_blank'}.
+En este desafío, se nos pide armar un Curriculum Vitae (**CV**) en **HTML**, utilizando una estructura organizada y las etiquetas semántica correspondiente. Como referencia para el desarrollo, se nos proporciona la siguiente [imagen de referencia]({{ page.img_path | relative_url | append: 'referencia.webp'}}){:target='_blank'}.
 
 ## __Desarrollo Paso a Paso__
 
