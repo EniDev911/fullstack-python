@@ -8,6 +8,30 @@ show_next: true
 img_path: /assets/img/desafios/curriculum/
 github:
   name: eniDev911/m2-evaluado-curriculum
+folder_tree:
+  - type: folder
+    name: "mi-cv"
+    open: true
+    children:
+      - type: file
+        name: "index.html"
+        icon: "fa-html5"
+      - type: folder
+        name: "assets"
+        open: true
+        children:
+          - type: folder
+            name: css
+            children:
+              - type: file
+                name: "estilos.css"
+                icon: "fa-css3-alt"
+          - type: folder
+            name: img
+            children:    
+              - type: file
+                name: "profile.png"
+                icon: "image"
 ---
 
 ## __Contexto__
@@ -28,25 +52,15 @@ Cuando trabajamos en un sitio web o página web de forma local, es importante ma
 La estructura de un proyecto es fundamental. Veamos cómo organizar nuestro proyecto de manera adecuada. Para ello pensemos en las cosas más comunes que encontramos en cualquier proyecto web simple:
 
 - Un archivo html principal (Ejemplo: **`index.html`**)
-- Directorio para contener las imágenes (Ejemplo: **`portada.jpg`**)
+- Directorio para contener las imágenes (Ejemplo: **`portada.jpg`**, **`perfil.png`**)
 - Directorio para contener archivos de estilos (Ejemplo: **`estilos.css`**)
 - Directorio para contener archivos script (Ejemplo: **`funciones.js`**)
 
-Siguiendo esta estructura, mantendremos nuestro proyecto bien organizado. Además, es común agrupar estos directorios dentro de una carpeta llamada **`📂 assets`**.
+Siguiendo esta estructura, mantendremos un proyecto bien organizado. Además, es común agrupar estos directorios dentro de una carpeta llamada **`📂 assets`**.
 
 Para nuestro proyecto **CV** vamos a crear entonces el siguiente árbol de directorios y archivos:
 
-```bash
-📂 mi-cv
-├── 📂 assets
-│   ├── 📂 css # 👈 para las hojas de estilos
-│   │   └─ estilos.css
-│   ├── 📂 img # 👈 para las imágenes
-│   │   └─ perfil.png
-│   └── 📁 favicons # 👈 para los favicons (opcional)
-└── index.html # página principal
-```
-{: .nolineno .noheader }
+{% include folder-tree.html tree=page.folder_tree %}
 
 > Busca la foto que desees para colocar en el directorio `img`. En [https://robohash.org/](https://robohash.org/){: target='_blank' } puedes conseguir algunas imágenes de buena calidad basados en robots y más.
 {: .prompt-note }
@@ -58,15 +72,13 @@ Como sabemos, la estructura básica de un documento HTML debe incluir siempre do
 - La **cabecera del documento** ( `head`{:.tag} )
 - El **cuerpo del documento** ( `body`{:.tag} )
 
+La sección de cabecera `head`{:.tag} del documento se encarga de incluir [metadatos sobre la página](https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML){: target="_blank" }, como el título del documento, la codificación de caracteres, enlaces a hojas de estilo, scripts y otros recursos externos. Esta parte no es visible directamente para el usuario.
 
-La sección `head`{:.tag} se encarga de incluir [metadatos sobre la página]((https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML){: target="_blank" }), como el título del documento, la codificación de caracteres, enlaces a hojas de estilo, scripts y otros recursos externos. Esta parte no es visible directamente para el usuario.
-
-Por otro lado, la sección `body`{:.tag} contiene todo el contenido visual que se muestra en el navegador, como texto, imágenes, enlaces, botones, etc.
+Por otro lado, la sección `body`{:.tag} del documento se encarga de todo el contenido visual que se muestra en el navegador, como texto, imágenes, enlaces, botones, etc.
 
 A continuación, veamos una ilustración que representa las etiquetas principales de cualquier documento HTML5:
 
-
-![img doc html](https://enidev911.github.io/fullstackjsg33/guias/html/guia-general/images/estructura-documento.png){: .rounded }
+![Documento HTML graph](https://raw.githubusercontent.com/EniDev911/assets/refs/heads/main/svg/html/documentoHtml.svg)
 
 Existen varias etiquetas que podemos utilizar en esta sección de cabecera del documento:
 
@@ -82,7 +94,7 @@ Existen varias etiquetas que podemos utilizar en esta sección de cabecera del d
 
 </div>
 
-También en la cabera se suele utilizar las etiquetas **Open Graph** que permiten destacar más nuestro sitio o página web.
+También en la cabecera de un documento HTML se suele utilizar las etiquetas **Open Graph** que permiten destacar más nuestro sitio o página web.
 
 ### __¿Qué es Open Graph?__
 
@@ -185,16 +197,16 @@ Para ello, nos guiaremos con la siguiente ilustración a modo de ejemplo:
 ```html
 <header align="center">
   <img src="https://i.ibb.co/SXnSFrkB/profile.png" width="80" height="80" alt="cv photo">
-  <h1>Marco Contreras</h1>
+  <h1>JUAN PERÉZ</h1>
   <table align="center">
     <tr>
       <td align="left">
-        📍 Coquimbo, Chile | ✉️ mcherrera@mail.com
+        📍 Coquimbo, Chile | ✉️ juanperez@mail.com
       </td>
     </tr>
     <tr>
       <td align="left">
-        📞 +56 956120021 | 💼 linkedin.com/in/mcherrera911
+        📞 +56 956120021 | 💼 linkedin.com/in/juanperez
       </td>
     </tr>
   </table>
@@ -203,7 +215,7 @@ Para ello, nos guiaremos con la siguiente ilustración a modo de ejemplo:
 ```
 {: .nolineno }
 
-### __Contenido del Documento__
+### __✍️ Paso 4: Secciones del Curriculum__
 
 Dentro del contenido principal vamos a estar utilizando básicamente secciones para cada apartado como sería los **datos personales**, **formación académica**, **experiencia**, **información complementaria**, etc. Un ejemplo de ello sería lo siguiente:
 

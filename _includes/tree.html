@@ -1,0 +1,109 @@
+<style scoped>
+    .tree {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+  border-left: 1px solid #333;
+  font-family: 'Segoe UI', sans-serif;
+  color: #d4d4d4;
+}
+
+.tree li {
+  position: relative;
+  padding-left: 1rem;
+  margin: 0.2rem 0;
+}
+
+.tree li::before {
+  content: "";
+  position: absolute;
+  top: 0.8rem;
+  left: -1rem;
+  width: 1rem;
+  height: 1px;
+  background: #333;
+}
+
+details > summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+details > summary:hover {
+  background: #3a3d41;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.file {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.file:hover {
+  background: #3a3d41;
+}
+
+.fa-folder,
+.fa-folder-open {
+  color: #d7ba7d;
+  width: 16px;
+}
+
+.fa-html5 { color: #e34c26; }
+.fa-css3-alt { color: #264de4; }
+.fa-js { color: #f1e05a; }
+.fa-image { color: #4ec9b0; }
+.fa-file { color: #c5c5c5; }
+
+details > summary .fa-folder-open {
+  display: none;
+}
+
+details[open] > summary .fa-folder {
+  display: none;
+}
+
+details[open] > summary .fa-folder-open {
+  display: inline-block;
+}
+
+</style>
+
+{% assign tree = include.tree %}
+<ul class="tree">
+  {% for item in tree %}
+    <li>
+      {% if item.type == "folder" %}
+        <details {% if item.open %}open{% endif %}>
+          <summary>
+            <i class="fa-solid fa-folder"></i>
+            <i class="fa-solid fa-folder-open"></i>
+            {{ item.name }}
+          </summary>
+          {% include folder-tree.html tree=item.children %}
+        </details>
+      {% else %}
+        <div class="file">
+          {% if item.icon == "image" %}
+            <i class="fa-solid fa-image"></i> {{ item.name }}
+          {% else %}
+            <i class="fa-brands fa-{{ item.icon }}"></i>
+          {% endif %}
+          {{ item.name }}
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

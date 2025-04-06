@@ -7,7 +7,6 @@ const removeNumbers = (str) => {
 }
 
 const definePen = (options) => {
-
 	const form = document.createElement("form");
 	form.action = "https://codepen.io/pen/define";
 	form.method = "POST";
