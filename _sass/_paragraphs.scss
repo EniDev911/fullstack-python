@@ -2,7 +2,12 @@ p {
 	word-spacing: .08rem;
 	letter-spacing: .01rem;
 	margin: 15px;
+	strong {
+		font-weight: normal;
+		color: rgb(165, 165, 127);
+	}
 }
+
 
 @media (min-width: 992px) {
 	p {

@@ -7,6 +7,47 @@ type: evaluado
 img_path: /assets/img/desafios/iguana/
 show: true
 show_next: true
+folder_tree:
+  - type: folder
+    name: "iguana-page"
+    open: true
+    children:
+      - type: file
+        name: "index.html"
+        icon: "fa-html5"
+      - type: folder
+        name: "assets"
+        open: true
+        children:
+          - type: folder
+            name: css
+            children:
+              - type: file
+                name: "estilos.css"
+                icon: "fa-css3-alt"
+          - type: folder
+            name: img
+            children:    
+              - type: file
+                name: "bg-header.png"
+                download_path: https://i.ibb.co/JjCD09h0/bg-header.png  
+                icon: "image"
+              - type: file
+                name: "iguana-1.jpg"
+                download_path: https://i.ibb.co/xt6HP64j/iguana-1.jpg  
+                icon: "image"
+              - type: file
+                name: "iguana-2.jpg"
+                download_path: https://i.ibb.co/JRd5r67X/iguana-2.jpg  
+                icon: "image"
+              - type: file
+                name: "iguana-3.jpg"
+                download_path: https://i.ibb.co/XZ7Q112X/iguana-3.jpg  
+                icon: "image"
+              - type: file
+                name: "iguana-4.jpg"
+                download_path: https://i.ibb.co/Zpqj86t1/iguana-4.jpg  
+                icon: "image"
 github:
   name: eniDev911/m2-evaluado-iguana-page
 ---
@@ -30,33 +71,15 @@ También contamos con un material de apoyo que podemos descargar [aquí]({{ page
 > El material de apoyo básicamente contiene las imágenes necesarias para trabajar en el desafío.
 {: .prompt-note }
 
+Para completar con éxito nuestro desafío, es fundamental mantener una organización adecuada de los archivos. Por ello, se recomienda utilizar una **estructura de assets** para trabajar, donde agrupemos los diferentes recursos del proyecto ordenadamente.
 
-## __Desarrollo Paso a Paso__
+## __Estructura del proyecto 📂__
 
-Para completar con éxito nuestro desafío, es fundamental mantener una organización adecuada de los archivos. Por ello, se recomienda utilizar una **estructura de assets** para trabajar, donde agrupemos los diferentes recursos del proyecto de manera ordenada.
+Al igual que en el desafío [{{ page.previous.title }}]({{ page.previous.url | relative_url }}), podemos usar el siguiente árbol de directorios basado en la **estructura assets**:
 
-### __Estructura del proyecto__
+{% include folder-tree.html tree=page.folder_tree %}
 
-Igual como en el [{{ page.previous.title }}]({{ page.previous.url | relative_url }}) podemos usar el siguiente árbol de directorios basado en la **estructura assets**:
-
-```bash
-📂 iguana-page
-├── 📂 assets
-│   ├── 📂 css # 👈 para las hojas de estilos
-│   │   └─ style.css
-│   ├── 📂 img # 👈 para las imágenes
-│   │   │─ bg-header.jpg
-│   │   │─ iguana-1.jpg
-│   │   │─ iguana-2.jpg
-│   │   │─ iguana-3.jpg
-│   │   └─ iguana-4.jpg
-│   └── 📁 favicons # 👈 para los favicons (opcional)
-└── index.html # página principal
-```
-{: .nolineno }
-
-
-### __Agregar la librería Font Awesome__
+## __Agregar Font Awesome 🎨__
 
 Debemos añadir la librería para los íconos, lo podemos hacer a través de **CDN**, asegurémonos de poner la etiqueta `script`{:.tag} justo antes de la etiqueta de cierre del `body`{: .tag }:
 
@@ -74,7 +97,7 @@ Debemos añadir la librería para los íconos, lo podemos hacer a través de **C
 </html>
 ```
 
-### __Añadir fuentes de Google Fonts__
+## __Agregar Google Fonts 🔠__
 
 Otro de los requisitos es integrar la fuente [Raleway de Google fonts](https://fonts.google.com/specimen/Raleway){: target='_blank' class='link'} en las siguientes variantes:
 
@@ -102,7 +125,7 @@ Una vez seleccionada las fuentes, las vinculamos dentro de `head`{: .tag } usand
 </html>
 ```
 
-### __Etiquetas semánticas__
+## __Etiquetas semánticas__
 
 Como en cada desafío nos piden utilizar correctamente las etiquetas semánticas. Es por ello que dispondremos de la siguiente forma la distribución de las etiquetas **HTML** (*en resumen*):
 

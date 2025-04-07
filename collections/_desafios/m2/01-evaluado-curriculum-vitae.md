@@ -31,6 +31,7 @@ folder_tree:
             children:    
               - type: file
                 name: "profile.png"
+                download_path: https://i.ibb.co/SXnSFrkB/profile.png   
                 icon: "image"
 ---
 
@@ -38,18 +39,16 @@ folder_tree:
 
 En este desafío, se nos pide armar un Curriculum Vitae (**CV**) en **HTML**, utilizando una estructura organizada y las etiquetas semántica correspondiente. Como referencia para el desarrollo, se nos proporciona la siguiente [imagen de referencia]({{ page.img_path | relative_url | append: 'referencia.webp'}}){:target='_blank'}.
 
-## __Desarrollo Paso a Paso__
-
 Para completar el desafío con éxito, avanzaremos paso a paso de forma estructurada, aclarando cada tema en detalle y ofreciendo sugerencias y recomendaciones útiles. Comenzaremos por definir la estructura del proyecto.
 
-### __✍️ Paso 1: Estructura del proyecto__
+## __Paso 1: Estructura del Proyecto 📂__
 
-Cuando trabajamos en un sitio web o página web de forma local, es importante mantener todos los archivos relacionados en un solo directorio o carpeta. Puedes crear este directorio en cualquier ubicación del sistema, pero es recomendable elegir un lugar de fácil acceso, como el escritorio.
+Cuando trabajamos en un sitio o página web de forma local, es importante **mantener todos los archivos relacionados en un solo directorio o carpeta**. Puedes crear este directorio en cualquier ubicación del sistema, pero es recomendable elegir un lugar de fácil acceso, como el escritorio.
 
 > Elige un lugar específico para almacenar tus proyectos web. Por ejemplo, puedes crear un directorio llamado **proyectos_web** (o algo similar), donde organizarás todos los proyectos que desarrolles.
 {: .prompt-success }
 
-La estructura de un proyecto es fundamental. Veamos cómo organizar nuestro proyecto de manera adecuada. Para ello pensemos en las cosas más comunes que encontramos en cualquier proyecto web simple:
+Veamos cómo organizar nuestro proyecto de manera adecuada. Para ello,  pensemos en los elementos más comunes que encontramos en cualquier proyecto web simple:
 
 - Un archivo html principal (Ejemplo: **`index.html`**)
 - Directorio para contener las imágenes (Ejemplo: **`portada.jpg`**, **`perfil.png`**)
@@ -62,10 +61,7 @@ Para nuestro proyecto **CV** vamos a crear entonces el siguiente árbol de direc
 
 {% include folder-tree.html tree=page.folder_tree %}
 
-> Busca la foto que desees para colocar en el directorio `img`. En [https://robohash.org/](https://robohash.org/){: target='_blank' } puedes conseguir algunas imágenes de buena calidad basados en robots y más.
-{: .prompt-note }
-
-### __✍️ Paso 2: Cabecera de un documento HTML__
+## __Paso 2: Cabecera de un documento HTML 🧬__
 
 Como sabemos, la estructura básica de un documento HTML debe incluir siempre dos secciones o etiquetas principales:
 
@@ -82,7 +78,7 @@ A continuación, veamos una ilustración que representa las etiquetas principale
 
 Existen varias etiquetas que podemos utilizar en esta sección de cabecera del documento:
 
-<div class="t-responsive" markdown="1">
+<div class="table-responsive" markdown="1">
 
 {: .table .table-dark  }
 |Etiqueta|Atributos|Descripción|
@@ -94,7 +90,7 @@ Existen varias etiquetas que podemos utilizar en esta sección de cabecera del d
 
 </div>
 
-También en la cabecera de un documento HTML se suele utilizar las etiquetas **Open Graph** que permiten destacar más nuestro sitio o página web.
+También, en la cabecera de un documento HTML, se suelen utilizar las etiquetas **Open Graph**, que permiten destacar más nuestro sitio o página web.
 
 ### __¿Qué es Open Graph?__
 
@@ -149,9 +145,9 @@ A pesar de que los motores de búsqueda como [Google](//google.com){:target='_bl
 
 ### __Favicon (icono de pestaña)__
 
-Cuando tenemos varias pestañas en nuestro navegador, para una búsqueda más fácil e intuitiva entre pestañas, el navegador suele colocar iconos a la izquierda del título de las pestañas. Estos iconos son conocidos como **favicons** (*iconos favoritos*) ya que [fue un invento de Internet Explorer](https://es.wikipedia.org/wiki/Favicon#:~:text=La%20forma%20original%20de%20definir%20un%20favicono%20era%20poniendo%20un%20archivo%20llamado%20favicon.ico%20en%20el%20directorio%20ra%C3%ADz%20del%20servidor%20web%2C%20el%20cual%20era%20mostrado%20autom%C3%A1ticamente%20en%20los%20favoritos%20de%20Internet%20Explorer){:target='_blank'} para colocar icono cuando el usuario añadía una página a favoritos.
+Cuando tenemos varias pestañas en nuestro navegador, para facilitar la búsqueda y la navegación entre pestañas, el navegador suele colocar iconos a la izquierda del título de las pestañas. Estos iconos son conocidos como **favicons** (iconos favoritos), ya que [fue un invento de Internet Explorer](https://es.wikipedia.org/wiki/Favicon#:~:text=La%20forma%20original%20de%20definir%20un%20favicono%20era%20poniendo%20un%20archivo%20llamado%20favicon.ico%20en%20el%20directorio%20ra%C3%ADz%20del%20servidor%20web%2C%20el%20cual%20era%20mostrado%20autom%C3%A1ticamente%20en%20los%20favoritos%20de%20Internet%20Explorer){:target='_blank'}, que los introdujo cuando el usuario añadía una página a sus favoritos.
 
-Para generar los favicons de una forma más comoda, podemos utilizar herramientas como [Real Favicon Generator](https://realfavicongenerator.net/){:target='_blank'}, donde podemos pasarle una imagen de alta resolución y nos genera un paquete **.zip** con los archivos y el código necesario para las diferentes versiones y resoluciones de los íconos. Ejemplo de ello sería el siguiente código:
+Para generar los favicons de manera más comoda, podemos utilizar herramientas como [Real Favicon Generator](https://realfavicongenerator.net/){:target='_blank'}, donde podemos pasarle una imagen de alta resolución y nos genera un paquete **.zip** con los archivos y el código necesario para las diferentes versiones y resoluciones de los íconos. Ejemplo de ello sería el siguiente código:
 
 {% include codeHeader.html icon="html" %}
 {3 4 5 6 7}
@@ -185,7 +181,7 @@ Para generar los favicons de una forma más comoda, podemos utilizar herramienta
 {: .prompt-note }
 
 
-### __✍️ Paso 3: Encabezado del Currículum__
+## __Paso 3: Encabezado del Currículum 📝__
 
 En la parte principal del CV, vamos a agrupar el título, nuestra foto de perfil y los datos personales utilizando como contenedor la etiqueta `header`{:.tag}.
 
@@ -215,11 +211,11 @@ Para ello, nos guiaremos con la siguiente ilustración a modo de ejemplo:
 ```
 {: .nolineno }
 
-### __✍️ Paso 4: Secciones del Curriculum__
+## __Paso 4: Secciones del Curriculum 👔__
 
-Dentro del contenido principal vamos a estar utilizando básicamente secciones para cada apartado como sería los **datos personales**, **formación académica**, **experiencia**, **información complementaria**, etc. Un ejemplo de ello sería lo siguiente:
+Dentro del contenido principal, vamos a estar trabajando básicamente con secciones (`section`{:.tag}) para cada apartado, como la **formación académica**, la **experiencia**, la **información complementaria**, etc. Un ejemplo de esa estructura sería lo siguiente:
 
-{% include codeHeader.html file="index.html" codepen="y" %}
+{% include codeHeader.html icon="html" %}
 {5 6 7 8 9 10}
 ```html
 <header>
@@ -238,7 +234,7 @@ Dentro del contenido principal vamos a estar utilizando básicamente secciones p
 </main>
 ```
 
-### __Estilos para imprimir__
+## __Paso 5: Estilos para imprimir 🖨️📄 (Opcional)__
 
 Este es un punto que se suele pasar por alto cuando se crean páginas o sitios web, y es poner un estilo específico para cuando alguien quiera imprimir y para nuestro curriculum sería positivo.
 
@@ -284,13 +280,13 @@ Luego debemos vincular ese archivo desde nuestro HTML:
 ```
 
 
-## Repositorio
+## __Repositorio 📥__
 
 {% include repository.html repo=page.github %}
 
 ---
 
-## __Recursos Adicionales__
+## __Recursos Adicionales 🔗__
 
 Si quieres íconos para utilizar en tus proyectos, te recomiendo las siguientes páginas:
 - [Icons8](https://iconos8.es/){: target='_blank' }: Ofrece una gran variedad de íconos gratuitos y personalizables en diferentes estilos, además de herramientas como generadores de imágenes y fondos.

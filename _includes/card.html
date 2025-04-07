@@ -1,3 +1,54 @@
+<style scoped>
+.card-header {
+  overflow: hidden;
+}
+
+.card img {
+  /* transform: translate(-80px, 80px); */
+  transition: transform 0.7s ease;
+}
+
+/* Animación al pasar el mouse (hover) */
+.card:hover img {
+  /* animation: moveIn 1s forwards; */
+  animation: pulse 0.6s infinite alternate;;
+}
+
+/* Animación para salir del hover */
+.card img {
+  /*animation: moveOut 1s forwards; /* Aplica la animación cuando el hover se elimina */
+}
+
+@keyframes pulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+
+/* Animación de entrada */
+@keyframes moveIn {
+  from {
+    transform: translate(-80px, 80px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+/* Animación de salida */
+@keyframes moveOut {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-80px, 80px);
+  }
+}
+
+</style>
 <div class="card text-light shadow" style="background-color: #191919; cursor: pointer;"
 onclick="location.href = '{{ include.href | relative_url }}'">
 <div class="card-header text-center">
@@ -11,7 +62,7 @@ onclick="location.href = '{{ include.href | relative_url }}'">
 		{{ include.title  }}
 	</h5>
 	<p class="card-text">
-		{{ include.text | truncatewords: 3 }}
+		{{ include.text }}
 	</p>
 </div>
 </div>

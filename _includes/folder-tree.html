@@ -6,7 +6,6 @@
       --accent: #fbbf24;
       --radius: 4px;
     }
-
     .tree {
       max-width: 600px;
       margin: auto;
@@ -110,7 +109,9 @@
       {% else %}
         <div class="file">
           {% if item.icon == "image" %}
+          <a href="{{ item.download_path }}" download="{{ item.name }}">
             <i class="fa-solid fa-image fa-lg"></i> {{ item.name }}
+          </a>
           {% else %}
           <i class="fa-brands {{ item.icon }} fa-lg"></i> {{ item.name }}
           {% endif %}

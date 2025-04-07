@@ -184,12 +184,12 @@ details[open] > summary {
 }
 
 .table  {
-	border-collapse: collapse;
+	// border-collapse: collapse;
 	color: #ff0;
-	border-radius: .4rem;
 	border: 1px solid #444;
 	box-shadow: 0 0 0 0.8px #444;
 	margin: 0;
+	margin-bottom: 30px;
 }
 
 .table-dark thead th {

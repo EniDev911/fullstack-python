@@ -8,7 +8,7 @@ blockquote {
 blockquote p {
 	position: relative;
 	padding: 10px;
-	padding-left: 40px;
+	padding-left: 50px;
 }
 
 blockquote {
@@ -45,7 +45,7 @@ blockquote {
 		background: #1b313b;
 		border: none;
 		& p::before {
-			content: "Nota:\A";
+			content: "NOTA\A";
 			font-weight: bold;
 			white-space: pre-line;
 		}
@@ -67,7 +67,7 @@ blockquote {
 			color: #ddd;
 		}
 		& p::before {
-			content: "Ojo:\A";
+			content: "OJO\A";
 			font-weight: bold;
 			white-space: pre-line;
 		}
@@ -97,5 +97,6 @@ blockquote p code.language-plaintext {
 @media (min-width: 992px) {
 	blockquote {
 		border-radius: 8px;
+		font-size: medium;
 	}
 }
