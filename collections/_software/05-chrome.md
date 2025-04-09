@@ -3,12 +3,12 @@ layout: post
 title: "🌐 GOOGLE CHROME"
 subtitle: "Navegador web flexible con una amplia gama de herramientas"
 text: "Navegador web"
-img: https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg
+thumbnail: https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg
 ---
 
 Google Chrome proporciona un conjunto robusto de herramientas y características que facilitan el desarrollo web.
 
-## Herramientas de Desarrollo (DevTools)
+## __Herramientas de Desarrollo (DevTools)__
 
 Las herramientas de desarrollo (DevTools) de Google Chrome son un conjunto de herramientas integradas que permiten a los desarrolladores web depurar, analizar y optimizar sus aplicaciones web.
 

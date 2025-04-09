@@ -28,25 +28,6 @@ function copyCode(e) {
     }
   }
 
-  //   codeFullscreenButtons.forEach((codeFullscreenButton, index) => {
-  //     let code = codeBlocks[index];
-  //     let header = document.querySelectorAll('.code-header')[index];
-  //     codeFullscreenButton.addEventListener('click', () => {
-  //       code.insertAdjacentElement('afterbegin', header);
-  //       if (!document.fullscreenElement) {
-  //     // header.style.borderRadius = '0';
-  //     // header.querySelector('.fsc').classList.add('fa-compress');
-  //     // header.querySelector('.fsc').classList.remove('fa-expand');
-  //     code.requestFullscreen();
-  //   } else if (document.exitFullscreen) {
-  //     code.insertAdjacentElement('beforebegin', header);
-  //     // header.querySelector('.fsc').classList.remove('fa-compress');
-  //     // header.querySelector('.fsc').classList.add('fa-expand');
-  //     document.exitFullscreen();
-  //   }
-  // });
-  //   });
-
   document.querySelectorAll("[data-color*='#']").forEach(ele => {
     ele.addEventListener('click', () => {
       color = getComputedStyle(ele).getPropertyValue('--color');

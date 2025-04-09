@@ -3,7 +3,7 @@ layout: post
 title: "🦫 DBEAVER"
 subtitle: "Cliente para administrar diferentes fuentes de datos"
 text: "Cliente de bases de datos Opensource"
-img: https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/dbeaver.svg
+thumbnail: https://raw.githubusercontent.com/EniDev911/assets/main/svg/software/dbeaver.svg
 ---
 
 ### ¿Qué es DBeaver?

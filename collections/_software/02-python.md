@@ -3,7 +3,7 @@ layout: post
 title: "🐍 Python"
 subtitle: "Instalación de Python"
 text: "Interprete de Python"
-img: /assets/svg/python.svg
+thumbnail: /assets/svg/python.svg
 show_next: true
 ---
 

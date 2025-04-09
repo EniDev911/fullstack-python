@@ -3,7 +3,7 @@ layout: post
 title: "🐘 Postgres"
 subtitle: "Instalación de Postgres"
 text: "ORDBMS Open Source"
-img: /assets/svg/postgres.svg
+thumbnail: /assets/svg/postgres.svg
 video_path: /assets/videos/postgres/
 show_next: true
 ---

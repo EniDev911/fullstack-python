@@ -12,6 +12,12 @@ ol, ul {
 		color: rgb(165, 165, 127);
 	}
 }
+ul.detail {
+		border: 2px dashed;
+		background: linear-gradient(20deg, #191919, #111, #3334);
+		list-style: "> ";
+		margin-bottom: 30px;
+}
 
 ul.section-toc {
 	margin: 0;
@@ -19,5 +25,12 @@ ul.section-toc {
 	ul {
 		margin: 0;
 		list-style: inside;
+	}
+}
+
+
+@media (min-width: 1200px) {
+	ul.detail {
+		border-radius: 10px;
 	}
 }

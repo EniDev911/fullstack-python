@@ -57,7 +57,7 @@ github:
 En este desafío, se nos pide crear una página web con los siguientes requerimientos:
 
 - Aplicar correctamente las etiquetas semánticas de **HTML5**.
-- Emplear correctamente los selectores en **CSS** ya sea para definir reglas por `id`, `clase` o `etiqueta`.
+- Emplear correctamente los selectores en **CSS** ya sea para definir reglas por **id**, **clase** o **etiqueta**.
 - Implementar estilos **CSS** para texto, color, fondo, alineación, imágenes y seguir el modelo de cajas, para la definición de aspectos visuales de una interfaz web.
 - Implementar estilos **CSS**, utilizando las propiedades display, unidades de medida y estilos tipográficos avanzados.
 
@@ -157,7 +157,7 @@ Como en cada desafío nos piden utilizar correctamente las etiquetas semánticas
 ```
 {: .nolineno }
 
-### Trabajando el header
+## __Trabajar el Header__
 
 Visto lo anterior, ya podemos entrar en tierra derecha, vamos a trabajar la siguiente parte de la maqueta:
 

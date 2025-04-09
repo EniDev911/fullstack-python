@@ -6,25 +6,27 @@ modulo: m3
 type: evaluado
 show: true
 show_next: true
+github:
+  name: eniDev911/m3-evaluado-introduccion-python
 ---
 
 ## __Contexto__
 
-En este desafío, se nos piden desarrollar 2 actividades, realizar cálculos simples en Python usando operaciones básicas.
+En este desafío, se nos piden desarrollar 2 actividades, realizar cálculos simples en Python usando operaciones básicas. El objetivo principal de este desafío es realizar los cálculos mediante el uso de fórmulas, y desarrollar una solución en Python para realizar estos cálculos de manera eficiente.
 
-## __Desarrollo Paso a Paso__
-
-### __1. Velocidad de escape__
+## __Actividad 1: Velocidad de Escape__
 
 La velocidad de escape de un planeta se define como la mínima velocidad necesaria para salir de un planeta venciendo la gravedad. La velocidad de escape se calcula mediante la siguiente fórmula:
 
 {: align='center' .fs-1 .text-warning }
 $V_e=\sqrt{2gr}$
 
-- `Ve`: corresponde a la Velocidad de Escape en `[m/s]`.
-- `g`: corresponde a la constante gravitacional en `[m/s2]`.
+- `Ve`: corresponde a la Velocidad de Escape en **[m/s]** (metros por segundo).
+- `G`: corresponde a la constante gravitacional universal **[m/s2]**.
 - `r`: Corresponde al radio del planeta en `[m]`.
+{: .detail }
 
+### __Indicaciones__
 
 1. Se solicita crear un script `escape.py` que permita calcular la velocidad de escape ingresando como datos de entradas el radio `r` y la constante `g`. Los datos de entrada deben ingresarse de manera interactiva utilizando la función `input()`.
 
@@ -43,6 +45,7 @@ __Ejemplo__:
 
 - `"La velocidad de Escape es 11174.6 [m/s]"`
 
+## __Solución__
 
 Creamos el script `escape.py`:
 
@@ -122,7 +125,7 @@ Ingrese el radio en Kilómetros: 6371
 Velocidad de Escape = 11174.6 [m/s]
 ```
 
-### Actividad 2 - Rentabilidad
+## __Actividad 2: Rentabilidad__
 
 Un emprededor quiere crear una app que provea un servicio para entregar comida de mascotas. Este proyecto tiene buenos pronósticos, pero su éxito dependerá de cuántos usuarios puedan alcanzar. La manera en la que se medirá esto es calculando las utilidades del proyecto. Estas utilidades se pueden calcular mediante la siguiente formula:
 
@@ -336,24 +339,7 @@ Ingresa las utilidades del año pasado: 140000
 La razón entre las utilidades actuales y las del año anterior es: 0.21
 ```
 
----
 
-## Repositorio
+## __Repositorio 📥__
 
-{% tabs repo %}
-{% tab repo github %}
-[![github](https://socialify.git.ci/enidev911/m3-evaluado-introduccion-python/image?description=1&descriptionEditable=M3%20%3A%20Introducci%C3%B3n%20a%20Python%20-%20Desaf%C3%ADo%20evaluado&language=1&name=1&owner=1&pattern=Charlie%20Brown&theme=Dark){: .card }](//github.com/enidev911/m3-evaluado-introduccion-python)
-{% endtab %}
-{% tab repo github cli %}
-{% include codeHeader.html icon="terminal" %}
-```bash
-gh repo clone EniDev911/m3-evaluado-introduccion-python
-```
-{% endtab %}
-{% tab repo ssh %}
-{% include codeHeader.html icon="terminal" %}
-```bash
-git clone git@github.com:EniDev911/m3-evaluado-introduccion-python.git
-```
-{% endtab %}
-{% endtabs %}
+{% include repository.html repo=page.github %}
