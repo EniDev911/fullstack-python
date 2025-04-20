@@ -6,9 +6,9 @@
 <body>
   <!-- 👇 partial de la navegación -->
   {% include navbar.html %}
-  <!-- HERO SECTION -->
-  <div class="pt-5" style="/*height: 80vh; background: #191919*/">
-    <div class="py-5 text-center">
+  <div class="pt-5">
+    <!-- HERO SECTION -->
+    <div class="py-5 text-center" id="hero">
       <h1 class="display-5 fw-bold page-title mb-5">{{ page.title }}</h1>
       {% if page.thumbnail %}
         <img src="{{ page.thumbnail | relative_url }}" height="100">

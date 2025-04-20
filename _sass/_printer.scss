@@ -1,10 +1,69 @@
 @media print {
 	@page {
-		size: A4 landscape;
+		size: A4 portrait; // landscape (horizontal)
 	}
 	body {
 		padding: 0 !important;
 		margin: 0 !important;
+		color: #000;
+	}
+	.tree {
+		margin: 0 !important;
+		box-shadow: 0 !important;
+	}
+	.ftree {
+		box-shadow: 0 !important;
+	}
+
+	ul.ftree li::before {
+		color: #333;
+		font-weight: 900;
+		background: red;
+	}
+
+	#hero,
+	#content,
+	#hero p {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	h1 {
+		margin-bottom: 0;
+	}
+
+	h2 {
+		font-size: 2rem !important;
+		font-weight: 900 !important;
+	}
+
+	p, a, p a {
+		font-size: 1.2rem !important;
+	}
+
+	a {
+		color: #000;
+		text-decoration: none;
+	}
+
+	a[href^='https']:after {
+		color: rgb(17, 128, 179);
+		content: " ( " attr(href) " ) "; /* mostramos la url del enlace */
+		font-size: 1.2rem;
+		vertical-align: middle;
+	}
+
+	blockquote {
+		&[class^='prompt-'] {
+			color: #000;
+			box-shadow: none;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+		}
+
+		&[class='prompt-success']::before{
+			content: "💡" !important;
+		}
 	}
 	.no-printer {
 		display: none;

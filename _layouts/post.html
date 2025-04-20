@@ -7,7 +7,7 @@ layout: default
 	<!-- toc content -->
 	{% if page.toc == false %}
 	{% else %}
-	<details class="my-3 px-2 px-lg-0"> <!-- open -->
+	<details class="my-3 px-2 px-lg-0 no-printer" id="toc_container"> <!-- open -->
 		<summary class="fs-5 text-light p-2">Tabla de Contenido</summary>
 		{% include toc.html html=content class="section-toc" %}
 	</details>
